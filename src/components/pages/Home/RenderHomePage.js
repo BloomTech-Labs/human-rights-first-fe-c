@@ -22,6 +22,9 @@ function RenderHomePage(props) {
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
         <p>
+          <Link to="/map">Map Visualizations Example</Link>
+        </p>
+        <p>
           <Button type="primary" onClick={() => authService.logout()}>
             Logout
           </Button>

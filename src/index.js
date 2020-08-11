@@ -42,7 +42,6 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Map />
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
@@ -55,6 +54,10 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
+        {/* map viz testing */}
+        <SecureRoute path="/map">
+          <Map />
+        </SecureRoute>
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
