@@ -18,6 +18,7 @@ import { HomePage } from './components/pages/Home';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import Map from './components/common/Map';
 
 ReactDOM.render(
   <Router>
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
+      <Map />
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
