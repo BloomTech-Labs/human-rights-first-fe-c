@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import * as capitalsData from '../../testing_data/capitals.json';
+import PlotlyMap from './MapByPlotly';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -12,6 +13,7 @@ const Map = () => {
   });
   return (
     <div>
+      map viz by Mapbox -
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -26,6 +28,9 @@ const Map = () => {
           </Marker>
         ))}
       </ReactMapGL>
+      <div id="myDiv">
+        <PlotlyMap />
+      </div>
     </div>
   );
 };

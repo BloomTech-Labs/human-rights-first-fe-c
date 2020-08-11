@@ -9,11 +9,12 @@
     "antd": "^4.4.3",
     "axios": "^0.19.2",
     "craco-less": "^1.17.0",
-    "plotly.js": "^1.54.6",
+    "plotly.js": "^1.47.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.7",
     "react-plotly.js": "^2.4.0",
+    "react-plotlyjs": "^0.4.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
