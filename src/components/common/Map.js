@@ -28,6 +28,7 @@ const Map = () => {
           </Marker>
         ))}
       </ReactMapGL>
+      map viz by Plotly -
       <div id="myDiv">
         <PlotlyMap />
       </div>
