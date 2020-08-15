@@ -10,7 +10,7 @@ const ConsentForm = () => {
         viewers. Please consider this information and decide whether to proceed
         to the website or you may be redirected.
       </p>
-      <a href="">
+      <a href="#">
         <button>Continue to Human Rights Considered</button>
       </a>
       <a href="https://www.google.com/">
