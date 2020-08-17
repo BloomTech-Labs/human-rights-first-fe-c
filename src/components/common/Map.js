@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import * as incidentsData from '../../testing_data/incidents data.json';
 import '../../styles/index.css';
@@ -12,6 +12,19 @@ const Map = () => {
     height: '90vh',
   });
   const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === 'Escape') {
+        setSelected(null);
+      }
+    };
+    window.addEventListener('keydown', listener);
+
+    return () => {
+      window.removeEventListener('keydown', listener);
+    };
+  }, []);
 
   const typeOfIncidents = data => {
     if (data.includes('tear')) {
