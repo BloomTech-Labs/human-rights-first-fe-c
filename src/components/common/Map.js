@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import * as incidentsData from '../../testing_data/incidents data.json';
+import '../../styles/index.css';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -77,6 +78,7 @@ const Map = () => {
             onClose={() => {
               setSelected(null);
             }}
+            className="popUpBox"
           >
             <div>
               <p>{selected[2]}</p>
