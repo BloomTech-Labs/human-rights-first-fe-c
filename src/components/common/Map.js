@@ -12,7 +12,7 @@ const Map = () => {
   });
   const [selected, setSelected] = useState(null);
 
-  const typeOfIncident = data => {
+  const typeOfIncidents = data => {
     if (data.includes('tear')) {
       return (
         <img
@@ -66,7 +66,7 @@ const Map = () => {
                 setSelected([incident.lat, incident.lon, incident.text]);
               }}
             >
-              {typeOfIncident(incident.text)}
+              {typeOfIncidents(incident.text)}
             </div>
           </Marker>
         ))}
