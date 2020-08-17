@@ -1,26 +1,24 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import * as capitalsData from '../../testing_data/capitals.json';
 import * as incidentsData from '../../testing_data/incidents data.json';
-import PlotlyMap from './MapByPlotly';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
     latitude: 37.09024,
     longitude: -95.712891,
-    zoom: 3,
-    width: '70vw',
-    height: '70vh',
+    zoom: 4,
+    width: '100vw',
+    height: '90vh',
   });
   const [selected, setSelected] = useState(null);
 
   return (
     <div>
-      map viz by Mapbox -
+      <div>filter bar</div>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        // mapStyle="mapbox://styles/janecyyu/ckdp4j03i0arg1imkwcu4kxzy"
+        mapStyle="mapbox://styles/janecyyu/ckdp4j03i0arg1imkwcu4kxzy"
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
@@ -36,7 +34,10 @@ const Map = () => {
                 setSelected([incident.lat, incident.lon, incident.text]);
               }}
             >
-              📍
+              <img
+                src="https://img.icons8.com/officel/16/000000/marker.png"
+                alt="marker"
+              />
             </div>
           </Marker>
         ))}
