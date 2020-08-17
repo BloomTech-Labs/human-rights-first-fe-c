@@ -12,6 +12,38 @@ const Map = () => {
   });
   const [selected, setSelected] = useState(null);
 
+  const typeOfIncident = data => {
+    if (data.includes('tear')) {
+      return (
+        <img
+          src="https://img.icons8.com/cotton/30/000000/eye-disease.png"
+          alt="tear-gas icon"
+        />
+      );
+    } else if (data.includes('shoot')) {
+      return (
+        <img
+          src="https://img.icons8.com/dusk/30/000000/gun.png"
+          alt="shoot icon"
+        />
+      );
+    } else if (data.includes('pepper')) {
+      return (
+        <img
+          src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+          alt="pepper spray icon"
+        />
+      );
+    } else {
+      return (
+        <img
+          src="https://img.icons8.com/color/30/000000/angry-fist.png"
+          alt="violence icon"
+        />
+      );
+    }
+  };
+
   return (
     <div>
       <div>filter bar</div>
@@ -34,10 +66,7 @@ const Map = () => {
                 setSelected([incident.lat, incident.lon, incident.text]);
               }}
             >
-              <img
-                src="https://img.icons8.com/officel/16/000000/marker.png"
-                alt="marker"
-              />
+              {typeOfIncident(incident.text)}
             </div>
           </Marker>
         ))}
@@ -60,9 +89,3 @@ const Map = () => {
 };
 
 export default Map;
-{
-  /* map viz by Plotly -
-      <div id="myDiv">
-        <PlotlyMap />
-      </div> */
-}
