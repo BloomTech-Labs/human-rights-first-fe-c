@@ -30,24 +30,29 @@ const Map = () => {
             latitude={parseInt(incident.lat)}
             longitude={parseInt(incident.lon)}
           >
-            <button
+            <div
               onClick={e => {
                 e.preventDefault();
-                // setSelected([incident.lat, incident.lon, incident.text]);
-                <Popup latitude={incident.lat} longitude={incident.lon}>
-                  <div>{incident.text}</div>
-                </Popup>;
+                setSelected([incident.lat, incident.lon, incident.text]);
               }}
             >
               📍
-            </button>
+            </div>
           </Marker>
         ))}
-        {/* {selected ? (
-          <Popup latitude={selected[0]} longitude={selected[1]}>
-            <div>{selected[2]}</div>
+        {selected ? (
+          <Popup
+            latitude={parseInt(selected[0])}
+            longitude={parseInt(selected[1])}
+            onClose={() => {
+              setSelected(null);
+            }}
+          >
+            <div>
+              <p>{selected[2]}</p>
+            </div>
           </Popup>
-        ) : null} */}
+        ) : null}
       </ReactMapGL>
     </div>
   );
