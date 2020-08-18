@@ -9,7 +9,7 @@ const Map = () => {
     longitude: -95.712891,
     zoom: 4,
     width: '100vw',
-    height: '90vh',
+    height: '73vh',
   });
   const [selected, setSelected] = useState(null);
 
@@ -59,8 +59,8 @@ const Map = () => {
   };
 
   return (
-    <div>
-      <div>filter bar</div>
+    <div className="container">
+      <div className="filter_bar">filter bar</div>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
