@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import * as incidentsData from '../../testing_data/incidents data.json';
+import usZips from 'us-zips';
 import '../../styles/index.css';
 
 const Map = () => {
@@ -12,6 +13,26 @@ const Map = () => {
     height: '73vh',
   });
   const [selected, setSelected] = useState(null);
+
+  const [zipCode, setZipCode] = useState('');
+
+  const findLatLon = zipcode => {};
+
+  const submitHandler = e => {
+    e.preventDefault();
+    setViewport({
+      latitude: usZips[zipCode].latitude,
+      longitude: usZips[zipCode].longitude,
+      zoom: 10,
+      width: '100vw',
+      height: '73vh',
+    });
+  };
+
+  const handleChange = e => {
+    e.preventDefault();
+    setZipCode(e.target.value);
+  };
 
   useEffect(() => {
     const listener = e => {
@@ -60,7 +81,16 @@ const Map = () => {
 
   return (
     <div className="container">
-      <div className="filter_bar">filter bar</div>
+      <div className="filter_bar">
+        <form>
+          <label>
+            Search for a place by zip code:
+            <br />
+            <input type="text" name="zipCode" onChange={handleChange} />
+          </label>
+          <input type="submit" value="Submit" onClick={submitHandler} />
+        </form>
+      </div>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}

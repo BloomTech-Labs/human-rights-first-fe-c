@@ -16,7 +16,8 @@
     "react-plotly.js": "^2.4.0",
     "react-plotlyjs": "^0.4.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "us-zips": "^4.0.2"
   },
   "scripts": {
     "start": "craco start",
