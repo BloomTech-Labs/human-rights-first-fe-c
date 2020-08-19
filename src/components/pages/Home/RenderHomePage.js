@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import ConsentForm from '../../common/GraphicContentModal';
+import ConsentForm from './ConsentForm';
 import Popup from 'reactjs-popup';
 import NavBar from '../../common/NavBar';
 

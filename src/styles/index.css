@@ -1,6 +1,48 @@
 .logo {
-  color: pink;
-  font-size: 100px;
-  text-align: center;
+  color        : pink;
+  font-size    : 100px;
+  text-align   : center;
   margin-bottom: -50px;
+}
+
+/* NavBar.js Styling */
+
+h3 {
+  color: #370617
+}
+
+a {
+  color      : #370617;
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-div {
+  margin: 3%
+}
+
+.nav-bar {
+  display        : flex;
+  justify-content: space-between;
+}
+
+.HRClogo {
+  display        : flex;
+  flex-direction : row;
+  width          : 50%;
+  justify-content: flex-start;
+}
+
+.logo-img-div{
+  width:30%;
+}
+
+.logo-img{
+  width: 100%;
+  margin-top: -30%;
+  margin-bottom: -30%;
+}
+.logo-text-div {
+  font-family: 'Playfair Display', serif;
+  margin-left: -15%;
+
 }
