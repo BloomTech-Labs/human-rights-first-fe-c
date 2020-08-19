@@ -16,8 +16,6 @@ const Map = () => {
 
   const [zipCode, setZipCode] = useState('');
 
-  const findLatLon = zipcode => {};
-
   const submitHandler = e => {
     e.preventDefault();
     setViewport({
