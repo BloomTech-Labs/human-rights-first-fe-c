@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import ConsentForm from '../../common/ConsentForm';
+import ConsentForm from './ConsentForm';
 import Popup from 'reactjs-popup';
 
 function RenderHomePage(props) {
