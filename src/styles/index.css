@@ -32,15 +32,16 @@ a {
   justify-content: flex-start;
 }
 
-.logo-img-div{
-  width:30%;
+.logo-img-div {
+  width: 30%;
 }
 
-.logo-img{
-  width: 100%;
-  margin-top: -30%;
+.logo-img {
+  width        : 100%;
+  margin-top   : -30%;
   margin-bottom: -30%;
 }
+
 .logo-text-div {
   font-family: 'Playfair Display', serif;
   margin-left: -15%;
