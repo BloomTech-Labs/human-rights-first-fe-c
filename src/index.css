@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    color: #111;
+  
+  }
+
+  
+  /* Header */
+  
+  header {
+    background: url("https://bostonglobe-prod.cdn.arcpublishing.com/resizer/-4r2K4_wNb2jOjnJ0UFyguS9fx0=/1440x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/BTUNKQB7FLX6Q7GA5QXFXVC7HY.jpg");
+    background-size: 100%;
+    height: 700px;
+    background-position: center;
+    position: relative;
+   
+  }
+  
+  header div.top {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 auto;
+    padding-top: 12%;
+    align-items: center;
+    
+  }
+  
+  header div.top  {
+    color: #222;
+  
+  }
+  
+  
+  header div.top h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 0px;
+    margin: 0;
+    letter-spacing: 4px;
+    border-right: 2px solid #111;
+    color:#FAA307;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  header div.top p {
+    padding-left: 30px;
+    color:#FAA307;
+  }
+  
+  
+  .map {
+    background: #9D0208;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none; 
+    -webkit-box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
+   }
+   
+  
+   /*Main Content*/
+  
+  
+  main {
+   
+    position: relative;
+    z-index: 3;
+   overflow: hidden;
+   font-family:'Playfair Display', serif;
+  }
+  
+  
+  main section {
+    width: 70%;
+    padding: 90px 0;
+    margin: 50px auto 150px auto;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+  
+  }
+  
+  main section h2 {
+    font-size: 4.3rem;
+    color: #ddd;
+    text-transform: uppercase;
+   line-height: 4.2rem; 
+   padding-right: 10px;
+   border-right: 3px solid #ddd;
+  }
+  
+  
+  
+  main section div {
+    position: relative;
+  
+  }
+  
+  main section div p {
+    padding-left: 10px;
+  }
+  
+  
+  
