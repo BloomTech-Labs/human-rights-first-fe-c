@@ -91,13 +91,12 @@ const Map = () => {
 
   const points = incidentsData.data.map(incident => ({
     type: 'Feature',
-    properties: { cluster: false },
+    properties: { cluster: false, text: incident.text, id: incident.id },
     geometry: {
       type: 'Point',
-      coordinates: [parseInt(incident.lat), parseInt(incident.lon)],
+      coordinates: [parseFloat(incident.lon), parseFloat(incident.lat)],
     },
   }));
-
   const bounds = mapRef.current
     ? mapRef.current
         .getMap()
@@ -106,10 +105,10 @@ const Map = () => {
         .flat()
     : null;
 
-  const { cluster, supercluster } = useSupercluster({
-    points,
-    zoom: viewport.zoom,
+  const { clusters, supercluster } = useSupercluster({
+    points: points,
     bounds,
+    zoom: viewport.zoom,
     options: { radius: 75, maxZoom: 20 },
   });
 
@@ -134,21 +133,59 @@ const Map = () => {
         }}
         ref={mapRef}
       >
-        {incidentsData.data.map(incident => (
-          <Marker
-            latitude={parseFloat(incident.lat)}
-            longitude={parseFloat(incident.lon)}
-          >
-            <div
-              onClick={e => {
-                e.preventDefault();
-                setSelected([incident.lat, incident.lon, incident.text]);
-              }}
-            >
-              {typeOfIncidents(incident.text)}
-            </div>
-          </Marker>
-        ))}
+        {clusters.map(cluster => {
+          const [longitude, latitude] = cluster.geometry.coordinates;
+          const {
+            cluster: isCluster,
+            point_count: pointCount,
+          } = cluster.properties;
+
+          if (isCluster) {
+            return (
+              <Marker
+                latitude={latitude}
+                longitude={longitude}
+                className="circle"
+              >
+                <div
+                  className="cluster-marker"
+                  onClick={() => {
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(cluster.id),
+                      20
+                    );
+
+                    setViewport({
+                      ...viewport,
+                      latitude,
+                      longitude,
+                      zoom: expansionZoom,
+                      transitionInterpolator: new FlyToInterpolator({
+                        speed: 2,
+                      }),
+                      transitionDuration: 'auto',
+                    });
+                  }}
+                >
+                  {pointCount}
+                </div>
+              </Marker>
+            );
+          }
+
+          return (
+            <Marker latitude={latitude} longitude={longitude}>
+              <div
+                onClick={e => {
+                  e.preventDefault();
+                  setSelected([latitude, longitude, cluster.text]);
+                }}
+              >
+                🙂
+              </div>
+            </Marker>
+          );
+        })}
         {selected ? (
           <Popup
             latitude={parseFloat(selected[0])}
