@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import React, { useState, useEffect, useRef } from 'react';
+import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as incidentsData from '../../testing_data/incidents data.json';
 import usZips from 'us-zips';
+import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
 
 const Map = () => {
@@ -15,6 +16,8 @@ const Map = () => {
   const [selected, setSelected] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
+
+  const mapRef = useRef();
 
   const submitHandler = e => {
     e.preventDefault();
@@ -48,34 +51,67 @@ const Map = () => {
   const typeOfIncidents = data => {
     if (data.includes('tear')) {
       return (
-        <img
-          src="https://img.icons8.com/cotton/30/000000/eye-disease.png"
-          alt="tear-gas icon"
-        />
+        <div className="incidents_icons">
+          <img
+            src="https://img.icons8.com/cotton/30/000000/eye-disease.png"
+            alt="tear-gas icon"
+          />
+        </div>
       );
     } else if (data.includes('shoot')) {
       return (
-        <img
-          src="https://img.icons8.com/dusk/30/000000/gun.png"
-          alt="shoot icon"
-        />
+        <div className="incidents_icons">
+          <img
+            src="https://img.icons8.com/dusk/30/000000/gun.png"
+            alt="shoot icon"
+          />
+        </div>
       );
     } else if (data.includes('pepper')) {
       return (
-        <img
-          src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
-          alt="pepper spray icon"
-        />
+        <div className="incidents_icons">
+          <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          />
+        </div>
       );
     } else {
       return (
-        <img
-          src="https://img.icons8.com/color/30/000000/angry-fist.png"
-          alt="violence icon"
-        />
+        <div className="incidents_icons">
+          <img
+            className="else"
+            src="https://img.icons8.com/color/30/000000/angry-fist.png"
+            alt="violence icon"
+          />
+        </div>
       );
     }
   };
+
+  const points = incidentsData.data.map(incident => ({
+    type: 'Feature',
+    properties: { cluster: false },
+    geometry: {
+      type: 'Point',
+      coordinates: [parseInt(incident.lat), parseInt(incident.lon)],
+    },
+  }));
+
+  const bounds = mapRef.current
+    ? mapRef.current
+        .getMap()
+        .getBounds()
+        .toArray()
+        .flat()
+    : null;
+
+  const { cluster, supercluster } = useSupercluster({
+    points,
+    zoom: viewport.zoom,
+    bounds,
+    options: { radius: 75, maxZoom: 20 },
+  });
 
   return (
     <div className="container">
@@ -96,11 +132,12 @@ const Map = () => {
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
+        ref={mapRef}
       >
         {incidentsData.data.map(incident => (
           <Marker
-            latitude={parseInt(incident.lat)}
-            longitude={parseInt(incident.lon)}
+            latitude={parseFloat(incident.lat)}
+            longitude={parseFloat(incident.lon)}
           >
             <div
               onClick={e => {
@@ -114,8 +151,8 @@ const Map = () => {
         ))}
         {selected ? (
           <Popup
-            latitude={parseInt(selected[0])}
-            longitude={parseInt(selected[1])}
+            latitude={parseFloat(selected[0])}
+            longitude={parseFloat(selected[1])}
             onClose={() => {
               setSelected(null);
             }}
