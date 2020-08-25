@@ -91,7 +91,7 @@ const Map = () => {
 
   const points = incidentsData.data.map(incident => ({
     type: 'Feature',
-    properties: { cluster: false, text: incident.text },
+    properties: { cluster: false, text: incident.text, id: incident.id },
     geometry: {
       type: 'Point',
       coordinates: [parseFloat(incident.lon), parseFloat(incident.lat)],
@@ -144,7 +144,11 @@ const Map = () => {
 
           if (isCluster) {
             return (
-              <Marker latitude={latitude} longitude={longitude}>
+              <Marker
+                key={`cluster-${cluster.id}`}
+                latitude={latitude}
+                longitude={longitude}
+              >
                 <div
                   className="cluster-marker"
                   onClick={() => {
@@ -186,14 +190,18 @@ const Map = () => {
           }
 
           return (
-            <Marker latitude={latitude} longitude={longitude}>
+            <Marker
+              key={cluster.properties.id}
+              latitude={latitude}
+              longitude={longitude}
+            >
               <div
                 onClick={e => {
                   e.preventDefault();
                   setSelected([latitude, longitude, text]);
                 }}
               >
-                🙂
+                {typeOfIncidents(text)}
               </div>
             </Marker>
           );
