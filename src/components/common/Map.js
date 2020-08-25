@@ -53,7 +53,7 @@ const Map = () => {
       return (
         <div className="incidents_icons">
           <img
-            src="https://img.icons8.com/cotton/30/000000/eye-disease.png"
+            src="https://img.icons8.com/ios-glyphs/25/000000/eye-disease.png"
             alt="tear-gas icon"
           />
         </div>
@@ -62,7 +62,7 @@ const Map = () => {
       return (
         <div className="incidents_icons">
           <img
-            src="https://img.icons8.com/dusk/30/000000/gun.png"
+            src="https://img.icons8.com/color/25/000000/flash-bang.png"
             alt="shoot icon"
           />
         </div>
@@ -81,7 +81,7 @@ const Map = () => {
         <div className="incidents_icons">
           <img
             className="else"
-            src="https://img.icons8.com/color/30/000000/angry-fist.png"
+            src="https://img.icons8.com/ios-filled/25/000000/action.png"
             alt="violence icon"
           />
         </div>
