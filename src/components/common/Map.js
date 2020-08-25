@@ -91,12 +91,13 @@ const Map = () => {
 
   const points = incidentsData.data.map(incident => ({
     type: 'Feature',
-    properties: { cluster: false, text: incident.text, id: incident.id },
+    properties: { cluster: false, text: incident.text },
     geometry: {
       type: 'Point',
       coordinates: [parseFloat(incident.lon), parseFloat(incident.lat)],
     },
   }));
+
   const bounds = mapRef.current
     ? mapRef.current
         .getMap()
@@ -135,6 +136,7 @@ const Map = () => {
       >
         {clusters.map(cluster => {
           const [longitude, latitude] = cluster.geometry.coordinates;
+          const text = cluster.properties.text;
           const {
             cluster: isCluster,
             point_count: pointCount,
@@ -142,11 +144,7 @@ const Map = () => {
 
           if (isCluster) {
             return (
-              <Marker
-                latitude={latitude}
-                longitude={longitude}
-                className="circle"
-              >
+              <Marker latitude={latitude} longitude={longitude}>
                 <div
                   className="cluster-marker"
                   onClick={() => {
@@ -165,6 +163,18 @@ const Map = () => {
                       }),
                       transitionDuration: 'auto',
                     });
+
+                    if (expansionZoom == 20) {
+                      console.log('hi');
+                      console.log(cluster);
+                      const description = [];
+                      const filtered = incidentsData.data.filter(
+                        i =>
+                          parseFloat(i.lon) == cluster.geometry.coordinates[0]
+                      );
+                      filtered.map(i => description.push(i.text));
+                      setSelected([latitude, longitude, description]);
+                    }
                   }}
                 >
                   {pointCount}
@@ -178,7 +188,7 @@ const Map = () => {
               <div
                 onClick={e => {
                   e.preventDefault();
-                  setSelected([latitude, longitude, cluster.text]);
+                  setSelected([latitude, longitude, text]);
                 }}
               >
                 🙂
