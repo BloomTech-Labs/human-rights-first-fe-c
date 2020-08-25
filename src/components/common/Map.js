@@ -13,6 +13,7 @@ const Map = () => {
     width: '100vw',
     height: '73vh',
   });
+  const [isShown, setIsShown] = useState(false);
   const [selected, setSelected] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
@@ -128,7 +129,7 @@ const Map = () => {
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/janecyyu/ckdp4j03i0arg1imkwcu4kxzy"
+        mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
@@ -196,9 +197,13 @@ const Map = () => {
               longitude={longitude}
             >
               <div
-                onClick={e => {
-                  e.preventDefault();
+                onMouseEnter={() => {
+                  setIsShown(true);
                   setSelected([latitude, longitude, text]);
+                }}
+                onMouseLeave={() => {
+                  setIsShown(false);
+                  setSelected(null);
                 }}
               >
                 {typeOfIncidents(text)}
