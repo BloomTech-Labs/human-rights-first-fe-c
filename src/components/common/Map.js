@@ -165,12 +165,14 @@ const Map = () => {
                     });
 
                     if (expansionZoom == 20) {
-                      console.log('hi');
-                      console.log(cluster);
                       const description = [];
                       const filtered = incidentsData.data.filter(
                         i =>
-                          parseFloat(i.lon) == cluster.geometry.coordinates[0]
+                          parseFloat(i.lon) ==
+                          Math.round(
+                            cluster.geometry.coordinates[0] * 1000000
+                          ) /
+                            1000000
                       );
                       filtered.map(i => description.push(i.text));
                       setSelected([latitude, longitude, description]);
