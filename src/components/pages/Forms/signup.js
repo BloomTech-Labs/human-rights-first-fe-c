@@ -117,7 +117,7 @@ const SignUp = () => {
           name="email"
           value={formState.email}
           onChange={inputChange}
-          placeholder="humanRightsConsidered@email.com"
+          placeholder="email@email.com"
         />
         {errors.email.length > 0 ? <p>{errors.email}</p> : null}
       </lable>
@@ -133,6 +133,7 @@ const SignUp = () => {
         />
         {errors.fname.length > 0 ? <p>{errors.fname}</p> : null}
       </lable>
+      <button disabled={buttonDisabled}>Sign Up</button>
     </form>
   );
 };
