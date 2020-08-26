@@ -1,61 +1,43 @@
 import React from 'react';
 
 const SideBar = () => {
+  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+  function openNav() {
+    console.log('open');
+    //document.getElementById('mySidebar').style.width = '250px';
+    // document.getElementById('main').style.marginLeft = '250px';
+  }
+
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    console.log('close');
+    // document.getElementById('mySidebar').style.width = '0';
+    // document.getElementById('main').style.marginLeft = '0';
+  }
   return (
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h3>Dacor Sidebar</h3>
+    <div>
+      <div id="mySidebar" class="sidebar">
+        <a
+          href="javascript:void(0)"
+          class="closebtn"
+          onclick={() => console.log('close')}
+        >
+          &times;
+        </a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
       </div>
 
-      <ul class="list-unstyled components">
-        <p>Dummy Heading</p>
-        <li class="active">
-          <a
-            href="#homeSubmenu"
-            data-toggle="collapse"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            Home
-          </a>
-          <ul class="collapse list-unstyled" id="homeSubmenu">
-            <li>
-              <a href="#">Home 1</a>
-            </li>
-            <li>
-              <a href="#">Home 2</a>
-            </li>
-            <li>
-              <a href="#">Home 3</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a
-            href="#pageSubmenu"
-            data-toggle="collapse"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            Pages
-          </a>
-          <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li>
-              <a href="#">Page 1</a>
-            </li>
-            <li>
-              <a href="#">Page 2</a>
-            </li>
-            <li>
-              <a href="#">Page 3</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+      <div id="main">
+        <button class="openbtn" onclick={() => console.log('open')}>
+          &#9776; Open Sidebar
+        </button>
+        <h2>Collapsed Sidebar</h2>
+        <p>Content...</p>
+      </div>
+    </div>
   );
 };
 

@@ -8,6 +8,7 @@
     "@okta/okta-signin-widget": "^4.1.2",
     "antd": "^4.4.3",
     "axios": "^0.19.2",
+    "bootstrap4": "0.0.1-security",
     "craco-less": "^1.17.0",
     "plotly.js": "^1.47.4",
     "react": "^16.13.1",

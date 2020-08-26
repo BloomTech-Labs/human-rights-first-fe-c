@@ -3,6 +3,7 @@ import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as incidentsData from '../../testing_data/incidents data.json';
 import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
+import SideBar from './SideBar';
 import '../../styles/index.css';
 
 const Map = () => {
@@ -82,7 +83,7 @@ const Map = () => {
         <div className="incidents_icons">
           <img
             className="else"
-            src="https://img.icons8.com/ios-filled/25/000000/action.png"
+            src="https://img.icons8.com/ios-filled/30/000000/action.png"
             alt="violence icon"
           />
         </div>
@@ -113,6 +114,8 @@ const Map = () => {
     zoom: viewport.zoom,
     options: { radius: 75, maxZoom: 20 },
   });
+
+  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 
   return (
     <div className="container">

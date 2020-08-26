@@ -1,11 +1,11 @@
 .popUpBox {
-  background-color: rgba(255, 210, 194, 0.817);
+  background-color: rgba(255, 231, 222, 0.967);
   width: 250px;
   border-radius: 20px;
   padding: 5px 5px 5px 15px;
 }
 .mapboxgl-popup-close-button {
-  background-color: rgba(255, 255, 255, 0.906);
+  background-color: rgba(255, 255, 255, 0.933);
   border: none;
   border-radius: 5px;
   margin-left: 90%;
@@ -16,20 +16,16 @@
   margin: 7% 5% 0 5%;
 }
 .filter_bar {
-  background-color: rgb(193, 191, 188);
-  width: 50vh;
+  background-color: #ebb801;
+  width: 20vh;
 }
 .cluster-marker {
   color: #fff;
-  background: #1978c8;
+  background: #c7650e;
   border-radius: 50%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
-}
-.test {
-  width: 100px;
-  height: 50px;
 }
