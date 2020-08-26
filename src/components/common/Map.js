@@ -4,6 +4,7 @@ import * as incidentsData from '../../testing_data/incidents data.json';
 import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
 import SideBar from './SideBar';
+import NavBar from '../common/NavBar';
 import '../../styles/index.css';
 
 const Map = () => {
@@ -118,117 +119,120 @@ const Map = () => {
   /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 
   return (
-    <div className="container">
-      <div className="filter_bar">
-        <form>
-          <label>
-            Search for a place by zip code:
-            <br />
-            <input type="text" name="zipCode" onChange={handleChange} />
-          </label>
-          <input type="submit" value="Submit" onClick={submitHandler} />
-        </form>
-      </div>
-      <ReactMapGL
-        {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
-        onViewportChange={viewport => {
-          setViewport(viewport);
-        }}
-        ref={mapRef}
-      >
-        {clusters.map(cluster => {
-          const [longitude, latitude] = cluster.geometry.coordinates;
-          const text = cluster.properties.text;
-          const {
-            cluster: isCluster,
-            point_count: pointCount,
-          } = cluster.properties;
+    <div>
+      <NavBar />
+      <div className="container">
+        <div className="filter_bar">
+          <form>
+            <label>
+              Search for a place by zip code:
+              <br />
+              <input type="text" name="zipCode" onChange={handleChange} />
+            </label>
+            <input type="submit" value="Submit" onClick={submitHandler} />
+          </form>
+        </div>
+        <ReactMapGL
+          {...viewport}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+          mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
+          onViewportChange={viewport => {
+            setViewport(viewport);
+          }}
+          ref={mapRef}
+        >
+          {clusters.map(cluster => {
+            const [longitude, latitude] = cluster.geometry.coordinates;
+            const text = cluster.properties.text;
+            const {
+              cluster: isCluster,
+              point_count: pointCount,
+            } = cluster.properties;
 
-          if (isCluster) {
+            if (isCluster) {
+              return (
+                <Marker
+                  key={`cluster-${cluster.id}`}
+                  latitude={latitude}
+                  longitude={longitude}
+                >
+                  <div
+                    className="cluster-marker"
+                    onClick={() => {
+                      const expansionZoom = Math.min(
+                        supercluster.getClusterExpansionZoom(cluster.id),
+                        20
+                      );
+
+                      setViewport({
+                        ...viewport,
+                        latitude,
+                        longitude,
+                        zoom: expansionZoom,
+                        transitionInterpolator: new FlyToInterpolator({
+                          speed: 2,
+                        }),
+                        transitionDuration: 'auto',
+                      });
+
+                      if (expansionZoom == 20) {
+                        const description = [];
+                        const filtered = incidentsData.data.filter(
+                          i =>
+                            parseFloat(i.lon) ==
+                            Math.round(
+                              cluster.geometry.coordinates[0] * 1000000
+                            ) /
+                              1000000
+                        );
+                        filtered.map(i => description.push(i.text));
+                        setSelected([latitude, longitude, description]);
+                      }
+                    }}
+                  >
+                    {pointCount}
+                  </div>
+                </Marker>
+              );
+            }
+
             return (
               <Marker
-                key={`cluster-${cluster.id}`}
+                key={cluster.properties.id}
                 latitude={latitude}
                 longitude={longitude}
               >
                 <div
-                  className="cluster-marker"
-                  onClick={() => {
-                    const expansionZoom = Math.min(
-                      supercluster.getClusterExpansionZoom(cluster.id),
-                      20
-                    );
-
-                    setViewport({
-                      ...viewport,
-                      latitude,
-                      longitude,
-                      zoom: expansionZoom,
-                      transitionInterpolator: new FlyToInterpolator({
-                        speed: 2,
-                      }),
-                      transitionDuration: 'auto',
-                    });
-
-                    if (expansionZoom == 20) {
-                      const description = [];
-                      const filtered = incidentsData.data.filter(
-                        i =>
-                          parseFloat(i.lon) ==
-                          Math.round(
-                            cluster.geometry.coordinates[0] * 1000000
-                          ) /
-                            1000000
-                      );
-                      filtered.map(i => description.push(i.text));
-                      setSelected([latitude, longitude, description]);
-                    }
+                  onMouseEnter={() => {
+                    setIsShown(true);
+                    setSelected([latitude, longitude, text]);
+                  }}
+                  onMouseLeave={() => {
+                    setIsShown(false);
+                    setSelected(null);
                   }}
                 >
-                  {pointCount}
+                  {typeOfIncidents(text)}
                 </div>
               </Marker>
             );
-          }
-
-          return (
-            <Marker
-              key={cluster.properties.id}
-              latitude={latitude}
-              longitude={longitude}
+          })}
+          {selected ? (
+            <Popup
+              latitude={parseFloat(selected[0])}
+              longitude={parseFloat(selected[1])}
+              onClose={() => {
+                setSelected(null);
+              }}
+              className="popUpBox"
             >
-              <div
-                onMouseEnter={() => {
-                  setIsShown(true);
-                  setSelected([latitude, longitude, text]);
-                }}
-                onMouseLeave={() => {
-                  setIsShown(false);
-                  setSelected(null);
-                }}
-              >
-                {typeOfIncidents(text)}
+              <div>
+                <p>{selected[2]}</p>
               </div>
-            </Marker>
-          );
-        })}
-        {selected ? (
-          <Popup
-            latitude={parseFloat(selected[0])}
-            longitude={parseFloat(selected[1])}
-            onClose={() => {
-              setSelected(null);
-            }}
-            className="popUpBox"
-          >
-            <div>
-              <p>{selected[2]}</p>
-            </div>
-          </Popup>
-        ) : null}
-      </ReactMapGL>
+            </Popup>
+          ) : null}
+        </ReactMapGL>
+      </div>
     </div>
   );
 };
