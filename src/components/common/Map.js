@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as incidentsData from '../../testing_data/incidents data.json';
+import * as data from '../../testing_data/data2.json';
 import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
-import SideBar from './SideBar';
 import NavBar from '../common/NavBar';
 import '../../styles/index.css';
 
@@ -92,12 +92,15 @@ const Map = () => {
     }
   };
 
-  const points = incidentsData.data.map(incident => ({
+  const points = data.data.map(incident => ({
     type: 'Feature',
     properties: { cluster: false, text: incident.text, id: incident.id },
     geometry: {
       type: 'Point',
-      coordinates: [parseFloat(incident.lon), parseFloat(incident.lat)],
+      coordinates: [
+        parseFloat(incident.LONGITUDE),
+        parseFloat(incident.LATITUDE),
+      ],
     },
   }));
 
@@ -125,7 +128,7 @@ const Map = () => {
         <div className="filter_bar">
           <form>
             <label>
-              Search for a place by zip code:
+              Search by zip code:
               <br />
               <input type="text" name="zipCode" onChange={handleChange} />
             </label>
@@ -175,11 +178,11 @@ const Map = () => {
                         transitionDuration: 'auto',
                       });
 
-                      if (expansionZoom == 20) {
+                      if (expansionZoom === 20) {
                         const description = [];
                         const filtered = incidentsData.data.filter(
                           i =>
-                            parseFloat(i.lon) ==
+                            parseFloat(i.lon) ===
                             Math.round(
                               cluster.geometry.coordinates[0] * 1000000
                             ) /
