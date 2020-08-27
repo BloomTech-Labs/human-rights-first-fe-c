@@ -1,27 +1,17 @@
 import React from 'react';
 import { Flag, PersonFill, Book, Link } from 'react-bootstrap-icons';
+import NavBar from './NavBar.js';
 
 export const Loading = () => {
   return (
     <main>
+      <NavBar />
       <header>
         <div className="top">
-          <h1>Find Excessive Use of Force Incidents in Your City </h1>
-          <div>
-            <div>
-              <a className="map" href="#">
-                View Map
-              </a>
-            </div>
-          </div>
-          <p class="force"> or type of force </p>
-          <div class="custom-select">
-            <select>
-              <option value="0">Select type of force:</option>
-              <option value="1">shooting</option>
-              <option value="2">tear gas</option>
-              <option value="3">pepper spray</option>
-            </select>
+          <div class="mapBtn">
+            <a className="map" href="#">
+              View Map
+            </a>
           </div>
         </div>
       </header>
@@ -36,8 +26,22 @@ export const Loading = () => {
           Human Rights Considered is a public police brutality incident viewing
           application
         </p>
+        <p class="considered-intro">
+          Our goal is to provide information regarding a variety of police
+          brutality incidents in an accurate and timely manner to public. The
+          incidents have been categorized and can be filtered by types of force,
+          location, and date
+        </p>
       </section>
-
+      <section class="middle">
+        <div class="how">
+          <p class="work">How It Works? </p>
+          <p class="explanation">
+            We collect relevant incidents data from Twitter, Reddit, and police
+            agencies to display it on the map
+          </p>
+        </div>
+      </section>
       <section class="bottom-section">
         <h2>About Human Rights First</h2>
         <div class="bottom">
