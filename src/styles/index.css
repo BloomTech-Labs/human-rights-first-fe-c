@@ -41,6 +41,9 @@
 
 h3 {
   color: #370617;
+  margin-left: -50%;
+  margin-top: 4%;
+  font-family: 'Playfair Display', serif;
 }
 
 a {
@@ -57,6 +60,11 @@ a {
   justify-content: space-between;
 }
 
+.sign-up-btn {
+  display: flex;
+  justify-content: end;
+}
+
 .HRClogo {
   display: flex;
   flex-direction: row;
@@ -65,7 +73,9 @@ a {
 }
 
 .logo-img-div {
-  width: 30%;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
 }
 
 .logo-img {
@@ -74,7 +84,7 @@ a {
   margin-bottom: -30%;
 }
 
-.logo-text-div {
+/* .logo-text-div {
   font-family: 'Playfair Display', serif;
   margin-left: -15%;
-}
+} */

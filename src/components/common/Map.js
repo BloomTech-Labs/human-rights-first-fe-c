@@ -52,6 +52,8 @@ const Map = () => {
   }, []);
 
   const typeOfIncidents = data => {
+    // TODO: update types, see: https://ppt.cc/fpdyfx
+    // TODO: update icons
     if (data.includes('tear')) {
       return (
         <div className="incidents_icons">
@@ -125,7 +127,9 @@ const Map = () => {
     <div>
       <NavBar />
       <div className="container">
+        {/* filter bar starts here */}
         <div className="filter_bar">
+          {/* search by zip code */}
           <form>
             <label>
               Search by zip code:
@@ -134,7 +138,12 @@ const Map = () => {
             </label>
             <input type="submit" value="Submit" onClick={submitHandler} />
           </form>
+          {/* TODO: search by city  */}
+          {/* TODO: search by types of force  */}
         </div>
+        {/* filter bar ends here*/}
+
+        {/* Map starts here */}
         <ReactMapGL
           {...viewport}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -152,6 +161,7 @@ const Map = () => {
               point_count: pointCount,
             } = cluster.properties;
 
+            // multiple incidents
             if (isCluster) {
               return (
                 <Marker
@@ -199,6 +209,7 @@ const Map = () => {
               );
             }
 
+            // single incidents:
             return (
               <Marker
                 key={cluster.properties.id}
@@ -220,6 +231,8 @@ const Map = () => {
               </Marker>
             );
           })}
+
+          {/* pop up box starts here */}
           {selected ? (
             <Popup
               latitude={parseFloat(selected[0])}
@@ -229,12 +242,15 @@ const Map = () => {
               }}
               className="popUpBox"
             >
+              {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
               <div>
                 <p>{selected[2]}</p>
               </div>
             </Popup>
           ) : null}
+          {/* pop up box ends here */}
         </ReactMapGL>
+        {/* Map ens here */}
       </div>
     </div>
   );
