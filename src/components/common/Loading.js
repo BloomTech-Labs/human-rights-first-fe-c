@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Flag, PersonFill, Book } from 'react-bootstrap-icons';
+import { Flag, PersonFill, Book, Link } from 'react-bootstrap-icons';
 import NavBar from './NavBar.js';
 
 export const Loading = () => {
@@ -18,9 +18,9 @@ export const Loading = () => {
       <section className="intro">
         <h2>What is Human Rights Considered?</h2>
         <div class="icons">
-          {/* <Flag size={75} class="flag" />
+          <Flag size={75} class="flag" />
           <PersonFill size={75} class="person" />
-          <Book size={75} class="book" /> */}
+          <Book size={75} class="book" />
         </div>
         <p class="considered">
           Human Rights Considered is a public police brutality incident viewing
@@ -59,10 +59,10 @@ export const Loading = () => {
             we work where we can best harness American influence to secure core
             freedoms.
           </p>
-          {/* <Link size={30} class="link" />
+          <Link size={30} class="link" />
           <a href="" class="learn">
             Learn more about us
-          </a> */}
+          </a>
         </div>
       </section>
     </main>
