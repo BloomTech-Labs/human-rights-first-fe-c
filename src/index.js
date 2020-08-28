@@ -7,7 +7,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
-
+import './index.css';
 import 'antd/dist/antd.less';
 
 import { NotFoundPage } from './components/pages/NotFound';
@@ -19,6 +19,7 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import Map from './components/common/Map';
+import { Loading } from './components/common/Loading';
 
 ReactDOM.render(
   <Router>
@@ -40,6 +41,8 @@ function App() {
     history.push('/login');
   };
 
+  require('dotenv').config();
+
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
@@ -57,6 +60,9 @@ function App() {
         {/* map viz testing */}
         <SecureRoute path="/map">
           <Map />
+        </SecureRoute>
+        <SecureRoute path="/loading" component={Loading}>
+          <Loading />
         </SecureRoute>
         <Route component={NotFoundPage} />
       </Switch>

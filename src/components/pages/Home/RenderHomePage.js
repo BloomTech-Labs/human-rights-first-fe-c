@@ -29,6 +29,9 @@ function RenderHomePage(props) {
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
         <p>
+          <Link to="/loading">Loading Page</Link>
+        </p>
+        <p>
           <Link to="/map">Map Visualizations Example</Link>
         </p>
         <p>
