@@ -7,7 +7,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
-
+import './index.css';
 import 'antd/dist/antd.less';
 
 import { NotFoundPage } from './components/pages/NotFound';
@@ -18,7 +18,7 @@ import { HomePage } from './components/pages/Home';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-
+import { Loading } from './components/common/Loading';
 ReactDOM.render(
   <Router>
     <React.StrictMode>
@@ -39,6 +39,8 @@ function App() {
     history.push('/login');
   };
 
+  require('dotenv').config();
+
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
@@ -53,6 +55,9 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
+        <SecureRoute path="/loading" component={Loading}>
+          <Loading />
+        </SecureRoute>
         <Route component={NotFoundPage} />
       </Switch>
     </Security>

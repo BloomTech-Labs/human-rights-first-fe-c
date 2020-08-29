@@ -3,32 +3,22 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 const formSchema = yup.object().shape({
-  fname: yup
-    .string()
-    .required('First name is a required field. Minimum of 2 characters.'),
-  lname: yup
-    .string()
-    .required('Last name is a required field. Minimum of 2 characters.'),
   email: yup
     .string()
     .email()
-    .required('Email is a required field.'),
+    .required('Please provide email to login.'),
   password: yup
     .string()
     .required('You must input a password. Minimum of 4 characters.'),
 });
 
-const SignUp = () => {
+const LogIn = () => {
   const [formState, setFormState] = useState({
-    fname: '',
-    lname: '',
     email: '',
     password: '',
   });
 
   const [errors, setErrors] = useState({
-    fname: '',
-    lname: '',
     email: '',
     password: '',
   });
@@ -68,8 +58,6 @@ const SignUp = () => {
         setPost(response.data);
 
         setFormState({
-          fname: '',
-          lname: '',
           email: '',
           password: '',
         });
@@ -91,30 +79,6 @@ const SignUp = () => {
 
   return (
     <form onSubmit={formSubmit}>
-      <lable htmlFor="fname">
-        First Name:
-        <input
-          id="fname"
-          type="text"
-          name="fname"
-          value={formState.fname}
-          onChange={inputChange}
-          placeholder="First Name"
-        />
-        {errors.fname.length > 2 ? <p>{errors.fname}</p> : null}
-      </lable>
-      <lable htmlFor="lname">
-        Last Name:
-        <input
-          id="lname"
-          type="text"
-          name="lname"
-          value={formState.lname}
-          onChange={inputChange}
-          placeholder="Last Name"
-        />
-        {errors.lname.length > 2 ? <p>{errors.lname}</p> : null}
-      </lable>
       <lable htmlFor="email">
         Email:
         <input
@@ -139,9 +103,9 @@ const SignUp = () => {
         />
         {errors.password.length > 4 ? <p>{errors.password}</p> : null}
       </lable>
-      <button disabled={buttonDisabled}>Sign Up</button>
+      <button disabled={buttonDisabled}>Login</button>
     </form>
   );
 };
 
-export default SignUp;
+export default LogIn;
