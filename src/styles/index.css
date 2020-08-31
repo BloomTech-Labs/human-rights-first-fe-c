@@ -1,49 +1,90 @@
+.popUpBox {
+  background-color: rgba(255, 231, 222, 0.967);
+  width: 250px;
+  border-radius: 20px;
+  padding: 5px 5px 5px 15px;
+}
+.mapboxgl-popup-close-button {
+  background-color: rgba(255, 255, 255, 0.933);
+  border: none;
+  border-radius: 5px;
+  margin-left: 90%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 3% 5% 0 5%;
+}
+.filter_bar {
+  background-color: #ebb801;
+  width: 20vh;
+}
+.cluster-marker {
+  color: #fff;
+  background: #aa5a15;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+
 .logo {
-  color        : pink;
-  font-size    : 100px;
-  text-align   : center;
+  color: pink;
+  font-size: 100px;
+  text-align: center;
   margin-bottom: -50px;
 }
 
 /* NavBar.js Styling */
 
 h3 {
-  color: #370617
+  color: #370617;
+  margin-left: -50%;
+  margin-top: 4%;
+  font-family: 'Playfair Display', serif;
 }
 
 a {
-  color      : #370617;
+  color: #370617;
   font-family: 'Playfair Display', serif;
 }
 
 .nav-div {
-  margin: 3%
+  margin: 3%;
 }
 
 .nav-bar {
-  display        : flex;
+  display: flex;
   justify-content: space-between;
 }
 
+.sign-up-btn {
+  display: flex;
+  justify-content: end;
+}
+
 .HRClogo {
-  display        : flex;
-  flex-direction : row;
-  width          : 50%;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
   justify-content: flex-start;
 }
 
 .logo-img-div {
-  width: 30%;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
 }
 
 .logo-img {
-  width        : 100%;
-  margin-top   : -30%;
+  width: 100%;
+  margin-top: -30%;
   margin-bottom: -30%;
 }
 
-.logo-text-div {
+/* .logo-text-div {
   font-family: 'Playfair Display', serif;
   margin-left: -15%;
-
-}
+} */

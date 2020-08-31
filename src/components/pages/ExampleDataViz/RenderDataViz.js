@@ -1,6 +1,6 @@
 /*eslint no-unused-vars: 0 */
 import React, { useState, useEffect } from 'react';
-import Plot from 'react-plotly.js';
+import Plot from 'react-plotlyjs';
 import { getDSData } from '../../../api';
 
 const initialState = {
