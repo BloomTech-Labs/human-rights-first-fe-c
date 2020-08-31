@@ -13,17 +13,19 @@
     "craco-less": "^1.17.0",
     "dotenv": "^8.2.0",
     "mdbreact": "^4.27.0",
-    "plotly": "^1.0.6",
-    "plotly.js": "^1.54.7",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap-icons": "^1.0.3-alpha5",
     "react-dom": "^16.13.1",
+    "react-map-gl": "^5.2.7",
     "react-plotly.js": "^2.4.0",
+    "react-plotlyjs": "^0.4.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactjs-popup": "^1.5.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "us-zips": "^4.0.2",
+    "use-supercluster": "^0.2.8"
   },
   "scripts": {
     "start": "craco --max_old_space_size=4096 start",

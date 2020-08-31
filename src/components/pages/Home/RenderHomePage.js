@@ -32,6 +32,9 @@ function RenderHomePage(props) {
           <Link to="/loading">Loading Page</Link>
         </p>
         <p>
+          <Link to="/map">Map Visualizations Example</Link>
+        </p>
+        <p>
           <Button type="primary" onClick={() => authService.logout()}>
             Logout
           </Button>

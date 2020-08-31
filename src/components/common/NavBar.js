@@ -9,14 +9,19 @@ const NavBar = () => {
         <div className="HRClogo">
           <div className="logo-img-div">
             <img src={HRCpic} className="logo-img" />
-          </div>
-          <div className="logo-text-div">
             <h3>
               Human <br /> Rights <br /> Considered
             </h3>
           </div>
+          {/* <div className="logo-text-div">
+            <h3>
+              Human <br /> Rights <br /> Considered
+            </h3>
+          </div> */}
         </div>
-        <a href="#">Sign Up</a>
+        <div className="sign-up-btn">
+          <a href="#">Sign Up</a>
+        </div>
       </nav>
     </div>
   );
