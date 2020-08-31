@@ -1,205 +1,238 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: #eee;
-    color: #111;
-  
-  }
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  color: #111;
+  font-family: 'Playfair Display', serif;
+}
+body * {
+  transition: all 0.3s ease-in-out;
+}
 
-  
-  /* Header */
-  
-  header {
-    background: url("./assets/banner.png");
-    background-size: 100%;
-    height: 500px;
-    background-position: center;
-    position: relative;
-    font-family: 'Playfair Display', serif;
-  
-  }
-  
-  header div.top {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    width: 90%;
-    grid-template-columns: repeat(2,1fr);
-    margin: 0 auto;
-    padding-top: 5%;
-    
-    
-  }
-  
-  
+/* Header */
 
-  .map {
-    background: #9B3F18;
-    display: block;
-    color: #fff;
-    font-weight: bold;
-    width: 20%;
-    text-align: center;
-    padding: 12px;
-    border-radius: 20px;
-    margin: 270px;
-    margin-left: -60px;
-    font-size: 17px;
-   }
-   
-   .mapBtn {
-    display:flex;
-    flex-direction:column;
-    
-  
+header {
+  background: url('./assets/banner.png');
+  background-size: 100%;
+  height: 500px;
+  background-position: center;
+  position: relative;
+}
 
-   }
-     /*Main Content*/
-  main {
-   
-    position: relative;
-    z-index: 3;
-   overflow: hidden;
-   font-family:'Playfair Display', serif;
-  }
-  
-  
-  main section {
-    width: 70%;
-    padding: 90px 0;
-    margin: 50px auto 150px auto;
-    align-items: center;
-  
-  }
-  
-  main section h2 {
-    font-size: 2.7rem;
-    color: #370617;
-   line-height: 4.2rem; 
-   padding-right: 10px;
-   text-align: center;
-  }
-  
-  
-  
-  main section div {
-    position: relative;
-  
-  }
-  
-  .bottom {
-    margin: 30px 0;
-    padding-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+header div.top {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  padding-top: 5%;
+  align-items: center;
+}
 
-  }
+.map {
+  background: #9b3f18;
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  width: 20%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 20px;
+  margin: 270px;
+  margin-left: -60px;
+  font-size: 17px;
+  -webkit-box-shadow: 0px 10px 54px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 54px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 54px -11px rgba(0, 0, 0, 0.75);
+}
 
-  .bottom-section {
-    border-bottom:2px solid silver;
-  }
-  .organization {
-    text-align: left;
-    font-size:20px;
-    margin-top: 40px;
-    color: #370617;
-    width: 48%;
-  }
+.mapBtn {
+  display: flex;
+  flex-direction: column;
+}
+/*Main Content*/
+main {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif;
+}
 
-  .link {
-    text-align:right;
-    width: 100%;
-    padding-left: 10%;
-    margin-top:-1%;;
-  }
+main section {
+  width: 70%;
+  padding: 90px 0;
+  margin: 50px auto 150px auto;
+  align-items: center;
+}
 
-  .learn {
-    text-align: right;
-    font-size:20px;
-    padding-left:10px;
-    width: 70%;
-    margin-top:-33px;
-    margin-left: 50px;
-    color:#FAA307;
-    text-decoration:underline;
-  }
-  
-  .intro {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: space-evenly;
-  }
-  
-  .considered {
-    text-align: left;
-    font-size:20px;
-    margin-top: 40px;
-    color: #370617;
-  }
-  
-  .considered-intro {
-    text-align: left;
-    font-size:20px;
-    margin-top: 40px;
-    color: #370617;
-    width: 730px;
-  }
-  
-  .icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
- 
-  }
+main section h2 {
+  font-size: 2.7rem;
+  color: #370617;
+  line-height: 4.2rem;
+  padding-right: 10px;
+  text-align: center;
+}
 
- .flag{
-    margin-right: 60px;
-  }
+main section div {
+  position: relative;
+}
 
-  
- .person{
+.bottom {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.bottom-section {
+  border-bottom: 2px solid silver;
+}
+.organization {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  color: #370617;
+  width: 48%;
+}
+
+.link {
+  margin-right: 46%;
+}
+
+.learn {
+  font-size: 20px;
+  padding-left: 10px;
+  width: 70%;
+  margin-top: -33px;
+  margin-left: 335px;
+  color: #faa307;
+  text-decoration: underline;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.considered {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  color: #370617;
+}
+
+.considered-intro {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  color: #370617;
+  width: 730px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag {
   margin-right: 60px;
 }
 
-
-.book{
+.person {
   margin-right: 60px;
 }
 
-.image {
-  width:50%;
+.book {
+  margin-right: 60px;
 }
 
 .middle {
-  display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: space-evenly;
-    opacity: .95;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0.95;
 }
 .how {
-  background-color: #FAA307;
+  background-color: #faa307;
   width: 600px;
   height: 300px;
-  border: 1px solid #9D0208;
+  border: 1px solid #9d0208;
   padding: 50px;
   margin: 20px;
   display: flex;
 }
 
 .work {
-  width:50%;
-  color:white;
-  text-align:center;
-  font-size:40px;
+  width: 50%;
+  color: white;
+  text-align: center;
+  font-size: 40px;
   margin-top: 30px;
 }
 .explanation {
   text-align: left;
-  font-size:18px;
+  font-size: 18px;
   margin-top: 40px;
   color: #370617;
   width: 50%;
+}
+
+@media (max-width: 500px) and (min-width: 0px) {
+  header {
+    background-size: 100%;
+    height: 165px;
+    position: relative;
+  }
+
+  header div.top {
+    width: 75%;
+    grid-template-columns: 1fr;
+    padding-top: 260px;
+  }
+
+  .map {
+    margin-top: -80px;
+    margin-left: 125px;
+    width: 25%;
+  }
+  main section:first-of-type {
+    margin-top: 290px;
+  }
+
+  main section {
+    width: 90%;
+    padding: 10px 0;
+    margin: 50px auto 0px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 1.5rem;
+  }
+  main section div p {
+    padding: 0px 10px;
+  }
+  .icons {
+    width: 75%;
+  }
+  .considered-intro {
+    width: 450px;
+  }
+
+  .organization {
+    width: 450px;
+  }
+
+  .link {
+    margin-right: 90%;
+  }
+  .learn {
+    margin-left: -80px;
+  }
 }
