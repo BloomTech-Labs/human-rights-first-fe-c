@@ -14,7 +14,7 @@ body * {
 header {
   background: url('./assets/banner.png');
   background-size: 100%;
-  height: 500px;
+  height: 31.25rem;
   background-position: center;
   position: relative;
 }
@@ -37,14 +37,14 @@ header div.top {
   font-weight: bold;
   width: 20%;
   text-align: center;
-  padding: 12px;
-  border-radius: 20px;
-  margin: 270px;
-  margin-left: -60px;
-  font-size: 17px;
-  -webkit-box-shadow: 0px 10px 54px -11px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 10px 54px -11px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 10px 54px -11px rgba(0, 0, 0, 0.75);
+  padding: 0.75rem;
+  border-radius: 1.25rem;
+  margin: 16.875rem;
+  margin-left: -3.75rem;
+  font-size: 1.063rem;
+  -webkit-box-shadow: 0rem 0.625rem 3.375rem -0.688rem rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0rem 0.625rem 3.375rem -0.688rem rgba(0, 0, 0, 0.75);
+  box-shadow: 0rem 0.625rem 3.375rem -0.688rem rgba(0, 0, 0, 0.75);
 }
 
 .mapBtn {
@@ -61,8 +61,8 @@ main {
 
 main section {
   width: 70%;
-  padding: 90px 0;
-  margin: 50px auto 150px auto;
+  padding: 5.625rem 0;
+  margin: 3.125rem auto 9.375rem auto;
   align-items: center;
 }
 
@@ -70,7 +70,7 @@ main section h2 {
   font-size: 2.7rem;
   color: #370617;
   line-height: 4.2rem;
-  padding-right: 10px;
+  padding-right: 0.625rem;
   text-align: center;
 }
 
@@ -79,7 +79,7 @@ main section div {
 }
 
 .bottom {
-  margin: 20px 0;
+  margin: 1.25rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,12 +87,12 @@ main section div {
 }
 
 .bottom-section {
-  border-bottom: 2px solid silver;
+  border-bottom: 0.125rem solid silver;
 }
 .organization {
   text-align: left;
-  font-size: 20px;
-  margin-top: 40px;
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
   color: #370617;
   width: 48%;
 }
@@ -102,11 +102,11 @@ main section div {
 }
 
 .learn {
-  font-size: 20px;
-  padding-left: 10px;
+  font-size: 1.25rem;
+  padding-left: 0.625rem;
   width: 70%;
-  margin-top: -33px;
-  margin-left: 335px;
+  margin-top: -2.063rem;
+  margin-left: 20.938rem;
   color: #faa307;
   text-decoration: underline;
 }
@@ -120,17 +120,17 @@ main section div {
 
 .considered {
   text-align: left;
-  font-size: 20px;
-  margin-top: 40px;
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
   color: #370617;
 }
 
 .considered-intro {
   text-align: left;
-  font-size: 20px;
-  margin-top: 40px;
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
   color: #370617;
-  width: 730px;
+  width: 45.625rem;
 }
 
 .icons {
@@ -140,15 +140,15 @@ main section div {
 }
 
 .flag {
-  margin-right: 60px;
+  margin-right: 3.75rem;
 }
 
 .person {
-  margin-right: 60px;
+  margin-right: 3.75rem;
 }
 
 .book {
-  margin-right: 60px;
+  margin-right: 3.75rem;
 }
 
 .middle {
@@ -160,11 +160,11 @@ main section div {
 }
 .how {
   background-color: #faa307;
-  width: 600px;
-  height: 300px;
-  border: 1px solid #9d0208;
-  padding: 50px;
-  margin: 20px;
+  width: 37.5rem;
+  height: 18.75rem;
+  border: 0.063rem solid #9d0208;
+  padding: 3.125rem;
+  margin: 1.25rem;
   display: flex;
 }
 
@@ -172,43 +172,43 @@ main section div {
   width: 50%;
   color: white;
   text-align: center;
-  font-size: 40px;
-  margin-top: 30px;
+  font-size: 2.5rem;
+  margin-top: 1.875rem;
 }
 .explanation {
   text-align: left;
-  font-size: 18px;
-  margin-top: 40px;
+  font-size: 1.125rem;
+  margin-top: 2.5rem;
   color: #370617;
   width: 50%;
 }
 
-@media (max-width: 500px) and (min-width: 0px) {
+@media (max-width: 31.25rem) and (min-width: 0rem) {
   header {
     background-size: 100%;
-    height: 165px;
+    height: 10rem;
     position: relative;
   }
 
   header div.top {
     width: 75%;
     grid-template-columns: 1fr;
-    padding-top: 260px;
+    padding-top: 16.25rem;
   }
 
   .map {
-    margin-top: -80px;
-    margin-left: 125px;
+    margin-top: -5rem;
+    margin-left: 7.813rem;
     width: 25%;
   }
   main section:first-of-type {
-    margin-top: 290px;
+    margin-top: 18.125rem;
   }
 
   main section {
     width: 90%;
-    padding: 10px 0;
-    margin: 50px auto 0px auto;
+    padding: 0.625rem 0;
+    margin: 3.125rem auto 0rem auto;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -216,17 +216,17 @@ main section div {
     font-size: 1.5rem;
   }
   main section div p {
-    padding: 0px 10px;
+    padding: 0rem 0.625rem;
   }
   .icons {
     width: 75%;
   }
   .considered-intro {
-    width: 450px;
+    width: 28.125rem;
   }
 
   .organization {
-    width: 450px;
+    width: 28.125rem;
   }
 
   .link {

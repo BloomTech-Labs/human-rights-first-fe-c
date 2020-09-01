@@ -9,7 +9,7 @@ export const Loading = () => {
       <header>
         <div className="top">
           <div class="mapBtn">
-            <a className="map" href="#">
+            <a className="map" href="/map">
               View Map
             </a>
           </div>
