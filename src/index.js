@@ -18,7 +18,9 @@ import { HomePage } from './components/pages/Home';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import Map from './components/common/Map';
 import { Loading } from './components/common/Loading';
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
