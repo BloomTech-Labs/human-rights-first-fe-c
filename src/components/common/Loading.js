@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import { Flag, PersonFill, Book, Link } from 'react-bootstrap-icons';
 import NavBar from './NavBar.js';
+import ConsentForm from './ConsentForm';
+import Popup from 'reactjs-popup';
 
 export const Loading = () => {
+  const [consented, setConsented] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('consent') !== null) {
+      setConsented(true);
+    }
+  });
   return (
     <main>
       <NavBar />
+      {consented === false && (
+          <Popup modal defaultOpen={true}>
+            <ConsentForm />
+          </Popup>
+        )}
       <header>
         <div className="top">
           <div class="mapBtn">
