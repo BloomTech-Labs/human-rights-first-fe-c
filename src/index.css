@@ -203,3 +203,32 @@ body {
   color: #370617;
   width: 50%;
 }
+
+
+/* Consent Modal */
+
+.consent-warning{
+  color: #9D0208;
+  text-align: center;
+
+}
+
+.consent-popup{
+  border: 3px solid #9D0208;
+  padding: 2%;
+}
+
+.consent-content{
+  margin: 0 3% 3% 3%;
+}
+.btn1{
+  margin: 0 2% 0 9%;
+}
+.btn2{
+  background: #FAA307;
+  color: #370617;
+}
+.btn2:hover{
+  background: #370617;
+  color: #FAA307
+}
