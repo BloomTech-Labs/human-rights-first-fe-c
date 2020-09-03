@@ -183,6 +183,7 @@ main section div {
   width: 50%;
 }
 
+<<<<<<< HEAD
 @media (max-width: 31.25rem) and (min-width: 0rem) {
   header {
     background-size: 100%;
@@ -245,3 +246,33 @@ main section div {
   max-height: 400px;
   border-radius: 5px;
 }
+=======
+
+/* Consent Modal */
+
+.consent-warning{
+  color: #9D0208;
+  text-align: center;
+
+}
+
+.consent-popup{
+  border: 3px solid #9D0208;
+  padding: 2%;
+}
+
+.consent-content{
+  margin: 0 3% 3% 3%;
+}
+.btn1{
+  margin: 0 2% 0 9%;
+}
+.btn2{
+  background: #FAA307;
+  color: #370617;
+}
+.btn2:hover{
+  background: #370617;
+  color: #FAA307
+}
+>>>>>>> aaf50de5de9c84ca520619343cd468e4cff29a87
