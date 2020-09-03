@@ -23,7 +23,7 @@ export const Loading = () => {
       <header>
         <div className="top">
           <div class="mapBtn">
-            <a className="map" href="#">
+            <a className="map" href="/map">
               View Map
             </a>
           </div>
@@ -59,10 +59,6 @@ export const Loading = () => {
       <section class="bottom-section">
         <h2>About Human Rights First</h2>
         <div class="bottom">
-          <img
-            src="https://cdn.vox-cdn.com/thumbor/lZFd68vgwQ3qtCmYybVC4JmWnBc=/0x0:3000x2000/1200x675/filters:focal(903x585:1383x1065)/cdn.vox-cdn.com/uploads/chorus_image/image/66880849/GettyImages_1216567582.0.jpg"
-            class="image"
-          ></img>
           <p class="organization">
             Human Rights First is an independent advocacy and action
             organization that challenges America to live up to its ideals. We

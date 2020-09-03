@@ -121,15 +121,11 @@ const Map = () => {
     options: { radius: 75, maxZoom: 20 },
   });
 
-  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-
   return (
     <div>
       <NavBar />
       <div className="container">
-        {/* filter bar starts here */}
         <div className="filter_bar">
-          {/* search by zip code */}
           <form>
             <label>
               Search by zip code:
@@ -141,9 +137,7 @@ const Map = () => {
           {/* TODO: search by city  */}
           {/* TODO: search by types of force  */}
         </div>
-        {/* filter bar ends here*/}
 
-        {/* Map starts here */}
         <ReactMapGL
           {...viewport}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -161,7 +155,6 @@ const Map = () => {
               point_count: pointCount,
             } = cluster.properties;
 
-            // multiple incidents
             if (isCluster) {
               return (
                 <Marker
@@ -209,7 +202,6 @@ const Map = () => {
               );
             }
 
-            // single incidents:
             return (
               <Marker
                 key={cluster.properties.id}
@@ -232,7 +224,6 @@ const Map = () => {
             );
           })}
 
-          {/* pop up box starts here */}
           {selected ? (
             <Popup
               latitude={parseFloat(selected[0])}
@@ -243,14 +234,12 @@ const Map = () => {
               className="popUpBox"
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
-              <div>
+              <div className="popUpContent">
                 <p>{selected[2]}</p>
               </div>
             </Popup>
           ) : null}
-          {/* pop up box ends here */}
         </ReactMapGL>
-        {/* Map ens here */}
       </div>
     </div>
   );
