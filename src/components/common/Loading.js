@@ -1,7 +1,7 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
 import { Flag, PersonFill, Book, Link } from 'react-bootstrap-icons';
 import NavBar from './NavBar.js';
-import ConsentForm from './ConsentForm';
+import ConsentForm from '../pages/Home/ConsentForm';
 import Popup from 'reactjs-popup';
 
 export const Loading = () => {
@@ -16,10 +16,10 @@ export const Loading = () => {
     <main>
       <NavBar />
       {consented === false && (
-          <Popup modal defaultOpen={true}>
-            <ConsentForm />
-          </Popup>
-        )}
+        <Popup modal defaultOpen={true}>
+          <ConsentForm />
+        </Popup>
+      )}
       <header>
         <div className="top">
           <div class="mapBtn">
