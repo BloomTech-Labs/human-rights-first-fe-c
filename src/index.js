@@ -44,25 +44,28 @@ function App() {
   require('dotenv').config();
 
   return (
-    // <Security {...config} onAuthRequired={authHandler}>
-    //   <Switch>
-    //     <Route path="/login" component={LoginPage} />
-    //     <Route path="/implicit/callback" component={LoginCallback} />
-    //     {/* any of the routes you need secured should be registered as SecureRoutes */}
-    //     <SecureRoute
-    //       path="/"
-    //       exact
-    //       component={() => <HomePage LoadingComponent={LoadingComponent} />}
-    //     />
-    //     <SecureRoute path="/example-list" component={ExampleListPage} />
-    //     <SecureRoute path="/profile-list" component={ProfileListPage} />
-    //     <SecureRoute path="/datavis" component={ExampleDataViz} />
-    //     <SecureRoute path="/loading" component={Loading}>
-    //       <Loading />
-    //     </SecureRoute>
-    //     <Route component={NotFoundPage} />
-    //   </Switch>
-    // </Security>
-    <Loading />
+    <Security {...config} onAuthRequired={authHandler}>
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/implicit/callback" component={LoginCallback} />
+        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        <SecureRoute
+          path="/"
+          exact
+          component={() => <HomePage LoadingComponent={LoadingComponent} />}
+        />
+        <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/profile-list" component={ProfileListPage} />
+        <SecureRoute path="/datavis" component={ExampleDataViz} />
+        {/* map viz testing */}
+        <SecureRoute path="/map">
+          <Map />
+        </SecureRoute>
+        <SecureRoute path="/loading" component={Loading}>
+          <Loading />
+        </SecureRoute>
+        <Route component={NotFoundPage} />
+      </Switch>
+    </Security>
   );
 }

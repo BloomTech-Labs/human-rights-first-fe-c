@@ -245,3 +245,7 @@ main section div {
   max-height: 400px;
   border-radius: 5px;
 }
+
+p {
+  border-bottom: 1px solid silver;
+}
