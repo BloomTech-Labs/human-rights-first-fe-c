@@ -125,7 +125,6 @@ const Map = () => {
 
   return (
     <div>
-      <NavBar />
       <div className="container">
         {/* filter bar starts here */}
         <div className="filter_bar">

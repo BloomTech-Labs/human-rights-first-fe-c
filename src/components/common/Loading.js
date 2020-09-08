@@ -5,7 +5,6 @@ import NavBar from './NavBar.js';
 export const Loading = () => {
   return (
     <main>
-      <NavBar />
       <header>
         <div className="top">
           <div class="mapBtn">
