@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flag, PersonFill, Book, Link } from 'react-bootstrap-icons';
-import NavBar from './NavBar.js';
+import { Flag, PersonFill, Book, Link as Lk } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 export const Loading = () => {
   return (
@@ -8,9 +8,9 @@ export const Loading = () => {
       <header>
         <div className="top">
           <div class="mapBtn">
-            <a className="map" href="#">
+            <Link to="/map" className="map">
               View Map
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -58,7 +58,7 @@ export const Loading = () => {
             we work where we can best harness American influence to secure core
             freedoms.
           </p>
-          <Link size={30} class="link" />
+          <Lk size={30} class="link" />
           <a href="" class="learn">
             Learn more about us
           </a>
