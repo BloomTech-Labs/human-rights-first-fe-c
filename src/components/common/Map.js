@@ -95,7 +95,13 @@ const Map = () => {
 
   const points = data.data.map(incident => ({
     type: 'Feature',
-    properties: { cluster: false, text: incident.text, id: incident.id },
+    properties: {
+      cluster: false,
+      text: incident.text,
+      id: incident.id,
+      type: incident.tags_str,
+      date: incident.date_text,
+    },
     geometry: {
       type: 'Point',
       coordinates: [
@@ -154,6 +160,8 @@ const Map = () => {
           {clusters.map(cluster => {
             const [longitude, latitude] = cluster.geometry.coordinates;
             const text = cluster.properties.text;
+            const date = cluster.properties.date;
+            const type = cluster.properties.type;
             const {
               cluster: isCluster,
               point_count: pointCount,
@@ -213,11 +221,13 @@ const Map = () => {
                 key={cluster.properties.id}
                 latitude={latitude}
                 longitude={longitude}
+                date={date}
+                type={type}
               >
                 <div
                   onClick={e => {
                     e.preventDefault();
-                    setSelected([latitude, longitude, text]);
+                    setSelected([latitude, longitude, text, type, date]);
                   }}
                 >
                   {typeOfIncidents(text)}
@@ -238,14 +248,14 @@ const Map = () => {
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
               <div>
-                <div className="incident_box">
+                <a className="incident_box">
                   {/* type */}
-                  <div className="type-incidents">type</div>
+                  <div className="type-incidents">{selected[3]}</div>
                   {/* description */}
                   <div className="text-incidents">{selected[2]}</div>
                   {/* date */}
-                  <div className="date-incidents">date</div>
-                </div>
+                  <div className="date-incidents">{selected[4]}</div>
+                </a>
               </div>
             </Popup>
           ) : null}
