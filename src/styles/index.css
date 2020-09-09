@@ -37,15 +37,21 @@
 }
 
 .popUpBox {
-  background-color: rgba(255, 231, 222, 0.967);
   border-radius: 20px;
   padding: 5px 5px 5px 15px;
+}
+
+.popup_incidents_container {
+  display: flex;
+  padding: 2%;
+  border: brown 0.1rem solid;
 }
 
 .incident_box {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  flex-direction: row;
 }
 
 .type-incidents {

@@ -5,6 +5,7 @@ import * as data from '../../testing_data/data2.json';
 import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
+import AnchorLink from 'antd/lib/anchor/AnchorLink';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -101,6 +102,7 @@ const Map = () => {
       id: incident.id,
       type: incident.tags_str,
       date: incident.date_text,
+      link: incident.Link1,
     },
     geometry: {
       type: 'Point',
@@ -162,6 +164,8 @@ const Map = () => {
             const text = cluster.properties.text;
             const date = cluster.properties.date;
             const type = cluster.properties.type;
+            const link = cluster.properties.link;
+
             const {
               cluster: isCluster,
               point_count: pointCount,
@@ -205,7 +209,14 @@ const Map = () => {
                               1000000
                         );
                         filtered.map(i => description.push(i.text));
-                        setSelected([latitude, longitude, description]);
+                        setSelected([
+                          latitude,
+                          longitude,
+                          description,
+                          type,
+                          date,
+                          link,
+                        ]);
                       }
                     }}
                   >
@@ -223,11 +234,12 @@ const Map = () => {
                 longitude={longitude}
                 date={date}
                 type={type}
+                link={link}
               >
                 <div
                   onClick={e => {
                     e.preventDefault();
-                    setSelected([latitude, longitude, text, type, date]);
+                    setSelected([latitude, longitude, text, type, date, link]);
                   }}
                 >
                   {typeOfIncidents(text)}
@@ -241,14 +253,13 @@ const Map = () => {
             <Popup
               latitude={parseFloat(selected[0])}
               longitude={parseFloat(selected[1])}
-              onClose={() => {
-                setSelected(null);
-              }}
+              closeButton={false}
               className="popUpBox"
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
-              <div>
-                <a className="incident_box">
+
+              <div className="popup_incidents_container">
+                <a className="incident_box" href={selected[5]} target="_blank">
                   {/* type */}
                   <div className="type-incidents">{selected[3]}</div>
                   {/* description */}
@@ -256,6 +267,9 @@ const Map = () => {
                   {/* date */}
                   <div className="date-incidents">{selected[4]}</div>
                 </a>
+                <button className="x" onClick={() => setSelected(null)}>
+                  close
+                </button>
               </div>
             </Popup>
           ) : null}
