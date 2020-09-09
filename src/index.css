@@ -97,20 +97,6 @@ main section div {
   width: 48%;
 }
 
-.link {
-  margin-right: 46%;
-}
-
-.learn {
-  font-size: 1.25rem;
-  padding-left: 0.625rem;
-  width: 70%;
-  margin-top: -2.063rem;
-  margin-left: 20.938rem;
-  color: #faa307;
-  text-decoration: underline;
-}
-
 .intro {
   display: flex;
   flex-direction: column;
@@ -159,28 +145,12 @@ main section div {
   opacity: 0.95;
 }
 .how {
-  background-color: #faa307;
-  width: 37.5rem;
-  height: 18.75rem;
-  border: 0.063rem solid #9d0208;
-  padding: 3.125rem;
-  margin: 1.25rem;
-  display: flex;
+  background: url('./assets/howitworks.PNG');
+  height: 300px;
+  width: 45%;
 }
 
-.work {
-  width: 50%;
-  color: white;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-top: 1.875rem;
-}
-.explanation {
-  text-align: left;
-  font-size: 1.125rem;
-  margin-top: 2.5rem;
-  color: #370617;
-  width: 50%;
+
 }
 
 @media (max-width: 31.25rem) and (min-width: 0rem) {
@@ -224,16 +194,54 @@ main section div {
   .considered-intro {
     width: 28.125rem;
   }
-
+  .how {
+    width: 140%;
+    height: 300px;
+  }
   .organization {
     width: 28.125rem;
   }
 
-  .link {
-    margin-right: 90%;
+ 
+}
+
+@media (max-width: 800px) and (min-width: 600px) {
+  header {
+    height: 265px;
   }
-  .learn {
-    margin-left: -80px;
+
+  header div.top {
+    width: 75%;
+    padding-top: 120px;
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    margin-top: 5rem;
+    width: 25%;
+  }
+
+  main section {
+    width: 90%;
+    padding: 90px 0;
+    margin: 0px auto 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section div p {
+    padding: 0px 90px;
+  }
+
+  .considered-intro {
+    width: 720px;
+  }
+
+  .how {
+    height: 285px;
+    width: 83%;
+  }
+  .organization {
+    width: 100%;
   }
 }
 
@@ -246,6 +254,7 @@ main section div {
   border-radius: 5px;
 }
 
-p {
+.popUpMessages {
   border-bottom: 1px solid silver;
+  padding-bottom: 15px;
 }
