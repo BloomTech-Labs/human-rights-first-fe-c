@@ -215,13 +215,9 @@ const Map = () => {
                 longitude={longitude}
               >
                 <div
-                  onMouseEnter={() => {
-                    setIsShown(true);
+                  onClick={e => {
+                    e.preventDefault();
                     setSelected([latitude, longitude, text]);
-                  }}
-                  onMouseLeave={() => {
-                    setIsShown(false);
-                    setSelected(null);
                   }}
                 >
                   {typeOfIncidents(text)}
@@ -242,7 +238,14 @@ const Map = () => {
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
               <div>
-                <p>{selected[2]}</p>
+                <div className="incident_box">
+                  {/* type */}
+                  <div className="type-incidents">type</div>
+                  {/* description */}
+                  <div className="text-incidents">{selected[2]}</div>
+                  {/* date */}
+                  <div className="date-incidents">date</div>
+                </div>
               </div>
             </Popup>
           ) : null}
