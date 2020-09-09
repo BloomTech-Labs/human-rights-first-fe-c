@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
-import * as incidentsData from '../../testing_data/incidents data.json';
 import * as data from '../../testing_data/data2.json';
 import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
-import AnchorLink from 'antd/lib/anchor/AnchorLink';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -15,7 +13,6 @@ const Map = () => {
     width: '100vw',
     height: '73vh',
   });
-  const [isShown, setIsShown] = useState(false);
   const [selected, setSelected] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
@@ -200,9 +197,9 @@ const Map = () => {
 
                       if (expansionZoom === 20) {
                         const description = [];
-                        const filtered = incidentsData.data.filter(
+                        const filtered = data.data.filter(
                           i =>
-                            parseFloat(i.lon) ===
+                            parseFloat(i.LONGITUDE) ===
                             Math.round(
                               cluster.geometry.coordinates[0] * 1000000
                             ) /
