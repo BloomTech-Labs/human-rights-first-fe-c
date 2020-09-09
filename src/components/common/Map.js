@@ -234,10 +234,8 @@ const Map = () => {
               className="popUpBox"
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
-              <div className="popUpContent">
-                {selected[2].map(text => (
-                  <p>{`${text}`}.</p>
-                ))}
+              <div>
+                <p>{selected[2]}</p>
               </div>
             </Popup>
           ) : null}
