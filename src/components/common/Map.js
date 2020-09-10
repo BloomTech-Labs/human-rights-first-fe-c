@@ -4,7 +4,6 @@ import * as incidentsData from '../../testing_data/incidents data.json';
 import * as data from '../../testing_data/data2.json';
 import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
-import NavBar from '../common/NavBar';
 import '../../styles/index.css';
 
 const Map = () => {
@@ -123,7 +122,6 @@ const Map = () => {
 
   return (
     <div>
-      <NavBar />
       <div className="container">
         <div className="filter_bar">
           <form>
