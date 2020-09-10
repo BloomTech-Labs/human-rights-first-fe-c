@@ -90,8 +90,8 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={formSubmit} className="form">
-      <lable htmlFor="fname" className="label">
+    <form onSubmit={formSubmit}>
+      <lable htmlFor="fname">
         First Name:
         <input
           id="fname"
@@ -103,7 +103,7 @@ const SignUp = () => {
         />
         {errors.fname.length > 2 ? <p>{errors.fname}</p> : null}
       </lable>
-      <lable htmlFor="lname" className="label">
+      <lable htmlFor="lname">
         Last Name:
         <input
           id="lname"
@@ -115,7 +115,7 @@ const SignUp = () => {
         />
         {errors.lname.length > 2 ? <p>{errors.lname}</p> : null}
       </lable>
-      <lable htmlFor="email" className="label">
+      <lable htmlFor="email">
         Email:
         <input
           id="email"
@@ -127,7 +127,7 @@ const SignUp = () => {
         />
         {errors.email.length > 5 ? <p>{errors.email}</p> : null}
       </lable>
-      <lable htmlFor="password" className="label">
+      <lable htmlFor="password">
         Password:
         <input
           id="password"
@@ -139,9 +139,7 @@ const SignUp = () => {
         />
         {errors.password.length > 4 ? <p>{errors.password}</p> : null}
       </lable>
-      <button disabled={buttonDisabled} className="signup-btn">
-        Sign Up
-      </button>
+      <button disabled={buttonDisabled}>Sign Up</button>
     </form>
   );
 };
