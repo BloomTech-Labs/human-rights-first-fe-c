@@ -14,6 +14,7 @@ const Map = () => {
     height: '73vh',
   });
   const [selected, setSelected] = useState(null);
+  const [multiIncidents, setMultiIncidents] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
 
@@ -197,9 +198,9 @@ const Map = () => {
                             ) /
                               1000000
                         );
+                        setMultiIncidents(filtered);
+
                         filtered.map(i => {
-                          console.log(i);
-                          console.log(selected);
                           setSelected([
                             i.LATITUDE,
                             i.LONGITUDE,
@@ -247,20 +248,51 @@ const Map = () => {
               className="popUpBox"
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
-
-              <div className="popup_incidents_container">
-                <a className="incident_box" href={selected[5]} target="_blank">
-                  {/* type */}
-                  <div className="type-incidents">{selected[3]}</div>
-                  {/* description */}
-                  <div className="text-incidents">{selected[2]}</div>
-                  {/* date */}
-                  <div className="date-incidents">{selected[4]}</div>
-                </a>
-                <button className="x" onClick={() => setSelected(null)}>
-                  close
-                </button>
-              </div>
+              {multiIncidents ? (
+                multiIncidents.map(incident => {
+                  return (
+                    <div
+                      className="popup_incidents_container"
+                      key={incident.id}
+                    >
+                      <a
+                        className="incident_box"
+                        href={incident.Link1}
+                        target="_blank"
+                      >
+                        {/* type */}
+                        <div className="type-incidents">
+                          {incident.tags_str}
+                        </div>
+                        {/* description */}
+                        <div className="text-incidents">{incident.text}</div>
+                        {/* date */}
+                        <div className="date-incidents">
+                          {incident.date_text}
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="popup_incidents_container">
+                  <a
+                    className="incident_box"
+                    href={selected[5]}
+                    target="_blank"
+                  >
+                    {/* type */}
+                    <div className="type-incidents">{selected[3]}</div>
+                    {/* description */}
+                    <div className="text-incidents">{selected[2]}</div>
+                    {/* date */}
+                    <div className="date-incidents">{selected[4]}</div>
+                  </a>
+                  <button className="x" onClick={() => setSelected(null)}>
+                    close
+                  </button>
+                </div>
+              )}
             </Popup>
           ) : null}
         </ReactMapGL>
