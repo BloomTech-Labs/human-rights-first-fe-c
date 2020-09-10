@@ -48,13 +48,7 @@ export const Loading = () => {
         </p>
       </section>
       <section class="middle">
-        <div class="how">
-          <p class="work">How It Works? </p>
-          <p class="explanation">
-            We collect relevant incidents data from Twitter, Reddit, and police
-            agencies to display it on the map
-          </p>
-        </div>
+        <div class="how"></div>
       </section>
       <section class="bottom-section">
         <h2>About Human Rights First</h2>
@@ -69,10 +63,6 @@ export const Loading = () => {
             we work where we can best harness American influence to secure core
             freedoms.
           </p>
-          <Lk size={30} class="link" />
-          <a href="" class="learn">
-            Learn more about us
-          </a>
         </div>
       </section>
     </main>
