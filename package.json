@@ -9,6 +9,7 @@
     "@okta/okta-signin-widget": "^4.1.2",
     "antd": "^4.4.3",
     "axios": "^0.19.2",
+    "cities.json": "^1.1.5",
     "classnames": "^2.2.6",
     "craco-less": "^1.17.0",
     "dotenv": "^8.2.0",
@@ -23,10 +24,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactjs-popup": "^1.5.0",
-    "yup": "^0.29.3",
     "styled-components": "^5.1.1",
     "us-zips": "^4.0.2",
-    "use-supercluster": "^0.2.8"
+    "use-supercluster": "^0.2.8",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "craco --max_old_space_size=4096 start",

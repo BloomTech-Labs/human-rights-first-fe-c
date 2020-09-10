@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as data from '../../testing_data/data2.json';
 import usZips from 'us-zips';
+import cities from 'cities.json';
 import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
 
@@ -17,7 +18,7 @@ const Map = () => {
   const [multiIncidents, setMultiIncidents] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
-
+  const [cityName, setCityName] = useState({ lat: '', lon: '' });
   const mapRef = useRef();
 
   const submitHandler = e => {
@@ -30,10 +31,30 @@ const Map = () => {
       height: '73vh',
     });
   };
+  const submitCityHandler = e => {
+    e.preventDefault();
+    console.log(cityName);
+    setViewport({
+      latitude: parseInt(cityName.lat),
+      longitude: parseInt(cityName.lon),
+      zoom: 6,
+      width: '100vw',
+      height: '73vh',
+    });
+  };
 
   const handleChange = e => {
-    e.preventDefault();
     setZipCode(e.target.value);
+  };
+  const handleCityChange = e => {
+    const city_info = cities.filter(
+      c => c.name === e.target.value && c.country === 'US'
+    );
+    setCityName({
+      lat: city_info[0].lat,
+      lon: city_info[0].lng,
+    });
+    console.log(city_info);
   };
 
   useEffect(() => {
@@ -137,9 +158,14 @@ const Map = () => {
               <input type="text" name="zipCode" onChange={handleChange} />
             </label>
             <input type="submit" value="Submit" onClick={submitHandler} />
+            <br />
+            <label>
+              Search by city name:
+              <br />
+              <input type="text" name="cityName" onChange={handleCityChange} />
+            </label>
+            <input type="submit" value="Submit" onClick={submitCityHandler} />
           </form>
-          {/* TODO: search by city  */}
-          {/* TODO: search by types of force  */}
         </div>
 
         <ReactMapGL
