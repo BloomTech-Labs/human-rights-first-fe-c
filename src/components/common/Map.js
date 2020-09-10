@@ -196,7 +196,6 @@ const Map = () => {
                       });
 
                       if (expansionZoom === 20) {
-                        const description = [];
                         const filtered = data.data.filter(
                           i =>
                             parseFloat(i.LONGITUDE) ===
@@ -205,15 +204,18 @@ const Map = () => {
                             ) /
                               1000000
                         );
-                        filtered.map(i => description.push(i.text));
-                        setSelected([
-                          latitude,
-                          longitude,
-                          description,
-                          type,
-                          date,
-                          link,
-                        ]);
+                        filtered.map(i => {
+                          console.log(i);
+                          console.log(selected);
+                          setSelected([
+                            i.LATITUDE,
+                            i.LONGITUDE,
+                            i.text,
+                            i.tags_str,
+                            i.date_text,
+                            i.link1,
+                          ]);
+                        });
                       }
                     }}
                   >
