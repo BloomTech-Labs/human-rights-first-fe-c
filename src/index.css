@@ -97,20 +97,6 @@ main section div {
   width: 48%;
 }
 
-.link {
-  margin-right: 46%;
-}
-
-.learn {
-  font-size: 1.25rem;
-  padding-left: 0.625rem;
-  width: 70%;
-  margin-top: -2.063rem;
-  margin-left: 20.938rem;
-  color: #faa307;
-  text-decoration: underline;
-}
-
 .intro {
   display: flex;
   flex-direction: column;
@@ -159,28 +145,9 @@ main section div {
   opacity: 0.95;
 }
 .how {
-  background-color: #faa307;
-  width: 37.5rem;
-  height: 18.75rem;
-  border: 0.063rem solid #9d0208;
-  padding: 3.125rem;
-  margin: 1.25rem;
-  display: flex;
-}
-
-.work {
-  width: 50%;
-  color: white;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-top: 1.875rem;
-}
-.explanation {
-  text-align: left;
-  font-size: 1.125rem;
-  margin-top: 2.5rem;
-  color: #370617;
-  width: 50%;
+  background: url('./assets/howitworks.PNG');
+  height: 300px;
+  width: 45%;
 }
 
 @media (max-width: 31.25rem) and (min-width: 0rem) {
@@ -224,16 +191,52 @@ main section div {
   .considered-intro {
     width: 28.125rem;
   }
-
+  .how {
+    width: 140%;
+    height: 300px;
+  }
   .organization {
     width: 28.125rem;
   }
+}
 
-  .link {
-    margin-right: 90%;
+@media (max-width: 50rem) and (min-width: 37.5rem) {
+  header {
+    height: 16.563rem;
   }
-  .learn {
-    margin-left: -80px;
+
+  header div.top {
+    width: 75%;
+    padding-top: 7.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    margin-top: 5rem;
+    width: 25%;
+  }
+
+  main section {
+    width: 90%;
+    padding: 5.625rem 0;
+    margin: 0rem auto 3.125rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section div p {
+    padding: 0rem 5.625rem;
+  }
+
+  .considered-intro {
+    width: 45rem;
+  }
+
+  .how {
+    height: 17.813rem;
+    width: 83%;
+  }
+  .organization {
+    width: 100%;
   }
 }
 
@@ -241,9 +244,14 @@ main section div {
 
 .popUpContent {
   overflow: scroll;
-  max-width: 200px;
-  max-height: 400px;
-  border-radius: 5px;
+  max-width: 12.5rem;
+  max-height: 25rem;
+  border-radius: 0.313rem;
+}
+
+.popUpMessages {
+  border-bottom: 0.063rem solid silver;
+  padding-bottom: 0.938rem;
 }
 
 
