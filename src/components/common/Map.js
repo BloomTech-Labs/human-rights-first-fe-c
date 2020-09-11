@@ -38,12 +38,9 @@ const Map = () => {
   };
   const submitCityHandler = e => {
     e.preventDefault();
-    console.log(cityName.state, cityName.city);
     const getCity = cities.filter(
       city => city.city === cityName.city && city.state_name === cityName.state
-      //city => city.name === cityName.city && city.state === cityName.state
     );
-    console.log(getCity[0].lat);
     setViewport({
       ...viewport,
       latitude: getCity[0].lat,
@@ -56,11 +53,9 @@ const Map = () => {
     setZipCode(e.target.value);
   };
   const handleCityChange = e => {
-    console.log(e.target.value);
     setCityName({ ...cityName, city: e.target.value });
   };
   const handleStateChange = e => {
-    console.log(e.target.value);
     setCityName({ ...cityName, state: e.target.value });
   };
 
@@ -167,7 +162,7 @@ const Map = () => {
             <input type="submit" value="Submit" onClick={submitHandler} />
             <br />
             <label>
-              Search by city name:
+              Search by city and state:
               <br />
               <input type="hidden" name="country" id="countryId" value="US" />
               <select
