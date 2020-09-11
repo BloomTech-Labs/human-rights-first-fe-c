@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
-import * as data from '../../testing_data/data2.json';
+import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
-import cities from 'cities.json';
+import cities from '../../database/cities.json';
 import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
 
@@ -18,7 +18,12 @@ const Map = () => {
   const [multiIncidents, setMultiIncidents] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
-  const [cityName, setCityName] = useState({ lat: '', lon: '' });
+  const [cityName, setCityName] = useState({
+    state: '',
+    city: '',
+    lat: '',
+    lon: '',
+  });
   const mapRef = useRef();
 
   const submitHandler = e => {
@@ -33,13 +38,17 @@ const Map = () => {
   };
   const submitCityHandler = e => {
     e.preventDefault();
-    console.log(cityName);
+    console.log(cityName.state, cityName.city);
+    const getCity = cities.filter(
+      city => city.city === cityName.city && city.state_name === cityName.state
+      //city => city.name === cityName.city && city.state === cityName.state
+    );
+    console.log(getCity[0].lat);
     setViewport({
-      latitude: parseInt(cityName.lat),
-      longitude: parseInt(cityName.lon),
-      zoom: 6,
-      width: '100vw',
-      height: '73vh',
+      ...viewport,
+      latitude: getCity[0].lat,
+      longitude: getCity[0].lng,
+      zoom: 10,
     });
   };
 
@@ -47,14 +56,12 @@ const Map = () => {
     setZipCode(e.target.value);
   };
   const handleCityChange = e => {
-    const city_info = cities.filter(
-      c => c.name === e.target.value && c.country === 'US'
-    );
-    setCityName({
-      lat: city_info[0].lat,
-      lon: city_info[0].lng,
-    });
-    console.log(city_info);
+    console.log(e.target.value);
+    setCityName({ ...cityName, city: e.target.value });
+  };
+  const handleStateChange = e => {
+    console.log(e.target.value);
+    setCityName({ ...cityName, state: e.target.value });
   };
 
   useEffect(() => {
@@ -163,11 +170,21 @@ const Map = () => {
               Search by city name:
               <br />
               <input type="hidden" name="country" id="countryId" value="US" />
-              <select name="state" class="states order-alpha" id="stateId">
-                <option value="">Select State</option>
+              <select
+                name="state"
+                class="states order-alpha"
+                id="stateId"
+                onChange={handleStateChange}
+              >
+                <option value="state">Select State</option>
               </select>
-              <select name="city" class="cities order-alpha" id="cityId">
-                <option value="">Select City</option>
+              <select
+                name="city"
+                class="cities order-alpha"
+                id="cityId"
+                onChange={handleCityChange}
+              >
+                <option value="city">Select City</option>
               </select>
               <br />
               <input type="submit" value="Submit" onClick={submitCityHandler} />
