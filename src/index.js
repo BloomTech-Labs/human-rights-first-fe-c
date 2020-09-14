@@ -7,6 +7,7 @@ import 'antd/dist/antd.less';
 
 import Map from './components/common/Map';
 import { Loading } from './components/common/Loading';
+import signupContainer from './components/pages/Forms/signupContainer';
 import NavBar from './components/common/NavBar';
 
 ReactDOM.render(
@@ -22,6 +23,7 @@ function App() {
   return (
     <Router>
       <NavBar />
+      <Route exact path="/signup" component={signupContainer} />
       <Route exact path="/" component={Loading} />
       <Route path="/map" component={Map} />
     </Router>
