@@ -296,26 +296,28 @@ const Map = () => {
               {multiIncidents ? (
                 multiIncidents.map(incident => {
                   return (
-                    <div
-                      className="popup_incidents_container"
-                      key={incident.id}
-                    >
-                      <a
-                        className="incident_box"
-                        href={incident.Link1}
-                        target="_blank"
+                    <div>
+                      <div
+                        className="popup_incidents_container"
+                        key={incident.id}
                       >
-                        {/* type */}
-                        <div className="type-incidents">
-                          {incident.tags_str}
-                        </div>
-                        {/* description */}
-                        <div className="text-incidents">{incident.text}</div>
-                        {/* date */}
-                        <div className="date-incidents">
-                          {incident.date_text}
-                        </div>
-                      </a>
+                        <a
+                          className="incident_box"
+                          href={incident.Link1}
+                          target="_blank"
+                        >
+                          {/* type */}
+                          <div className="type-incidents">
+                            {incident.tags_str}
+                          </div>
+                          {/* description */}
+                          <div className="text-incidents">{incident.text}</div>
+                          {/* date */}
+                          <div className="date-incidents">
+                            {incident.date_text}
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   );
                 })
@@ -333,11 +335,11 @@ const Map = () => {
                     {/* date */}
                     <div className="date-incidents">{selected[4]}</div>
                   </a>
-                  <button className="x" onClick={() => setSelected(null)}>
-                    close
-                  </button>
                 </div>
               )}
+              <button className="x" onClick={() => setSelected(null)}>
+                close
+              </button>
             </Popup>
           ) : null}
         </ReactMapGL>
