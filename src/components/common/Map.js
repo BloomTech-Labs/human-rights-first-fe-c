@@ -288,11 +288,11 @@ const Map = () => {
                     {/* date */}
                     <div className="date-incidents">{selected[4]}</div>
                   </a>
-                  <button className="x" onClick={() => setSelected(null)}>
-                    close
-                  </button>
                 </div>
               )}
+              <button className="x" onClick={() => setSelected(null)}>
+                close
+              </button>
             </Popup>
           ) : null}
         </ReactMapGL>
