@@ -4,11 +4,15 @@ import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
 import cities from '../../database/cities.json';
 import useSupercluster from 'use-supercluster';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
+import { withStyles } from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
+import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 import '../../styles/index.css';
 
@@ -33,6 +37,16 @@ const splitSameLocation = data => {
   });
 };
 
+const GreenCheckbox = withStyles({
+  root: {
+    color: green[400],
+    '&$checked': {
+      color: green[600],
+    },
+  },
+  checked: {},
+})(props => <Checkbox color="default" {...props} />);
+
 const Map = () => {
   splitSameLocation(data);
   const [viewport, setViewport] = useState({
@@ -52,6 +66,18 @@ const Map = () => {
     lat: '',
     lon: '',
   });
+
+  const [state, setState] = React.useState({
+    checkedPresence: true,
+    checkedSoftTech: true,
+    checkedHardTech: true,
+    checkedProjectiles: true,
+    checkedChemical: true,
+    checkedEnergyDevices: true,
+    checkedMiscellaneous: true,
+    checkedOther: true,
+  });
+
   const mapRef = useRef();
 
   const submitHandler = e => {
@@ -85,6 +111,11 @@ const Map = () => {
   };
   const handleStateChange = e => {
     setCityName({ ...cityName, state: e.target.value });
+  };
+
+  const handleTypeChange = event => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+    console.log(event.target.name);
   };
 
   useEffect(() => {
@@ -178,12 +209,6 @@ const Map = () => {
     options: { radius: 75, maxZoom: 20 },
   });
 
-  const [value, setValue] = React.useState('female');
-
-  const handleTypeChange = event => {
-    setValue(event.target.value);
-  };
-
   return (
     <div>
       <div className="container">
@@ -219,68 +244,96 @@ const Map = () => {
               <br />
               <input type="submit" value="Submit" onClick={submitCityHandler} />
             </label>
+            <FormGroup row>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedPresence}
+                    onChange={handleTypeChange}
+                    name="checkedPresence"
+                  />
+                }
+                label="Presence"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedSoftTech}
+                    onChange={handleTypeChange}
+                    name="checkedSoftTech"
+                    color="primary"
+                  />
+                }
+                label="Empty-hand control soft technique"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedHardTech}
+                    onChange={handleTypeChange}
+                    name="checkedHardTech"
+                    color="primary"
+                  />
+                }
+                label="Empty-hand control hard technique"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedProjectiles}
+                    onChange={handleTypeChange}
+                    name="checkedProjectiles"
+                    color="primary"
+                  />
+                }
+                label="Projectiles"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedChemical}
+                    onChange={handleTypeChange}
+                    name="checkedChemical"
+                    color="primary"
+                  />
+                }
+                label="Chemical"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedEnergyDevices}
+                    onChange={handleTypeChange}
+                    name="checkedEnergyDevices"
+                    color="primary"
+                  />
+                }
+                label="Conducted energy devices"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedMiscellaneous}
+                    onChange={handleTypeChange}
+                    name="checkedMiscellaneous"
+                    color="primary"
+                  />
+                }
+                label="Miscellaneous"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.checkedOther}
+                    onChange={handleTypeChange}
+                    name="checkedOther"
+                    color="primary"
+                  />
+                }
+                label="Other"
+              />
+            </FormGroup>
             <br />
-            <FormControl component="fieldset">
-              <FormLabel component="legend">Use of force</FormLabel>
-              <RadioGroup
-                aria-label="gender"
-                name="typeOfIncidents"
-                value={value}
-                onChange={handleTypeChange}
-              >
-                <FormControlLabel
-                  value="presence"
-                  control={<Radio />}
-                  label="Presence"
-                />
-                <FormControlLabel
-                  value="softTech"
-                  control={<Radio />}
-                  label="Empty-hand control soft technique"
-                />
-                <FormControlLabel
-                  value="hardTech"
-                  control={<Radio />}
-                  label="Empty-hand control hard technique"
-                />
-                <FormControlLabel
-                  value="Projectiles"
-                  control={<Radio />}
-                  label="projectiles"
-                />
-                <FormControlLabel
-                  value="Projectiles"
-                  control={<Radio />}
-                  label="projectiles"
-                />
-                <FormControlLabel
-                  value="chemical"
-                  control={<Radio />}
-                  label="Chemical"
-                />
-                <FormControlLabel
-                  value="projectiles"
-                  control={<Radio />}
-                  label="Projectiles"
-                />
-                <FormControlLabel
-                  value="energyDevices"
-                  control={<Radio />}
-                  label="Conducted energy devices"
-                />
-                <FormControlLabel
-                  value="miscellaneous"
-                  control={<Radio />}
-                  label="Miscellaneous"
-                />
-                <FormControlLabel
-                  value="disabled"
-                  disabled
-                  control={<Radio />}
-                  label="(Disabled option)"
-                />
-              </RadioGroup>
-            </FormControl>
           </form>
         </div>
 
