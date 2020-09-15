@@ -31,7 +31,6 @@ const splitSameLocation = data => {
   });
 };
 const Map = () => {
-  splitSameLocation(data);
   const [viewport, setViewport] = useState({
     latitude: 37.09024,
     longitude: -95.712891,
@@ -49,14 +48,14 @@ const Map = () => {
     lon: '',
   });
   const [state, setState] = React.useState({
-    checkedPresence: true,
-    checkedSoftTech: true,
-    checkedHardTech: true,
-    checkedProjectiles: true,
-    checkedChemical: true,
-    checkedEnergyDevices: true,
-    checkedMiscellaneous: true,
-    checkedOther: true,
+    Presence: true,
+    Soft: true,
+    Hard: true,
+    Projectiles: true,
+    Chemical: true,
+    EnergyDevices: true,
+    Miscellaneous: true,
+    Other: true,
   });
   const mapRef = useRef();
 
@@ -92,11 +91,31 @@ const Map = () => {
   const handleStateChange = e => {
     setCityName({ ...cityName, state: e.target.value });
   };
+
   const handleTypeChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    // if checked && target.name == tag_str
-    data.default.data.filter(i => i.tags_str === 'Projectiles');
   };
+
+  const [filteredData, setFilterData] = useState(null);
+
+  useEffect(() => {
+    const falseBtn = [];
+    Object.entries(state).map(check => {
+      if (!check[1]) {
+        falseBtn.push(check);
+      }
+    });
+    if (falseBtn.length > 0) {
+      const getBtn = [];
+      falseBtn.map(btn => getBtn.push(btn[0]));
+      console.log(getBtn);
+      setFilterData(
+        data.default.data.filter(i => !getBtn.includes(i.tags_str))
+      );
+    } else {
+      setFilterData(data.default.data);
+    }
+  }, [state]);
 
   useEffect(() => {
     const listener = e => {
@@ -198,24 +217,43 @@ const Map = () => {
     }
   };
 
-  const points = data.data.map(incident => ({
-    type: 'Feature',
-    properties: {
-      cluster: false,
-      text: incident.text,
-      id: incident.id,
-      type: incident.tags_str,
-      date: incident.date_text,
-      link: incident.Link1,
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [
-        parseFloat(incident.LONGITUDE),
-        parseFloat(incident.LATITUDE),
-      ],
-    },
-  }));
+  const points = filteredData
+    ? filteredData.map(incident => ({
+        type: 'Feature',
+        properties: {
+          cluster: false,
+          text: incident.text,
+          id: incident.id,
+          type: incident.tags_str,
+          date: incident.date_text,
+          link: incident.Link1,
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            parseFloat(incident.LONGITUDE),
+            parseFloat(incident.LATITUDE),
+          ],
+        },
+      }))
+    : data.data.map(incident => ({
+        type: 'Feature',
+        properties: {
+          cluster: false,
+          text: incident.text,
+          id: incident.id,
+          type: incident.tags_str,
+          date: incident.date_text,
+          link: incident.Link1,
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            parseFloat(incident.LONGITUDE),
+            parseFloat(incident.LATITUDE),
+          ],
+        },
+      }));
 
   const bounds = mapRef.current
     ? mapRef.current
@@ -231,7 +269,7 @@ const Map = () => {
     zoom: viewport.zoom,
     options: { radius: 75, maxZoom: 20 },
   });
-
+  splitSameLocation(data);
   return (
     <div>
       <div className="container">
@@ -271,9 +309,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedPresence}
+                    checked={state.Presence}
                     onChange={handleTypeChange}
-                    name="checkedPresence"
+                    name="Presence"
                     color="primary"
                   />
                 }
@@ -282,9 +320,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedSoftTech}
+                    checked={state.Soft}
                     onChange={handleTypeChange}
-                    name="checkedSoftTech"
+                    name="Soft"
                     color="primary"
                   />
                 }
@@ -293,9 +331,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedHardTech}
+                    checked={state.Hard}
                     onChange={handleTypeChange}
-                    name="checkedHardTech"
+                    name="Hard"
                     color="primary"
                   />
                 }
@@ -304,9 +342,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedProjectiles}
+                    checked={state.Projectiles}
                     onChange={handleTypeChange}
-                    name="checkedProjectiles"
+                    name="Projectiles"
                     color="primary"
                   />
                 }
@@ -315,9 +353,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedChemical}
+                    checked={state.Chemical}
                     onChange={handleTypeChange}
-                    name="checkedChemical"
+                    name="Chemical"
                     color="primary"
                   />
                 }
@@ -326,9 +364,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedEnergyDevices}
+                    checked={state.EnergyDevices}
                     onChange={handleTypeChange}
-                    name="checkedEnergyDevices"
+                    name="EnergyDevices"
                     color="primary"
                   />
                 }
@@ -337,9 +375,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedMiscellaneous}
+                    checked={state.Miscellaneous}
                     onChange={handleTypeChange}
-                    name="checkedMiscellaneous"
+                    name="Miscellaneous"
                     color="primary"
                   />
                 }
@@ -348,9 +386,9 @@ const Map = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={state.checkedOther}
+                    checked={state.Other}
                     onChange={handleTypeChange}
-                    name="checkedOther"
+                    name="Other"
                     color="primary"
                   />
                 }
