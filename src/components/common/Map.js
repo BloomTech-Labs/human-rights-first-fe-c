@@ -207,6 +207,66 @@ const Map = () => {
               <br />
               <input type="submit" value="Submit" onClick={submitCityHandler} />
             </label>
+            <br />
+            <label>
+              Search by type of incidents:
+              <br />
+              <input
+                type="radio"
+                id="Presence"
+                name="typeOfIncidents"
+                value="Presence"
+              />
+              <label for="Presence">Presence</label>
+              <br />
+              <input
+                type="radio"
+                id="softTech"
+                name="typeOfIncidents"
+                value="softTech"
+              />
+              <label for="softTech">Empty-hand control soft technique</label>
+              <br />
+              <input
+                type="radio"
+                id="hardTech"
+                name="typeOfIncidents"
+                value="hardTech"
+              />
+              <label for="hardTech">Empty-hand control hard technique</label>
+              <br />
+              <input
+                type="radio"
+                id="projectiles"
+                name="typeOfIncidents"
+                value="projectiles"
+              />
+              <label for="projectiles">Projectiles</label>
+              <br />
+              <input
+                type="radio"
+                id="chemical"
+                name="typeOfIncidents"
+                value="chemical"
+              />
+              <label for="chemical">Chemical</label>
+              <br />
+              <input
+                type="radio"
+                id="energyDevices"
+                name="typeOfIncidents"
+                value="energyDevices"
+              />
+              <label for="energyDevices">Conducted energy devices</label>
+              <br />
+              <input
+                type="radio"
+                id="miscellaneous"
+                name="typeOfIncidents"
+                value="miscellaneous"
+              />
+              <label for="miscellaneous">Miscellaneous</label>
+            </label>
           </form>
         </div>
 
