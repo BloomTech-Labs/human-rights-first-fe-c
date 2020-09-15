@@ -1,24 +1,23 @@
-.popUpBox {
-  background-color: rgba(255, 231, 222, 0.967);
-  width: 250px;
-  border-radius: 20px;
-  padding: 5px 5px 5px 15px;
-}
+/* Map component styling*/
 .mapboxgl-popup-close-button {
   background-color: rgba(255, 255, 255, 0.933);
   border: none;
   border-radius: 5px;
   margin-left: 90%;
+  max-width: 30%;
 }
+
 .container {
   display: flex;
   flex-direction: row;
   margin: 3% 5% 0 5%;
 }
+
 .filter_bar {
   background-color: #ebb801;
   width: 20vh;
 }
+
 .cluster-marker {
   color: #fff;
   background: #aa5a15;
@@ -35,6 +34,36 @@
   font-size: 100px;
   text-align: center;
   margin-bottom: -50px;
+}
+
+.popUpBox {
+  border-radius: 20px;
+  padding: 5px 5px 5px 15px;
+}
+
+.popup_incidents_container {
+  display: flex;
+  padding: 2%;
+  border: brown 0.1rem solid;
+}
+
+.incident_box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: row;
+}
+
+.type-incidents {
+  flex: 1
+}
+
+.text-incidents {
+  flex: 2;
+}
+
+.date-incidents {
+  flex: 1;
 }
 
 /* NavBar.js Styling */
@@ -83,8 +112,3 @@ a {
   margin-top: -30%;
   margin-bottom: -30%;
 }
-
-/* .logo-text-div {
-  font-family: 'Playfair Display', serif;
-  margin-left: -15%;
-} */

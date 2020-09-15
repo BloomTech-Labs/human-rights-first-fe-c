@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
-import * as incidentsData from '../../testing_data/incidents data.json';
-import * as data from '../../testing_data/data2.json';
+import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
+import cities from '../../database/cities.json';
 import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
 
@@ -14,11 +14,16 @@ const Map = () => {
     width: '100vw',
     height: '73vh',
   });
-  const [isShown, setIsShown] = useState(false);
   const [selected, setSelected] = useState(null);
+  const [multiIncidents, setMultiIncidents] = useState(null);
 
   const [zipCode, setZipCode] = useState('');
-
+  const [cityName, setCityName] = useState({
+    state: '',
+    city: '',
+    lat: '',
+    lon: '',
+  });
   const mapRef = useRef();
 
   const submitHandler = e => {
@@ -31,10 +36,27 @@ const Map = () => {
       height: '73vh',
     });
   };
+  const submitCityHandler = e => {
+    e.preventDefault();
+    const getCity = cities.filter(
+      city => city.city === cityName.city && city.state_name === cityName.state
+    );
+    setViewport({
+      ...viewport,
+      latitude: getCity[0].lat,
+      longitude: getCity[0].lng,
+      zoom: 10,
+    });
+  };
 
   const handleChange = e => {
-    e.preventDefault();
     setZipCode(e.target.value);
+  };
+  const handleCityChange = e => {
+    setCityName({ ...cityName, city: e.target.value });
+  };
+  const handleStateChange = e => {
+    setCityName({ ...cityName, state: e.target.value });
   };
 
   useEffect(() => {
@@ -95,7 +117,14 @@ const Map = () => {
 
   const points = data.data.map(incident => ({
     type: 'Feature',
-    properties: { cluster: false, text: incident.text, id: incident.id },
+    properties: {
+      cluster: false,
+      text: incident.text,
+      id: incident.id,
+      type: incident.tags_str,
+      date: incident.date_text,
+      link: incident.Link1,
+    },
     geometry: {
       type: 'Point',
       coordinates: [
@@ -131,9 +160,31 @@ const Map = () => {
               <input type="text" name="zipCode" onChange={handleChange} />
             </label>
             <input type="submit" value="Submit" onClick={submitHandler} />
+            <br />
+            <label>
+              Search by city and state:
+              <br />
+              <input type="hidden" name="country" id="countryId" value="US" />
+              <select
+                name="state"
+                class="states order-alpha"
+                id="stateId"
+                onChange={handleStateChange}
+              >
+                <option value="state">Select State</option>
+              </select>
+              <select
+                name="city"
+                class="cities order-alpha"
+                id="cityId"
+                onChange={handleCityChange}
+              >
+                <option value="city">Select City</option>
+              </select>
+              <br />
+              <input type="submit" value="Submit" onClick={submitCityHandler} />
+            </label>
           </form>
-          {/* TODO: search by city  */}
-          {/* TODO: search by types of force  */}
         </div>
 
         <ReactMapGL
@@ -148,6 +199,10 @@ const Map = () => {
           {clusters.map(cluster => {
             const [longitude, latitude] = cluster.geometry.coordinates;
             const text = cluster.properties.text;
+            const date = cluster.properties.date;
+            const type = cluster.properties.type;
+            const link = cluster.properties.link;
+
             const {
               cluster: isCluster,
               point_count: pointCount,
@@ -180,17 +235,26 @@ const Map = () => {
                       });
 
                       if (expansionZoom === 20) {
-                        const description = [];
-                        const filtered = incidentsData.data.filter(
+                        const filtered = data.data.filter(
                           i =>
-                            parseFloat(i.lon) ===
+                            parseFloat(i.LONGITUDE) ===
                             Math.round(
                               cluster.geometry.coordinates[0] * 1000000
                             ) /
                               1000000
                         );
-                        filtered.map(i => description.push(i.text));
-                        setSelected([latitude, longitude, description]);
+                        setMultiIncidents(filtered);
+
+                        filtered.map(i => {
+                          setSelected([
+                            i.LATITUDE,
+                            i.LONGITUDE,
+                            i.text,
+                            i.tags_str,
+                            i.date_text,
+                            i.link1,
+                          ]);
+                        });
                       }
                     }}
                   >
@@ -205,15 +269,14 @@ const Map = () => {
                 key={cluster.properties.id}
                 latitude={latitude}
                 longitude={longitude}
+                date={date}
+                type={type}
+                link={link}
               >
                 <div
-                  onMouseEnter={() => {
-                    setIsShown(true);
-                    setSelected([latitude, longitude, text]);
-                  }}
-                  onMouseLeave={() => {
-                    setIsShown(false);
-                    setSelected(null);
+                  onClick={e => {
+                    e.preventDefault();
+                    setSelected([latitude, longitude, text, type, date, link]);
                   }}
                 >
                   {typeOfIncidents(text)}
@@ -226,15 +289,57 @@ const Map = () => {
             <Popup
               latitude={parseFloat(selected[0])}
               longitude={parseFloat(selected[1])}
-              onClose={() => {
-                setSelected(null);
-              }}
+              closeButton={false}
               className="popUpBox"
             >
               {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
-              <div>
-                <p>{selected[2]}</p>
-              </div>
+              {multiIncidents ? (
+                multiIncidents.map(incident => {
+                  return (
+                    <div>
+                      <div
+                        className="popup_incidents_container"
+                        key={incident.id}
+                      >
+                        <a
+                          className="incident_box"
+                          href={incident.Link1}
+                          target="_blank"
+                        >
+                          {/* type */}
+                          <div className="type-incidents">
+                            {incident.tags_str}
+                          </div>
+                          {/* description */}
+                          <div className="text-incidents">{incident.text}</div>
+                          {/* date */}
+                          <div className="date-incidents">
+                            {incident.date_text}
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="popup_incidents_container">
+                  <a
+                    className="incident_box"
+                    href={selected[5]}
+                    target="_blank"
+                  >
+                    {/* type */}
+                    <div className="type-incidents">{selected[3]}</div>
+                    {/* description */}
+                    <div className="text-incidents">{selected[2]}</div>
+                    {/* date */}
+                    <div className="date-incidents">{selected[4]}</div>
+                  </a>
+                </div>
+              )}
+              <button className="x" onClick={() => setSelected(null)}>
+                close
+              </button>
             </Popup>
           ) : null}
         </ReactMapGL>

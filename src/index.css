@@ -5,6 +5,7 @@ body {
   color: #111;
   font-family: 'Playfair Display', serif;
 }
+
 body * {
   transition: all 0.3s ease-in-out;
 }
@@ -51,6 +52,7 @@ header div.top {
   display: flex;
   flex-direction: column;
 }
+
 /*Main Content*/
 main {
   position: relative;
@@ -89,6 +91,7 @@ main section div {
 .bottom-section {
   border-bottom: 0.125rem solid silver;
 }
+
 .organization {
   text-align: left;
   font-size: 1.25rem;
@@ -144,6 +147,7 @@ main section div {
   justify-content: space-evenly;
   opacity: 0.95;
 }
+
 .how {
   background: url('./assets/howitworks.PNG');
   height: 300px;
@@ -168,6 +172,7 @@ main section div {
     margin-left: 7.813rem;
     width: 25%;
   }
+
   main section:first-of-type {
     margin-top: 18.125rem;
   }
@@ -179,22 +184,28 @@ main section div {
     display: grid;
     grid-template-columns: 1fr;
   }
+
   main section h2 {
     font-size: 1.5rem;
   }
+
   main section div p {
     padding: 0rem 0.625rem;
   }
+
   .icons {
     width: 75%;
   }
+
   .considered-intro {
     width: 28.125rem;
   }
+
   .how {
     width: 140%;
     height: 300px;
   }
+
   .organization {
     width: 28.125rem;
   }
@@ -223,6 +234,7 @@ main section div {
     display: grid;
     grid-template-columns: 1fr;
   }
+
   main section div p {
     padding: 0rem 5.625rem;
   }
@@ -235,6 +247,7 @@ main section div {
     height: 17.813rem;
     width: 83%;
   }
+
   .organization {
     width: 100%;
   }
