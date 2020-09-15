@@ -4,15 +4,9 @@ import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
 import cities from '../../database/cities.json';
 import useSupercluster from 'use-supercluster';
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 import '../../styles/index.css';
 
@@ -36,17 +30,6 @@ const splitSameLocation = data => {
     }
   });
 };
-
-const GreenCheckbox = withStyles({
-  root: {
-    color: green[400],
-    '&$checked': {
-      color: green[600],
-    },
-  },
-  checked: {},
-})(props => <Checkbox color="default" {...props} />);
-
 const Map = () => {
   splitSameLocation(data);
   const [viewport, setViewport] = useState({
@@ -58,7 +41,6 @@ const Map = () => {
   });
   const [selected, setSelected] = useState(null);
   const [multiIncidents, setMultiIncidents] = useState(null);
-
   const [zipCode, setZipCode] = useState('');
   const [cityName, setCityName] = useState({
     state: '',
@@ -66,7 +48,6 @@ const Map = () => {
     lat: '',
     lon: '',
   });
-
   const [state, setState] = React.useState({
     checkedPresence: true,
     checkedSoftTech: true,
@@ -77,7 +58,6 @@ const Map = () => {
     checkedMiscellaneous: true,
     checkedOther: true,
   });
-
   const mapRef = useRef();
 
   const submitHandler = e => {
@@ -112,10 +92,10 @@ const Map = () => {
   const handleStateChange = e => {
     setCityName({ ...cityName, state: e.target.value });
   };
-
   const handleTypeChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    console.log(event.target.name);
+    // if checked && target.name == tag_str
+    data.default.data.filter(i => i.tags_str === 'Projectiles');
   };
 
   useEffect(() => {
@@ -134,47 +114,90 @@ const Map = () => {
   const typeOfIncidents = data => {
     // TODO: update types, see: https://ppt.cc/fpdyfx
     // TODO: update icons
-    if (data.includes('tear')) {
+    if (data.includes('Projectiles')) {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             src="https://img.icons8.com/ios-glyphs/25/000000/eye-disease.png"
             alt="tear-gas icon"
-          />
+          /> */}{' '}
+          😗
         </div>
       );
-    } else if (data.includes('shoot')) {
+    } else if (data.includes('soft')) {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             src="https://img.icons8.com/color/25/000000/flash-bang.png"
             alt="shoot icon"
-          />
+          /> */}{' '}
+          🐖
         </div>
       );
-    } else if (data.includes('pepper')) {
+    } else if (data.includes('hard')) {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
             alt="pepper spray icon"
-          />
+          /> */}{' '}
+          🍋
+        </div>
+      );
+    } else if (data.includes('Projectiles')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}{' '}
+          🍎
+        </div>
+      );
+    } else if (data.includes('Chemical')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}
+          🏓
+        </div>
+      );
+    } else if (data.includes('energy')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}
+          🥝
+        </div>
+      );
+    } else if (data.includes('Miscellaneous')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}{' '}
+          🐻
         </div>
       );
     } else {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             className="else"
             src="https://img.icons8.com/ios-filled/30/000000/action.png"
             alt="violence icon"
-          />
+          /> */}{' '}
+          ⚓
         </div>
       );
     }
   };
 
-  //splitSameLocation(data).map(i => console.log());
   const points = data.data.map(incident => ({
     type: 'Feature',
     properties: {
@@ -251,6 +274,7 @@ const Map = () => {
                     checked={state.checkedPresence}
                     onChange={handleTypeChange}
                     name="checkedPresence"
+                    color="primary"
                   />
                 }
                 label="Presence"
@@ -430,7 +454,7 @@ const Map = () => {
                     setSelected([latitude, longitude, text, type, date, link]);
                   }}
                 >
-                  {typeOfIncidents(text)}
+                  {typeOfIncidents(type)}
                 </div>
               </Marker>
             );
