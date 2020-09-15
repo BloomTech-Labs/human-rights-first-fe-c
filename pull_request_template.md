@@ -1,18 +1,16 @@
-## Bug description
-
-Describe the problem
-
 ## Solution description
 
 Describe the code change in detail for reviewer. Explain the technical solution you have provided and how it fixed the issue case.
 
-## Which file changed
-
-Clarify which file changed, for example “Added Hello World to index.js”
-
 ## Covered unit test cases
 
 Were unit test cases recorded for this fix?
+
+## Code is clear and maintainable:
+
+- [x] My code follows the style guidelines of this project
+- [x] My code is consistently formatted.
+- [x] No instance on duplicate code.
 
 ## Tested this issue fix on all browser
 
@@ -33,8 +31,3 @@ Pull Request is reviewed by one or more team members
 
 Code follows industry standards for language, framework, and libraries.
 
-## Code is clear and maintainable:
-
-- [ ] My code follows the style guidelines of this project
-- [ ] My code is consistently formatted.
-- [ ] No instance on duplicate code.
