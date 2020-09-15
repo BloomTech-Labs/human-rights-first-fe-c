@@ -5,7 +5,29 @@ import usZips from 'us-zips';
 import useSupercluster from 'use-supercluster';
 import '../../styles/index.css';
 
+const splitSameLocation = data => {
+  Object.size = function(obj) {
+    var size = 0,
+      key;
+    for (key in obj) {
+      if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+  };
+  var lng_lat_storage = {};
+
+  data.default.data.map(i => {
+    if (!lng_lat_storage.hasOwnProperty(i.LATITUDE)) {
+      lng_lat_storage[i.LATITUDE] = i.LONGITUDE;
+    } else {
+      i.LATITUDE += Math.random() / 1000;
+      i.LONGITUDE += Math.random() / 1000;
+    }
+  });
+};
+
 const Map = () => {
+  splitSameLocation(data);
   const [viewport, setViewport] = useState({
     latitude: 37.09024,
     longitude: -95.712891,
@@ -92,6 +114,7 @@ const Map = () => {
     }
   };
 
+  //splitSameLocation(data).map(i => console.log());
   const points = data.data.map(incident => ({
     type: 'Feature',
     properties: {
@@ -198,6 +221,7 @@ const Map = () => {
                             ) /
                               1000000
                         );
+
                         setMultiIncidents(filtered);
 
                         filtered.map(i => {
