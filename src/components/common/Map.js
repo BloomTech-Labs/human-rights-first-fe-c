@@ -4,6 +4,12 @@ import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
 import cities from '../../database/cities.json';
 import useSupercluster from 'use-supercluster';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+
 import '../../styles/index.css';
 
 const splitSameLocation = data => {
@@ -172,6 +178,12 @@ const Map = () => {
     options: { radius: 75, maxZoom: 20 },
   });
 
+  const [value, setValue] = React.useState('female');
+
+  const handleTypeChange = event => {
+    setValue(event.target.value);
+  };
+
   return (
     <div>
       <div className="container">
@@ -208,65 +220,67 @@ const Map = () => {
               <input type="submit" value="Submit" onClick={submitCityHandler} />
             </label>
             <br />
-            <label>
-              Search by type of incidents:
-              <br />
-              <input
-                type="radio"
-                id="Presence"
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Use of force</FormLabel>
+              <RadioGroup
+                aria-label="gender"
                 name="typeOfIncidents"
-                value="Presence"
-              />
-              <label for="Presence">Presence</label>
-              <br />
-              <input
-                type="radio"
-                id="softTech"
-                name="typeOfIncidents"
-                value="softTech"
-              />
-              <label for="softTech">Empty-hand control soft technique</label>
-              <br />
-              <input
-                type="radio"
-                id="hardTech"
-                name="typeOfIncidents"
-                value="hardTech"
-              />
-              <label for="hardTech">Empty-hand control hard technique</label>
-              <br />
-              <input
-                type="radio"
-                id="projectiles"
-                name="typeOfIncidents"
-                value="projectiles"
-              />
-              <label for="projectiles">Projectiles</label>
-              <br />
-              <input
-                type="radio"
-                id="chemical"
-                name="typeOfIncidents"
-                value="chemical"
-              />
-              <label for="chemical">Chemical</label>
-              <br />
-              <input
-                type="radio"
-                id="energyDevices"
-                name="typeOfIncidents"
-                value="energyDevices"
-              />
-              <label for="energyDevices">Conducted energy devices</label>
-              <br />
-              <input
-                type="radio"
-                id="miscellaneous"
-                name="typeOfIncidents"
-                value="miscellaneous"
-              />
-              <label for="miscellaneous">Miscellaneous</label>
-            </label>
+                value={value}
+                onChange={handleTypeChange}
+              >
+                <FormControlLabel
+                  value="presence"
+                  control={<Radio />}
+                  label="Presence"
+                />
+                <FormControlLabel
+                  value="softTech"
+                  control={<Radio />}
+                  label="Empty-hand control soft technique"
+                />
+                <FormControlLabel
+                  value="hardTech"
+                  control={<Radio />}
+                  label="Empty-hand control hard technique"
+                />
+                <FormControlLabel
+                  value="Projectiles"
+                  control={<Radio />}
+                  label="projectiles"
+                />
+                <FormControlLabel
+                  value="Projectiles"
+                  control={<Radio />}
+                  label="projectiles"
+                />
+                <FormControlLabel
+                  value="chemical"
+                  control={<Radio />}
+                  label="Chemical"
+                />
+                <FormControlLabel
+                  value="projectiles"
+                  control={<Radio />}
+                  label="Projectiles"
+                />
+                <FormControlLabel
+                  value="energyDevices"
+                  control={<Radio />}
+                  label="Conducted energy devices"
+                />
+                <FormControlLabel
+                  value="miscellaneous"
+                  control={<Radio />}
+                  label="Miscellaneous"
+                />
+                <FormControlLabel
+                  value="disabled"
+                  disabled
+                  control={<Radio />}
+                  label="(Disabled option)"
+                />
+              </RadioGroup>
+            </FormControl>
           </form>
         </div>
 
