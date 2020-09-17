@@ -90,8 +90,8 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={formSubmit}>
-      <lable htmlFor="fname">
+    <form onSubmit={formSubmit} className="form">
+      <label htmlFor="fname" className="label">
         First Name:
         <input
           id="fname"
@@ -102,8 +102,8 @@ const SignUp = () => {
           placeholder="First Name"
         />
         {errors.fname.length > 2 ? <p>{errors.fname}</p> : null}
-      </lable>
-      <lable htmlFor="lname">
+      </label>
+      <label htmlFor="lname" className="label">
         Last Name:
         <input
           id="lname"
@@ -114,8 +114,8 @@ const SignUp = () => {
           placeholder="Last Name"
         />
         {errors.lname.length > 2 ? <p>{errors.lname}</p> : null}
-      </lable>
-      <lable htmlFor="email">
+      </label>
+      <label htmlFor="email" className="label">
         Email:
         <input
           id="email"
@@ -126,8 +126,8 @@ const SignUp = () => {
           placeholder="email@email.com"
         />
         {errors.email.length > 5 ? <p>{errors.email}</p> : null}
-      </lable>
-      <lable htmlFor="password">
+      </label>
+      <label htmlFor="password" className="label">
         Password:
         <input
           id="password"
@@ -138,7 +138,7 @@ const SignUp = () => {
           placeholder="Password"
         />
         {errors.password.length > 4 ? <p>{errors.password}</p> : null}
-      </lable>
+      </label>
       <button disabled={buttonDisabled}>Sign Up</button>
     </form>
   );
