@@ -81,7 +81,7 @@ a {
 }
 
 .nav-div {
-  margin: 3%;
+  margin: 1%;
 }
 
 .nav-bar {
@@ -111,4 +111,60 @@ a {
   width: 100%;
   margin-top: -30%;
   margin-bottom: -30%;
+}
+
+
+/* Sign Up Form */
+
+.form {
+  background-color: #faa307;
+  width: 25%;
+  margin: 5% 0 10% 10%;
+  padding: 6%;
+}
+
+.label {
+  color: #03071E;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.sign-up-pic {
+  width: 40%;
+  margin-top: 9%;
+  margin-left: 10%;
+  height: 50%;
+  opacity: 45%;
+  
+}
+
+.signupContainer{
+  display: flex;
+  background-color: #370617;
+}
+
+.sign-up-form-and-image {
+  display: flex;
+  background-color: #370617;
+}
+
+.sign-up-text-container {
+  margin-left: 11%;
+  margin-top: 4%;
+  color: #faa307;
+  font-family: 'Playfair Display', serif;
+}
+
+.sign-up-h1 {
+  color: #faa307;
+  font-family: 'Playfair Display', serif;
+}
+
+.signup-btn {
+  background-color: #370617;
+  color: #faa307;
+  opacity: 50%;
+  margin-top: 6%;
+  margin-left: 32%;
+
 }
