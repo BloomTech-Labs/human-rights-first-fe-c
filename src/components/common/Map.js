@@ -98,6 +98,17 @@ const Map = () => {
 
   const [filteredData, setFilterData] = useState(null);
 
+  function getFirstType(types) {
+    let firstType = '';
+    for (let i = 0; i < types.length; i++) {
+      if (types[i] == ',') {
+        break;
+      }
+      firstType += types[i];
+    }
+    return firstType;
+  }
+
   useEffect(() => {
     const falseBtn = [];
     Object.entries(state).map(check => {
@@ -108,9 +119,13 @@ const Map = () => {
     if (falseBtn.length > 0) {
       const getBtn = [];
       falseBtn.map(btn => getBtn.push(btn[0]));
-      console.log(getBtn);
       setFilterData(
-        data.default.data.filter(i => !getBtn.includes(i.tags_str))
+        data.default.data.filter(
+          i =>
+            !getBtn.includes(
+              i.tags_str.includes(',') ? getFirstType(i.tags_str) : i.tags_str
+            )
+        )
       );
     } else {
       setFilterData(data.default.data);
@@ -133,7 +148,7 @@ const Map = () => {
   const typeOfIncidents = data => {
     // TODO: update types, see: https://ppt.cc/fpdyfx
     // TODO: update icons
-    if (data.includes('Projectiles')) {
+    if (data.includes('Presence')) {
       return (
         <div className="incidents_icons">
           {/* <img
@@ -143,7 +158,7 @@ const Map = () => {
           😗
         </div>
       );
-    } else if (data.includes('soft')) {
+    } else if (data.includes('Soft')) {
       return (
         <div className="incidents_icons">
           {/* <img
@@ -153,7 +168,7 @@ const Map = () => {
           🐖
         </div>
       );
-    } else if (data.includes('hard')) {
+    } else if (data.includes('Hard')) {
       return (
         <div className="incidents_icons">
           {/* <img
@@ -183,7 +198,7 @@ const Map = () => {
           🏓
         </div>
       );
-    } else if (data.includes('energy')) {
+    } else if (data.includes('EnergyDevices')) {
       return (
         <div className="incidents_icons">
           {/* <img
@@ -305,6 +320,7 @@ const Map = () => {
               <br />
               <input type="submit" value="Submit" onClick={submitCityHandler} />
             </label>
+            <label>Type of incidents</label>;
             <FormGroup row>
               <FormControlLabel
                 control={
