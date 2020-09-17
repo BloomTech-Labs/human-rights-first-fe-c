@@ -67,11 +67,6 @@ const Map = () => {
   const [selected, setSelected] = useState(null);
   const [multiIncidents, setMultiIncidents] = useState(null);
   const [zipCode, setZipCode] = useState('');
-  const [stateName, setStateName] = useState({
-    state: '',
-    lat: '',
-    lon: '',
-  });
   const [state, setState] = React.useState({
     Presence: true,
     Soft: true,
@@ -83,7 +78,7 @@ const Map = () => {
     Other: true,
   });
   const mapRef = useRef();
-  const classesForCityFilter = stylesForCityFilter();
+  const classesForStateFilter = stylesForCityFilter();
   const classesForZipCodeFilter = useStylesForZipCodeFilter();
 
   const submitHandler = e => {
@@ -98,8 +93,10 @@ const Map = () => {
     setZipCode('');
   };
   const submitStateHandler = e => {
-    e.preventDefault();
-    const getCity = states.filter(s => s.state === stateName.state);
+    if (!e.target.value) {
+      return;
+    }
+    const getCity = states.filter(s => s.state === e.target.value);
     setViewport({
       ...viewport,
       latitude: getCity[0].latitude,
@@ -111,9 +108,6 @@ const Map = () => {
     setZipCode(e.target.value);
   };
 
-  const handleStateChange = e => {
-    setStateName({ ...stateName, state: e.target.value });
-  };
   const handleTypeChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -311,6 +305,33 @@ const Map = () => {
         <div className="filter_bar">
           <form>
             <label>
+              Search by state:
+              <br />
+              <FormControl
+                variant="outlined"
+                className={classesForStateFilter.formControl}
+              >
+                <InputLabel id="demo-simple-select-outlined-label">
+                  State
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-outlined-label"
+                  id="demo-simple-select-outlined"
+                  name="state"
+                  onChange={submitStateHandler}
+                  label="State"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {states.map(c => (
+                    <MenuItem value={c.state}>{c.state}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <br />
+            </label>
+            <label>
               Search by zip code:
               <form
                 noValidate
@@ -325,55 +346,17 @@ const Map = () => {
                   onChange={handleChange}
                 />
               </form>
-            </label>
-            <Button
-              variant="contained"
-              type="submit"
-              value="Submit"
-              color="primary"
-              onClick={submitHandler}
-              disabled={zipCode.length > 0 ? false : true}
-            >
-              Submit
-            </Button>
-            <br />
-            <label>
-              Search by state:
-              <br />
-              <FormControl
-                variant="outlined"
-                className={classesForCityFilter.formControl}
-              >
-                <InputLabel id="demo-simple-select-outlined-label">
-                  State
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-outlined-label"
-                  id="demo-simple-select-outlined"
-                  name="state"
-                  onChange={handleStateChange}
-                  label="State"
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  {states.map(c => (
-                    <MenuItem value={c.state}>{c.state}</MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-              <br />
               <Button
                 variant="contained"
                 type="submit"
                 value="Submit"
                 color="primary"
-                onClick={submitStateHandler}
+                onClick={submitHandler}
+                disabled={zipCode.length > 0 && usZips[zipCode] ? false : true}
               >
                 Submit
               </Button>
             </label>
-            <br />
             <br />
             <label>
               Type of incidents
