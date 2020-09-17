@@ -7,6 +7,8 @@ import useSupercluster from 'use-supercluster';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 import '../../styles/index.css';
 
@@ -68,6 +70,7 @@ const Map = () => {
       width: '100vw',
       height: '73vh',
     });
+    setZipCode('');
   };
   const submitCityHandler = e => {
     e.preventDefault();
@@ -81,7 +84,6 @@ const Map = () => {
       zoom: 10,
     });
   };
-
   const handleChange = e => {
     setZipCode(e.target.value);
   };
@@ -91,7 +93,6 @@ const Map = () => {
   const handleStateChange = e => {
     setCityName({ ...cityName, state: e.target.value });
   };
-
   const handleTypeChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -292,8 +293,15 @@ const Map = () => {
           <form>
             <label>
               Search by zip code:
-              <br />
-              <input type="text" name="zipCode" onChange={handleChange} />
+              <form noValidate autoComplete="off">
+                <TextField
+                  id="filled-basic"
+                  label="Zip Code Here"
+                  name="zipCode"
+                  value={zipCode}
+                  onChange={handleChange}
+                />
+              </form>
             </label>
             <input type="submit" value="Submit" onClick={submitHandler} />
             <br />
@@ -322,97 +330,99 @@ const Map = () => {
             </label>
             <br />
             <br />
-            <label>Type of incidents</label>
-            <FormGroup row>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Presence}
-                    onChange={handleTypeChange}
-                    name="Presence"
-                    color="primary"
-                  />
-                }
-                label="Presence"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Soft}
-                    onChange={handleTypeChange}
-                    name="Soft"
-                    color="primary"
-                  />
-                }
-                label="Empty-hand control soft technique"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Hard}
-                    onChange={handleTypeChange}
-                    name="Hard"
-                    color="primary"
-                  />
-                }
-                label="Empty-hand control hard technique"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Projectiles}
-                    onChange={handleTypeChange}
-                    name="Projectiles"
-                    color="primary"
-                  />
-                }
-                label="Projectiles"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Chemical}
-                    onChange={handleTypeChange}
-                    name="Chemical"
-                    color="primary"
-                  />
-                }
-                label="Chemical"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.EnergyDevices}
-                    onChange={handleTypeChange}
-                    name="EnergyDevices"
-                    color="primary"
-                  />
-                }
-                label="Conducted energy devices"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Miscellaneous}
-                    onChange={handleTypeChange}
-                    name="Miscellaneous"
-                    color="primary"
-                  />
-                }
-                label="Miscellaneous"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Other}
-                    onChange={handleTypeChange}
-                    name="Other"
-                    color="primary"
-                  />
-                }
-                label="Other"
-              />
-            </FormGroup>
+            <label>
+              Type of incidents
+              <FormGroup row>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Presence}
+                      onChange={handleTypeChange}
+                      name="Presence"
+                      color="primary"
+                    />
+                  }
+                  label="Presence"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Soft}
+                      onChange={handleTypeChange}
+                      name="Soft"
+                      color="primary"
+                    />
+                  }
+                  label="Empty-hand control soft technique"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Hard}
+                      onChange={handleTypeChange}
+                      name="Hard"
+                      color="primary"
+                    />
+                  }
+                  label="Empty-hand control hard technique"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Projectiles}
+                      onChange={handleTypeChange}
+                      name="Projectiles"
+                      color="primary"
+                    />
+                  }
+                  label="Projectiles"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Chemical}
+                      onChange={handleTypeChange}
+                      name="Chemical"
+                      color="primary"
+                    />
+                  }
+                  label="Chemical"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.EnergyDevices}
+                      onChange={handleTypeChange}
+                      name="EnergyDevices"
+                      color="primary"
+                    />
+                  }
+                  label="Conducted energy devices"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Miscellaneous}
+                      onChange={handleTypeChange}
+                      name="Miscellaneous"
+                      color="primary"
+                    />
+                  }
+                  label="Miscellaneous"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Other}
+                      onChange={handleTypeChange}
+                      name="Other"
+                      color="primary"
+                    />
+                  }
+                  label="Other"
+                />
+              </FormGroup>
+            </label>
             <br />
           </form>
         </div>
@@ -523,7 +533,6 @@ const Map = () => {
               closeButton={false}
               className="popUpBox"
             >
-              {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
               {multiIncidents ? (
                 multiIncidents.map(incident => {
                   return (
