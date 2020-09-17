@@ -26,13 +26,9 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactjs-popup": "^1.5.0",
-    "redux": "^4.0.5",
-    "styled-components": "^5.1.1",
     "us-zips": "^4.0.2",
     "use-supercluster": "^0.2.8",
-    "worldcities": "^0.1.6",
-    "yup": "^0.29.3",
-    "zipcodes": "^8.0.0"
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "craco --max_old_space_size=4096 start",
