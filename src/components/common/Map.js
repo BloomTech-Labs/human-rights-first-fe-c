@@ -2,14 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
-import cities from '../../database/cities.json';
+import states from '../../database/states.json';
 import useSupercluster from 'use-supercluster';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-
+import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { makeStyles } from '@material-ui/core/styles';
 import '../../styles/index.css';
 
 const splitSameLocation = data => {
@@ -32,6 +36,26 @@ const splitSameLocation = data => {
     }
   });
 };
+
+const stylesForCityFilter = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
+const useStylesForZipCodeFilter = makeStyles(theme => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
+
 const Map = () => {
   const [viewport, setViewport] = useState({
     latitude: 37.09024,
@@ -43,9 +67,8 @@ const Map = () => {
   const [selected, setSelected] = useState(null);
   const [multiIncidents, setMultiIncidents] = useState(null);
   const [zipCode, setZipCode] = useState('');
-  const [cityName, setCityName] = useState({
+  const [stateName, setStateName] = useState({
     state: '',
-    city: '',
     lat: '',
     lon: '',
   });
@@ -60,6 +83,8 @@ const Map = () => {
     Other: true,
   });
   const mapRef = useRef();
+  const classesForCityFilter = stylesForCityFilter();
+  const classesForZipCodeFilter = useStylesForZipCodeFilter();
 
   const submitHandler = e => {
     e.preventDefault();
@@ -72,26 +97,22 @@ const Map = () => {
     });
     setZipCode('');
   };
-  const submitCityHandler = e => {
+  const submitStateHandler = e => {
     e.preventDefault();
-    const getCity = cities.filter(
-      city => city.city === cityName.city && city.state_name === cityName.state
-    );
+    const getCity = states.filter(s => s.state === stateName.state);
     setViewport({
       ...viewport,
-      latitude: getCity[0].lat,
-      longitude: getCity[0].lng,
-      zoom: 10,
+      latitude: getCity[0].latitude,
+      longitude: getCity[0].longitude,
+      zoom: 6,
     });
   };
   const handleChange = e => {
     setZipCode(e.target.value);
   };
-  const handleCityChange = e => {
-    setCityName({ ...cityName, city: e.target.value });
-  };
+
   const handleStateChange = e => {
-    setCityName({ ...cityName, state: e.target.value });
+    setStateName({ ...stateName, state: e.target.value });
   };
   const handleTypeChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -147,8 +168,6 @@ const Map = () => {
   }, []);
 
   const typeOfIncidents = data => {
-    // TODO: update types, see: https://ppt.cc/fpdyfx
-    // TODO: update icons
     if (data.includes('Presence')) {
       return (
         <div className="incidents_icons">
@@ -293,7 +312,11 @@ const Map = () => {
           <form>
             <label>
               Search by zip code:
-              <form noValidate autoComplete="off">
+              <form
+                noValidate
+                autoComplete="off"
+                className={classesForZipCodeFilter.root}
+              >
                 <TextField
                   id="filled-basic"
                   label="Zip Code Here"
@@ -303,30 +326,52 @@ const Map = () => {
                 />
               </form>
             </label>
-            <input type="submit" value="Submit" onClick={submitHandler} />
+            <Button
+              variant="contained"
+              type="submit"
+              value="Submit"
+              color="primary"
+              onClick={submitHandler}
+              disabled={zipCode.length > 0 ? false : true}
+            >
+              Submit
+            </Button>
             <br />
             <label>
-              Search by city and state:
+              Search by state:
               <br />
-              <input type="hidden" name="country" id="countryId" value="US" />
-              <select
-                name="state"
-                class="states order-alpha"
-                id="stateId"
-                onChange={handleStateChange}
+              <FormControl
+                variant="outlined"
+                className={classesForCityFilter.formControl}
               >
-                <option value="state">Select State</option>
-              </select>
-              <select
-                name="city"
-                class="cities order-alpha"
-                id="cityId"
-                onChange={handleCityChange}
-              >
-                <option value="city">Select City</option>
-              </select>
+                <InputLabel id="demo-simple-select-outlined-label">
+                  State
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-outlined-label"
+                  id="demo-simple-select-outlined"
+                  name="state"
+                  onChange={handleStateChange}
+                  label="State"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {states.map(c => (
+                    <MenuItem value={c.state}>{c.state}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
               <br />
-              <input type="submit" value="Submit" onClick={submitCityHandler} />
+              <Button
+                variant="contained"
+                type="submit"
+                value="Submit"
+                color="primary"
+                onClick={submitStateHandler}
+              >
+                Submit
+              </Button>
             </label>
             <br />
             <br />
