@@ -4,6 +4,10 @@ import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
 import cities from '../../database/cities.json';
 import useSupercluster from 'use-supercluster';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+
 import '../../styles/index.css';
 
 const splitSameLocation = data => {
@@ -26,9 +30,7 @@ const splitSameLocation = data => {
     }
   });
 };
-
 const Map = () => {
-  splitSameLocation(data);
   const [viewport, setViewport] = useState({
     latitude: 37.09024,
     longitude: -95.712891,
@@ -38,13 +40,22 @@ const Map = () => {
   });
   const [selected, setSelected] = useState(null);
   const [multiIncidents, setMultiIncidents] = useState(null);
-
   const [zipCode, setZipCode] = useState('');
   const [cityName, setCityName] = useState({
     state: '',
     city: '',
     lat: '',
     lon: '',
+  });
+  const [state, setState] = React.useState({
+    Presence: true,
+    Soft: true,
+    Hard: true,
+    Projectiles: true,
+    Chemical: true,
+    EnergyDevices: true,
+    Miscellaneous: true,
+    Other: true,
   });
   const mapRef = useRef();
 
@@ -81,6 +92,46 @@ const Map = () => {
     setCityName({ ...cityName, state: e.target.value });
   };
 
+  const handleTypeChange = event => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+
+  const [filteredData, setFilterData] = useState(null);
+
+  function getFirstType(types) {
+    let firstType = '';
+    for (let i = 0; i < types.length; i++) {
+      if (types[i] == ',') {
+        break;
+      }
+      firstType += types[i];
+    }
+    return firstType;
+  }
+
+  useEffect(() => {
+    const falseBtn = [];
+    Object.entries(state).map(check => {
+      if (!check[1]) {
+        falseBtn.push(check);
+      }
+    });
+    if (falseBtn.length > 0) {
+      const getBtn = [];
+      falseBtn.map(btn => getBtn.push(btn[0]));
+      setFilterData(
+        data.default.data.filter(
+          i =>
+            !getBtn.includes(
+              i.tags_str.includes(',') ? getFirstType(i.tags_str) : i.tags_str
+            )
+        )
+      );
+    } else {
+      setFilterData(data.default.data);
+    }
+  }, [state]);
+
   useEffect(() => {
     const listener = e => {
       if (e.key === 'Escape') {
@@ -97,65 +148,127 @@ const Map = () => {
   const typeOfIncidents = data => {
     // TODO: update types, see: https://ppt.cc/fpdyfx
     // TODO: update icons
-    if (data.includes('tear')) {
+    if (data.includes('Presence')) {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             src="https://img.icons8.com/ios-glyphs/25/000000/eye-disease.png"
             alt="tear-gas icon"
-          />
+          /> */}{' '}
+          😗
         </div>
       );
-    } else if (data.includes('shoot')) {
+    } else if (data.includes('Soft')) {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             src="https://img.icons8.com/color/25/000000/flash-bang.png"
             alt="shoot icon"
-          />
+          /> */}{' '}
+          🐖
         </div>
       );
-    } else if (data.includes('pepper')) {
+    } else if (data.includes('Hard')) {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
             alt="pepper spray icon"
-          />
+          /> */}{' '}
+          🍋
+        </div>
+      );
+    } else if (data.includes('Projectiles')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}{' '}
+          🍎
+        </div>
+      );
+    } else if (data.includes('Chemical')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}
+          🏓
+        </div>
+      );
+    } else if (data.includes('EnergyDevices')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}
+          🥝
+        </div>
+      );
+    } else if (data.includes('Miscellaneous')) {
+      return (
+        <div className="incidents_icons">
+          {/* <img
+            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
+            alt="pepper spray icon"
+          /> */}{' '}
+          🐻
         </div>
       );
     } else {
       return (
         <div className="incidents_icons">
-          <img
+          {/* <img
             className="else"
             src="https://img.icons8.com/ios-filled/30/000000/action.png"
             alt="violence icon"
-          />
+          /> */}{' '}
+          ⚓
         </div>
       );
     }
   };
 
-  //splitSameLocation(data).map(i => console.log());
-  const points = data.data.map(incident => ({
-    type: 'Feature',
-    properties: {
-      cluster: false,
-      text: incident.text,
-      id: incident.id,
-      type: incident.tags_str,
-      date: incident.date_text,
-      link: incident.Link1,
-    },
-    geometry: {
-      type: 'Point',
-      coordinates: [
-        parseFloat(incident.LONGITUDE),
-        parseFloat(incident.LATITUDE),
-      ],
-    },
-  }));
+  const points = filteredData
+    ? filteredData.map(incident => ({
+        type: 'Feature',
+        properties: {
+          cluster: false,
+          text: incident.text,
+          id: incident.id,
+          type: incident.tags_str,
+          date: incident.date_text,
+          link: incident.Link1,
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            parseFloat(incident.LONGITUDE),
+            parseFloat(incident.LATITUDE),
+          ],
+        },
+      }))
+    : data.data.map(incident => ({
+        type: 'Feature',
+        properties: {
+          cluster: false,
+          text: incident.text,
+          id: incident.id,
+          type: incident.tags_str,
+          date: incident.date_text,
+          link: incident.Link1,
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            parseFloat(incident.LONGITUDE),
+            parseFloat(incident.LATITUDE),
+          ],
+        },
+      }));
 
   const bounds = mapRef.current
     ? mapRef.current
@@ -171,7 +284,7 @@ const Map = () => {
     zoom: viewport.zoom,
     options: { radius: 75, maxZoom: 20 },
   });
-
+  splitSameLocation(data);
   return (
     <div>
       <div className="container">
@@ -207,6 +320,100 @@ const Map = () => {
               <br />
               <input type="submit" value="Submit" onClick={submitCityHandler} />
             </label>
+            <br />
+            <br />
+            <label>Type of incidents</label>
+            <FormGroup row>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Presence}
+                    onChange={handleTypeChange}
+                    name="Presence"
+                    color="primary"
+                  />
+                }
+                label="Presence"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Soft}
+                    onChange={handleTypeChange}
+                    name="Soft"
+                    color="primary"
+                  />
+                }
+                label="Empty-hand control soft technique"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Hard}
+                    onChange={handleTypeChange}
+                    name="Hard"
+                    color="primary"
+                  />
+                }
+                label="Empty-hand control hard technique"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Projectiles}
+                    onChange={handleTypeChange}
+                    name="Projectiles"
+                    color="primary"
+                  />
+                }
+                label="Projectiles"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Chemical}
+                    onChange={handleTypeChange}
+                    name="Chemical"
+                    color="primary"
+                  />
+                }
+                label="Chemical"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.EnergyDevices}
+                    onChange={handleTypeChange}
+                    name="EnergyDevices"
+                    color="primary"
+                  />
+                }
+                label="Conducted energy devices"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Miscellaneous}
+                    onChange={handleTypeChange}
+                    name="Miscellaneous"
+                    color="primary"
+                  />
+                }
+                label="Miscellaneous"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state.Other}
+                    onChange={handleTypeChange}
+                    name="Other"
+                    color="primary"
+                  />
+                }
+                label="Other"
+              />
+            </FormGroup>
+            <br />
           </form>
         </div>
 
@@ -303,7 +510,7 @@ const Map = () => {
                     setSelected([latitude, longitude, text, type, date, link]);
                   }}
                 >
-                  {typeOfIncidents(text)}
+                  {typeOfIncidents(type)}
                 </div>
               </Marker>
             );
