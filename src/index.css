@@ -770,8 +770,3 @@ main section div {
   border-bottom: 0.063rem solid silver;
   padding-bottom: 0.938rem;
 }
-/* <div className="popUpContent">
-<p>{selected[2]}</p>	                {selected[2].map(text => (
-  <p>{`${text}`}.</p>
-))}
-</div>	              </div> */
