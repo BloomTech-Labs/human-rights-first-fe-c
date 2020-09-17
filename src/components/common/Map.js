@@ -320,7 +320,9 @@ const Map = () => {
               <br />
               <input type="submit" value="Submit" onClick={submitCityHandler} />
             </label>
-            <label>Type of incidents</label>;
+            <br />
+            <br />
+            <label>Type of incidents</label>
             <FormGroup row>
               <FormControlLabel
                 control={
