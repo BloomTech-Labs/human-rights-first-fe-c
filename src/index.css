@@ -14,7 +14,7 @@ body * {
 header {
   background: url('./assets/banner.png');
   background-size: 100%;
-  height: 31.25rem;
+  height: 28.5rem;
   background-position: center;
   position: relative;
 }
@@ -88,6 +88,7 @@ main section div {
 
 .bottom-section {
   border-bottom: 0.125rem solid silver;
+  margin-bottom: 1.875rem;
 }
 .organization {
   text-align: left;
@@ -147,11 +148,11 @@ main section div {
 .how {
   background: url('./assets/howitworks.PNG');
   height: 18.75rem;
-  width: 50%;
+  width: 60%;
 }
 
 /* 280px Galaxy Fold  */
-@media (max-width: 17.5rem) and (min-width: 0rem) {
+@media screen and (max-width: 17.5rem) and (min-width: 0rem) {
   header {
     background-size: 100%;
     height: 5.5rem;
@@ -202,14 +203,14 @@ main section div {
   .how {
     width: 57%;
     height: 8rem;
-    background: url('./assets/howitworks4.PNG');
+    background: url('./assets/howitworks4.png');
   }
 
   .works {
     margin-top: 0.938rem;
     width: 85%;
     height: 6rem;
-    background: url('./assets/howitworks5.PNG');
+    background: url('./assets/howitworks5.png');
   }
 
   .bottom-section {
@@ -229,7 +230,7 @@ main section div {
 
 /* 320px iPhone5  */
 
-@media (max-width: 20rem) and (min-width: 18rem) {
+@media screen and (max-width: 20rem) and (min-width: 18rem) {
   header {
     background-size: 100%;
     height: 6rem;
@@ -280,14 +281,14 @@ main section div {
   .how {
     width: 50%;
     height: 8rem;
-    background: url('./assets/howitworks4.PNG');
+    background: url('./assets/howitworks4.png');
   }
 
   .works {
     margin-top: 0.938rem;
     width: 75%;
     height: 6rem;
-    background: url('./assets/howitworks5.PNG');
+    background: url('./assets/howitworks5.png');
   }
   .bottom-section {
     margin-bottom: 0.938rem;
@@ -306,7 +307,7 @@ main section div {
 
 /* 360px Moto G4 & Galaxy S5 */
 
-@media (max-width: 22.5rem) and (min-width: 21rem) {
+@media screen and (max-width: 22.5rem) and (min-width: 21rem) {
   header {
     background-size: 100%;
     height: 7rem;
@@ -357,7 +358,7 @@ main section div {
   .how {
     width: 113%;
     height: 7.5rem;
-    background: url('./assets/howitworks3.PNG');
+    background: url('./assets/howitworks3.png');
   }
   .bottom-section {
     margin-bottom: 1.25rem;
@@ -375,7 +376,7 @@ main section div {
 
 /*375px iPhone 6, 7, 8, X */
 
-@media (max-width: 23.438rem) and (min-width: 22.6rem) {
+@media screen and (max-width: 24.5rem) and (min-width: 22.6rem) {
   header {
     background-size: 100%;
     height: 7rem;
@@ -422,7 +423,7 @@ main section div {
   .how {
     width: 115%;
     height: 10rem;
-    background: url('./assets/howitworks2.PNG');
+    background: url('./assets/howitworks2.png');
   }
 
   .bottom-section {
@@ -441,7 +442,7 @@ main section div {
 
 /*414px iPhone 6,7,8 Plus. 411px Pixel 2 & Pixel 2 XL responsive*/
 
-@media (max-width: 25.875rem) and (min-width: 24rem) {
+@media screen and (max-width: 26rem) and (min-width: 24rem) {
   header {
     background-size: 100%;
     height: 8rem;
@@ -488,7 +489,7 @@ main section div {
   .how {
     width: 115%;
     height: 10rem;
-    background: url('./assets/howitworks2.PNG');
+    background: url('./assets/howitworks2.png');
   }
 
   .bottom-section {
@@ -507,7 +508,7 @@ main section div {
 
 /*500px mobile responsive*/
 
-@media (max-width: 31.25rem) and (min-width: 26rem) {
+@media screen and (max-width: 31.25rem) and (min-width: 26.5rem) {
   header {
     background-size: 100%;
     height: 10rem;
@@ -562,7 +563,7 @@ main section div {
 
 /*540px Surface Duo*/
 
-@media (max-width: 33.75rem) and (min-width: 32rem) {
+@media screen and (max-width: 33.75rem) and (min-width: 32rem) {
   header {
     background-size: 100%;
     height: 10rem;
@@ -621,7 +622,7 @@ main section div {
 
 /*768px iPad responsive*/
 
-@media (max-width: 48rem) and (min-width: 37.5rem) {
+@media screen and (max-width: 48rem) and (min-width: 37.5rem) {
   header {
     height: 16.063rem;
   }
@@ -673,7 +674,7 @@ main section div {
 
 /*800px tablet responsive*/
 
-@media (max-width: 50rem) and (min-width: 48.5rem) {
+@media screen and (max-width: 50rem) and (min-width: 48.5rem) {
   header {
     height: 16.563rem;
   }
@@ -715,7 +716,7 @@ main section div {
 
 /*1024px iPad Pro responsive*/
 
-@media (max-width: 64rem) and (min-width: 50.5rem) {
+@media screen and (max-width: 64rem) and (min-width: 50.5rem) {
   header {
     height: 16.563rem;
   }
