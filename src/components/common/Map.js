@@ -94,6 +94,13 @@ const Map = () => {
   };
   const submitStateHandler = e => {
     if (!e.target.value) {
+      setViewport({
+        latitude: 37.09024,
+        longitude: -95.712891,
+        zoom: 4,
+        width: '100vw',
+        height: '73vh',
+      });
       return;
     }
     const getCity = states.filter(s => s.state === e.target.value);
