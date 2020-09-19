@@ -4,6 +4,8 @@ body {
   background: #eee;
   color: #111;
   font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-direction: column;
 }
 
 body * {
@@ -265,4 +267,71 @@ main section div {
 .popUpMessages {
   border-bottom: 0.063rem solid silver;
   padding-bottom: 0.938rem;
+}
+
+/* full screen setting */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper>* {
+  padding: 20px;
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+/* header */
+.page-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header ul {
+  display: flex;
+  order: 1;
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 550px) {
+  .page-header ul {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .page-header .cta-contact {
+    order: 1;
+  }
+}
+
+/* variables */
+:root {
+  --main-white-color: white;
+  --main-purple-color: #1f0b02;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 350px;
+  background: var(--main-purple-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
+  background-blend-mode: luminosity;
+  color: var(--main-white-color);
+}
+
+.page-main div {
+  max-width: 500px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-main {
+    padding-left: 90px;
+  }
 }
