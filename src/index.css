@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -285,35 +287,33 @@ main section div {
 }
 
 /* header */
-.page-header nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+.title-content {
+  margin-top: -6%;
+  margin-left: 2%;
 }
 
-.page-header ul {
-  display: flex;
-  order: 1;
-  width: 100%;
-  margin-top: 15px;
+.banner-title {
+  font-size: 3rem;
 }
 
-@media screen and (min-width: 550px) {
-  .page-header ul {
-    width: auto;
-    margin-top: 0;
-  }
+.banner-second-title {
+  font-size: 3rem;
+  color: rgb(141, 66, 19);
+  background-color: rgba(255, 255, 255, 0.651);
+  width: 240px;
+  padding: 0 1%;
+  border-radius: 0.5rem;
+}
 
-  .page-header .cta-contact {
-    order: 1;
-  }
+.banner-subtitle {
+  font-size: 1.2rem;
+  margin-top: 1%;
 }
 
 /* variables */
 :root {
   --main-white-color: white;
-  --main-purple-color: #1f0b02;
+  --main-brown-color: #000000;
 }
 
 .page-main {
@@ -321,7 +321,7 @@ main section div {
   flex-direction: column;
   justify-content: center;
   min-height: 350px;
-  background: var(--main-purple-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
 }

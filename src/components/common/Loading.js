@@ -32,7 +32,19 @@ export const Loading = () => {
       </header> */}
         <div class="wrapper">
           <main class="page-main">
-            <div>main here</div>
+            <div className="title-content">
+              <div className="banner-title">
+                FIND
+                <br />
+                EXCESSIVE FORCE
+                <br />
+                INCIDENTS
+              </div>
+              <div className="banner-second-title">NEAR YOU</div>
+              <div className="banner-subtitle">
+                Explore the map from a human rights perspective
+              </div>
+            </div>
           </main>
         </div>
 
