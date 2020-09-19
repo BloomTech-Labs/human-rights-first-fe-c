@@ -81,8 +81,29 @@ a {
 }
 
 .nav-div {
-  margin: 1%;
+  padding: 0 1%;
+  position: absolute;
+  background: #fff;
+  opacity: 0.75;
+  z-index: 4;
+  width: 100%;
 }
+
+.navigation {
+  display: flex;
+}
+
+.navigation-content {
+  font-size: 1.25rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.navigation-content:hover {
+  color: blue;
+}
+
 
 .nav-bar {
   display: flex;
@@ -135,10 +156,10 @@ a {
   margin-left: 10%;
   height: 50%;
   opacity: 45%;
-  
+
 }
 
-.signupContainer{
+.signupContainer {
   display: flex;
   background-color: #370617;
 }
