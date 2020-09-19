@@ -300,14 +300,15 @@ main section div {
   font-size: 3rem;
   color: rgb(141, 66, 19);
   background-color: rgba(255, 255, 255, 0.651);
-  width: 240px;
-  padding: 0 1%;
+  width: 50%;
+  text-align: center;
   border-radius: 0.5rem;
 }
 
 .banner-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 1%;
+  color: rgb(255, 255, 255);
 }
 
 /* variables */
