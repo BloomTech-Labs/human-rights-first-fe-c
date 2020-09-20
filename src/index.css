@@ -290,7 +290,7 @@ main section div {
 .title-content {
   margin-top: -6%;
   margin-left: 2%;
-  background-color: rgba(14, 14, 14, 0.365);
+  background-color: rgba(24, 17, 6, 0.386);
   padding-left: 2%;
   border-radius: 0.5rem;
 }
@@ -302,7 +302,7 @@ main section div {
 
 .banner-second-title {
   font-size: 3rem;
-  color: rgb(249, 152, 91);
+  color: rgb(249, 168, 143);
 }
 
 .banner-subtitle {
