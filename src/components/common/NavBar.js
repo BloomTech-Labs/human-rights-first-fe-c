@@ -14,42 +14,40 @@ function handleClick(event) {
 const NavBar = () => {
   return (
     <div className="nav-div">
-      <nav className="nav-bar">
-        <LinkTo to="/">
-          <div className="HRClogo">
-            <div className="logo-img-div">
-              <img src={HRCpic} className="logo-img" />
-              <h3>
-                Human <br /> Rights <br /> Considered
-              </h3>
-            </div>
+      <LinkTo to="/">
+        <div className="HRClogo">
+          <div className="logo-img-div">
+            <img src={HRCpic} className="logo-img" />
+            <h3>
+              Human <br /> Rights <br /> Considered
+            </h3>
           </div>
-        </LinkTo>
-        <Breadcrumbs aria-label="breadcrumb" className="navigation">
-          <Link
-            href="/"
-            onClick={handleClick}
-            className="navigation-content"
-            style={{ textDecoration: 'none' }}
-          >
-            Map
-          </Link>
-          <Link
-            href="http://localhost:3000/#about"
-            className="navigation-content"
-            style={{ textDecoration: 'none' }}
-          >
-            About
-          </Link>
-          <Link
-            href="/signup"
-            className="navigation-content"
-            style={{ textDecoration: 'none' }}
-          >
-            Sign Up
-          </Link>
-        </Breadcrumbs>
-      </nav>
+        </div>
+      </LinkTo>
+      <Breadcrumbs aria-label="breadcrumb" className="navigation">
+        <Link
+          href="/"
+          onClick={handleClick}
+          className="navigation-content"
+          style={{ textDecoration: 'none' }}
+        >
+          Map
+        </Link>
+        <Link
+          href="http://localhost:3000/#about"
+          className="navigation-content"
+          style={{ textDecoration: 'none' }}
+        >
+          About
+        </Link>
+        <Link
+          href="/signup"
+          className="navigation-content"
+          style={{ textDecoration: 'none' }}
+        >
+          Sign Up
+        </Link>
+      </Breadcrumbs>
     </div>
   );
 };
