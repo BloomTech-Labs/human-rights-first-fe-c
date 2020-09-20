@@ -143,12 +143,6 @@ a {
   right: 0;
 }
 
-
-.sign-up-btn {
-  display: flex;
-  justify-content: end;
-}
-
 .HRClogo {
   display: flex;
   flex-direction: row;
@@ -163,7 +157,7 @@ a {
 }
 
 .logo-img {
-  width: 100%;
+  width: 120%;
   margin-top: -30%;
   margin-bottom: -30%;
 }

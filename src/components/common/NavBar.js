@@ -17,7 +17,7 @@ const NavBar = () => {
       <LinkTo to="/">
         <div className="HRClogo">
           <div className="logo-img-div">
-            <img src={HRCpic} className="logo-img" />
+            <img src={HRCpic} className="logo-img" alt="logo-image" />
             <h3>
               Human <br /> Rights <br /> Considered
             </h3>

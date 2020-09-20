@@ -16,11 +16,11 @@ export const Loading = () => {
   return (
     <div>
       <main>
-        {consented === false && (
+        {/* {consented === false && (
           <Popup modal defaultOpen={true}>
             <ConsentForm />
           </Popup>
-        )}
+        )} */}
         {/* <header>
         <div className="top">
           <div class="mapBtn">
