@@ -21,15 +21,6 @@ export const Loading = () => {
             <ConsentForm />
           </Popup>
         )}
-        {/* <header>
-        <div className="top">
-          <div class="mapBtn">
-            <Link to="/map" className="map">
-              View Map
-            </Link>
-          </div>
-        </div>
-      </header> */}
         <div class="wrapper">
           <main class="page-main">
             <div className="title-content">
@@ -44,6 +35,9 @@ export const Loading = () => {
               <div className="banner-subtitle">
                 Explore the map from a human rights perspective
               </div>
+              <p className="view-map">
+                View Map<i class="arrow down"></i>
+              </p>
             </div>
           </main>
         </div>

@@ -278,7 +278,7 @@ main section div {
   min-height: 100vh;
 }
 
-.wrapper>* {
+.wrapper > * {
   padding: 20px;
 }
 
@@ -290,25 +290,53 @@ main section div {
 .title-content {
   margin-top: -6%;
   margin-left: 2%;
+  background-color: rgba(14, 14, 14, 0.365);
+  padding-left: 2%;
+  border-radius: 0.5rem;
 }
 
 .banner-title {
   font-size: 3rem;
+  color: rgb(242, 215, 198);
 }
 
 .banner-second-title {
   font-size: 3rem;
-  color: rgb(141, 66, 19);
-  background-color: rgba(255, 255, 255, 0.651);
-  width: 50%;
-  text-align: center;
-  border-radius: 0.5rem;
+  color: rgb(249, 152, 91);
 }
 
 .banner-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 1%;
-  color: rgb(255, 255, 255);
+  color: rgb(222, 208, 199);
+}
+
+/* arrow down */
+.view-map {
+  background-color: rgba(255, 255, 255, 0.466);
+  color: rgb(156, 56, 13);
+  font-size: 2rem;
+  width: 50%;
+  height: 80px;
+  padding: 3% 2%;
+  margin-top: 2%;
+  font-family: 'Playfair Display', serif;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.arrow {
+  border: solid rgb(104, 20, 20);
+  border-width: 0 0.2rem 0.2rem 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-block;
+  padding: 0.2rem;
+  margin-left: 1rem;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 /* variables */
@@ -322,7 +350,8 @@ main section div {
   flex-direction: column;
   justify-content: center;
   min-height: 350px;
-  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat
+    center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
 }
