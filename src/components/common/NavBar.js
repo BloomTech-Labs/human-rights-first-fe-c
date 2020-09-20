@@ -29,23 +29,23 @@ const NavBar = () => {
           href="/"
           onClick={handleClick}
           className="navigation-content"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: 'none', color: '#8b3902' }}
         >
-          Map
+          View Map
         </Link>
         <Link
           href="http://localhost:3000/#about"
           className="navigation-content"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: 'none', color: '#8b3902' }}
         >
           About
         </Link>
         <Link
           href="/signup"
           className="navigation-content"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: 'none', color: '#8b3902' }}
         >
-          Sign Up
+          Sign up
         </Link>
       </Breadcrumbs>
     </div>
