@@ -35,13 +35,20 @@ export const Loading = () => {
               <div className="banner-subtitle">
                 Explore the map from a human rights perspective
               </div>
-              <a href="#" class="hvr-icon-hang view-map">
-                View map <i class="fa fa-chevron-down hvr-icon"></i>
+              <a
+                href="http://localhost:3000/#map"
+                class="hvr-icon-hang view-map"
+              >
+                <span className="view-map-font">
+                  View map <i class="fa fa-chevron-down hvr-icon"></i>
+                </span>
               </a>
             </div>
           </main>
         </div>
-
+        <div id="map">
+          <Map />
+        </div>
         <section className="intro">
           <h2>What is Human Rights Considered?</h2>
           <div class="icons">
