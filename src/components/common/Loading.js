@@ -49,9 +49,10 @@ export const Loading = () => {
       </section>
       <section class="middle">
         <div class="how"></div>
+        <div class="works"></div>
       </section>
       <section class="bottom-section">
-        <h2>About Human Rights First</h2>
+        <h2 class="bottom-title">About Human Rights First</h2>
         <div class="bottom">
           <p class="organization">
             Human Rights First is an independent advocacy and action
