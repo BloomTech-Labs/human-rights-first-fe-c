@@ -55,7 +55,7 @@
 }
 
 .type-incidents {
-  flex: 1
+  flex: 1;
 }
 
 .text-incidents {
@@ -81,17 +81,66 @@ a {
 }
 
 .nav-div {
-  margin: 1%;
-}
-
-.nav-bar {
+  padding: 0 1%;
+  position: absolute;
+  background: #fff;
+  opacity: 0.75;
+  z-index: 4;
+  width: 100%;
+  animation: nav-div 1s;
   display: flex;
   justify-content: space-between;
 }
 
-.sign-up-btn {
+@keyframes nav-div {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .75;
+  }
+}
+
+.navigation {
   display: flex;
-  justify-content: end;
+}
+
+.navigation-content {
+  font-size: 1.25rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  transition: 0.5s;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation-content:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #8b4312;
+  height: 0.15rem;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.navigation-content:hover:before,
+.navigation-content:focus:before,
+.navigation-content:active:before {
+  right: 0;
 }
 
 .HRClogo {
@@ -108,11 +157,10 @@ a {
 }
 
 .logo-img {
-  width: 100%;
+  width: 120%;
   margin-top: -30%;
   margin-bottom: -30%;
 }
-
 
 /* Sign Up Form */
 
@@ -124,7 +172,7 @@ a {
 }
 
 .label {
-  color: #03071E;
+  color: #03071e;
   font-weight: 700;
   font-family: 'Playfair Display', serif;
 }
@@ -135,10 +183,9 @@ a {
   margin-left: 10%;
   height: 50%;
   opacity: 45%;
-  
 }
 
-.signupContainer{
+.signupContainer {
   display: flex;
   background-color: #370617;
 }
@@ -166,5 +213,4 @@ a {
   opacity: 50%;
   margin-top: 6%;
   margin-left: 32%;
-
 }

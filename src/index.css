@@ -65,8 +65,7 @@ main {
   overflow: hidden;
   font-family: 'Playfair Display', serif;
 }
-
-main section {
+ section {
   width: 70%;
   padding: 5.625rem 0;
   margin: 3.125rem auto 9.375rem auto;
@@ -836,7 +835,7 @@ main section div {
 }
 
 .banner-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-top: 1%;
   color: rgb(222, 208, 199);
 }
@@ -865,7 +864,6 @@ main section div {
   .page-main {
     padding-left: 90px;
   }
-}
 
 @media screen and (max-width: 280px) {
 

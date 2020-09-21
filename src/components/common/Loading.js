@@ -1,5 +1,5 @@
 import { Flag, PersonFill, Book, Link as Lk } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import ConsentForm from '../pages/Home/ConsentForm';
 import Popup from 'reactjs-popup';
@@ -16,6 +16,7 @@ export const Loading = () => {
   return (
     <div>
       <main>
+
         {consented === false && (
           <Popup modal defaultOpen={true}>
             <ConsentForm />
@@ -49,16 +50,17 @@ export const Loading = () => {
         <div id="map">
           <Map />
         </div>
-        <section className="intro">
-          <h2>What is Human Rights Considered?</h2>
-          <div class="icons">
-            <Flag size={75} class="flag" />
-            <PersonFill size={75} class="person" />
-            <Book size={75} class="book" />
-          </div>
+
+      <section className="intro" id="about">
+        <h2>What is Human Rights Considered?</h2>
+        <div class="icons">
+          <Flag size={75} class="flag" />
+          <PersonFill size={75} class="person" />
+          <Book size={75} class="book" />
+        </div>
         <p class="considered">
-          Human Rights Considered is a public police brutality incident viewing
-          application
+          Human Rights Considered is a public police brutality incident
+          viewing application
         </p>
         <p class="considered-intro">
           Our goal is to provide information regarding a variety of police
