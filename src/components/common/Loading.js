@@ -35,9 +35,9 @@ export const Loading = () => {
               <div className="banner-subtitle">
                 Explore the map from a human rights perspective
               </div>
-              <p className="view-map">
-                View Map<i class="arrow down"></i>
-              </p>
+              <a href="#" class="hvr-icon-hang view-map">
+                View map <i class="fa fa-chevron-down hvr-icon"></i>
+              </a>
             </div>
           </main>
         </div>
