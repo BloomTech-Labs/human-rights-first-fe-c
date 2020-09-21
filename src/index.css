@@ -4,10 +4,8 @@ body {
   background: #eee;
   color: #111;
   font-family: 'Playfair Display', serif;
-}
-
-body * {
-  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -783,4 +781,70 @@ main section div {
 .popUpMessages {
   border-bottom: 0.063rem solid silver;
   padding-bottom: 0.938rem;
+}
+
+/* full screen setting */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper>* {
+  padding: 20px;
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+/* header */
+.title-content {
+  margin-top: -6%;
+  margin-left: 2%;
+}
+
+.banner-title {
+  font-size: 3rem;
+}
+
+.banner-second-title {
+  font-size: 3rem;
+  color: rgb(141, 66, 19);
+  background-color: rgba(255, 255, 255, 0.651);
+  width: 50%;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.banner-subtitle {
+  font-size: 1.3rem;
+  margin-top: 1%;
+  color: rgb(255, 255, 255);
+}
+
+/* variables */
+:root {
+  --main-white-color: white;
+  --main-brown-color: #000000;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 350px;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
+  background-blend-mode: luminosity;
+  color: var(--main-white-color);
+}
+
+.page-main div {
+  max-width: 500px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-main {
+    padding-left: 90px;
+  }
 }

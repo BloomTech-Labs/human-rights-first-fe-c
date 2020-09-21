@@ -77,6 +77,7 @@ const Map = () => {
     Miscellaneous: true,
     Other: true,
   });
+  const [filteredData, setFilterData] = useState(null);
   const mapRef = useRef();
   const classesForStateFilter = stylesForCityFilter();
   const classesForZipCodeFilter = useStylesForZipCodeFilter();
@@ -114,12 +115,9 @@ const Map = () => {
   const handleChange = e => {
     setZipCode(e.target.value);
   };
-
   const handleTypeChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-
-  const [filteredData, setFilterData] = useState(null);
 
   function getFirstType(types) {
     let firstType = '';
@@ -131,7 +129,6 @@ const Map = () => {
     }
     return firstType;
   }
-
   useEffect(() => {
     const falseBtn = [];
     Object.entries(state).map(check => {
