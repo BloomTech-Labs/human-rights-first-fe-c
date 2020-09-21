@@ -16,6 +16,7 @@
 .filter_bar {
   background-color: #ebb801;
   width: 20vh;
+  height: 73vh;
 }
 
 .cluster-marker {
@@ -135,10 +136,10 @@ a {
   margin-left: 10%;
   height: 50%;
   opacity: 45%;
-  
+
 }
 
-.signupContainer{
+.signupContainer {
   display: flex;
   background-color: #370617;
 }

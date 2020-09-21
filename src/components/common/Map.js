@@ -82,14 +82,14 @@ const Map = () => {
   const classesForStateFilter = stylesForCityFilter();
   const classesForZipCodeFilter = useStylesForZipCodeFilter();
 
-  const submitHandler = e => {
+  const submitZipCodeHandler = e => {
     e.preventDefault();
     setViewport({
       latitude: usZips[zipCode].latitude,
       longitude: usZips[zipCode].longitude,
       zoom: 10,
       width: '100vw',
-      height: '73vh',
+      height: '100vh',
     });
     setZipCode('');
   };
@@ -112,7 +112,7 @@ const Map = () => {
       zoom: 6,
     });
   };
-  const handleChange = e => {
+  const handleZipCodeChange = e => {
     setZipCode(e.target.value);
   };
   const handleTypeChange = event => {
@@ -129,6 +129,7 @@ const Map = () => {
     }
     return firstType;
   }
+
   useEffect(() => {
     const falseBtn = [];
     Object.entries(state).map(check => {
@@ -347,7 +348,7 @@ const Map = () => {
                   label="Zip Code Here"
                   name="zipCode"
                   value={zipCode}
-                  onChange={handleChange}
+                  onChange={handleZipCodeChange}
                 />
               </form>
               <Button
@@ -355,7 +356,7 @@ const Map = () => {
                 type="submit"
                 value="Submit"
                 color="primary"
-                onClick={submitHandler}
+                onClick={submitZipCodeHandler}
                 disabled={zipCode.length > 0 && usZips[zipCode] ? false : true}
               >
                 Submit
@@ -458,163 +459,173 @@ const Map = () => {
             <br />
           </form>
         </div>
+        <div className="map-container">
+          <ReactMapGL
+            {...viewport}
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+            mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
+            onViewportChange={viewport => {
+              setViewport(viewport);
+            }}
+            ref={mapRef}
+          >
+            {clusters.map(cluster => {
+              const [longitude, latitude] = cluster.geometry.coordinates;
+              const text = cluster.properties.text;
+              const date = cluster.properties.date;
+              const type = cluster.properties.type;
+              const link = cluster.properties.link;
 
-        <ReactMapGL
-          {...viewport}
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
-          onViewportChange={viewport => {
-            setViewport(viewport);
-          }}
-          ref={mapRef}
-        >
-          {clusters.map(cluster => {
-            const [longitude, latitude] = cluster.geometry.coordinates;
-            const text = cluster.properties.text;
-            const date = cluster.properties.date;
-            const type = cluster.properties.type;
-            const link = cluster.properties.link;
+              const {
+                cluster: isCluster,
+                point_count: pointCount,
+              } = cluster.properties;
 
-            const {
-              cluster: isCluster,
-              point_count: pointCount,
-            } = cluster.properties;
-
-            if (isCluster) {
-              return (
-                <Marker
-                  key={`cluster-${cluster.id}`}
-                  latitude={latitude}
-                  longitude={longitude}
-                >
-                  <div
-                    className="cluster-marker"
-                    onClick={() => {
-                      const expansionZoom = Math.min(
-                        supercluster.getClusterExpansionZoom(cluster.id),
-                        20
-                      );
-
-                      setViewport({
-                        ...viewport,
-                        latitude,
-                        longitude,
-                        zoom: expansionZoom,
-                        transitionInterpolator: new FlyToInterpolator({
-                          speed: 2,
-                        }),
-                        transitionDuration: 'auto',
-                      });
-
-                      if (expansionZoom === 20) {
-                        const filtered = data.data.filter(
-                          i =>
-                            parseFloat(i.LONGITUDE) ===
-                            Math.round(
-                              cluster.geometry.coordinates[0] * 1000000
-                            ) /
-                              1000000
+              if (isCluster) {
+                return (
+                  <Marker
+                    key={`cluster-${cluster.id}`}
+                    latitude={latitude}
+                    longitude={longitude}
+                  >
+                    <div
+                      className="cluster-marker"
+                      onClick={() => {
+                        const expansionZoom = Math.min(
+                          supercluster.getClusterExpansionZoom(cluster.id),
+                          20
                         );
 
-                        setMultiIncidents(filtered);
-
-                        filtered.map(i => {
-                          setSelected([
-                            i.LATITUDE,
-                            i.LONGITUDE,
-                            i.text,
-                            i.tags_str,
-                            i.date_text,
-                            i.link1,
-                          ]);
+                        setViewport({
+                          ...viewport,
+                          latitude,
+                          longitude,
+                          zoom: expansionZoom,
+                          transitionInterpolator: new FlyToInterpolator({
+                            speed: 2,
+                          }),
+                          transitionDuration: 'auto',
                         });
-                      }
+
+                        if (expansionZoom === 20) {
+                          const filtered = data.data.filter(
+                            i =>
+                              parseFloat(i.LONGITUDE) ===
+                              Math.round(
+                                cluster.geometry.coordinates[0] * 1000000
+                              ) /
+                                1000000
+                          );
+
+                          setMultiIncidents(filtered);
+
+                          filtered.map(i => {
+                            setSelected([
+                              i.LATITUDE,
+                              i.LONGITUDE,
+                              i.text,
+                              i.tags_str,
+                              i.date_text,
+                              i.link1,
+                            ]);
+                          });
+                        }
+                      }}
+                    >
+                      {pointCount}
+                    </div>
+                  </Marker>
+                );
+              }
+
+              return (
+                <Marker
+                  key={cluster.properties.id}
+                  latitude={latitude}
+                  longitude={longitude}
+                  date={date}
+                  type={type}
+                  link={link}
+                >
+                  <div
+                    onClick={e => {
+                      e.preventDefault();
+                      setSelected([
+                        latitude,
+                        longitude,
+                        text,
+                        type,
+                        date,
+                        link,
+                      ]);
                     }}
                   >
-                    {pointCount}
+                    {typeOfIncidents(type)}
                   </div>
                 </Marker>
               );
-            }
+            })}
 
-            return (
-              <Marker
-                key={cluster.properties.id}
-                latitude={latitude}
-                longitude={longitude}
-                date={date}
-                type={type}
-                link={link}
+            {selected ? (
+              <Popup
+                latitude={parseFloat(selected[0])}
+                longitude={parseFloat(selected[1])}
+                closeButton={false}
+                className="popUpBox"
               >
-                <div
-                  onClick={e => {
-                    e.preventDefault();
-                    setSelected([latitude, longitude, text, type, date, link]);
-                  }}
-                >
-                  {typeOfIncidents(type)}
-                </div>
-              </Marker>
-            );
-          })}
-
-          {selected ? (
-            <Popup
-              latitude={parseFloat(selected[0])}
-              longitude={parseFloat(selected[1])}
-              closeButton={false}
-              className="popUpBox"
-            >
-              {multiIncidents ? (
-                multiIncidents.map(incident => {
-                  return (
-                    <div>
-                      <div
-                        className="popup_incidents_container"
-                        key={incident.id}
-                      >
-                        <a
-                          className="incident_box"
-                          href={incident.Link1}
-                          target="_blank"
+                {multiIncidents ? (
+                  multiIncidents.map(incident => {
+                    return (
+                      <div>
+                        <div
+                          className="popup_incidents_container"
+                          key={incident.id}
                         >
-                          {/* type */}
-                          <div className="type-incidents">
-                            {incident.tags_str}
-                          </div>
-                          {/* description */}
-                          <div className="text-incidents">{incident.text}</div>
-                          {/* date */}
-                          <div className="date-incidents">
-                            {incident.date_text}
-                          </div>
-                        </a>
+                          <a
+                            className="incident_box"
+                            href={incident.Link1}
+                            target="_blank"
+                          >
+                            {/* type */}
+                            <div className="type-incidents">
+                              {incident.tags_str}
+                            </div>
+                            {/* description */}
+                            <div className="text-incidents">
+                              {incident.text}
+                            </div>
+                            {/* date */}
+                            <div className="date-incidents">
+                              {incident.date_text}
+                            </div>
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })
-              ) : (
-                <div className="popup_incidents_container">
-                  <a
-                    className="incident_box"
-                    href={selected[5]}
-                    target="_blank"
-                  >
-                    {/* type */}
-                    <div className="type-incidents">{selected[3]}</div>
-                    {/* description */}
-                    <div className="text-incidents">{selected[2]}</div>
-                    {/* date */}
-                    <div className="date-incidents">{selected[4]}</div>
-                  </a>
-                </div>
-              )}
-              <button className="x" onClick={() => setSelected(null)}>
-                close
-              </button>
-            </Popup>
-          ) : null}
-        </ReactMapGL>
+                    );
+                  })
+                ) : (
+                  <div className="popup_incidents_container">
+                    <a
+                      className="incident_box"
+                      href={selected[5]}
+                      target="_blank"
+                    >
+                      {/* type */}
+                      <div className="type-incidents">{selected[3]}</div>
+                      {/* description */}
+                      <div className="text-incidents">{selected[2]}</div>
+                      {/* date */}
+                      <div className="date-incidents">{selected[4]}</div>
+                    </a>
+                  </div>
+                )}
+                <button className="x" onClick={() => setSelected(null)}>
+                  close
+                </button>
+              </Popup>
+            ) : null}
+          </ReactMapGL>
+        </div>
       </div>
     </div>
   );
