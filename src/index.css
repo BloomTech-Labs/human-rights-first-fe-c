@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +9,10 @@ body {
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: column;
+}
+
+body * {
+  transition: all 0.3s ease-in-out;
 }
 
 /* Header */
@@ -58,8 +65,7 @@ main {
   overflow: hidden;
   font-family: 'Playfair Display', serif;
 }
-
-main section {
+ section {
   width: 70%;
   padding: 5.625rem 0;
   margin: 3.125rem auto 9.375rem auto;
@@ -802,25 +808,36 @@ main section div {
 .title-content {
   margin-top: -6%;
   margin-left: 2%;
+  background-color: rgba(24, 17, 6, 0.386);
+  padding-left: 2%;
+  border-radius: 0.5rem;
+  animation: title-content 1s;
+}
+
+@keyframes title-content {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .banner-title {
   font-size: 3rem;
+  color: rgb(242, 215, 198);
 }
 
 .banner-second-title {
   font-size: 3rem;
-  color: rgb(141, 66, 19);
-  background-color: rgba(255, 255, 255, 0.651);
-  width: 50%;
-  text-align: center;
-  border-radius: 0.5rem;
+  color: rgb(249, 168, 143);
 }
 
 .banner-subtitle {
   font-size: 1.3rem;
   margin-top: 1%;
-  color: rgb(255, 255, 255);
+  color: rgb(222, 208, 199);
 }
 
 /* variables */
@@ -847,4 +864,125 @@ main section div {
   .page-main {
     padding-left: 90px;
   }
+
+@media screen and (max-width: 280px) {
+
+  .banner-title,
+  .banner-second-title {
+    font-size: 2rem
+  }
+
+  .banner-subtitle {
+    font-size: 1rem
+  }
+}
+
+/* view-map button and animation */
+
+.view-map {
+  background-color: rgba(255, 255, 255, 0.466);
+  color: rgb(156, 51, 13);
+  font-size: 2rem;
+  width: 80%;
+  height: 30%;
+  padding: 2.5% 2%;
+  margin-top: 3%;
+  margin-bottom: 4%;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.view-map-font {
+  font-family: 'Merriweather', serif;
+}
+
+@media screen and (max-width: 280px) {
+  .view-map {
+    width: 90%;
+    padding: 6% 0;
+    font-size: 1.3rem;
+    height: 20%;
+  }
+}
+
+@-webkit-keyframes hvr-icon-hang {
+  0% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+
+  50% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@keyframes hvr-icon-hang {
+  0% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+
+  50% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@-webkit-keyframes hvr-icon-hang-sink {
+  100% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@keyframes hvr-icon-hang-sink {
+  100% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+.hvr-icon-hang {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-icon-hang .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.hvr-icon-hang:hover .hvr-icon,
+.hvr-icon-hang:focus .hvr-icon,
+.hvr-icon-hang:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+  animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+  -webkit-animation-duration: 0.3s, 1.5s;
+  animation-duration: 0.3s, 1.5s;
+  -webkit-animation-delay: 0s, 0.3s;
+  animation-delay: 0s, 0.3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
 }

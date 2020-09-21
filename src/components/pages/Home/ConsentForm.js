@@ -13,7 +13,7 @@ const ConsentForm = () => {
       <a href="https://www.google.com/">
         <button className="btn1">Please redirect me from this page</button>
       </a>
-      <a href="/loading">
+      <a href="/">
         <button
           className="btn2"
           onClick={() => localStorage.setItem('consent', true)}
