@@ -1,16 +1,8 @@
 /* Map component styling*/
-.mapboxgl-popup-close-button {
-  background-color: rgba(255, 255, 255, 0.933);
-  border: none;
-  border-radius: 5px;
-  margin-left: 90%;
-  max-width: 30%;
-}
-
 .container {
   display: flex;
   flex-direction: row;
-  margin: 3% 5% 0 5%;
+  margin: 3%;
 }
 
 .filter_bar {
@@ -37,40 +29,10 @@
   margin-bottom: -50px;
 }
 
-.popUpBox {
-  border-radius: 20px;
-  padding: 5px 5px 5px 15px;
-}
-
-.popup_incidents_container {
-  display: flex;
-  padding: 2%;
-  border: brown 0.1rem solid;
-}
-
 .pop-up-close {
   display: flex;
   justify-content: center;
   margin-top: 3.5%;
-}
-
-.incident_box {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  flex-direction: row;
-}
-
-.type-incidents {
-  flex: 1;
-}
-
-.text-incidents {
-  flex: 2;
-}
-
-.date-incidents {
-  flex: 1;
 }
 
 /* NavBar.js Styling */

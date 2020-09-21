@@ -103,15 +103,14 @@ const Map = () => {
   const classesForStateFilter = stylesForCityFilter();
   const classesForZipCodeFilter = useStylesForZipCodeFilter();
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   const submitZipCodeHandler = e => {
     e.preventDefault();
     setViewport({
       latitude: usZips[zipCode].latitude,
       longitude: usZips[zipCode].longitude,
       zoom: 10,
-      width: '100vw',
-      height: '100vh',
+      width: '50%',
+      height: '73vh',
     });
     setZipCode('');
   };
@@ -328,6 +327,10 @@ const Map = () => {
   splitSameLocation(data);
   return (
     <div>
+      <br />
+      <br />
+      <br />
+      <h1 className="map-title">Find Excessive Force Incidents</h1>
       <div className="container">
         <div className="filter_bar">
           <form>
@@ -489,6 +492,8 @@ const Map = () => {
             onViewportChange={viewport => {
               setViewport(viewport);
             }}
+            width="80vw"
+            height="100%"
             ref={mapRef}
           >
             {clusters.map(cluster => {
@@ -591,7 +596,6 @@ const Map = () => {
                 latitude={parseFloat(selected[0])}
                 longitude={parseFloat(selected[1])}
                 closeButton={false}
-                className="popUpBox"
               >
                 <Card className={classes.root} style={{ width: '30vh' }}>
                   <CardContent>

@@ -984,3 +984,8 @@ main section div {
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
 }
+
+.map-title {
+  text-align: center;
+  color: #370617;
+}
