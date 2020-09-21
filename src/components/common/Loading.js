@@ -1,5 +1,5 @@
 import { Flag, PersonFill, Book, Link as Lk } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import ConsentForm from '../pages/Home/ConsentForm';
 import Popup from 'reactjs-popup';
@@ -16,11 +16,6 @@ export const Loading = () => {
   return (
     <div>
       <main>
-        {consented === false && (
-          <Popup modal defaultOpen={true}>
-            <ConsentForm />
-          </Popup>
-        )}
         <div class="wrapper">
           <main class="page-main">
             <div className="title-content">

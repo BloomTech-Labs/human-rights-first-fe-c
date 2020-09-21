@@ -11,16 +11,12 @@ body {
   flex-direction: column;
 }
 
-body * {
-  transition: all 0.3s ease-in-out;
-}
-
 /* Header */
 
 header {
   background: url('./assets/banner.png');
   background-size: 100%;
-  height: 31.25rem;
+  height: 28.5rem;
   background-position: center;
   position: relative;
 }
@@ -95,6 +91,7 @@ main section div {
 
 .bottom-section {
   border-bottom: 0.125rem solid silver;
+  margin-bottom: 1.875rem;
 }
 
 .organization {
@@ -154,12 +151,369 @@ main section div {
 }
 
 .how {
-  background: url('./assets/howitworks.PNG');
-  height: 300px;
-  width: 45%;
+  background: url('./assets/howitworks2.PNG');
+  height: 18.75rem;
+  width: 60%;
 }
 
-@media (max-width: 31.25rem) and (min-width: 0rem) {
+/* 280px Galaxy Fold  */
+@media screen and (max-width: 17.5rem) and (min-width: 0rem) {
+  header {
+    background-size: 100%;
+    height: 5.5rem;
+    position: relative;
+  }
+
+  header div.top {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding-top: 11rem;
+  }
+
+  .map {
+    margin-top: -5rem;
+    margin-left: 5.9rem;
+    width: 23%;
+  }
+  main section:first-of-type {
+    margin-top: 13.125rem;
+  }
+
+  main section {
+    width: 90%;
+    padding: 0.625rem 0;
+    margin: 5.125rem auto 0rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 0.9rem;
+  }
+  main section div p {
+    padding: 0rem 0.625rem;
+  }
+  .icons {
+    width: 100%;
+    display: flex;
+    margin-left: 2.5rem;
+  }
+  .considered {
+    font-size: 0.7rem;
+  }
+  .considered-intro {
+    font-size: 0.7rem;
+    width: 16rem;
+  }
+
+  .how {
+    width: 57%;
+    height: 8rem;
+    background: url('./assets/howitworks4.PNG');
+  }
+
+  .works {
+    margin-top: 0.938rem;
+    width: 85%;
+    height: 6rem;
+    background: url('./assets/howitworks5.PNG');
+  }
+
+  .bottom-section {
+    margin-bottom: 0.938rem;
+  }
+  .bottom-title {
+    font-size: 0.9rem;
+    margin-left: -0.563rem;
+  }
+  .organization {
+    width: 17.5rem;
+    font-size: 0.7rem;
+    margin-top: 0.2rem;
+    margin-left: -0.7rem;
+  }
+}
+
+/* 320px iPhone5  */
+
+@media screen and (max-width: 20rem) and (min-width: 18rem) {
+  header {
+    background-size: 100%;
+    height: 6rem;
+    position: relative;
+  }
+
+  header div.top {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding-top: 12rem;
+  }
+
+  .map {
+    margin-top: -5rem;
+    margin-left: 6.813rem;
+    width: 23%;
+  }
+  main section:first-of-type {
+    margin-top: 13.125rem;
+  }
+
+  main section {
+    width: 90%;
+    padding: 0.625rem 0;
+    margin: 5.125rem auto 0rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 1rem;
+  }
+  main section div p {
+    padding: 0rem 0.625rem;
+  }
+  .icons {
+    width: 90%;
+    display: flex;
+    margin-left: 2.5rem;
+  }
+  .considered {
+    font-size: 0.8rem;
+  }
+  .considered-intro {
+    font-size: 0.8rem;
+    width: 18rem;
+  }
+
+  .how {
+    width: 50%;
+    height: 8rem;
+    background: url('./assets/howitworks4.PNG');
+  }
+
+  .works {
+    margin-top: 0.938rem;
+    width: 75%;
+    height: 6rem;
+    background: url('./assets/howitworks5.PNG');
+  }
+  .bottom-section {
+    margin-bottom: 0.938rem;
+  }
+  .bottom-title {
+    font-size: 1rem;
+    margin-left: -0.563rem;
+  }
+  .organization {
+    width: 19.688rem;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    margin-left: -0.625rem;
+  }
+}
+
+/* 360px Moto G4 & Galaxy S5 */
+
+@media screen and (max-width: 22.5rem) and (min-width: 21rem) {
+  header {
+    background-size: 100%;
+    height: 7rem;
+    position: relative;
+  }
+
+  header div.top {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding-top: 13rem;
+  }
+
+  .map {
+    margin-top: -5rem;
+    margin-left: 7.813rem;
+    width: 22%;
+  }
+  main section:first-of-type {
+    margin-top: 13.125rem;
+  }
+
+  main section {
+    width: 90%;
+    padding: 0.625rem 0;
+    margin: 5.125rem auto 0rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 1.1rem;
+  }
+  main section div p {
+    padding: 0rem 0.625rem;
+  }
+  .icons {
+    width: 90%;
+    display: flex;
+    margin-left: 2.5rem;
+  }
+  .considered {
+    font-size: 0.9rem;
+  }
+  .considered-intro {
+    font-size: 0.9rem;
+    width: 20.313rem;
+  }
+
+  .how {
+    width: 113%;
+    height: 7.5rem;
+    background: url('./assets/howitworks3.PNG');
+  }
+  .bottom-section {
+    margin-bottom: 1.25rem;
+  }
+  .bottom-title {
+    font-size: 1.1rem;
+    margin-left: -1.563rem;
+  }
+  .organization {
+    width: 20.5rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+/*375px iPhone 6, 7, 8, X */
+
+@media screen and (max-width: 24.5rem) and (min-width: 22.6rem) {
+  header {
+    background-size: 100%;
+    height: 7rem;
+    position: relative;
+  }
+
+  header div.top {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding-top: 13rem;
+  }
+
+  .map {
+    margin-top: -5rem;
+    margin-left: 7.813rem;
+    width: 22%;
+  }
+  main section:first-of-type {
+    margin-top: 13.125rem;
+  }
+
+  main section {
+    width: 90%;
+    padding: 0.625rem 0;
+    margin: 3.125rem auto 0rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 1.2rem;
+  }
+
+  .icons {
+    width: 90%;
+    margin-left: 3rem;
+  }
+  .considered {
+    font-size: 0.9rem;
+  }
+  .considered-intro {
+    font-size: 0.9rem;
+    width: 21.25rem;
+  }
+  .how {
+    width: 115%;
+    height: 10rem;
+    background: url('./assets/howitworks2.PNG');
+  }
+
+  .bottom-section {
+    margin-bottom: 1.25rem;
+  }
+  .bottom-title {
+    font-size: 1.2em;
+    margin-left: -1.563rem;
+  }
+  .organization {
+    width: 20.8rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+/*414px iPhone 6,7,8 Plus. 411px Pixel 2 & Pixel 2 XL responsive*/
+
+@media screen and (max-width: 26rem) and (min-width: 24rem) {
+  header {
+    background-size: 100%;
+    height: 8rem;
+    position: relative;
+  }
+
+  header div.top {
+    width: 90%;
+    grid-template-columns: 1fr;
+    padding-top: 14rem;
+  }
+
+  .map {
+    margin-top: -5rem;
+    margin-left: 7.813rem;
+    width: 23%;
+  }
+  main section:first-of-type {
+    margin-top: 13.125rem;
+  }
+
+  main section {
+    width: 90%;
+    padding: 0.625rem 0;
+    margin: 3.125rem auto 0rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 1.4rem;
+  }
+
+  .icons {
+    width: 80%;
+    margin-left: 3rem;
+  }
+  .considered {
+    font-size: 1rem;
+  }
+  .considered-intro {
+    font-size: 1rem;
+    width: 23.313rem;
+  }
+  .how {
+    width: 115%;
+    height: 10rem;
+    /* background: url('./assets/howitworks2.PNG'); */
+  }
+
+  .bottom-section {
+    margin-bottom: 1.25rem;
+  }
+  .bottom-title {
+    font-size: 1.4rem;
+    margin-left: -1.563rem;
+  }
+  .organization {
+    width: 23.125rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/*500px mobile responsive*/
+
+@media screen and (max-width: 31.25rem) and (min-width: 26.5rem) {
   header {
     background-size: 100%;
     height: 10rem;
@@ -208,7 +562,10 @@ main section div {
 
   .how {
     width: 140%;
-    height: 300px;
+    height: 18.75rem;
+  }
+  .bottom-section {
+    margin-bottom: 1.563rem;
   }
 
   .organization {
@@ -216,7 +573,120 @@ main section div {
   }
 }
 
-@media (max-width: 50rem) and (min-width: 37.5rem) {
+/*540px Surface Duo*/
+
+@media screen and (max-width: 33.75rem) and (min-width: 32rem) {
+  header {
+    background-size: 100%;
+    height: 10rem;
+    position: relative;
+  }
+
+  header div.top {
+    width: 75%;
+    grid-template-columns: 1fr;
+    padding-top: 16.25rem;
+  }
+
+  .map {
+    margin-top: -5rem;
+    margin-left: 7.813rem;
+    width: 25%;
+  }
+  main section:first-of-type {
+    margin-top: 18.125rem;
+  }
+
+  main section {
+    width: 90%;
+    padding: 0.625rem 0;
+    margin: 3.125rem auto 0rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section h2 {
+    font-size: 1.5rem;
+  }
+  main section div p {
+    padding: 0rem 0.625rem;
+  }
+  .icons {
+    width: 75%;
+  }
+  .considered {
+    margin-left: 1.125rem;
+  }
+  .considered-intro {
+    width: 28.125rem;
+  }
+  .how {
+    width: 140%;
+    height: 18.75rem;
+  }
+
+  .bottom-section {
+    margin-bottom: 1.563rem;
+  }
+  .organization {
+    width: 28.125rem;
+  }
+}
+
+/*768px iPad responsive*/
+
+@media screen and (max-width: 48rem) and (min-width: 37.5rem) {
+  header {
+    height: 16.063rem;
+  }
+
+  header div.top {
+    width: 75%;
+    padding-top: 7rem;
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    margin-top: 5rem;
+    width: 25%;
+  }
+
+  main section {
+    width: 90%;
+    padding: 5.625rem 0;
+    margin: 0rem auto 3.125rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  main section h2 {
+    font-size: 2.6rem;
+  }
+
+  main section div p {
+    padding: 0rem 5.625rem;
+  }
+
+  .considered {
+    margin-left: -0.313rem;
+  }
+
+  .considered-intro {
+    width: 43.75rem;
+  }
+
+  .how {
+    height: 17.813rem;
+    width: 83%;
+  }
+
+  .organization {
+    width: 105%;
+  }
+}
+
+/*800px tablet responsive*/
+
+@media screen and (max-width: 50rem) and (min-width: 48.5rem) {
   header {
     height: 16.563rem;
   }
@@ -258,6 +728,50 @@ main section div {
   }
 }
 
+/*1024px iPad Pro responsive*/
+
+@media screen and (max-width: 64rem) and (min-width: 50.5rem) {
+  header {
+    height: 16.563rem;
+  }
+
+  header div.top {
+    width: 75%;
+    padding-top: 7.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    margin-top: 5rem;
+    width: 25%;
+  }
+
+  main section {
+    width: 90%;
+    padding: 5.625rem 0;
+    margin: 0rem auto 3.125rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main section div p {
+    padding: 0rem 5.625rem;
+  }
+
+  .considered {
+    margin-left: 0.625rem;
+  }
+  .considered-intro {
+    width: 45rem;
+  }
+
+  .how {
+    height: 17.813rem;
+    width: 73%;
+  }
+  .organization {
+    width: 88%;
+  }
+}
 /* popup box */
 
 .popUpContent {
@@ -279,7 +793,7 @@ main section div {
   min-height: 100vh;
 }
 
-.wrapper>* {
+.wrapper > * {
   padding: 20px;
 }
 
@@ -334,7 +848,8 @@ main section div {
   flex-direction: column;
   justify-content: center;
   min-height: 350px;
-  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat
+    center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
 }
@@ -350,14 +865,13 @@ main section div {
 }
 
 @media screen and (max-width: 280px) {
-
   .banner-title,
   .banner-second-title {
-    font-size: 2rem
+    font-size: 2rem;
   }
 
   .banner-subtitle {
-    font-size: 1rem
+    font-size: 1rem;
   }
 }
 
