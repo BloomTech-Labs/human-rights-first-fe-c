@@ -294,6 +294,17 @@ main section div {
   background-color: rgba(24, 17, 6, 0.386);
   padding-left: 2%;
   border-radius: 0.5rem;
+  animation: title-content 1s;
+}
+
+@keyframes title-content {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .banner-title {
