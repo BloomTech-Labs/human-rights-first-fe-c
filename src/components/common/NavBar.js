@@ -40,13 +40,6 @@ const NavBar = () => {
         >
           About
         </Link>
-        <Link
-          href="/signup"
-          className="navigation-content"
-          style={{ textDecoration: 'none', color: '#8b3902' }}
-        >
-          Sign up
-        </Link>
       </Breadcrumbs>
     </div>
   );
