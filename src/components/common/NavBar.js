@@ -2,7 +2,6 @@ import React from 'react';
 import HRCpic from '../../assets/HRC(2).png';
 import '../../styles/index.css';
 import { Link as LinkTo } from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 
