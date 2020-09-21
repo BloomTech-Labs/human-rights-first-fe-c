@@ -14,7 +14,29 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+
 import '../../styles/index.css';
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 
 const splitSameLocation = data => {
   Object.size = function(obj) {
@@ -65,7 +87,6 @@ const Map = () => {
     height: '73vh',
   });
   const [selected, setSelected] = useState(null);
-  const [multiIncidents, setMultiIncidents] = useState(null);
   const [zipCode, setZipCode] = useState('');
   const [state, setState] = React.useState({
     Presence: true,
@@ -81,7 +102,8 @@ const Map = () => {
   const mapRef = useRef();
   const classesForStateFilter = stylesForCityFilter();
   const classesForZipCodeFilter = useStylesForZipCodeFilter();
-
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
   const submitZipCodeHandler = e => {
     e.preventDefault();
     setViewport({
@@ -517,8 +539,6 @@ const Map = () => {
                                 1000000
                           );
 
-                          setMultiIncidents(filtered);
-
                           filtered.map(i => {
                             setSelected([
                               i.LATITUDE,
@@ -573,55 +593,39 @@ const Map = () => {
                 closeButton={false}
                 className="popUpBox"
               >
-                {multiIncidents ? (
-                  multiIncidents.map(incident => {
-                    return (
-                      <div>
-                        <div
-                          className="popup_incidents_container"
-                          key={incident.id}
-                        >
-                          <a
-                            className="incident_box"
-                            href={incident.Link1}
-                            target="_blank"
-                          >
-                            {/* type */}
-                            <div className="type-incidents">
-                              {incident.tags_str}
-                            </div>
-                            {/* description */}
-                            <div className="text-incidents">
-                              {incident.text}
-                            </div>
-                            {/* date */}
-                            <div className="date-incidents">
-                              {incident.date_text}
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div className="popup_incidents_container">
-                    <a
-                      className="incident_box"
-                      href={selected[5]}
-                      target="_blank"
+                <Card className={classes.root} style={{ width: '30vh' }}>
+                  <CardContent>
+                    <Typography
+                      className={classes.title}
+                      color="textSecondary"
+                      gutterBottom
                     >
-                      {/* type */}
-                      <div className="type-incidents">{selected[3]}</div>
-                      {/* description */}
-                      <div className="text-incidents">{selected[2]}</div>
-                      {/* date */}
-                      <div className="date-incidents">{selected[4]}</div>
-                    </a>
-                  </div>
-                )}
-                <button className="x" onClick={() => setSelected(null)}>
-                  close
-                </button>
+                      {selected[3]}
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      {selected[2]}
+                    </Typography>
+                    <Typography className={classes.pos} color="textSecondary">
+                      {selected[4]}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">
+                      <a href={selected[5]} target="_blank">
+                        Learn More
+                      </a>
+                    </Button>
+                  </CardActions>
+                </Card>
+                <div className="pop-up-close">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => setSelected(null)}
+                  >
+                    close
+                  </Button>
+                </div>
               </Popup>
             ) : null}
           </ReactMapGL>

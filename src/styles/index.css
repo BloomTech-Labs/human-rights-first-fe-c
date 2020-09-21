@@ -48,6 +48,12 @@
   border: brown 0.1rem solid;
 }
 
+.pop-up-close {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5%;
+}
+
 .incident_box {
   display: flex;
   justify-content: space-between;
