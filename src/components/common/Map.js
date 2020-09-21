@@ -2,12 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as data from '../../database/data2.json';
 import usZips from 'us-zips';
-import cities from '../../database/cities.json';
+import states from '../../database/states.json';
 import useSupercluster from 'use-supercluster';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { makeStyles } from '@material-ui/core/styles';
 import '../../styles/index.css';
 
 const splitSameLocation = data => {
@@ -30,6 +36,26 @@ const splitSameLocation = data => {
     }
   });
 };
+
+const stylesForCityFilter = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
+const useStylesForZipCodeFilter = makeStyles(theme => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
+
 const Map = () => {
   const [viewport, setViewport] = useState({
     latitude: 37.09024,
@@ -41,12 +67,6 @@ const Map = () => {
   const [selected, setSelected] = useState(null);
   const [multiIncidents, setMultiIncidents] = useState(null);
   const [zipCode, setZipCode] = useState('');
-  const [cityName, setCityName] = useState({
-    state: '',
-    city: '',
-    lat: '',
-    lon: '',
-  });
   const [state, setState] = React.useState({
     Presence: true,
     Soft: true,
@@ -58,6 +78,8 @@ const Map = () => {
     Other: true,
   });
   const mapRef = useRef();
+  const classesForStateFilter = stylesForCityFilter();
+  const classesForZipCodeFilter = useStylesForZipCodeFilter();
 
   const submitHandler = e => {
     e.preventDefault();
@@ -68,28 +90,29 @@ const Map = () => {
       width: '100vw',
       height: '73vh',
     });
+    setZipCode('');
   };
-  const submitCityHandler = e => {
-    e.preventDefault();
-    const getCity = cities.filter(
-      city => city.city === cityName.city && city.state_name === cityName.state
-    );
+  const submitStateHandler = e => {
+    if (!e.target.value) {
+      setViewport({
+        latitude: 37.09024,
+        longitude: -95.712891,
+        zoom: 4,
+        width: '100vw',
+        height: '73vh',
+      });
+      return;
+    }
+    const getCity = states.filter(s => s.state === e.target.value);
     setViewport({
       ...viewport,
-      latitude: getCity[0].lat,
-      longitude: getCity[0].lng,
-      zoom: 10,
+      latitude: getCity[0].latitude,
+      longitude: getCity[0].longitude,
+      zoom: 6,
     });
   };
-
   const handleChange = e => {
     setZipCode(e.target.value);
-  };
-  const handleCityChange = e => {
-    setCityName({ ...cityName, city: e.target.value });
-  };
-  const handleStateChange = e => {
-    setCityName({ ...cityName, state: e.target.value });
   };
 
   const handleTypeChange = event => {
@@ -146,8 +169,6 @@ const Map = () => {
   }, []);
 
   const typeOfIncidents = data => {
-    // TODO: update types, see: https://ppt.cc/fpdyfx
-    // TODO: update icons
     if (data.includes('Presence')) {
       return (
         <div className="incidents_icons">
@@ -291,128 +312,152 @@ const Map = () => {
         <div className="filter_bar">
           <form>
             <label>
-              Search by zip code:
+              Search by state:
               <br />
-              <input type="text" name="zipCode" onChange={handleChange} />
+              <FormControl
+                variant="outlined"
+                className={classesForStateFilter.formControl}
+              >
+                <InputLabel id="demo-simple-select-outlined-label">
+                  State
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-outlined-label"
+                  id="demo-simple-select-outlined"
+                  name="state"
+                  onChange={submitStateHandler}
+                  label="State"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {states.map(c => (
+                    <MenuItem value={c.state}>{c.state}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <br />
             </label>
-            <input type="submit" value="Submit" onClick={submitHandler} />
+            <label>
+              Search by zip code:
+              <form
+                noValidate
+                autoComplete="off"
+                className={classesForZipCodeFilter.root}
+              >
+                <TextField
+                  id="filled-basic"
+                  label="Zip Code Here"
+                  name="zipCode"
+                  value={zipCode}
+                  onChange={handleChange}
+                />
+              </form>
+              <Button
+                variant="contained"
+                type="submit"
+                value="Submit"
+                color="primary"
+                onClick={submitHandler}
+                disabled={zipCode.length > 0 && usZips[zipCode] ? false : true}
+              >
+                Submit
+              </Button>
+            </label>
             <br />
             <label>
-              Search by city and state:
-              <br />
-              <input type="hidden" name="country" id="countryId" value="US" />
-              <select
-                name="state"
-                class="states order-alpha"
-                id="stateId"
-                onChange={handleStateChange}
-              >
-                <option value="state">Select State</option>
-              </select>
-              <select
-                name="city"
-                class="cities order-alpha"
-                id="cityId"
-                onChange={handleCityChange}
-              >
-                <option value="city">Select City</option>
-              </select>
-              <br />
-              <input type="submit" value="Submit" onClick={submitCityHandler} />
+              Type of incidents
+              <FormGroup row>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Presence}
+                      onChange={handleTypeChange}
+                      name="Presence"
+                      color="primary"
+                    />
+                  }
+                  label="Presence"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Soft}
+                      onChange={handleTypeChange}
+                      name="Soft"
+                      color="primary"
+                    />
+                  }
+                  label="Empty-hand control soft technique"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Hard}
+                      onChange={handleTypeChange}
+                      name="Hard"
+                      color="primary"
+                    />
+                  }
+                  label="Empty-hand control hard technique"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Projectiles}
+                      onChange={handleTypeChange}
+                      name="Projectiles"
+                      color="primary"
+                    />
+                  }
+                  label="Projectiles"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Chemical}
+                      onChange={handleTypeChange}
+                      name="Chemical"
+                      color="primary"
+                    />
+                  }
+                  label="Chemical"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.EnergyDevices}
+                      onChange={handleTypeChange}
+                      name="EnergyDevices"
+                      color="primary"
+                    />
+                  }
+                  label="Conducted energy devices"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Miscellaneous}
+                      onChange={handleTypeChange}
+                      name="Miscellaneous"
+                      color="primary"
+                    />
+                  }
+                  label="Miscellaneous"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={state.Other}
+                      onChange={handleTypeChange}
+                      name="Other"
+                      color="primary"
+                    />
+                  }
+                  label="Other"
+                />
+              </FormGroup>
             </label>
-            <br />
-            <br />
-            <label>Type of incidents</label>
-            <FormGroup row>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Presence}
-                    onChange={handleTypeChange}
-                    name="Presence"
-                    color="primary"
-                  />
-                }
-                label="Presence"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Soft}
-                    onChange={handleTypeChange}
-                    name="Soft"
-                    color="primary"
-                  />
-                }
-                label="Empty-hand control soft technique"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Hard}
-                    onChange={handleTypeChange}
-                    name="Hard"
-                    color="primary"
-                  />
-                }
-                label="Empty-hand control hard technique"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Projectiles}
-                    onChange={handleTypeChange}
-                    name="Projectiles"
-                    color="primary"
-                  />
-                }
-                label="Projectiles"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Chemical}
-                    onChange={handleTypeChange}
-                    name="Chemical"
-                    color="primary"
-                  />
-                }
-                label="Chemical"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.EnergyDevices}
-                    onChange={handleTypeChange}
-                    name="EnergyDevices"
-                    color="primary"
-                  />
-                }
-                label="Conducted energy devices"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Miscellaneous}
-                    onChange={handleTypeChange}
-                    name="Miscellaneous"
-                    color="primary"
-                  />
-                }
-                label="Miscellaneous"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={state.Other}
-                    onChange={handleTypeChange}
-                    name="Other"
-                    color="primary"
-                  />
-                }
-                label="Other"
-              />
-            </FormGroup>
             <br />
           </form>
         </div>
@@ -523,7 +568,6 @@ const Map = () => {
               closeButton={false}
               className="popUpBox"
             >
-              {/* TODO: make every incident to a box, allow users scroll down if there're multiple incidents*/}
               {multiIncidents ? (
                 multiIncidents.map(incident => {
                   return (
