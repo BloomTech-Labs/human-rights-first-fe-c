@@ -96,6 +96,10 @@ export const Loading = () => {
               influence to secure core freedoms.
             </p>
           </div>
+          <a href="#" className="back-to-top">
+            back to top {'  '}
+            <i class="fa fa-chevron-up"></i>
+          </a>
         </section>
       </main>
       <footer className="page-footer">

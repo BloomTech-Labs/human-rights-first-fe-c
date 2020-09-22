@@ -352,6 +352,13 @@ main section div {
   color: #370617;
 }
 
+.back-to-top {
+  position: absolute;
+  right: 10%;
+  background-color: rgb(255, 243, 172);
+  padding: 0.3%;
+}
+
 /* footer */
 .page-footer {
   margin-left: 10%;
