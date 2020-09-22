@@ -28,14 +28,14 @@ const NavBar = () => {
           href="/"
           onClick={handleClick}
           className="navigation-content"
-          style={{ textDecoration: 'none', color: '#8b3902' }}
+          style={{ textDecoration: 'none', color: 'wheat' }}
         >
           View Map
         </Link>
         <Link
           href="http://localhost:3000/#about"
           className="navigation-content"
-          style={{ textDecoration: 'none', color: '#8b3902' }}
+          style={{ textDecoration: 'none', color: 'wheat' }}
         >
           About
         </Link>

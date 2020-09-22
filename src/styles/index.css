@@ -38,7 +38,7 @@
 /* NavBar.js Styling */
 
 h3 {
-  color: #370617;
+  color: #fff8fb;
   margin-left: -50%;
   margin-top: 4%;
   font-family: 'Playfair Display', serif;
@@ -52,7 +52,7 @@ a {
 .nav-div {
   padding: 0 1%;
   position: absolute;
-  background: rgb(230, 230, 230);
+  background: rgb(75, 75, 75);
   opacity: 0.75;
   z-index: 4;
   width: 100%;
@@ -183,4 +183,3 @@ a {
   margin-top: 6%;
   margin-left: 32%;
 }
-
