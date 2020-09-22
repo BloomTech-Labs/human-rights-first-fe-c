@@ -82,6 +82,7 @@ main section div {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  margin-top: 1rem;
 }
 
 /* middle content */
@@ -223,6 +224,12 @@ main section div {
 @media screen and (min-width: 768px) {
   .page-main {
     padding-left: 90px;
+  }
+  main section h2 {
+    font-size: 2rem;
+  }
+  .mid-title {
+    font-size: 3rem;
   }
 }
 
