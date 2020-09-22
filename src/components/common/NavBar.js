@@ -5,11 +5,6 @@ import { Link as LinkTo } from 'react-router-dom';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
-}
-
 const NavBar = () => {
   return (
     <div className="nav-div">
@@ -26,7 +21,6 @@ const NavBar = () => {
       <Breadcrumbs aria-label="breadcrumb" className="navigation">
         <Link
           href="http://localhost:3000/#map"
-          onClick={handleClick}
           className="navigation-content"
           style={{ textDecoration: 'none', color: 'wheat' }}
         >
