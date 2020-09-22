@@ -54,13 +54,12 @@ export const Loading = () => {
           </div>
           <p class="considered">
             Human Rights Considered is a public police brutality incident
-            viewing application
-          </p>
-          <p class="considered-intro">
-            Our goal is to provide information regarding a variety of police
-            brutality incidents in an accurate and timely manner to public. The
-            incidents have been categorized and can be filtered by types of
-            force, location, and date.
+            viewing application.
+            <br />
+            <br /> Our goal is to provide information regarding a variety of
+            police brutality incidents in an accurate and timely manner to
+            public. The incidents have been categorized and can be filtered by
+            types of force, location, and date.
           </p>
         </section>
         <section class="middle">
