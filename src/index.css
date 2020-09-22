@@ -154,7 +154,7 @@ main section div {
 }
 
 .how {
-  background: url('./assets/howitworks.PNG');
+  background: url('./assets/howitworks2.PNG');
   height: 18.75rem;
   width: 60%;
 }
@@ -211,14 +211,14 @@ main section div {
   .how {
     width: 57%;
     height: 8rem;
-    background: url('./assets/howitworks4.png');
+    background: url('./assets/howitworks4.PNG');
   }
 
   .works {
     margin-top: 0.938rem;
     width: 85%;
     height: 6rem;
-    background: url('./assets/howitworks5.png');
+    background: url('./assets/howitworks5.PNG');
   }
 
   .bottom-section {
@@ -289,14 +289,14 @@ main section div {
   .how {
     width: 50%;
     height: 8rem;
-    background: url('./assets/howitworks4.png');
+    background: url('./assets/howitworks4.PNG');
   }
 
   .works {
     margin-top: 0.938rem;
     width: 75%;
     height: 6rem;
-    background: url('./assets/howitworks5.png');
+    background: url('./assets/howitworks5.PNG');
   }
   .bottom-section {
     margin-bottom: 0.938rem;
@@ -366,7 +366,7 @@ main section div {
   .how {
     width: 113%;
     height: 7.5rem;
-    background: url('./assets/howitworks3.png');
+    background: url('./assets/howitworks3.PNG');
   }
   .bottom-section {
     margin-bottom: 1.25rem;
@@ -431,7 +431,7 @@ main section div {
   .how {
     width: 115%;
     height: 10rem;
-    background: url('./assets/howitworks2.png');
+    background: url('./assets/howitworks2.PNG');
   }
 
   .bottom-section {
@@ -497,7 +497,7 @@ main section div {
   .how {
     width: 115%;
     height: 10rem;
-    background: url('./assets/howitworks2.png');
+    /* background: url('./assets/howitworks2.PNG'); */
   }
 
   .bottom-section {
@@ -796,7 +796,7 @@ main section div {
   min-height: 100vh;
 }
 
-.wrapper>* {
+.wrapper > * {
   padding: 20px;
 }
 
@@ -835,7 +835,7 @@ main section div {
 }
 
 .banner-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 1%;
   color: rgb(222, 208, 199);
 }
@@ -851,7 +851,8 @@ main section div {
   flex-direction: column;
   justify-content: center;
   min-height: 350px;
-  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat
+    center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
 }
@@ -864,16 +865,16 @@ main section div {
   .page-main {
     padding-left: 90px;
   }
+}
 
 @media screen and (max-width: 280px) {
-
   .banner-title,
   .banner-second-title {
-    font-size: 2rem
+    font-size: 2rem;
   }
 
   .banner-subtitle {
-    font-size: 1rem
+    font-size: 1rem;
   }
 }
 
@@ -986,3 +987,9 @@ main section div {
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
 }
+
+.map-title {
+  text-align: center;
+  color: #370617;
+}
+
