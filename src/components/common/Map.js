@@ -191,82 +191,73 @@ const Map = () => {
     if (data.includes('Presence')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/ios-glyphs/25/000000/eye-disease.png"
-            alt="tear-gas icon"
-          /> */}{' '}
-          😗
+          <i
+            class="fa fa-map-marker"
+            style={{ 'font-size': '1.5rem', color: 'DarkRed' }}
+          />
         </div>
       );
     } else if (data.includes('Soft')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/color/25/000000/flash-bang.png"
-            alt="shoot icon"
-          /> */}{' '}
-          🐖
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'Green', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     } else if (data.includes('Hard')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
-            alt="pepper spray icon"
-          /> */}{' '}
-          🍋
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'Turquoise', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     } else if (data.includes('Projectiles')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
-            alt="pepper spray icon"
-          /> */}{' '}
-          🍎
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'RoyalBlue', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     } else if (data.includes('Chemical')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
-            alt="pepper spray icon"
-          /> */}
-          🏓
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'PaleVioletRed', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     } else if (data.includes('EnergyDevices')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
-            alt="pepper spray icon"
-          /> */}
-          🥝
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'Magenta', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     } else if (data.includes('Miscellaneous')) {
       return (
         <div className="incidents_icons">
-          {/* <img
-            src="https://img.icons8.com/plasticine/30/000000/deodorant-spray.png"
-            alt="pepper spray icon"
-          /> */}{' '}
-          🐻
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'LightSlateGrey', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     } else {
       return (
         <div className="incidents_icons">
-          {/* <img
-            className="else"
-            src="https://img.icons8.com/ios-filled/30/000000/action.png"
-            alt="violence icon"
-          /> */}{' '}
-          ⚓
+          <i
+            class="fa fa-map-marker"
+            style={{ color: 'Black', 'font-size': '1.5rem' }}
+          />
         </div>
       );
     }
@@ -398,9 +389,17 @@ const Map = () => {
                       onChange={handleTypeChange}
                       name="Presence"
                       color="primary"
-                    />
+                    ></Checkbox>
                   }
-                  label="Presence"
+                  label={
+                    <div>
+                      <i
+                        class="fa fa-map-marker"
+                        style={{ color: 'DarkRed' }}
+                      />{' '}
+                      Presence
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -411,7 +410,12 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Empty-hand control soft technique"
+                  label={
+                    <div>
+                      <i class="fa fa-map-marker" style={{ color: 'Green' }} />{' '}
+                      Soft technique
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -422,7 +426,15 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Empty-hand control hard technique"
+                  label={
+                    <div>
+                      <i
+                        class="fa fa-map-marker"
+                        style={{ color: 'Turquoise' }}
+                      />{' '}
+                      Hard technique
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -433,7 +445,15 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Projectiles"
+                  label={
+                    <div>
+                      <i
+                        class="fa fa-map-marker"
+                        style={{ color: 'RoyalBlue' }}
+                      />{' '}
+                      Projectiles
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -444,7 +464,15 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Chemical"
+                  label={
+                    <div>
+                      <i
+                        class="fa fa-map-marker"
+                        style={{ color: 'PaleVioletRed' }}
+                      />{' '}
+                      Chemical
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -455,7 +483,15 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Conducted energy devices"
+                  label={
+                    <div>
+                      <i
+                        class="fa fa-map-marker"
+                        style={{ color: 'Magenta' }}
+                      />{' '}
+                      Energy devices
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -466,7 +502,15 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Miscellaneous"
+                  label={
+                    <div>
+                      <i
+                        class="fa fa-map-marker"
+                        style={{ color: 'LightSlateGrey' }}
+                      />{' '}
+                      Miscellaneous
+                    </div>
+                  }
                 />
                 <FormControlLabel
                   control={
@@ -477,7 +521,12 @@ const Map = () => {
                       color="primary"
                     />
                   }
-                  label="Other"
+                  label={
+                    <div>
+                      <i class="fa fa-map-marker" style={{ color: 'Black' }} />{' '}
+                      Other
+                    </div>
+                  }
                 />
               </FormGroup>
             </label>
