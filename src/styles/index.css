@@ -52,7 +52,7 @@ a {
 .nav-div {
   padding: 0 1%;
   position: absolute;
-  background: #fff;
+  background: rgb(230, 230, 230);
   opacity: 0.75;
   z-index: 4;
   width: 100%;
@@ -184,4 +184,3 @@ a {
   margin-left: 32%;
 }
 
-/* markers */
