@@ -38,12 +38,14 @@ export const Loading = () => {
                 </span>
               </a>
             </div>
+            <a href="#map" className="next-page">
+              <i class="fa fa-chevron-down next-page-btn"></i>
+            </a>
           </main>
         </div>
         <div id="map">
           <Map />
         </div>
-
         <section className="intro" id="about">
           <h2>What is Human Rights Considered?</h2>
           <div className="icons">
@@ -79,6 +81,10 @@ export const Loading = () => {
         <section className="bottom-section">
           <h2>About Human Rights First</h2>
           <div className="bottom">
+            <img
+              src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/423165_10150686770200747_669805325_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=-TaZmzOKohgAX8W3jk4&_nc_ht=scontent-sjc3-1.xx&oh=88b11d2fdc32243402fed9c37667b936&oe=5F8F34C8"
+              alt="humane-right-first-logo"
+            />
             <p className="organization">
               Human Rights First is an independent advocacy and action
               organization that challenges America to live up to its ideals. We

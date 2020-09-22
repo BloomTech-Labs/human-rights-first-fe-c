@@ -2,13 +2,13 @@
 .container {
   display: flex;
   flex-direction: row;
-  margin: 3%;
+  padding: 1% 2% 1% 3%;
 }
 
 .filter_bar {
   background-color: #ebb801;
-  width: 20vh;
-  height: 73vh;
+  width: 28vh;
+  height: 78vh;
 }
 
 .cluster-marker {
@@ -33,6 +33,20 @@
   display: flex;
   justify-content: center;
   margin-top: 3.5%;
+}
+
+.next-to-about {
+  position: absolute;
+  right: 50%;
+  margin-top: 1%;
+  background-color: rgba(211, 124, 18, 0.324);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition-duration: 0.3s;
 }
 
 /* NavBar.js Styling */

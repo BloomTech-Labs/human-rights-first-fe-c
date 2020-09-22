@@ -31,7 +31,7 @@ section {
 main section h2 {
   font-size: 2.7rem;
   color: #370617;
-  line-height: 4.2rem;
+  line-height: 2rem;
   padding-right: 0.625rem;
   text-align: center;
 }
@@ -51,14 +51,14 @@ main section div {
 .bottom-section {
   border-bottom: 0.125rem solid silver;
   margin-bottom: 1.875rem;
+  width: 80%;
 }
 
 .organization {
-  text-align: left;
+  text-align: center;
   font-size: 1.25rem;
-  margin-top: 2.5rem;
   color: #370617;
-  width: 48%;
+  width: 80%;
 }
 
 .intro {
@@ -66,6 +66,7 @@ main section div {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 5%;
 }
 
 .considered {
@@ -146,7 +147,7 @@ main section div {
 
 /* header */
 .title-content {
-  margin-top: -6%;
+  margin-top: 3%;
   margin-left: 2%;
   background-color: rgba(24, 17, 6, 0.386);
   padding-left: 2%;
@@ -165,21 +166,39 @@ main section div {
 }
 
 .banner-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: rgb(242, 215, 198);
 }
 
 .banner-second-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: rgb(249, 168, 143);
 }
 
 .banner-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 1%;
   color: rgb(222, 208, 199);
 }
 
+/* next page button */
+.next-page {
+  position: absolute;
+  bottom: 1rem;
+  right: 50%;
+  background-color: rgba(255, 255, 255, 0.324);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+}
+.next-page:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
 /* variables */
 :root {
   --main-white-color: white;
@@ -331,4 +350,10 @@ main section div {
 .map-title {
   text-align: center;
   color: #370617;
+}
+
+/* footer */
+.page-footer {
+  margin-left: 10%;
+  margin-top: -1%;
 }

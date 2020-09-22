@@ -84,7 +84,7 @@ const Map = () => {
     longitude: -95.712891,
     zoom: 4,
     width: '100vw',
-    height: '73vh',
+    height: '76vh',
   });
   const [selected, setSelected] = useState(null);
   const [zipCode, setZipCode] = useState('');
@@ -110,7 +110,7 @@ const Map = () => {
       longitude: usZips[zipCode].longitude,
       zoom: 10,
       width: '50%',
-      height: '73vh',
+      height: '76vh',
     });
     setZipCode('');
   };
@@ -121,7 +121,7 @@ const Map = () => {
         longitude: -95.712891,
         zoom: 4,
         width: '100vw',
-        height: '73vh',
+        height: '76vh',
       });
       return;
     }
@@ -318,8 +318,6 @@ const Map = () => {
   splitSameLocation(data);
   return (
     <div>
-      <br />
-      <br />
       <br />
       <h1 className="map-title">Find Excessive Force Incidents</h1>
       <div className="container">
@@ -683,6 +681,9 @@ const Map = () => {
               </Popup>
             ) : null}
           </ReactMapGL>
+          <a href="#about" className="next-to-about">
+            <i class="fa fa-chevron-down"></i>
+          </a>
         </div>
       </div>
     </div>

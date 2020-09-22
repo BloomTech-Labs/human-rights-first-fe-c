@@ -25,7 +25,7 @@ const NavBar = () => {
       </LinkTo>
       <Breadcrumbs aria-label="breadcrumb" className="navigation">
         <Link
-          href="/"
+          href="http://localhost:3000/#map"
           onClick={handleClick}
           className="navigation-content"
           style={{ textDecoration: 'none', color: 'wheat' }}
