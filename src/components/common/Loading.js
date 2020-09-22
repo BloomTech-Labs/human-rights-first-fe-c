@@ -44,7 +44,8 @@ export const Loading = () => {
         <div id="map">
           <Map />
         </div>
-        <section className="intro">
+
+        <section className="intro" id="about">
           <h2>What is Human Rights Considered?</h2>
           <div class="icons">
             <Flag size={75} class="flag" />

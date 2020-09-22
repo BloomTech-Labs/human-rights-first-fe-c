@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+body * {
+  transition: all 0.3s ease-in-out;
+}
+
 /* Header */
 
 header {
@@ -61,8 +65,7 @@ main {
   overflow: hidden;
   font-family: 'Playfair Display', serif;
 }
-
-main section {
+ section {
   width: 70%;
   padding: 5.625rem 0;
   margin: 3.125rem auto 9.375rem auto;
@@ -989,3 +992,4 @@ main section div {
   text-align: center;
   color: #370617;
 }
+
