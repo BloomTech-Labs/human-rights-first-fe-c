@@ -1,5 +1,4 @@
-import { Flag, PersonFill, Book, Link as Lk } from 'react-bootstrap-icons';
-// import { Link } from 'react-router-dom';
+import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React, { useState, useEffect } from 'react';
 import ConsentForm from '../pages/Home/ConsentForm';
 import Popup from 'reactjs-popup';
@@ -47,10 +46,16 @@ export const Loading = () => {
 
         <section className="intro" id="about">
           <h2>What is Human Rights Considered?</h2>
-          <div class="icons">
-            <Flag size={75} class="flag" />
-            <PersonFill size={75} class="person" />
-            <Book size={75} class="book" />
+          <div className="icons">
+            <div>
+              <Flag />
+            </div>
+            <div>
+              <People />
+            </div>
+            <div>
+              <Mp />
+            </div>
           </div>
           <p className="considered">
             Human Rights Considered is a public police brutality incident

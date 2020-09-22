@@ -77,21 +77,10 @@ main section div {
 }
 
 .icons {
+  font-size: 3rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flag {
-  margin-right: 3.75rem;
-}
-
-.person {
-  margin-right: 3.75rem;
-}
-
-.book {
-  margin-right: 3.75rem;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 /* middle content */
