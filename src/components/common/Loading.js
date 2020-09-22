@@ -16,20 +16,6 @@ export const Loading = () => {
   return (
     <div>
       <main>
-        {/* {consented === false && (
-          <Popup modal defaultOpen={true}>
-            <ConsentForm />
-          </Popup>
-        )} */}
-        {/* <header>
-        <div className="top">
-          <div class="mapBtn">
-            <Link to="/map" className="map">
-              View Map
-            </Link>
-          </div>
-        </div>
-      </header> */}
         <div class="wrapper">
           <main class="page-main">
             <div className="title-content">
@@ -44,8 +30,19 @@ export const Loading = () => {
               <div className="banner-subtitle">
                 Explore the map from a human rights perspective
               </div>
+              <a
+                href="http://localhost:3000/#map"
+                class="hvr-icon-hang view-map"
+              >
+                <span className="view-map-font">
+                  View map <i class="fa fa-chevron-down hvr-icon"></i>
+                </span>
+              </a>
             </div>
           </main>
+        </div>
+        <div id="map">
+          <Map />
         </div>
 
         <section className="intro" id="about">
