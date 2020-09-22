@@ -16,8 +16,8 @@ export const Loading = () => {
   return (
     <div>
       <main>
-        <div class="wrapper">
-          <main class="page-main">
+        <div className="wrapper">
+          <main className="page-main">
             <div className="title-content">
               <div className="banner-title">
                 FIND
@@ -52,7 +52,7 @@ export const Loading = () => {
             <PersonFill size={75} class="person" />
             <Book size={75} class="book" />
           </div>
-          <p class="considered">
+          <p className="considered">
             Human Rights Considered is a public police brutality incident
             viewing application.
             <br />
@@ -62,13 +62,19 @@ export const Loading = () => {
             types of force, location, and date.
           </p>
         </section>
-        <section class="middle">
-          <div class="how"></div>
+        <section className="middle">
+          <div className="middle-content">
+            <h1 className="mid-title">How it works?</h1>
+            <p className="mid-text">
+              We collect relevant incidents data from Twitter, Reddit, and
+              police agencies to display it on the map.
+            </p>
+          </div>
         </section>
-        <section class="bottom-section">
+        <section className="bottom-section">
           <h2>About Human Rights First</h2>
-          <div class="bottom">
-            <p class="organization">
+          <div className="bottom">
+            <p className="organization">
               Human Rights First is an independent advocacy and action
               organization that challenges America to live up to its ideals. We
               believe American leadership is essential in the global struggle
@@ -81,7 +87,7 @@ export const Loading = () => {
           </div>
         </section>
       </main>
-      <footer class="page-footer">
+      <footer className="page-footer">
         <small>© Copyright 2020. All rights reserved.</small>
         <ul></ul>
       </footer>

@@ -23,8 +23,8 @@ main {
 }
 section {
   width: 70%;
-  padding: 5.625rem 0;
-  margin: 3.125rem auto 9.375rem auto;
+  padding: 3rem 0 2rem 0;
+  margin: 0 auto;
   align-items: center;
 }
 
@@ -94,18 +94,36 @@ main section div {
   margin-right: 3.75rem;
 }
 
+/* middle content */
+
 .middle {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  opacity: 0.95;
+  justify-content: center;
 }
 
-.how {
-  background: url('./assets/howitworks2.PNG');
-  height: 18.75rem;
-  width: 60%;
+.middle-content {
+  background-color: rgb(159, 70, 1);
+  height: 20rem;
+  width: 90%;
+  padding: 0 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mid-title {
+  font-size: 5rem;
+  color: wheat;
+  flex: 1;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.mid-text {
+  font-size: 1.5rem;
+  color: rgb(255, 216, 175);
+  flex: 1;
+  padding-top: 5%;
 }
 
 /* popup box */
