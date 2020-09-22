@@ -225,14 +225,8 @@ main section div {
   .page-main {
     padding-left: 90px;
   }
-  /* main section h2 {
-    font-size: 2rem;
-  }
-  .mid-title {
-    font-size: 3rem;
-  } */
 }
-@media screen and (min-width: 540px) {
+@media screen and (max-width: 540px) {
   main section h2 {
     font-size: 1.8rem;
   }
