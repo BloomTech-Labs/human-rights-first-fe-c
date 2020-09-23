@@ -225,6 +225,11 @@ a {
   background-color: red;
 }
 
+.submit-zip-code {
+  margin-left: 1%;
+}
+
+
 
 
 @media screen and (max-width: 768px) {

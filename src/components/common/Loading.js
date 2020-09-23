@@ -1,17 +1,8 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
-import React, { useState, useEffect } from 'react';
-import ConsentForm from '../pages/Home/ConsentForm';
-import Popup from 'reactjs-popup';
+import React from 'react';
 import Map from '../common/Map';
 
 export const Loading = () => {
-  const [consented, setConsented] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem('consent') !== null) {
-      setConsented(true);
-    }
-  });
   return (
     <div>
       <main>
@@ -30,7 +21,7 @@ export const Loading = () => {
                 Explore the map from a human rights perspective
               </div>
               <a
-                href="http://localhost:3000/#map"
+                href="https://c.humanrightsfirst.dev/#map"
                 class="hvr-icon-hang view-map"
               >
                 <span className="view-map-font">
@@ -39,7 +30,7 @@ export const Loading = () => {
               </a>
             </div>
             <a href="#map" className="next-page">
-              <i class="fa fa-chevron-down next-page-btn"></i>
+              <i class="fa fa-chevron-down -page-btn"></i>
             </a>
           </main>
         </div>

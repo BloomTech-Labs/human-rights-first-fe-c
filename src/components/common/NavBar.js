@@ -11,7 +11,11 @@ const NavBar = () => {
       <LinkTo to="/">
         <div className="HRClogo">
           <div className="logo-img-div">
-            <img src={HRCpic} className="logo-img" alt="logo-image" />
+            <img
+              src={HRCpic}
+              className="logo-img"
+              alt="human-rights-considered-logo"
+            />
             <h3>
               Human <br /> Rights <br /> Considered
             </h3>
@@ -20,14 +24,14 @@ const NavBar = () => {
       </LinkTo>
       <Breadcrumbs aria-label="breadcrumb" className="navigation">
         <Link
-          href="http://localhost:3000/#map"
+          href="https://c.humanrightsfirst.dev/#map"
           className="navigation-content"
           style={{ textDecoration: 'none', color: 'wheat' }}
         >
           View Map
         </Link>
         <Link
-          href="http://localhost:3000/#about"
+          href="https://c.humanrightsfirst.dev/#about"
           className="navigation-content"
           style={{ textDecoration: 'none', color: 'wheat' }}
         >
