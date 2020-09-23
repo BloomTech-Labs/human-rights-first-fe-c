@@ -2,13 +2,36 @@
 .container {
   display: flex;
   flex-direction: row;
-  margin: 3%;
+  padding: 1% 0;
+  width: 89%;
+  margin-left: 5%;
+  overflow: hidden;
 }
 
-.filter_bar {
-  background-color: #ebb801;
-  width: 20vh;
-  height: 73vh;
+.map_box {
+  height: 80vh;
+}
+
+.filter-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.25%;
+  margin-right: 25%
+}
+
+.map-title {
+  margin-left: 20%;
+  margin-top: 1%;
+}
+
+
+.map-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(245, 237, 221);
+  height: 100vh;
 }
 
 .cluster-marker {
@@ -35,10 +58,24 @@
   margin-top: 3.5%;
 }
 
+.next-to-about {
+  position: absolute;
+  right: 50%;
+  margin-top: 1%;
+  background-color: rgba(211, 124, 18, 0.324);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+}
+
 /* NavBar.js Styling */
 
 h3 {
-  color: #370617;
+  color: #fff8fb;
   margin-left: -50%;
   margin-top: 4%;
   font-family: 'Playfair Display', serif;
@@ -52,7 +89,7 @@ a {
 .nav-div {
   padding: 0 1%;
   position: absolute;
-  background: rgb(230, 230, 230);
+  background: rgb(75, 75, 75);
   opacity: 0.75;
   z-index: 4;
   width: 100%;
@@ -184,3 +221,37 @@ a {
   margin-left: 32%;
 }
 
+.filter-paper {
+  background-color: red;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .next-to-about {
+    display: none;
+  }
+
+  .map-title {
+    margin-left: 9%;
+  }
+
+  .filter-title {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+
+  .filter-title {
+    flex-direction: column-reverse;
+    margin-left: 20%;
+  }
+
+  .map-title {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
+}

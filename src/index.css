@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 
 body {
@@ -15,49 +14,6 @@ body * {
   transition: all 0.3s ease-in-out;
 }
 
-/* Header */
-
-header {
-  background: url('./assets/banner.png');
-  background-size: 100%;
-  height: 28.5rem;
-  background-position: center;
-  position: relative;
-}
-
-header div.top {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  width: 90%;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 auto;
-  padding-top: 5%;
-  align-items: center;
-}
-
-.map {
-  background: #9b3f18;
-  display: block;
-  color: #fff;
-  font-weight: bold;
-  width: 20%;
-  text-align: center;
-  padding: 0.75rem;
-  border-radius: 1.25rem;
-  margin: 16.875rem;
-  margin-left: -3.75rem;
-  font-size: 1.063rem;
-  -webkit-box-shadow: 0rem 0.625rem 3.375rem -0.688rem rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0rem 0.625rem 3.375rem -0.688rem rgba(0, 0, 0, 0.75);
-  box-shadow: 0rem 0.625rem 3.375rem -0.688rem rgba(0, 0, 0, 0.75);
-}
-
-.mapBtn {
-  display: flex;
-  flex-direction: column;
-}
-
 /*Main Content*/
 main {
   position: relative;
@@ -65,17 +21,18 @@ main {
   overflow: hidden;
   font-family: 'Playfair Display', serif;
 }
- section {
+
+section {
   width: 70%;
-  padding: 5.625rem 0;
-  margin: 3.125rem auto 9.375rem auto;
+  padding: 3rem 0 2rem 0;
+  margin: 0 auto;
   align-items: center;
 }
 
 main section h2 {
   font-size: 2.7rem;
   color: #370617;
-  line-height: 4.2rem;
+  line-height: 2rem;
   padding-right: 0.625rem;
   text-align: center;
 }
@@ -95,14 +52,14 @@ main section div {
 .bottom-section {
   border-bottom: 0.125rem solid silver;
   margin-bottom: 1.875rem;
+  width: 80%;
 }
 
 .organization {
-  text-align: left;
+  text-align: center;
   font-size: 1.25rem;
-  margin-top: 2.5rem;
   color: #370617;
-  width: 48%;
+  width: 80%;
 }
 
 .intro {
@@ -110,671 +67,61 @@ main section div {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  /* margin-top: 5%; */
 }
 
 .considered {
-  text-align: left;
   font-size: 1.25rem;
   margin-top: 2.5rem;
   color: #370617;
-}
-
-.considered-intro {
-  text-align: left;
-  font-size: 1.25rem;
-  margin-top: 2.5rem;
-  color: #370617;
-  width: 45.625rem;
+  text-align: center;
+  width: 90%;
 }
 
 .icons {
+  font-size: 3rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 1rem;
 }
 
-.flag {
-  margin-right: 3.75rem;
-}
-
-.person {
-  margin-right: 3.75rem;
-}
-
-.book {
-  margin-right: 3.75rem;
-}
+/* middle content */
 
 .middle {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.middle-content {
+  background-color: rgb(159, 70, 1);
+  height: 20rem;
+  width: 90%;
+  padding: 0 2%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  opacity: 0.95;
 }
 
-.how {
-  background: url('./assets/howitworks2.PNG');
-  height: 18.75rem;
-  width: 60%;
+.mid-title {
+  font-size: 5rem;
+  color: wheat;
+  flex: 1;
+  padding-left: 5%;
+  padding-top: 5%;
 }
 
-/* 280px Galaxy Fold  */
-@media screen and (max-width: 17.5rem) and (min-width: 0rem) {
-  header {
-    background-size: 100%;
-    height: 5.5rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 100%;
-    grid-template-columns: 1fr;
-    padding-top: 11rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 5.9rem;
-    width: 23%;
-  }
-  main section:first-of-type {
-    margin-top: 13.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 5.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section h2 {
-    font-size: 0.9rem;
-  }
-  main section div p {
-    padding: 0rem 0.625rem;
-  }
-  .icons {
-    width: 100%;
-    display: flex;
-    margin-left: 2.5rem;
-  }
-  .considered {
-    font-size: 0.7rem;
-  }
-  .considered-intro {
-    font-size: 0.7rem;
-    width: 16rem;
-  }
-
-  .how {
-    width: 57%;
-    height: 8rem;
-    background: url('./assets/howitworks4.PNG');
-  }
-
-  .works {
-    margin-top: 0.938rem;
-    width: 85%;
-    height: 6rem;
-    background: url('./assets/howitworks5.PNG');
-  }
-
-  .bottom-section {
-    margin-bottom: 0.938rem;
-  }
-  .bottom-title {
-    font-size: 0.9rem;
-    margin-left: -0.563rem;
-  }
-  .organization {
-    width: 17.5rem;
-    font-size: 0.7rem;
-    margin-top: 0.2rem;
-    margin-left: -0.7rem;
-  }
+.mid-text {
+  font-size: 1.5rem;
+  color: rgb(255, 216, 175);
+  flex: 1;
+  padding-top: 5%;
 }
 
-/* 320px iPhone5  */
-
-@media screen and (max-width: 20rem) and (min-width: 18rem) {
-  header {
-    background-size: 100%;
-    height: 6rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 100%;
-    grid-template-columns: 1fr;
-    padding-top: 12rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 6.813rem;
-    width: 23%;
-  }
-  main section:first-of-type {
-    margin-top: 13.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 5.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section h2 {
-    font-size: 1rem;
-  }
-  main section div p {
-    padding: 0rem 0.625rem;
-  }
-  .icons {
-    width: 90%;
-    display: flex;
-    margin-left: 2.5rem;
-  }
-  .considered {
-    font-size: 0.8rem;
-  }
-  .considered-intro {
-    font-size: 0.8rem;
-    width: 18rem;
-  }
-
-  .how {
-    width: 50%;
-    height: 8rem;
-    background: url('./assets/howitworks4.PNG');
-  }
-
-  .works {
-    margin-top: 0.938rem;
-    width: 75%;
-    height: 6rem;
-    background: url('./assets/howitworks5.PNG');
-  }
-  .bottom-section {
-    margin-bottom: 0.938rem;
-  }
-  .bottom-title {
-    font-size: 1rem;
-    margin-left: -0.563rem;
-  }
-  .organization {
-    width: 19.688rem;
-    font-size: 0.8rem;
-    margin-top: 0.2rem;
-    margin-left: -0.625rem;
-  }
+.last-section {
+  background-color: rgb(255, 253, 247);
 }
 
-/* 360px Moto G4 & Galaxy S5 */
-
-@media screen and (max-width: 22.5rem) and (min-width: 21rem) {
-  header {
-    background-size: 100%;
-    height: 7rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 100%;
-    grid-template-columns: 1fr;
-    padding-top: 13rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 7.813rem;
-    width: 22%;
-  }
-  main section:first-of-type {
-    margin-top: 13.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 5.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section h2 {
-    font-size: 1.1rem;
-  }
-  main section div p {
-    padding: 0rem 0.625rem;
-  }
-  .icons {
-    width: 90%;
-    display: flex;
-    margin-left: 2.5rem;
-  }
-  .considered {
-    font-size: 0.9rem;
-  }
-  .considered-intro {
-    font-size: 0.9rem;
-    width: 20.313rem;
-  }
-
-  .how {
-    width: 113%;
-    height: 7.5rem;
-    background: url('./assets/howitworks3.PNG');
-  }
-  .bottom-section {
-    margin-bottom: 1.25rem;
-  }
-  .bottom-title {
-    font-size: 1.1rem;
-    margin-left: -1.563rem;
-  }
-  .organization {
-    width: 20.5rem;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-  }
-}
-
-/*375px iPhone 6, 7, 8, X */
-
-@media screen and (max-width: 24.5rem) and (min-width: 22.6rem) {
-  header {
-    background-size: 100%;
-    height: 7rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 100%;
-    grid-template-columns: 1fr;
-    padding-top: 13rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 7.813rem;
-    width: 22%;
-  }
-  main section:first-of-type {
-    margin-top: 13.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 3.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section h2 {
-    font-size: 1.2rem;
-  }
-
-  .icons {
-    width: 90%;
-    margin-left: 3rem;
-  }
-  .considered {
-    font-size: 0.9rem;
-  }
-  .considered-intro {
-    font-size: 0.9rem;
-    width: 21.25rem;
-  }
-  .how {
-    width: 115%;
-    height: 10rem;
-    background: url('./assets/howitworks2.PNG');
-  }
-
-  .bottom-section {
-    margin-bottom: 1.25rem;
-  }
-  .bottom-title {
-    font-size: 1.2em;
-    margin-left: -1.563rem;
-  }
-  .organization {
-    width: 20.8rem;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-  }
-}
-
-/*414px iPhone 6,7,8 Plus. 411px Pixel 2 & Pixel 2 XL responsive*/
-
-@media screen and (max-width: 26rem) and (min-width: 24rem) {
-  header {
-    background-size: 100%;
-    height: 8rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 90%;
-    grid-template-columns: 1fr;
-    padding-top: 14rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 7.813rem;
-    width: 23%;
-  }
-  main section:first-of-type {
-    margin-top: 13.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 3.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section h2 {
-    font-size: 1.4rem;
-  }
-
-  .icons {
-    width: 80%;
-    margin-left: 3rem;
-  }
-  .considered {
-    font-size: 1rem;
-  }
-  .considered-intro {
-    font-size: 1rem;
-    width: 23.313rem;
-  }
-  .how {
-    width: 115%;
-    height: 10rem;
-    /* background: url('./assets/howitworks2.PNG'); */
-  }
-
-  .bottom-section {
-    margin-bottom: 1.25rem;
-  }
-  .bottom-title {
-    font-size: 1.4rem;
-    margin-left: -1.563rem;
-  }
-  .organization {
-    width: 23.125rem;
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-}
-
-/*500px mobile responsive*/
-
-@media screen and (max-width: 31.25rem) and (min-width: 26.5rem) {
-  header {
-    background-size: 100%;
-    height: 10rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 75%;
-    grid-template-columns: 1fr;
-    padding-top: 16.25rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 7.813rem;
-    width: 25%;
-  }
-
-  main section:first-of-type {
-    margin-top: 18.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 3.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  main section h2 {
-    font-size: 1.5rem;
-  }
-
-  main section div p {
-    padding: 0rem 0.625rem;
-  }
-
-  .icons {
-    width: 75%;
-  }
-
-  .considered-intro {
-    width: 28.125rem;
-  }
-
-  .how {
-    width: 140%;
-    height: 18.75rem;
-  }
-  .bottom-section {
-    margin-bottom: 1.563rem;
-  }
-
-  .organization {
-    width: 28.125rem;
-  }
-}
-
-/*540px Surface Duo*/
-
-@media screen and (max-width: 33.75rem) and (min-width: 32rem) {
-  header {
-    background-size: 100%;
-    height: 10rem;
-    position: relative;
-  }
-
-  header div.top {
-    width: 75%;
-    grid-template-columns: 1fr;
-    padding-top: 16.25rem;
-  }
-
-  .map {
-    margin-top: -5rem;
-    margin-left: 7.813rem;
-    width: 25%;
-  }
-  main section:first-of-type {
-    margin-top: 18.125rem;
-  }
-
-  main section {
-    width: 90%;
-    padding: 0.625rem 0;
-    margin: 3.125rem auto 0rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section h2 {
-    font-size: 1.5rem;
-  }
-  main section div p {
-    padding: 0rem 0.625rem;
-  }
-  .icons {
-    width: 75%;
-  }
-  .considered {
-    margin-left: 1.125rem;
-  }
-  .considered-intro {
-    width: 28.125rem;
-  }
-  .how {
-    width: 140%;
-    height: 18.75rem;
-  }
-
-  .bottom-section {
-    margin-bottom: 1.563rem;
-  }
-  .organization {
-    width: 28.125rem;
-  }
-}
-
-/*768px iPad responsive*/
-
-@media screen and (max-width: 48rem) and (min-width: 37.5rem) {
-  header {
-    height: 16.063rem;
-  }
-
-  header div.top {
-    width: 75%;
-    padding-top: 7rem;
-    grid-template-columns: 1fr;
-  }
-
-  .map {
-    margin-top: 5rem;
-    width: 25%;
-  }
-
-  main section {
-    width: 90%;
-    padding: 5.625rem 0;
-    margin: 0rem auto 3.125rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  main section h2 {
-    font-size: 2.6rem;
-  }
-
-  main section div p {
-    padding: 0rem 5.625rem;
-  }
-
-  .considered {
-    margin-left: -0.313rem;
-  }
-
-  .considered-intro {
-    width: 43.75rem;
-  }
-
-  .how {
-    height: 17.813rem;
-    width: 83%;
-  }
-
-  .organization {
-    width: 105%;
-  }
-}
-
-/*800px tablet responsive*/
-
-@media screen and (max-width: 50rem) and (min-width: 48.5rem) {
-  header {
-    height: 16.563rem;
-  }
-
-  header div.top {
-    width: 75%;
-    padding-top: 7.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  .map {
-    margin-top: 5rem;
-    width: 25%;
-  }
-
-  main section {
-    width: 90%;
-    padding: 5.625rem 0;
-    margin: 0rem auto 3.125rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  main section div p {
-    padding: 0rem 5.625rem;
-  }
-
-  .considered-intro {
-    width: 45rem;
-  }
-
-  .how {
-    height: 17.813rem;
-    width: 83%;
-  }
-
-  .organization {
-    width: 100%;
-  }
-}
-
-/*1024px iPad Pro responsive*/
-
-@media screen and (max-width: 64rem) and (min-width: 50.5rem) {
-  header {
-    height: 16.563rem;
-  }
-
-  header div.top {
-    width: 75%;
-    padding-top: 7.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  .map {
-    margin-top: 5rem;
-    width: 25%;
-  }
-
-  main section {
-    width: 90%;
-    padding: 5.625rem 0;
-    margin: 0rem auto 3.125rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  main section div p {
-    padding: 0rem 5.625rem;
-  }
-
-  .considered {
-    margin-left: 0.625rem;
-  }
-  .considered-intro {
-    width: 45rem;
-  }
-
-  .how {
-    height: 17.813rem;
-    width: 73%;
-  }
-  .organization {
-    width: 88%;
-  }
-}
 /* popup box */
 
 .popUpContent {
@@ -796,7 +143,7 @@ main section div {
   min-height: 100vh;
 }
 
-.wrapper > * {
+.wrapper>* {
   padding: 20px;
 }
 
@@ -806,7 +153,7 @@ main section div {
 
 /* header */
 .title-content {
-  margin-top: -6%;
+  margin-top: 3%;
   margin-left: 2%;
   background-color: rgba(24, 17, 6, 0.386);
   padding-left: 2%;
@@ -825,19 +172,39 @@ main section div {
 }
 
 .banner-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: rgb(242, 215, 198);
 }
 
 .banner-second-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: rgb(249, 168, 143);
 }
 
 .banner-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 1%;
   color: rgb(222, 208, 199);
+}
+
+/* next page button */
+.next-page {
+  position: absolute;
+  bottom: 1rem;
+  right: 50%;
+  background-color: rgba(255, 255, 255, 0.324);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+}
+
+.next-page:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 /* variables */
@@ -851,8 +218,7 @@ main section div {
   flex-direction: column;
   justify-content: center;
   min-height: 350px;
-  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat
-    center / cover;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
 }
@@ -865,9 +231,53 @@ main section div {
   .page-main {
     padding-left: 90px;
   }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  main section h2 {
+    font-size: 1.8rem;
+  }
+
+  .mid-title {
+    font-size: 2rem;
+  }
+
+  .mid-text {
+    font-size: 1.2rem;
+  }
+
+
+  .next-page {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  main section h2 {
+    font-size: 1.8rem;
+  }
+
+  .mid-title {
+    font-size: 2rem;
+  }
+
+  .mid-text {
+    font-size: 1.2rem;
+  }
+
+  .middle-content {
+    width: 100%;
+  }
+
+  .next-page {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 280px) {
+
   .banner-title,
   .banner-second-title {
     font-size: 2rem;
@@ -993,3 +403,15 @@ main section div {
   color: #370617;
 }
 
+.back-to-top {
+  position: absolute;
+  right: 10%;
+  background-color: rgb(255, 243, 172);
+  padding: 0.3%;
+}
+
+/* footer */
+.page-footer {
+  margin-left: 10%;
+  margin-top: -1%;
+}

@@ -1,5 +1,4 @@
-import { Flag, PersonFill, Book, Link as Lk } from 'react-bootstrap-icons';
-// import { Link } from 'react-router-dom';
+import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React, { useState, useEffect } from 'react';
 import ConsentForm from '../pages/Home/ConsentForm';
 import Popup from 'reactjs-popup';
@@ -16,8 +15,8 @@ export const Loading = () => {
   return (
     <div>
       <main>
-        <div class="wrapper">
-          <main class="page-main">
+        <div className="wrapper">
+          <main className="page-main">
             <div className="title-content">
               <div className="banner-title">
                 FIND
@@ -39,50 +38,73 @@ export const Loading = () => {
                 </span>
               </a>
             </div>
+            <a href="#map" className="next-page">
+              <i class="fa fa-chevron-down next-page-btn"></i>
+            </a>
           </main>
         </div>
         <div id="map">
           <Map />
         </div>
-
-        <section className="intro" id="about">
-          <h2>What is Human Rights Considered?</h2>
-          <div class="icons">
-            <Flag size={75} class="flag" />
-            <PersonFill size={75} class="person" />
-            <Book size={75} class="book" />
-          </div>
-          <p class="considered">
-            Human Rights Considered is a public police brutality incident
-            viewing application
-          </p>
-          <p class="considered-intro">
-            Our goal is to provide information regarding a variety of police
-            brutality incidents in an accurate and timely manner to public. The
-            incidents have been categorized and can be filtered by types of
-            force, location, and date.
-          </p>
-        </section>
-        <section class="middle">
-          <div class="how"></div>
-        </section>
-        <section class="bottom-section">
-          <h2>About Human Rights First</h2>
-          <div class="bottom">
-            <p class="organization">
-              Human Rights First is an independent advocacy and action
-              organization that challenges America to live up to its ideals. We
-              believe American leadership is essential in the global struggle
-              for human rights, so we press the U.S. government and private
-              companies to respect human rights and the rule of law. When they
-              fail, we step in to demand reform, accountability and justice.
-              Around the world, we work where we can best harness American
-              influence to secure core freedoms.
+        <div className="last-section">
+          <section className="intro" id="about">
+            <h2>What is Human Rights Considered?</h2>
+            <div className="icons">
+              <div>
+                <Flag />
+              </div>
+              <div>
+                <People />
+              </div>
+              <div>
+                <Mp />
+              </div>
+            </div>
+            <p className="considered">
+              Human Rights Considered is a public police brutality incident
+              viewing application.
+              <br />
+              <br /> Our goal is to provide information regarding a variety of
+              police brutality incidents in an accurate and timely manner to
+              public. The incidents have been categorized and can be filtered by
+              types of force, location, and date.
             </p>
-          </div>
-        </section>
+          </section>
+          <section className="middle">
+            <div className="middle-content">
+              <h1 className="mid-title">How it works?</h1>
+              <p className="mid-text">
+                We collect relevant incidents data from Twitter, Reddit, and
+                police agencies to display it on the map.
+              </p>
+            </div>
+          </section>
+          <section className="bottom-section">
+            <h2>About Human Rights First</h2>
+            <div className="bottom">
+              <img
+                src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/423165_10150686770200747_669805325_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=-TaZmzOKohgAX8W3jk4&_nc_ht=scontent-sjc3-1.xx&oh=88b11d2fdc32243402fed9c37667b936&oe=5F8F34C8"
+                alt="humane-right-first-logo"
+              />
+              <p className="organization">
+                Human Rights First is an independent advocacy and action
+                organization that challenges America to live up to its ideals.
+                We believe American leadership is essential in the global
+                struggle for human rights, so we press the U.S. government and
+                private companies to respect human rights and the rule of law.
+                When they fail, we step in to demand reform, accountability and
+                justice. Around the world, we work where we can best harness
+                American influence to secure core freedoms.
+              </p>
+            </div>
+            <a href="#" className="back-to-top">
+              back to top {'  '}
+              <i class="fa fa-chevron-up"></i>
+            </a>
+          </section>
+        </div>
       </main>
-      <footer class="page-footer">
+      <footer className="page-footer">
         <small>© Copyright 2020. All rights reserved.</small>
         <ul></ul>
       </footer>
