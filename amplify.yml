@@ -10,7 +10,6 @@ frontend:
         - nvm use $VERSION_NODE_12
         - node -v
         - npm run-script build
-        - REACT_APP_MAPBOX_TOKEN = $REACT_APP_MAPBOX_TOKEN
   artifacts:
     baseDirectory: build
     files:
