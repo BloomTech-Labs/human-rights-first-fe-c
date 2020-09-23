@@ -145,7 +145,7 @@ const Map = () => {
   function getFirstType(types) {
     let firstType = '';
     for (let i = 0; i < types.length; i++) {
-      if (types[i] == ',') {
+      if (types[i] === ',') {
         break;
       }
       firstType += types[i];
@@ -685,7 +685,11 @@ const Map = () => {
                   </CardContent>
                   <CardActions>
                     <Button size="small">
-                      <a href={selected[5]} target="_blank">
+                      <a
+                        href={selected[5]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Learn More
                       </a>
                     </Button>
