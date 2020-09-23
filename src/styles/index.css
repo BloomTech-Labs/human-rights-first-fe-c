@@ -2,13 +2,36 @@
 .container {
   display: flex;
   flex-direction: row;
-  padding: 1% 2% 1% 3%;
+  padding: 1% 0;
+  width: 89%;
+  margin-left: 5%;
+  overflow: hidden;
 }
 
-.filter_bar {
-  background-color: #ebb801;
-  width: 25vh;
-  height: 78vh;
+.map_box {
+  height: 80vh;
+}
+
+.filter-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.25%;
+  margin-right: 25%
+}
+
+.map-title {
+  margin-left: 20%;
+  margin-top: 1%;
+}
+
+
+.map-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(245, 237, 221);
+  height: 100vh;
 }
 
 .cluster-marker {
@@ -196,4 +219,39 @@ a {
   opacity: 50%;
   margin-top: 6%;
   margin-left: 32%;
+}
+
+.filter-paper {
+  background-color: red;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .next-to-about {
+    display: none;
+  }
+
+  .map-title {
+    margin-left: 9%;
+  }
+
+  .filter-title {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+
+  .filter-title {
+    flex-direction: column-reverse;
+    margin-left: 20%;
+  }
+
+  .map-title {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
 }

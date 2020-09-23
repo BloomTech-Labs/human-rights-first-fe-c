@@ -16,6 +16,7 @@
     "classnames": "^2.2.6",
     "craco-less": "^1.17.0",
     "dotenv": "^8.2.0",
+    "material-ui-popup-state": "^1.6.1",
     "mdbreact": "^4.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

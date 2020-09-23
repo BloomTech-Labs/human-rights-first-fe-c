@@ -21,6 +21,7 @@ main {
   overflow: hidden;
   font-family: 'Playfair Display', serif;
 }
+
 section {
   width: 70%;
   padding: 3rem 0 2rem 0;
@@ -66,7 +67,7 @@ main section div {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 .considered {
@@ -117,6 +118,10 @@ main section div {
   padding-top: 5%;
 }
 
+.last-section {
+  background-color: rgb(255, 253, 247);
+}
+
 /* popup box */
 
 .popUpContent {
@@ -138,7 +143,7 @@ main section div {
   min-height: 100vh;
 }
 
-.wrapper > * {
+.wrapper>* {
   padding: 20px;
 }
 
@@ -196,10 +201,12 @@ main section div {
   border-radius: 50%;
   transition-duration: 0.3s;
 }
+
 .next-page:hover {
   color: rgb(255, 255, 255);
   cursor: pointer;
 }
+
 /* variables */
 :root {
   --main-white-color: white;
@@ -211,8 +218,7 @@ main section div {
   flex-direction: column;
   justify-content: center;
   min-height: 350px;
-  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat
-    center / cover;
+  background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
 }
@@ -225,23 +231,53 @@ main section div {
   .page-main {
     padding-left: 90px;
   }
+
 }
+
+@media screen and (max-width: 768px) {
+
+  main section h2 {
+    font-size: 1.8rem;
+  }
+
+  .mid-title {
+    font-size: 2rem;
+  }
+
+  .mid-text {
+    font-size: 1.2rem;
+  }
+
+
+  .next-page {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 540px) {
   main section h2 {
     font-size: 1.8rem;
   }
+
   .mid-title {
     font-size: 2rem;
   }
+
   .mid-text {
     font-size: 1.2rem;
   }
+
   .middle-content {
     width: 100%;
+  }
+
+  .next-page {
+    display: none;
   }
 }
 
 @media screen and (max-width: 280px) {
+
   .banner-title,
   .banner-second-title {
     font-size: 2rem;
