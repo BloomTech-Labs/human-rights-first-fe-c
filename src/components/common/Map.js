@@ -111,7 +111,7 @@ const Map = () => {
       latitude: usZips[zipCode].latitude,
       longitude: usZips[zipCode].longitude,
       zoom: 10,
-      width: '50%',
+      width: '100vw',
       height: '76vh',
     });
     setZipCode('');
@@ -346,7 +346,6 @@ const Map = () => {
                       <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
-                        name="state"
                         onChange={submitStateHandler}
                         label="State"
                       >
@@ -375,7 +374,8 @@ const Map = () => {
                         onChange={handleZipCodeChange}
                       />
                     </form>
-                    <Button
+                    <button
+                      className="submit-zip-code"
                       variant="contained"
                       type="submit"
                       value="Submit"
@@ -386,7 +386,7 @@ const Map = () => {
                       }
                     >
                       Submit
-                    </Button>
+                    </button>
                   </label>
                   <br />
                   <br />
