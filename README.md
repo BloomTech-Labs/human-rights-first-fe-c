@@ -5,12 +5,16 @@
 - An application that takes information from data provided by the data science team collecting relevant incidents and data from Twitter, Reddit, and police agencies to display it on the map.
 - Human Rights First is a nonprofit on a mission — an independent advocacy and action organization that challenges America to live up to its ideals.
 - This app will display various incidents of police use of force on a map that can be filtered by  type of force and location with zipcodes and states or cities. 
+- Check the document here: [Human Rights Considered Doc](https://docs.google.com/document/d/1zCsBIktUfdXDozJitbPzDH4Ya02SVTFUAmysdTWylaM/edit?usp=sharing)
+
+
 ## Resources 👇
 ## Deployed App
 https://c.humanrightsfirst.dev/
 
 ## Styling Our App
-- `CSS` 
+- `CSS`
+- `Matirial UI` 
 ## Data Visualization 
 `MapBox` - https://docs.mapbox.com
 ## Contributing
