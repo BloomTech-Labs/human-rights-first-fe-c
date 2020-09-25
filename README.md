@@ -18,7 +18,6 @@
 
 ## Deploying Your App
 - https://c.humanrightsfirst.dev/
-![Humane Right Considered Demo](hrc_demo.gif)
 [![Watch the video](https://i.imgur.com/oO6jPnb.png)](https://vimeo.com/user101433243/review/461896648/cc13846aac)
 
 ## Components
