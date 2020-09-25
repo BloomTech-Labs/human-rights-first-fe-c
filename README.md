@@ -17,8 +17,9 @@
 - `REACT_APP_MAPBOX_TOKEN` Mapbox access tokens (check `https://docs.mapbox.com/help/how-mapbox-works/access-tokens/`)
 
 ## Deploying Your App
-https://c.humanrightsfirst.dev/
+- https://c.humanrightsfirst.dev/
 ![Humane Right Considered Demo](hrc_demo.gif)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://vimeo.com/user101433243/review/461896648/cc13846aac)
 
 ## Components
 
