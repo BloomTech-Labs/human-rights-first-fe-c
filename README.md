@@ -8,9 +8,26 @@
 - Check the document here: [Human Rights Considered Doc](https://docs.google.com/document/d/1zCsBIktUfdXDozJitbPzDH4Ya02SVTFUAmysdTWylaM/edit?usp=sharing)
 
 
-## Resources 👇
-## Deployed App
+## Requirements
+
+- [Labs Engineering Standard requirements found here](https://www.notion.so/Human-Rights-First-Roadmap-Team-Kevin-c53ed8e80b0e4584aba47abee5753591)
+
+### Environment variable
+
+- `REACT_APP_MAPBOX_TOKEN` Mapbox access tokens (check `https://docs.mapbox.com/help/how-mapbox-works/access-tokens/`)
+
+## Deploying Your App
 https://c.humanrightsfirst.dev/
+![Humane Right Considered Demo](hrc_demo.gif)
+
+## Components
+
+- Loading
+- Map
+- NavBar
+
+## Deployed App
+
 
 ## Styling Our App
 - `CSS`
