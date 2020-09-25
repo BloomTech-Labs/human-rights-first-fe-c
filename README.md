@@ -1,4 +1,4 @@
-# Human Rights First / Human Rights Considered 
+# Human Rights Considered 
 
 ## Description 👇
 > **Disclaimer:** This application is currently in Alpha (as of Sep 20, 2020) and is not ready for production. Please use at your own risk as things will change almost daily.
@@ -19,7 +19,7 @@
 ## Deploying Your App
 - https://c.humanrightsfirst.dev/
 ![Humane Right Considered Demo](hrc_demo.gif)
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://vimeo.com/user101433243/review/461896648/cc13846aac)
+[![Watch the video](https://i.imgur.com/oO6jPnb.png)](https://vimeo.com/user101433243/review/461896648/cc13846aac)
 
 ## Components
 
