@@ -1,0 +1,13 @@
+.form{
+    margin-left: 30%;
+    background-color: white;
+}
+input{
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button{
+    width: 190px;
+}

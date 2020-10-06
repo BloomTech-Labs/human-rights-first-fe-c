@@ -1,34 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
+import './login.css';
 
 const formSchema = yup.object().shape({
-  fname: yup
-    .string()
-    .required('First name is a required field. Minimum of 2 characters.'),
-  lname: yup
-    .string()
-    .required('Last name is a required field. Minimum of 2 characters.'),
+  username: yup.string().required('Must put Username'),
+
   email: yup
     .string()
     .email()
-    .required('Email is a required field.'),
-  password: yup
-    .string()
-    .required('You must input a password. Minimum of 4 characters.'),
+    .required('Email is required'),
+
+  password: yup.string().required('Password is required'),
 });
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
-    fname: '',
-    lname: '',
+    username: '',
     email: '',
     password: '',
   });
 
   const [errors, setErrors] = useState({
-    fname: '',
-    lname: '',
+    username: '',
     email: '',
     password: '',
   });
@@ -42,7 +36,8 @@ const SignUp = () => {
     });
   }, [formState]);
 
-  const validateChange = e => {
+  const validate = e => {
+    e.persist();
     yup
       .reach(formSchema, e.target.name)
       .validate(e.target.value)
@@ -52,12 +47,21 @@ const SignUp = () => {
           [e.target.name]: '',
         });
       })
-      .catch(error => {
+
+      .catch(err => {
         setErrors({
           ...errors,
-          [e.target.name]: error.errors,
+          [e.target.name]: err.errors[0],
         });
       });
+  };
+  const Changehandler = e => {
+    e.persist();
+    validate(e);
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const formSubmit = e => {
@@ -68,8 +72,7 @@ const SignUp = () => {
         setPost(response.data);
 
         setFormState({
-          fname: '',
-          lname: '',
+          username: '',
           email: '',
           password: '',
         });
@@ -79,62 +82,40 @@ const SignUp = () => {
       });
   };
 
-  const inputChange = e => {
-    e.persist();
-    const newFormData = {
-      ...formState,
-      [e.target.name]: e.target.value,
-    };
-    validateChange(e);
-    setFormState(newFormData);
-  };
-
   return (
     <form onSubmit={formSubmit} className="form">
-      <label htmlFor="fname" className="label">
-        First Name:
+      <label htmlFor="username" className="label">
+        username
         <input
-          id="fname"
+          id="username"
           type="text"
-          name="fname"
-          value={formState.fname}
-          onChange={inputChange}
-          placeholder="First Name"
+          name="username"
+          value={formState.username}
+          onChange={Changehandler}
+          placeholder="username"
         />
-        {errors.fname.length > 2 ? <p>{errors.fname}</p> : null}
-      </label>
-      <label htmlFor="lname" className="label">
-        Last Name:
-        <input
-          id="lname"
-          type="text"
-          name="lname"
-          value={formState.lname}
-          onChange={inputChange}
-          placeholder="Last Name"
-        />
-        {errors.lname.length > 2 ? <p>{errors.lname}</p> : null}
+        {errors.username.length > 2 ? <p>{errors.username}</p> : null}
       </label>
       <label htmlFor="email" className="label">
-        Email:
+        Email
         <input
           id="email"
           type="email"
           name="email"
           value={formState.email}
-          onChange={inputChange}
-          placeholder="email@email.com"
+          onChange={Changehandler}
+          placeholder="my@email.com"
         />
         {errors.email.length > 5 ? <p>{errors.email}</p> : null}
       </label>
       <label htmlFor="password" className="label">
-        Password:
+        Password
         <input
           id="password"
           type="password"
           name="password"
           value={formState.password}
-          onChange={inputChange}
+          onChange={Changehandler}
           placeholder="Password"
         />
         {errors.password.length > 4 ? <p>{errors.password}</p> : null}

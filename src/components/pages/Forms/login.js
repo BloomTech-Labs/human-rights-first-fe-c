@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
+import './login.css';
 
 const formSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email()
-    .required('Please provide email to login.'),
-  password: yup
-    .string()
-    .required('You must input a password. Minimum of 4 characters.'),
+  username: yup.string().required('Must put Username'),
+  password: yup.string().required('Password is required'),
 });
 
 const LogIn = () => {
   const [formState, setFormState] = useState({
-    email: '',
+    username: '',
     password: '',
   });
 
   const [errors, setErrors] = useState({
-    email: '',
+    username: '',
     password: '',
   });
 
@@ -32,7 +28,8 @@ const LogIn = () => {
     });
   }, [formState]);
 
-  const validateChange = e => {
+  const validate = e => {
+    e.persist();
     yup
       .reach(formSchema, e.target.name)
       .validate(e.target.value)
@@ -42,12 +39,21 @@ const LogIn = () => {
           [e.target.name]: '',
         });
       })
-      .catch(error => {
+
+      .catch(err => {
         setErrors({
           ...errors,
-          [e.target.name]: error.errors,
+          [e.target.name]: err.errors[0],
         });
       });
+  };
+  const Changehandler = e => {
+    e.persist();
+    validate(e);
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const formSubmit = e => {
@@ -58,7 +64,7 @@ const LogIn = () => {
         setPost(response.data);
 
         setFormState({
-          email: '',
+          username: '',
           password: '',
         });
       })
@@ -67,43 +73,33 @@ const LogIn = () => {
       });
   };
 
-  const inputChange = e => {
-    e.persist();
-    const newFormData = {
-      ...formState,
-      [e.target.name]: e.target.value,
-    };
-    validateChange(e);
-    setFormState(newFormData);
-  };
-
   return (
-    <form onSubmit={formSubmit}>
-      <lable htmlFor="email">
-        Email:
+    <form onSubmit={formSubmit} className="form">
+      <label htmlFor="username" className="label">
+        username
         <input
-          id="email"
-          type="email"
-          name="email"
-          value={formState.email}
-          onChange={inputChange}
-          placeholder="email@email.com"
+          id="username"
+          type="text"
+          name="username"
+          value={formState.username}
+          onChange={Changehandler}
+          placeholder="username"
         />
-        {errors.email.length > 5 ? <p>{errors.email}</p> : null}
-      </lable>
-      <lable htmlFor="password">
-        Password:
+        {errors.username.length > 2 ? <p>{errors.username}</p> : null}
+      </label>
+      <label htmlFor="password" className="label">
+        Password
         <input
           id="password"
           type="password"
           name="password"
           value={formState.password}
-          onChange={inputChange}
+          onChange={Changehandler}
           placeholder="Password"
         />
         {errors.password.length > 4 ? <p>{errors.password}</p> : null}
-      </lable>
-      <button disabled={buttonDisabled}>Login</button>
+      </label>
+      <button disabled={buttonDisabled}>log in</button>
     </form>
   );
 };
