@@ -189,6 +189,7 @@ const Map = () => {
     };
   }, []);
 
+  // TODO: Export this function and refactor
   const typeOfIncidents = data => {
     if (data.includes('Presence')) {
       return (
@@ -265,6 +266,7 @@ const Map = () => {
     }
   };
 
+  // TODO: Export to Utils?
   const points = filteredData
     ? filteredData.map(incident => ({
         type: 'Feature',
@@ -317,6 +319,7 @@ const Map = () => {
     zoom: viewport.zoom,
     options: { radius: 75, maxZoom: 20 },
   });
+
   splitSameLocation(data);
   return (
     <div className="map-section">
@@ -552,6 +555,10 @@ const Map = () => {
             )}
           </PopupState>
         </div>
+        {/*
+        End of Filter Form
+        !TODO: Refactor and export as its own component
+        */}
         <h1 className="map-title">Find Excessive Force Incidents</h1>
       </div>
       <div className="container">
@@ -559,7 +566,7 @@ const Map = () => {
           <ReactMapGL
             {...viewport}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
+            mapStyle="mapbox://styles/jasonelliots/ckfyi3f840a3719nv8ruodjrn"
             onViewportChange={viewport => {
               setViewport(viewport);
             }}
