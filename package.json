@@ -25,7 +25,6 @@
     "react-map-gl": "^5.2.7",
     "react-places-autocomplete": "^7.3.0",
     "react-plotly.js": "^2.4.0",
-    "react-plotlyjs": "^0.4.4",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
