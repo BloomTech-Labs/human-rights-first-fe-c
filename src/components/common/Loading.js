@@ -1,6 +1,6 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React from 'react';
-import Map from '../common/Map';
+import Map from '../map/Map';
 
 export const Loading = () => {
   return (

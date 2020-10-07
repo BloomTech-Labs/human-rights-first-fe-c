@@ -194,6 +194,7 @@ const Map = () => {
     };
   }, []);
 
+<<<<<<< HEAD:src/components/common/Map.js
   // useEffect to make Web API call to bring in data
 
   useEffect(() => {
@@ -209,6 +210,9 @@ const Map = () => {
       });
   }, []);
 
+=======
+  // TODO: Export this function and refactor
+>>>>>>> 6a07bd7a4b9cb64786ac056316da15a8923acb3d:src/components/map/Map.js
   const typeOfIncidents = data => {
     if (data.includes('Presence')) {
       return (
@@ -285,8 +289,12 @@ const Map = () => {
     }
   };
 
+<<<<<<< HEAD:src/components/common/Map.js
   // code for creating points array which includs specific incidents //
 
+=======
+  // TODO: Export to Utils?
+>>>>>>> 6a07bd7a4b9cb64786ac056316da15a8923acb3d:src/components/map/Map.js
   const points = filteredData
     ? filteredData.map(incident => ({
         type: 'Feature',
@@ -343,6 +351,7 @@ const Map = () => {
     zoom: viewport.zoom,
     options: { radius: 75, maxZoom: 20 },
   });
+
   splitSameLocation(data);
   return (
     <div className="map-section">
@@ -578,6 +587,10 @@ const Map = () => {
             )}
           </PopupState>
         </div>
+        {/*
+        End of Filter Form
+        !TODO: Refactor and export as its own component
+        */}
         <h1 className="map-title">Find Excessive Force Incidents</h1>
       </div>
       <div className="container">
@@ -585,7 +598,7 @@ const Map = () => {
           <ReactMapGL
             {...viewport}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            mapStyle="mapbox://styles/janecyyu/ckeafpzbv05jh19qdfpxnfmzh"
+            mapStyle="mapbox://styles/jasonelliots/ckfyi3f840a3719nv8ruodjrn"
             onViewportChange={viewport => {
               setViewport(viewport);
             }}
