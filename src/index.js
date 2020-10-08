@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import 'antd/dist/antd.less';
 
-import { Loading } from './components/common/Loading';
+import { Container } from './components/common/Container';
 import NavBar from './components/common/NavBar';
 
 ReactDOM.render(
@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Route exact path="/" component={Loading} />
+      <Route exact path="/" component={Container} />
     </Router>
   );
 }

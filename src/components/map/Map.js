@@ -194,25 +194,23 @@ const Map = () => {
     };
   }, []);
 
-<<<<<<< HEAD:src/components/common/Map.js
   // useEffect to make Web API call to bring in data
 
-  useEffect(() => {
-    // update request url
-    axios
-      .get('backendurl')
-      .then(res => {
-        console.log(res);
-        // save response into state
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // update request url
+  //   axios
+  //     .get('backendurl')
+  //     .then(res => {
+  //       console.log(res);
+  //       // save response into state
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
-=======
   // TODO: Export this function and refactor
->>>>>>> 6a07bd7a4b9cb64786ac056316da15a8923acb3d:src/components/map/Map.js
+
   const typeOfIncidents = data => {
     if (data.includes('Presence')) {
       return (
@@ -289,12 +287,10 @@ const Map = () => {
     }
   };
 
-<<<<<<< HEAD:src/components/common/Map.js
   // code for creating points array which includs specific incidents //
 
-=======
   // TODO: Export to Utils?
->>>>>>> 6a07bd7a4b9cb64786ac056316da15a8923acb3d:src/components/map/Map.js
+
   const points = filteredData
     ? filteredData.map(incident => ({
         type: 'Feature',

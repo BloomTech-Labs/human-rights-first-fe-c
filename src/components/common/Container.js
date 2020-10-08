@@ -1,8 +1,10 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React from 'react';
-import Map from '../map/Map';
+import Map from '../map_components/map';
+import { CollectionsPage } from '../common/CreateForm';
+import Map_Filter from '../map_components/map_filter';
 
-export const Loading = () => {
+export const Container = () => {
   return (
     <div>
       <main>
@@ -35,7 +37,9 @@ export const Loading = () => {
           </main>
         </div>
         <div id="map">
+          <Map_Filter />
           <Map />
+          {/* <CollectionsPage /> */}
         </div>
         <div className="last-section">
           <section className="intro" id="about">
