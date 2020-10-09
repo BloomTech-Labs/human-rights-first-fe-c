@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as data from '../../database/data1.json';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Styleddiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
+// useEffect to set data to state using useDispatch()
+// grab data with useSelector(), and map through it (data will be updated from from filter)
 
 const Map = () => {
   const [viewport, setViewport] = useState({

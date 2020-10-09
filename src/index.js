@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './state/reducers/index.js';
 import './index.css';
 import 'antd/dist/antd.less';
 
 import { Container } from './components/common/Container';
 import NavBar from './components/common/NavBar';
 
+const store = createStore(rootReducer);
+
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

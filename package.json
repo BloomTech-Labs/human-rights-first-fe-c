@@ -29,6 +29,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactjs-popup": "^1.5.0",
+    "redux": "^4.0.5",
     "styled-components": "^5.2.0",
     "us-zips": "^4.0.2",
     "use-supercluster": "^0.2.8",
