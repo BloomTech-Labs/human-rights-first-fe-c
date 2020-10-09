@@ -24,16 +24,6 @@ const Map = () => {
 
   return (
     <>
-      {/* <div>
-        {data.data
-          ? data.data.map(data => (
-              <div>
-                <p>
-                </p>
-              </div>
-            ))
-          : null}
-      </div> */}
       <Styleddiv>
         <ReactMapGL
           {...viewport}
