@@ -3,6 +3,7 @@ import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import * as data from '../../database/data1.json';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 
 const Styleddiv = styled.div`
   display: flex;
@@ -10,10 +11,10 @@ const Styleddiv = styled.div`
   align-items: center;
 `;
 
-// useEffect to set data to state using useDispatch()
-// grab data with useSelector(), and map through it (data will be updated from from filter)
-
 const Map = () => {
+  const data = useSelector(state => state.data);
+  const dispatch = useDispatch();
+
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
@@ -25,6 +26,18 @@ const Map = () => {
   const [settings, setSettings] = useState({
     scrollZoom: false,
   });
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/')
+      .then(res => {
+        console.log(res);
+        dispatch({ type: 'GETDATA', payload: res.data.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [dispatch]);
 
   return (
     <>
@@ -41,7 +54,7 @@ const Map = () => {
             setViewport(viewport);
           }}
         >
-          {data.data.map(incident => (
+          {data.map(incident => (
             <Marker
               key={incident.id}
               latitude={incident.LATITUDE}

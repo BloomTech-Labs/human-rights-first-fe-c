@@ -14,6 +14,9 @@ const StyledDiv = styled.div`
 // use searchInput to filter through current data (grab using useSelector), and update state (using useDispatch)
 
 const Map_Filter = () => {
+  const data = useSelector(state => state.data);
+  const dispatch = useDispatch();
+
   const [searchInput, setSearchInput] = useState('');
 
   const { Search } = Input;

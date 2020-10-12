@@ -2,16 +2,14 @@
 // This allows for the simplification of flow when importing reducers into your actions throughout your app.
 
 const initialState = {
-  filteredData: [],
+  data: [],
 };
 
-function rootReducer(state = initialState, action) {
+export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'FILTER':
-      return {};
+    case 'GETDATA':
+      return { data: action.payload };
     default:
       return state;
   }
-}
-
-export default rootReducer;
+};
