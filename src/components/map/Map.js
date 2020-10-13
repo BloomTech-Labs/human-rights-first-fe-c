@@ -23,8 +23,6 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 import '../../styles/index.css';
 
-import axios from 'axios';
-
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -195,20 +193,6 @@ const Map = () => {
   }, []);
 
   // useEffect to make Web API call to bring in data
-
-  // useEffect(() => {
-  //   // update request url
-  //   axios
-  //     .get('backendurl')
-  //     .then(res => {
-  //       console.log(res);
-  //       // save response into state
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
   // TODO: Export this function and refactor
 
   const typeOfIncidents = data => {
