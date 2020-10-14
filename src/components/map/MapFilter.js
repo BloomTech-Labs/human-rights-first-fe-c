@@ -42,15 +42,15 @@ const MapFilter = () => {
 
   return (
     <StyledDiv>
+      <Map filteredData={searchResults} />
       <StyledDiv>
         <input
           className="form-control"
           value={searchInput}
-          placeholder="search by keyword"
+          placeholder="search by city"
           onChange={handleSearchInput}
         />
       </StyledDiv>
-      <Map filteredData={searchResults} />
     </StyledDiv>
   );
 };
