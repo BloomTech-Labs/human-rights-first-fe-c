@@ -28,8 +28,6 @@ const MapFilter = () => {
 
   const data = useSelector(state => state.data);
 
-  const [filteredData, setFilteredData] = useState(data);
-
   const dispatch = useDispatch();
 
   const [searchInput, setSearchInput] = useState('');
@@ -38,15 +36,9 @@ const MapFilter = () => {
     setSearchInput(e.target.value.toLowerCase());
   };
 
-  useEffect(() => {
-    let searchResults = data;
-    if (searchInput) {
-      searchResults = data.filter(incident => {
-        return incident.city.toLowerCase().includes(searchInput.toLowerCase());
-      });
-    }
-    setFilteredData(searchResults);
-  }, [searchInput, data]);
+  const searchResults = data.filter(incident => {
+    return incident.city.toLowerCase().includes(searchInput.toLowerCase());
+  });
 
   return (
     <StyledDiv>
@@ -58,7 +50,7 @@ const MapFilter = () => {
           onChange={handleSearchInput}
         />
       </StyledDiv>
-      <Map filteredData={filteredData} />
+      <Map filteredData={searchResults} />
     </StyledDiv>
   );
 };
