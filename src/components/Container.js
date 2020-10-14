@@ -1,6 +1,5 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React from 'react';
-import Map from './map/Map';
 import MapFilter from './map/MapFilter';
 
 export const Container = () => {
@@ -37,7 +36,6 @@ export const Container = () => {
         </div>
         <div id="map">
           <MapFilter />
-          {/* <Map /> */}
         </div>
         <div className="last-section">
           <section className="intro" id="about">

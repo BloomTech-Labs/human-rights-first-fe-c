@@ -22,7 +22,7 @@ const MapFilter = () => {
         dispatch({ type: 'GETDATA', payload: res.data });
       })
       .catch(err => {
-        console.log(err);
+        window.alert('No incident data available. Please try again later.');
       });
   }, []);
 
