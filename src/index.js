@@ -7,8 +7,8 @@ import { rootReducer } from './state/reducers/index.js';
 import './index.css';
 import 'antd/dist/antd.less';
 
-import { Container } from './components/common/Container';
-import NavBar from './components/common/NavBar';
+import { Container } from './components/Container';
+import NavBar from './components/NavBar';
 
 const store = createStore(rootReducer);
 
