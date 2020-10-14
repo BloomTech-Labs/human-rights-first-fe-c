@@ -8,6 +8,7 @@ const Styleddiv = styled.div`
   align-items: center;
 `;
 
+
 const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
     latitude: 45.4211,

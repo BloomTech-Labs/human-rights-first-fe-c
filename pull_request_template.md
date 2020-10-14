@@ -1,33 +1,29 @@
-## Solution description
+# Description
+Fixes # (issue)
 
-Describe the code change in detail for reviewer. Explain the technical solution you have provided and how it fixed the issue case.
+## Type of change
+Please delete options that are not relevant.
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] This change requires a documentation update
 
-## Covered unit test cases
+## Change Status
+- [ ] Complete, tested, ready to review and merge
+- [ ] Complete, but not tested (may need new tests)
+- [ ] Incomplete/work-in-progress, PR is for discussion/feedback
 
-Were unit test cases recorded for this fix?
+# How Has This Been Tested?
+- [ ] Test A
+- [ ] Test B
 
-## Code is clear and maintainable:
-
-- [x] My code follows the style guidelines of this project
-- [x] My code is consistently formatted.
-- [x] No instance on duplicate code.
-
-## Tested this issue fix on all browser
-
-[x] Chrome
-[x] Safari
-[x] Internet Explorer
-[x] Firefox
-
-## Keep Pull Request Simple
-
-Pull Request is relatively small. It does not contain multiple changes or solve multiple problems.
-
-## Reviewed by Team members
-
-Pull Request is reviewed by one or more team members
-
-## Idiomatic Code
-
-Code follows industry standards for language, framework, and libraries.
-
+# Checklist
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] My code has been reviewed by at least one peer
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
+- [ ] There are no merge conflicts
