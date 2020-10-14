@@ -8,7 +8,7 @@ const initialState = {
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GETDATA':
-      return { data: action.payload };
+      return { ...state, data: action.payload };
     default:
       return state;
   }
