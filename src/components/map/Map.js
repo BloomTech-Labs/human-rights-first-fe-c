@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import styled from 'styled-components';
 import icon from '../../assets/pngegg.png';
 

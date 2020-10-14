@@ -6,7 +6,7 @@ export const Container = () => {
   return (
     <div>
       <main>
-        {/* <div className="wrapper">
+        <div className="wrapper">
           <main className="page-main">
             <div className="title-content">
               <div className="banner-title">
@@ -33,7 +33,7 @@ export const Container = () => {
               <i class="fa fa-chevron-down -page-btn"></i>
             </a>
           </main>
-        </div> */}
+        </div>
         <div id="map">
           <MapFilter />
         </div>
