@@ -14,7 +14,6 @@ const NavBar = () => {
   const [current, setCurrent] = useState('mail');
 
   const handleClick = e => {
-    console.log('click ', e);
     setCurrent({ current: e.key });
   };
   return (
