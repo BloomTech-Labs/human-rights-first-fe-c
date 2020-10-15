@@ -10,7 +10,6 @@ const StyledHeader = styled(Header)`
   align-items: center;
   background-color: white;
   top: 0;
-  // position: 'fixed',
   width: 100vw;
   margin-bottom: -2.2%;
   padding: 0% 15%;

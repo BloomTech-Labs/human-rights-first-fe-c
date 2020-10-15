@@ -6,34 +6,6 @@ export const Container = () => {
   return (
     <div>
       <main>
-        {/* <div className="wrapper">
-          <main className="page-main">
-            <div className="title-content">
-              <div className="banner-title">
-                FIND
-                <br />
-                EXCESSIVE FORCE
-                <br />
-                INCIDENTS
-              </div>
-              <div className="banner-second-title">NEAR YOU</div>
-              <div className="banner-subtitle">
-                Explore the map from a human rights perspective
-              </div>
-              <a
-                href="https://c.humanrightsfirst.dev/#map"
-                class="hvr-icon-hang view-map"
-              >
-                <span className="view-map-font">
-                  View map <i class="fa fa-chevron-down hvr-icon"></i>
-                </span>
-              </a>
-            </div>
-            <a href="#map" className="next-page">
-              <i class="fa fa-chevron-down -page-btn"></i>
-            </a>
-          </main>
-        </div> */}
         <div id="map">
           <MapFilter />
         </div>

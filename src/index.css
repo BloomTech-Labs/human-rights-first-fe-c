@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: #eee;
-  color: #111;
+  color: black;
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ section {
 
 main section h2 {
   font-size: 2.7rem;
-  color: #370617;
+  color: black;
   line-height: 2rem;
   padding-right: 0.625rem;
   text-align: center;
@@ -58,7 +58,7 @@ main section div {
 .organization {
   text-align: center;
   font-size: 1.25rem;
-  color: #370617;
+  color: black;
   width: 80%;
 }
 
@@ -73,7 +73,7 @@ main section div {
 .considered {
   font-size: 1.25rem;
   margin-top: 2.5rem;
-  color: #370617;
+  color: black;
   text-align: center;
   width: 90%;
 }
