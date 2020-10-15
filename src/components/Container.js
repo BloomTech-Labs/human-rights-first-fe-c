@@ -1,45 +1,17 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React from 'react';
 import MapFilter from './map/MapFilter';
+import logo from '../assets/logo.png';
 
 export const Container = () => {
   return (
     <div>
       <main>
-        <div className="wrapper">
-          <main className="page-main">
-            <div className="title-content">
-              <div className="banner-title">
-                FIND
-                <br />
-                EXCESSIVE FORCE
-                <br />
-                INCIDENTS
-              </div>
-              <div className="banner-second-title">NEAR YOU</div>
-              <div className="banner-subtitle">
-                Explore the map from a human rights perspective
-              </div>
-              <a
-                href="https://c.humanrightsfirst.dev/#map"
-                class="hvr-icon-hang view-map"
-              >
-                <span className="view-map-font">
-                  View map <i class="fa fa-chevron-down hvr-icon"></i>
-                </span>
-              </a>
-            </div>
-            <a href="#map" className="next-page">
-              <i class="fa fa-chevron-down -page-btn"></i>
-            </a>
-          </main>
-        </div>
         <div id="map">
           <MapFilter />
         </div>
         <div className="last-section">
           <section className="intro" id="about">
-            <h2>What is Human Rights Considered?</h2>
             <div className="icons">
               <div>
                 <Flag />
@@ -52,31 +24,34 @@ export const Container = () => {
               </div>
             </div>
             <p className="considered">
-              Human Rights Considered is a public police brutality incident
-              viewing application.
+              Police Violence Across America is a public police brutality
+              incident viewing application commissioned by{' '}
+              <a href="https://www.humanrightsfirst.org/">
+                Human Rights First.
+              </a>
               <br />
-              <br /> Our goal is to provide information regarding a variety of
-              police brutality incidents in an accurate and timely manner to
-              public. The incidents have been categorized and can be filtered by
-              types of force, location, and date.
+              <br /> Our goal is to provide information regarding police
+              brutality incidents in an accurate and timely manner to concerned
+              citizens and journalists. The incidents have been categorized and
+              can be filtered by types of force, location, and date.
             </p>
           </section>
           <section className="middle">
             <div className="middle-content">
-              <h1 className="mid-title">How it works?</h1>
+              <h1 className="mid-title">How it works</h1>
               <p className="mid-text">
-                We collect relevant incidents data from Twitter, Reddit, and
-                police agencies to display it on the map.
+                We collected data from various sources, including Reddit,
+                Twitter, news media, etc. The data is filtered through modeling
+                and classification algorithms to display only incidents of
+                police brutality and their corresponding tags.
               </p>
             </div>
           </section>
           <section className="bottom-section">
             <h2>About Human Rights First</h2>
             <div className="bottom">
-              <img
-                src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/423165_10150686770200747_669805325_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=-TaZmzOKohgAX8W3jk4&_nc_ht=scontent-sjc3-1.xx&oh=88b11d2fdc32243402fed9c37667b936&oe=5F8F34C8"
-                alt="humane-right-first-logo"
-              />
+              <br />
+              <br />
               <p className="organization">
                 Human Rights First is an independent advocacy and action
                 organization that challenges America to live up to its ideals.
@@ -87,6 +62,8 @@ export const Container = () => {
                 justice. Around the world, we work where we can best harness
                 American influence to secure core freedoms.
               </p>
+
+              <img src={logo} alt="humane-right-first-logo" id="footerLogo" />
             </div>
             <a href="#" className="back-to-top">
               back to top {'  '}

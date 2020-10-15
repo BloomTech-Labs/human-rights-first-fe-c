@@ -1,55 +1,35 @@
 import React, { useState } from 'react';
 import './../styles/index.css';
-import { Link as LinkTo } from 'react-router-dom';
+import 'antd/dist/antd.css';
+import logo from '../assets/logo.png';
+import { Menu, Typography } from 'antd';
 
-import { Menu } from 'antd';
+// style component imports
 import {
-  MailOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-} from '@ant-design/icons';
+  StyledHeader,
+  StyledTitle,
+  StyledNavDiv,
+} from '../styles/StyledComponents.js';
 
 const NavBar = () => {
-  const { SubMenu } = Menu;
-  const [current, setCurrent] = useState('mail');
-
-  const handleClick = e => {
-    setCurrent({ current: e.key });
-  };
   return (
-    <div>
-      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-        <Menu.Item key="mail" icon={<MailOutlined />}>
-          Navigation One
+    <StyledHeader>
+      <StyledNavDiv>
+        <a href="https://www.humanrightsfirst.org/">
+          <img id="logo" src={logo} alt="human-rights-first-logo" />
+        </a>
+        <StyledTitle level={3}>Police Violence in America</StyledTitle>
+      </StyledNavDiv>
+
+      <Menu mode="horizontal">
+        <Menu.Item>
+          <a href="#map"> Map </a>
         </Menu.Item>
-        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-          Navigation Two
-        </Menu.Item>
-        <SubMenu
-          key="SubMenu"
-          icon={<SettingOutlined />}
-          title="Navigation Three - Submenu"
-        >
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu>
-        <Menu.Item key="alipay">
-          <a
-            href="https://google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Navigation Four - Link
-          </a>
+        <Menu.Item>
+          <a href="#about"> About </a>
         </Menu.Item>
       </Menu>
-    </div>
+    </StyledHeader>
   );
 };
 export default NavBar;

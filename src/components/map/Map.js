@@ -2,19 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import styled from 'styled-components';
 import icon from '../../assets/pngegg.png';
-
-const Styleddiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import { MapDiv } from '../../styles/StyledComponents';
 
 const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
     latitude: 38,
-    longitude: -90,
+    longitude: -95,
     width: '80vw',
-    height: '70vh',
+    height: '80vh',
     zoom: 3,
   });
   const [settings] = useState({
@@ -39,7 +34,7 @@ const Map = ({ filteredData }) => {
 
   return (
     <>
-      <Styleddiv>
+      <MapDiv>
         <ReactMapGL
           {...viewport}
           {...settings}
@@ -47,7 +42,7 @@ const Map = ({ filteredData }) => {
             'pk.eyJ1IjoiamFzb25lbGxpb3RzIiwiYSI6ImNrZnloZjh2cjAybnYyc3AxOG1zZWVmMmoifQ.N-mmGAz8nf3VHwDOBk7sfw' ||
             process.env.REACT_APP_MAPBOX_TOKEN
           }
-          mapStyle="mapbox://styles/jasonelliots/ckg9srh742dhh19q2fr2945q4"
+          mapStyle="mapbox://styles/jasonelliots/ckg9t6ll3002y19mk5th7j05v"
           onViewportChange={viewport => {
             setViewport(viewport);
           }}
@@ -102,7 +97,7 @@ const Map = ({ filteredData }) => {
             </Popup>
           ) : null}
         </ReactMapGL>
-      </Styleddiv>
+      </MapDiv>
     </>
   );
 };

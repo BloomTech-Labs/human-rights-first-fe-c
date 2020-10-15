@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: #eee;
-  color: #111;
+  color: black;
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ section {
 
 main section h2 {
   font-size: 2.7rem;
-  color: #370617;
+  color: black;
   line-height: 2rem;
   padding-right: 0.625rem;
   text-align: center;
@@ -58,7 +58,7 @@ main section div {
 .organization {
   text-align: center;
   font-size: 1.25rem;
-  color: #370617;
+  color: black;
   width: 80%;
 }
 
@@ -73,7 +73,7 @@ main section div {
 .considered {
   font-size: 1.25rem;
   margin-top: 2.5rem;
-  color: #370617;
+  color: black;
   text-align: center;
   width: 90%;
 }
@@ -94,7 +94,7 @@ main section div {
 }
 
 .middle-content {
-  background-color: rgb(159, 70, 1);
+  background-color: rgb(146, 63, 0);
   height: 20rem;
   width: 90%;
   padding: 0 2%;
@@ -112,14 +112,14 @@ main section div {
 }
 
 .mid-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: rgb(255, 216, 175);
   flex: 1;
-  padding-top: 5%;
+  padding: 4% 8% 0 0;
 }
 
 .last-section {
-  background-color: rgb(255, 253, 247);
+  background-color: white; 
 }
 
 /* popup box */
@@ -132,6 +132,7 @@ main section div {
 }
 
 .popUpMessages {
+ 
   border-bottom: 0.063rem solid silver;
   padding-bottom: 0.938rem;
 }
@@ -221,6 +222,7 @@ main section div {
   background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
+  
 }
 
 .page-main div {
@@ -406,7 +408,7 @@ main section div {
 .back-to-top {
   position: absolute;
   right: 10%;
-  background-color: rgb(255, 243, 172);
+  background-color:white;
   padding: 0.3%;
 }
 
