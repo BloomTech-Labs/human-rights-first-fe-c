@@ -39,7 +39,7 @@ export const Container = () => {
         </div>
         <div className="last-section">
           <section className="intro" id="about">
-            <h2>What is Human Rights Considered?</h2>
+            <h2>Police Violence Across America</h2>
             <div className="icons">
               <div>
                 <Flag />

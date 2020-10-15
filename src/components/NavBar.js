@@ -1,30 +1,14 @@
 import React, { useState } from 'react';
 import './../styles/index.css';
 import 'antd/dist/antd.css';
+import { Menu } from 'antd';
 
-import { Layout, Menu } from 'antd';
-
-const { Header } = Layout;
+// style component imports
+import { StyledHeader } from '../styles/StyledComponents.js';
 
 const NavBar = () => {
   return (
-    <Header
-      style={{
-        display: 'flex',
-        height: '21vh',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        top: 0,
-        // position: 'fixed',
-        width: '100vw',
-        marginBottom: '-2.2%',
-        padding: '0% 15%',
-        zIndex: 100,
-        opacity: '80%',
-        borderBottom: '2px solid gray',
-      }}
-    >
+    <StyledHeader>
       <div className="logo">
         <img
           id="logo"
@@ -40,7 +24,7 @@ const NavBar = () => {
           <a href="#about"> About </a>
         </Menu.Item>
       </Menu>
-    </Header>
+    </StyledHeader>
   );
 };
 export default NavBar;

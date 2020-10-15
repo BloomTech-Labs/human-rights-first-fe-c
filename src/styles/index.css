@@ -39,7 +39,7 @@
 
 .cluster-marker {
   color: #fff;
-  background: #aa5a15;
+  /* background: #aa5a15; */
   border-radius: 50%;
   padding: 10px;
   display: flex;
@@ -66,7 +66,7 @@
   position: absolute;
   right: 50%;
   margin-top: 1%;
-  background-color: rgba(211, 124, 18, 0.324);
+  /* background-color: rgba(211, 124, 18, 0.324); */
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -137,7 +137,7 @@ a {
   left: 0;
   right: 100%;
   bottom: 0;
-  background: #8b4312;
+  /* background: #8b4312; */
   height: 0.15rem;
   -webkit-transition-property: right;
   transition-property: right;
@@ -175,7 +175,7 @@ a {
 /* Sign Up Form */
 
 .form {
-  background-color: #faa307;
+  /* background-color: #faa307; */
   width: 25%;
   margin: 5% 0 10% 10%;
   padding: 6%;
@@ -208,18 +208,18 @@ a {
 .sign-up-text-container {
   margin-left: 11%;
   margin-top: 4%;
-  color: #faa307;
+  /* color: #faa307; */
   font-family: 'Playfair Display', serif;
 }
 
 .sign-up-h1 {
-  color: #faa307;
+  /* color: #faa307; */
   font-family: 'Playfair Display', serif;
 }
 
 .signup-btn {
   background-color: #370617;
-  color: #faa307;
+  /* color: #faa307; */
   opacity: 50%;
   margin-top: 6%;
   margin-left: 32%;

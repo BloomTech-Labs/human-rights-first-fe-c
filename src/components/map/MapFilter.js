@@ -2,17 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Input } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
 import axios from 'axios';
 import Map from '../map/Map';
 
-const StyledDiv = styled.div`
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+// styled component imports
+import { StyledDiv } from '../../styles/StyledComponents';
 
 const MapFilter = () => {
   useEffect(() => {

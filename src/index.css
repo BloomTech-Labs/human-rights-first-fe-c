@@ -119,7 +119,7 @@ main section div {
 }
 
 .last-section {
-  background-color: rgb(255, 253, 247);
+  background-color: white; 
 }
 
 /* popup box */
@@ -221,6 +221,7 @@ main section div {
   background: var(--main-brown-color) url(./assets//bannerFull.jpg) no-repeat center / cover;
   background-blend-mode: luminosity;
   color: var(--main-white-color);
+  
 }
 
 .page-main div {
@@ -406,7 +407,7 @@ main section div {
 .back-to-top {
   position: absolute;
   right: 10%;
-  background-color: rgb(255, 243, 172);
+  background-color:white;
   padding: 0.3%;
 }
 
