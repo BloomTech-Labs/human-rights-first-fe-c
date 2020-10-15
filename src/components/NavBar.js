@@ -18,11 +18,11 @@ const NavBar = () => {
         top: 0,
         // position: 'fixed',
         width: '100vw',
-        marginBottom: '-2.5%',
+        marginBottom: '-2.2%',
         padding: '0% 15%',
         zIndex: 100,
         opacity: '80%',
-        borderBottom: '5px solid black',
+        borderBottom: '2px solid gray',
       }}
     >
       <div className="logo">

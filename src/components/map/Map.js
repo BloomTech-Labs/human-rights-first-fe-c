@@ -7,12 +7,14 @@ const Styleddiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
 `;
 
 const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
     latitude: 38,
-    longitude: -90,
+    longitude: -95,
     width: '80vw',
     height: '80vh',
     zoom: 3,
@@ -47,7 +49,7 @@ const Map = ({ filteredData }) => {
             'pk.eyJ1IjoiamFzb25lbGxpb3RzIiwiYSI6ImNrZnloZjh2cjAybnYyc3AxOG1zZWVmMmoifQ.N-mmGAz8nf3VHwDOBk7sfw' ||
             process.env.REACT_APP_MAPBOX_TOKEN
           }
-          mapStyle="mapbox://styles/jasonelliots/ckg9srh742dhh19q2fr2945q4"
+          mapStyle="mapbox://styles/jasonelliots/ckg9t6ll3002y19mk5th7j05v"
           onViewportChange={viewport => {
             setViewport(viewport);
           }}

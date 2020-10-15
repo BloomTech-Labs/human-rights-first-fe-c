@@ -48,16 +48,9 @@
   width: 40px;
 }
 
-/* .logo {
-  width: 50x; 
-  color: black;
-  font-size: 100px;
-  text-align: center;
-} */
-
 #logo {
-  width: 200px; 
-  height: 140px; 
+  width: 50%; 
+  height: 10%; 
   color: black;
   font-size: 100px;
   text-align: center;
