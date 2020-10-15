@@ -1,4 +1,9 @@
 /* Map component styling*/
+
+#map {
+  margin-top: 15%; 
+
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -46,10 +51,9 @@
 }
 
 .logo {
-  color: pink;
+  color: black;
   font-size: 100px;
   text-align: center;
-  margin-bottom: -50px;
 }
 
 .pop-up-close {
@@ -230,6 +234,21 @@ a {
 }
 
 
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  size: 5px; 
+}
+
+.icon {
+  width: 10px;
+  height: 12px; 
+}
+
+.popup {
+  width: 30%; 
+}
 
 
 @media screen and (max-width: 768px) {
@@ -259,20 +278,4 @@ a {
     margin-left: 0;
   }
 
-}
-
-.marker-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  size: 5px; 
-}
-
-.icon {
-  width: 10px;
-  height: 12px; 
-}
-
-.popup {
-  width: 30%; 
 }

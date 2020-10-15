@@ -1,55 +1,41 @@
 import React, { useState } from 'react';
 import './../styles/index.css';
+import 'antd/dist/antd.css';
 import { Link as LinkTo } from 'react-router-dom';
 
-import { Menu } from 'antd';
-import {
-  MailOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-} from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+
+const { Header } = Layout;
 
 const NavBar = () => {
-  const { SubMenu } = Menu;
-  const [current, setCurrent] = useState('mail');
-
-  const handleClick = e => {
-    setCurrent({ current: e.key });
-  };
   return (
-    <div>
-      <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-        <Menu.Item key="mail" icon={<MailOutlined />}>
-          Navigation One
+    <Header
+      style={{
+        display: 'flex',
+        height: '20vh',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        top: 0,
+        position: 'fixed',
+        width: '100vw',
+        padding: '3% 15%',
+        zIndex: 100,
+        borderBottom: '5px solid black',
+      }}
+    >
+      <div className="logo">
+        <span> Test </span>
+      </div>
+      <Menu mode="horizontal">
+        <Menu.Item>
+          <span> Map </span>
         </Menu.Item>
-        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-          Navigation Two
-        </Menu.Item>
-        <SubMenu
-          key="SubMenu"
-          icon={<SettingOutlined />}
-          title="Navigation Three - Submenu"
-        >
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu>
-        <Menu.Item key="alipay">
-          <a
-            href="https://google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Navigation Four - Link
-          </a>
+        <Menu.Item>
+          <span> About </span>
         </Menu.Item>
       </Menu>
-    </div>
+    </Header>
   );
 };
 export default NavBar;
