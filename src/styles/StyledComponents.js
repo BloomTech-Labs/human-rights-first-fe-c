@@ -29,7 +29,7 @@ const StyledHeader = styled(Header)`
   margin-bottom: -2.2%;
   padding: 0% 10%;
   z-index: 100;
-  border-bottom: 2px solid gray;
+  border-bottom: 0.125rem solid silver;
 `;
 
 const StyledDiv = styled.div`
@@ -40,4 +40,12 @@ const StyledDiv = styled.div`
   justify-content: center;
 `;
 
-export { StyledNavDiv, StyledTitle, StyledHeader, StyledDiv };
+const MapDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 0.125rem solid silver;
+  border-right: 0.125rem solid silver;
+`;
+
+export { StyledNavDiv, StyledTitle, StyledHeader, StyledDiv, MapDiv };

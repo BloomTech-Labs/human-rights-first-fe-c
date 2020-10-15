@@ -1,6 +1,7 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React from 'react';
 import MapFilter from './map/MapFilter';
+import logo from '../assets/logo.png';
 
 export const Container = () => {
   return (
@@ -62,10 +63,7 @@ export const Container = () => {
                 American influence to secure core freedoms.
               </p>
 
-              <img
-                src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/423165_10150686770200747_669805325_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=-TaZmzOKohgAX8W3jk4&_nc_ht=scontent-sjc3-1.xx&oh=88b11d2fdc32243402fed9c37667b936&oe=5F8F34C8"
-                alt="humane-right-first-logo"
-              />
+              <img src={logo} alt="humane-right-first-logo" id="footerLogo" />
             </div>
             <a href="#" className="back-to-top">
               back to top {'  '}
