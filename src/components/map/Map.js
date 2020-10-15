@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import ReactMapGL, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
+import React, { useState, useEffect } from 'react';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import styled from 'styled-components';
+import icon from '../../assets/pngegg.png';
 
 const Styleddiv = styled.div`
   display: flex;
@@ -8,19 +9,33 @@ const Styleddiv = styled.div`
   align-items: center;
 `;
 
-
 const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
-    latitude: 45.4211,
-    longitude: -75.6903,
+    latitude: 38,
+    longitude: -90,
     width: '80vw',
-    height: '50vh',
+    height: '70vh',
     zoom: 3,
   });
-
   const [settings] = useState({
-    scrollZoom: false,
+    scrollZoom: true,
   });
+
+  const [selectedIncident, setSelectedIncident] = useState(null);
+  const [descriptionClicked, setDescriptionClicked] = useState(false);
+
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === 'Escape') {
+        setSelectedIncident(null);
+      }
+    };
+    window.addEventListener('keydown', listener);
+
+    return () => {
+      window.removeEventListener('keydown', listener);
+    };
+  }, []);
 
   return (
     <>
@@ -32,7 +47,7 @@ const Map = ({ filteredData }) => {
             'pk.eyJ1IjoiamFzb25lbGxpb3RzIiwiYSI6ImNrZnloZjh2cjAybnYyc3AxOG1zZWVmMmoifQ.N-mmGAz8nf3VHwDOBk7sfw' ||
             process.env.REACT_APP_MAPBOX_TOKEN
           }
-          mapStyle="mapbox://styles/jasonelliots/ckfyi3f840a3719nv8ruodjrn"
+          mapStyle="mapbox://styles/jasonelliots/ckg9srh742dhh19q2fr2945q4"
           onViewportChange={viewport => {
             setViewport(viewport);
           }}
@@ -45,11 +60,47 @@ const Map = ({ filteredData }) => {
                     latitude={incident.lat}
                     longitude={incident.long}
                   >
-                    <button>{incident.city}</button>
+                    <button
+                      className="marker-btn"
+                      onClick={e => {
+                        e.preventDefault();
+                        setSelectedIncident(incident);
+                      }}
+                    >
+                      <img src={icon} alt="Incident Icon" className="icon" />
+                    </button>
                   </Marker>
                 ) : null
               )
             : null}
+
+          {selectedIncident ? (
+            <Popup
+              latitude={selectedIncident.lat}
+              longitude={selectedIncident.long}
+              closeOnClick={false}
+              onClose={() => {
+                setSelectedIncident(null);
+                setDescriptionClicked(false);
+              }}
+              className="popup"
+            >
+              <div>
+                <h2>{selectedIncident.title}</h2>
+                <p>
+                  {selectedIncident.city}, {selectedIncident.state}
+                </p>
+                {descriptionClicked ? (
+                  selectedIncident.desc
+                ) : (
+                  <button onClick={() => setDescriptionClicked(true)}>
+                    {' '}
+                    Show description{' '}
+                  </button>
+                )}
+              </div>
+            </Popup>
+          ) : null}
         </ReactMapGL>
       </Styleddiv>
     </>

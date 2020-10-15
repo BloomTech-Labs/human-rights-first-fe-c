@@ -260,3 +260,19 @@ a {
   }
 
 }
+
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  size: 5px; 
+}
+
+.icon {
+  width: 10px;
+  height: 12px; 
+}
+
+.popup {
+  width: 30%; 
+}
