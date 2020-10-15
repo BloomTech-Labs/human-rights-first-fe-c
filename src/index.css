@@ -94,7 +94,7 @@ main section div {
 }
 
 .middle-content {
-  background-color: rgb(159, 70, 1);
+  background-color: rgb(146, 63, 0);
   height: 20rem;
   width: 90%;
   padding: 0 2%;
@@ -112,10 +112,10 @@ main section div {
 }
 
 .mid-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: rgb(255, 216, 175);
   flex: 1;
-  padding-top: 5%;
+  padding: 4% 8% 0 0;
 }
 
 .last-section {

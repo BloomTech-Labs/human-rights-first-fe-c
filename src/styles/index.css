@@ -133,7 +133,6 @@ a {
   left: 0;
   right: 100%;
   bottom: 0;
-  /* background: #8b4312; */
   height: 0.15rem;
   -webkit-transition-property: right;
   transition-property: right;
