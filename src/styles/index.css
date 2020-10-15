@@ -48,7 +48,16 @@
   width: 40px;
 }
 
-.logo {
+/* .logo {
+  width: 50x; 
+  color: black;
+  font-size: 100px;
+  text-align: center;
+} */
+
+#logo {
+  width: 200px; 
+  height: 140px; 
   color: black;
   font-size: 100px;
   text-align: center;
