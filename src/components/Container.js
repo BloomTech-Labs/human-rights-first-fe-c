@@ -11,8 +11,6 @@ export const Container = () => {
         </div>
         <div className="last-section">
           <section className="intro" id="about">
-            <h2>Police Violence Across America</h2>
-            <br />
             <div className="icons">
               <div>
                 <Flag />

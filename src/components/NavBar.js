@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import './../styles/index.css';
 import 'antd/dist/antd.css';
-import { Menu } from 'antd';
+import logo from '../assets/logo.png';
+import { Menu, Typography } from 'antd';
 
 // style component imports
-import { StyledHeader } from '../styles/StyledComponents.js';
+import {
+  StyledHeader,
+  StyledTitle,
+  StyledNavDiv,
+} from '../styles/StyledComponents.js';
 
 const NavBar = () => {
   return (
     <StyledHeader>
-      <div className="logo">
+      <StyledNavDiv>
         <a href="https://www.humanrightsfirst.org/">
-          <img
-            id="logo"
-            src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/423165_10150686770200747_669805325_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=-TaZmzOKohgAX8W3jk4&_nc_ht=scontent-sjc3-1.xx&oh=88b11d2fdc32243402fed9c37667b936&oe=5F8F34C8"
-            alt="human-rights-first-logo"
-          />
+          <img id="logo" src={logo} alt="human-rights-first-logo" />
         </a>
-      </div>
+        <StyledTitle level={3}>Police Violence in America</StyledTitle>
+      </StyledNavDiv>
+
       <Menu mode="horizontal">
         <Menu.Item>
           <a href="#map"> Map </a>
