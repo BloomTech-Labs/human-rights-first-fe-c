@@ -14,7 +14,7 @@ const Map = ({ filteredData }) => {
     latitude: 38,
     longitude: -90,
     width: '80vw',
-    height: '70vh',
+    height: '80vh',
     zoom: 3,
   });
   const [settings] = useState({

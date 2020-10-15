@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './../styles/index.css';
 import 'antd/dist/antd.css';
-import { Link as LinkTo } from 'react-router-dom';
 
 import { Layout, Menu } from 'antd';
 
@@ -17,10 +16,12 @@ const NavBar = () => {
         alignItems: 'center',
         backgroundColor: 'white',
         top: 0,
-        position: 'fixed',
+        // position: 'fixed',
         width: '100vw',
-        padding: '3% 15%',
+        marginBottom: '-2.5%',
+        padding: '0% 15%',
         zIndex: 100,
+        opacity: '80%',
         borderBottom: '5px solid black',
       }}
     >
@@ -29,10 +30,10 @@ const NavBar = () => {
       </div>
       <Menu mode="horizontal">
         <Menu.Item>
-          <span> Map </span>
+          <a href="#map"> Map </a>
         </Menu.Item>
         <Menu.Item>
-          <span> About </span>
+          <a href="#about"> About </a>
         </Menu.Item>
       </Menu>
     </Header>
