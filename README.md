@@ -1,14 +1,8 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
+# Human Rights First: Police Brutality Across America
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be completed by. Make sure to delete the numbers by the end of Labs.
+You can find the deployed project at [Human Rights First - Police Brutality Across America](https://main.d17v0exvwwwzgz.amplifyapp.com/).
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
-# Human Rights First Police Use of Force Map
-
-You can find the deployed project at [Human Rights First - Mapping Police Violence](https://main.d17v0exvwwwzgz.amplifyapp.com/).
-
-## 4️⃣ Contributors
+## Contributors
 
 |                                                      [Matthew Molloy](https://github.com/)                                                       |                                                       [Jason Schwartz](https://github.com/)                                                        |                                                      [Emilio Diaz-Goico](https://github.com/)                                                       |                                                       [Steele Helbling](https://github.com/)                                                        |     |                                                 
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
@@ -19,33 +13,19 @@ You can find the deployed project at [Human Rights First - Mapping Police Violen
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
-1️⃣ [Trello Board](https://trello.com/b/QD7rXL7v/labs25hrfthierry)
+[Trello Board](https://trello.com/b/QWXanExQ/team-c-2009)
 
-1️⃣ [Product Canvas](https://whimsical.com/47hccoy2w65yxpK8dSfpwz)
+[Technical Architecture and Userflow](https://whimsical.com/8sQcpjw3K2XdAiM9aeMkft)
 
-Our team is developing an interactive map that identifies potential instances of police use of force across the United States of America for Human Rights First, an independent advocacy and action organization.
+Our team is developing an interactive map that identifies instances of police use of force across the United States of America for Human Rights First, an independent advocacy and action organization.
 
-We're pulling data from similiar APIs(All locations V2 - https://raw.githubusercontent.com/2020PB/police-brutality/data_build/all-locations-v2.json, 846- https://api.846policebrutality.com/api/incidents) and from Twitter and Reddit. We want to identify aggregate these instances.
+### Key Features
 
-### 4️⃣ Key Features
-
-- feature one
-- feature two
-- feature three
-- feature four
-- feature five
+- User can view incidents of police brutality and get more information on specific incidents
+- User can seearch map based on type of force, location, and date 
 
 ## 1️⃣ Tech Stack
 
