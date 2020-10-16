@@ -6,7 +6,11 @@ import axios from 'axios';
 import Map from '../map/Map';
 
 // styled component imports
-import { StyledDiv } from '../../styles/StyledComponents';
+import {
+  StyledDiv,
+  StyledFilterDiv,
+  StyledSubTitle,
+} from '../../styles/StyledComponents';
 
 const MapFilter = () => {
   useEffect(() => {
@@ -24,27 +28,43 @@ const MapFilter = () => {
 
   const dispatch = useDispatch();
 
-  const [searchInput, setSearchInput] = useState('');
+  const [citySearchInput, setCitySearchInput] = useState('');
+  const [stateSearchInput, setStateSearchInput] = useState('');
 
-  const handleSearchInput = e => {
-    setSearchInput(e.target.value.toLowerCase());
+  const handleCitySearchInput = e => {
+    setCitySearchInput(e.target.value.toLowerCase());
+  };
+
+  const handleStateSearchInput = e => {
+    setStateSearchInput(e.target.value.toLowerCase());
   };
 
   const searchResults = data.filter(incident => {
-    return incident.city.toLowerCase().includes(searchInput.toLowerCase());
+    return (
+      incident.city.toLowerCase().includes(citySearchInput.toLowerCase()) &&
+      incident.state.toLowerCase().includes(stateSearchInput.toLowerCase())
+    );
   });
 
   return (
     <StyledDiv>
       <Map filteredData={searchResults} />
-      <StyledDiv>
-        <input
+      <StyledFilterDiv>
+        <Input
+          size="large"
           className="form-control"
-          value={searchInput}
+          value={citySearchInput}
           placeholder="search by city"
-          onChange={handleSearchInput}
+          onChange={handleCitySearchInput}
         />
-      </StyledDiv>
+        <Input
+          size="large"
+          className="form-control"
+          value={stateSearchInput}
+          placeholder="search by state"
+          onChange={handleStateSearchInput}
+        />
+      </StyledFilterDiv>
     </StyledDiv>
   );
 };

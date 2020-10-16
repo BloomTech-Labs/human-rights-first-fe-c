@@ -18,7 +18,7 @@ const NavBar = () => {
         <a href="https://www.humanrightsfirst.org/">
           <img id="logo" src={logo} alt="human-rights-first-logo" />
         </a>
-        <StyledTitle level={3}>Police Violence in America</StyledTitle>
+        <StyledTitle level={3}>Police Brutality Across America</StyledTitle>
       </StyledNavDiv>
 
       <Menu mode="horizontal">

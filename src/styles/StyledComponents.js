@@ -10,6 +10,11 @@ const StyledTitle = styled(Title)`
   margin-top: 15px;
 `;
 
+const StyledSubTitle = styled(Title)`
+  margin-top: 10px;
+  font-size: 10px;
+`;
+
 const StyledNavDiv = styled.div`
   width: 50%;
   display: flex;
@@ -40,6 +45,16 @@ const StyledDiv = styled.div`
   justify-content: center;
 `;
 
+const StyledFilterDiv = styled.div`
+  margin: 2rem;
+  margin-bottom: -2rem;
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const MapDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,4 +63,12 @@ const MapDiv = styled.div`
   border-right: 0.125rem solid silver;
 `;
 
-export { StyledNavDiv, StyledTitle, StyledHeader, StyledDiv, MapDiv };
+export {
+  StyledNavDiv,
+  StyledTitle,
+  StyledHeader,
+  StyledDiv,
+  MapDiv,
+  StyledFilterDiv,
+  StyledSubTitle,
+};

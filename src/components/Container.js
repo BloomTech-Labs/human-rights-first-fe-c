@@ -24,7 +24,7 @@ export const Container = () => {
               </div>
             </div>
             <p className="considered">
-              Police Violence Across America is a public police brutality
+              Police Brutality Across America is a public police brutality
               incident viewing application commissioned by{' '}
               <a href="https://www.humanrightsfirst.org/">
                 Human Rights First.
