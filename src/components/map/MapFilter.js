@@ -24,14 +24,22 @@ const MapFilter = () => {
 
   const dispatch = useDispatch();
 
-  const [searchInput, setSearchInput] = useState('');
+  const [citySearchInput, setCitySearchInput] = useState('');
+  const [stateSearchInput, setStateSearchInput] = useState('');
 
-  const handleSearchInput = e => {
-    setSearchInput(e.target.value.toLowerCase());
+  const handleCitySearchInput = e => {
+    setCitySearchInput(e.target.value.toLowerCase());
+  };
+
+  const handleStateSearchInput = e => {
+    setStateSearchInput(e.target.value.toLowerCase());
   };
 
   const searchResults = data.filter(incident => {
-    return incident.city.toLowerCase().includes(searchInput.toLowerCase());
+    return (
+      incident.city.toLowerCase().includes(citySearchInput.toLowerCase()) &&
+      incident.state.toLowerCase().includes(stateSearchInput.toLowerCase())
+    );
   });
 
   return (
@@ -40,9 +48,15 @@ const MapFilter = () => {
       <StyledDiv>
         <input
           className="form-control"
-          value={searchInput}
+          value={citySearchInput}
           placeholder="search by city"
-          onChange={handleSearchInput}
+          onChange={handleCitySearchInput}
+        />
+        <input
+          className="form-control"
+          value={stateSearchInput}
+          placeholder="search by state"
+          onChange={handleStateSearchInput}
         />
       </StyledDiv>
     </StyledDiv>
