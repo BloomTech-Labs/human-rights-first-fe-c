@@ -78,41 +78,19 @@ Tweepy is a Python library that allows users to access the Twitter API. We used 
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-🚫These are just examples, replace them with the specifics for your app
+    *  REACT_APP_MAPBOX_TOKEN=
 
-    *  PRAW_CLIENT_ID  - keys for Reddit API
-    *  PRAW_CLIENT_SECRET - keys for Reddit API
-    *  PRAW_USER_AGENT - keys for Reddit API
-    *  TWEEPY_CONSUMER - keys for Twitter API
-    *  TWEEPY_SECRET - keys for Twitter API
-    *  TWEEPY_ACCESS - keys for Twitter API
-    *  TWEEPY_ACCESS_SECRET - keys for Twitter API
+# Testing
 
-# 5️⃣ Content Licenses
+No testing implemented as of October 16th, 2020. 
 
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
+# Installation Instructions
 
-| Image Filename | Source / Creator | License                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
-
-# 4️⃣ Testing
-
-🚫Document what you used for testing and why
-
-# 4️⃣ Installation Instructions
-
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+Run 'npm install' to install all necessary dependencies. 
 
 ## Other Scripts
 
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * node server.js - must be executed from /server folder - runs local server for development 
 
 # Contributing
 
