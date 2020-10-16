@@ -6,7 +6,11 @@ import axios from 'axios';
 import Map from '../map/Map';
 
 // styled component imports
-import { StyledDiv } from '../../styles/StyledComponents';
+import {
+  StyledDiv,
+  StyledFilterDiv,
+  StyledSubTitle,
+} from '../../styles/StyledComponents';
 
 const MapFilter = () => {
   useEffect(() => {
@@ -45,20 +49,22 @@ const MapFilter = () => {
   return (
     <StyledDiv>
       <Map filteredData={searchResults} />
-      <StyledDiv>
-        <input
+      <StyledFilterDiv>
+        <Input
+          size="large"
           className="form-control"
           value={citySearchInput}
           placeholder="search by city"
           onChange={handleCitySearchInput}
         />
-        <input
+        <Input
+          size="large"
           className="form-control"
           value={stateSearchInput}
           placeholder="search by state"
           onChange={handleStateSearchInput}
         />
-      </StyledDiv>
+      </StyledFilterDiv>
     </StyledDiv>
   );
 };
