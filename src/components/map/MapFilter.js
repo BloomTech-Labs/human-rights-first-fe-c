@@ -11,7 +11,7 @@ import { StyledDiv, StyledFilterDiv } from '../../styles/StyledComponents';
 const MapFilter = () => {
   useEffect(() => {
     axios
-      .get('http://localhost:5000/')
+      .get(process.env.REACT_APP_BACKENDURL)
       .then(res => {
         dispatch({ type: 'GETDATA', payload: res.data });
       })
