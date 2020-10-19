@@ -6,16 +6,12 @@ import axios from 'axios';
 import Map from '../map/Map';
 
 // styled component imports
-import {
-  StyledDiv,
-  StyledFilterDiv,
-  StyledSubTitle,
-} from '../../styles/StyledComponents';
+import { StyledDiv, StyledFilterDiv } from '../../styles/StyledComponents';
 
 const MapFilter = () => {
   useEffect(() => {
     axios
-      .get('http://localhost:5000/')
+      .get(process.env.REACT_APP_BACKENDURL)
       .then(res => {
         dispatch({ type: 'GETDATA', payload: res.data });
       })

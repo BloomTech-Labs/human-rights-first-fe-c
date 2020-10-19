@@ -25,6 +25,7 @@
     "react-bootstrap-icons": "^1.0.3-alpha5",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.7",
+    "react-mapbox-gl": "^4.8.6",
     "react-places-autocomplete": "^7.3.0",
     "react-plotly.js": "^2.4.0",
     "react-redux": "^7.2.1",
