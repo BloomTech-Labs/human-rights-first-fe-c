@@ -54,6 +54,8 @@ const Map = ({ filteredData }) => {
                     key={incident.id}
                     latitude={incident.lat}
                     longitude={incident.long}
+                    offsetLeft={-12}
+                    offsetTop={-15}
                   >
                     <button
                       className="marker-btn"
