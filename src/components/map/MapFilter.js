@@ -6,11 +6,7 @@ import axios from 'axios';
 import Map from '../map/Map';
 
 // styled component imports
-import {
-  StyledDiv,
-  StyledFilterDiv,
-  StyledSubTitle,
-} from '../../styles/StyledComponents';
+import { StyledDiv, StyledFilterDiv } from '../../styles/StyledComponents';
 
 const MapFilter = () => {
   useEffect(() => {

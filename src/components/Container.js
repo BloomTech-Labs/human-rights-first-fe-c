@@ -33,7 +33,11 @@ export const Container = () => {
               <br /> Our goal is to provide information regarding police
               brutality incidents in an accurate and timely manner to concerned
               citizens and journalists. The incidents have been categorized and
-              can be filtered by types of force, location, and date.
+              can be filtered by types of force used, location, and date.
+              <br /> <br />
+              <p>
+                Click on the icon of a given incident to view more information.{' '}
+              </p>
             </p>
           </section>
           <section className="middle">
