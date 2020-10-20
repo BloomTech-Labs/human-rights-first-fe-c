@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import icon from '../../assets/pngegg.png';
 import { MapDiv } from '../../styles/StyledComponents';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
@@ -89,6 +90,7 @@ const Map = ({ filteredData }) => {
                     Show description{' '}
                   </button>
                 )}
+                <p> {selectedIncident.src} </p>
               </div>
             </Popup>
           ) : null}
