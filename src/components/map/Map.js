@@ -90,7 +90,20 @@ const Map = ({ filteredData }) => {
                     Show description{' '}
                   </button>
                 )}
-                <p> {selectedIncident.src} </p>
+
+                {selectedIncident.src.map(source => {
+                  return (
+                    <div
+                      style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'auto',
+                        textOverflow: 'ellipsis',
+                      }}
+                    >
+                      <a href={source.src_url}> {source.src_url} </a>
+                    </div>
+                  );
+                })}
               </div>
             </Popup>
           ) : null}
