@@ -25,64 +25,19 @@ Our team is developing an interactive map that identifies instances of police us
 ### Key Features
 
 - User can view incidents of police brutality and get more information on specific incidents
-- User can seearch map based on type of force, location, and date 
+- User can currently search map based on city and state. In future releases, filters based on type of force and date could be implemented. 
 
-## 1️⃣ Tech Stack
 
-### Data Science API built using:
-
-#### _Data Science goes here_
-
-🚫 Why did you choose this framework?
-
-- Works well with FastAPI
-- Recommended to us
-- Wanted to learn an in-demand framework
-
-🚫List the rest of the data science features and libraries in the same format as the framework above.
-
-- Pandas
-- scikit-learn
-- spacy
-- nltk
-- PRAW
-- Tweepy
-
-#### Data Science API deployed to AWS
-
-#### [Back end](🚫link to back end repo here) built using:
-
-#### 🚫 back end framework goes here (link to BE REPO)
-
-- point one
-- point two
-- point three
-
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
-
-# APIs
-
-## 2️⃣ Data Science API
-
-We are sending json objects to the backend with information about instances of police use of force. This information includes location data (city, state, and geocode) and relevant details about the incident, like the type of force that was used.
-
-## 2️⃣ PRAW
-
-PRAW, The Python Reddit API Wrapper, makes it easy for users to analyze Reddit data. We used PRAW to scrape Reddit for potential instances of police of force.
-
-## 3️⃣ Tweepy
-
-Tweepy is a Python library that allows users to access the Twitter API. We used Tweepy to scan Twitter to find instances of police use of force.
-
-# 3️⃣ Environment Variables
+#  Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
+    *  REACT_APP_BACKENDURL=
     *  REACT_APP_MAPBOX_TOKEN=
 
 # Testing
 
-No testing implemented as of October 16th, 2020. 
+No testing implemented as of October 18th, 2020. 
 
 # Installation Instructions
 
@@ -129,6 +84,9 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
-## Documentation
+## Further Tech Stack Information
 
-See [Backend Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-BE) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-BE) for details on the backend portion of our project.
+
+See [Data Science Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-DS) for details on the data science portion of our project.
+
