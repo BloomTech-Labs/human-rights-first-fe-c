@@ -31,14 +31,12 @@ const StyledHeader = styled(Header)`
   background-color: white;
   top: 0;
   width: 100vw;
-  margin-bottom: -2.2%;
   padding: 0% 10%;
   z-index: 100;
   border-bottom: 0.125rem solid silver;
 `;
 
 const StyledDiv = styled.div`
-  margin: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
