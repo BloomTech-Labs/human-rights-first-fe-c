@@ -1,14 +1,14 @@
 # Human Rights First: Police Brutality Across America
 
-You can find the deployed project at [Human Rights First - Police Brutality Across America](https://main.d17v0exvwwwzgz.amplifyapp.com/).
+You can find the deployed project at [Human Rights First - Police Brutality Across America](https://main.d17v0exvwwwzgz.amplifyapp.com/) and a product demo video [here](https://streamable.com/s065r3)
 
 ## Contributors
 
-|                                                      [Matthew Molloy](https://github.com/)                                                       |                                                       [Jason Schwartz](https://github.com/)                                                        |                                                      [Emilio Diaz-Goico](https://github.com/)                                                       |                                                       [Steele Helbling](https://github.com/)                                                        |     |                                                 
-| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                      [Matthew Molloy](https://github.com/)                                                       |                                                       [Jason Schwartz](https://github.com/)                                                        |                                                      [Emilio Diaz-Goico](https://github.com/)                                                       |                                                       [Steele Helbling](https://github.com/)                                                        |                                                      
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | 
 | [<img src="https://ca.slack-edge.com/ESZCHB482-W012H6TKTBP-791655a057b9-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W012QNY40TW-13608abc8792-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ52B0B-dbe5d49f721f-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W0123RSMJQP-dd8a48c8def2-512" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "0" />](https://github.com/) |
 |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                                                      |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |              |
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |              
 
 <br>
 <br>
@@ -33,11 +33,13 @@ Our team is developing an interactive map that identifies instances of police us
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
     *  REACT_APP_BACKENDURL=
+       link to API endpoint to retrieve data 
     *  REACT_APP_MAPBOX_TOKEN=
+       mapbox token for accessing mapbox API - generate new token at mapbox.com 
 
 # Testing
 
-No testing implemented as of October 18th, 2020. 
+No testing implemented as of October 23rd, 2020. 
 
 # Installation Instructions
 
@@ -49,7 +51,7 @@ Run 'npm install' to install all necessary dependencies.
 
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make via the 'issue' tab or any other method with the owners of this repository before making a change.
 
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
@@ -60,7 +62,7 @@ Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it 
 - Check first to see if your issue has already been reported.
 - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
 - Create a live example of the problem.
-- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
+- Navigate to the 'issues' tab to submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
