@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './../styles/index.css';
 import 'antd/dist/antd.css';
 import logo from '../assets/logo.png';
-import { Menu, Typography } from 'antd';
+import { Menu } from 'antd';
 
 // style component imports
+
 import {
   StyledHeader,
   StyledTitle,
