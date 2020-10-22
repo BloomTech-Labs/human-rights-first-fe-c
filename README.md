@@ -1,6 +1,6 @@
 # Human Rights First: Police Brutality Across America
 
-You can find the deployed project at [Human Rights First - Police Brutality Across America](https://main.d17v0exvwwwzgz.amplifyapp.com/).
+You can find the deployed project at [Human Rights First - Police Brutality Across America](https://main.d17v0exvwwwzgz.amplifyapp.com/) and a product demo video [here](https://streamable.com/s065r3)
 
 ## Contributors
 
