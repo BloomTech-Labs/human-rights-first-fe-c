@@ -8,9 +8,9 @@ const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
     latitude: 38,
     longitude: -95,
-    width: '80vw',
-    height: '80vh',
-    zoom: 3,
+    width: '85vw',
+    height: '85vh',
+    zoom: 1,
   });
   const [settings] = useState({
     scrollZoom: true,
