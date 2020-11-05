@@ -3,6 +3,7 @@ import './../styles/index.css';
 import 'antd/dist/antd.css';
 import logo from '../assets/logo.png';
 import { Menu } from 'antd';
+import { NavLink } from 'react-router-dom';
 
 // style component imports
 
@@ -24,10 +25,13 @@ const NavBar = () => {
 
       <Menu mode="horizontal">
         <Menu.Item>
-          <a href="#map"> Map </a>
+          <NavLink to="/dashboard">Dashboard</NavLink>
         </Menu.Item>
         <Menu.Item>
-          <a href="#about"> About </a>
+          <NavLink to="/">Map</NavLink>
+        </Menu.Item>
+        <Menu.Item>
+          <NavLink to="/about">About</NavLink>
         </Menu.Item>
       </Menu>
     </StyledHeader>
