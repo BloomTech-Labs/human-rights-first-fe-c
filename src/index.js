@@ -27,10 +27,10 @@ ReactDOM.render(
 function App() {
   return (
     <div>
+      {/* Add the Route in to App */}
       <header>
         <NavBar />
       </header>
-
       <Switch>
         <Route path="/dashboard">{/* dashboard components go here */}</Route>
         <Route path="/about">
