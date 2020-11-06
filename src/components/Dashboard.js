@@ -37,6 +37,7 @@ function IncidentDetails({ incident }) {
     <div className="incident-card">
       <Link to={`/showallincidents/${id}`}>
         <IncidentCard incident={incident} />
+        <button>Save</button>
       </Link>
     </div>
   );
