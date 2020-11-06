@@ -1,14 +1,14 @@
 import React from 'react';
 
 const IncidentCard = props => {
-  const { dates, title, city, state, description } = props.IncidentCard;
+  const { dates, title, city, state, description } = props.incident;
 
   return (
     <div className="incident-card">
       <h1>{title}</h1>
       <div className="location-date">
         <em>
-          `{city},{state} | {dates}`
+          {city},{state} - {dates}
         </em>
       </div>
       <div className="incident-description">

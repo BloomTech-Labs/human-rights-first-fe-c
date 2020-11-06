@@ -8,9 +8,10 @@ const Dashboard = () => {
   useEffect(() => {
     const getIncidents = () => {
       axios
-        .get('https://hrf-c-api.herokuapp.com/showallincidents')
+        .get('https://hrf-c-api.herokuapp.com/incidents/showallincidents')
         .then(res => {
           setIncidents(res.data);
+          console.log(res.data);
         })
         .catch(err => {
           console.error('server error', err);
