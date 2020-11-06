@@ -12,7 +12,10 @@ export const Container = () => {
         </div>
       </main>
       <footer className="page-footer">
-        <small>© Copyright 2020. All rights reserved.</small>
+        <small>
+          © Copyright {new Date().getFullYear()}, Human Rights First. All rights
+          reserved.
+        </small>
         <ul></ul>
       </footer>
     </div>
