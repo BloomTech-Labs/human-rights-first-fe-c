@@ -10,6 +10,7 @@ import 'antd/dist/antd.less';
 import { Container } from './components/Container';
 import NavBar from './components/NavBar';
 import About from './components/about';
+import Dashboard from './components/Dashboard';
 
 const store = createStore(rootReducer);
 
@@ -32,7 +33,9 @@ function App() {
         <NavBar />
       </header>
       <Switch>
-        <Route path="/dashboard">{/* dashboard components go here */}</Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
