@@ -420,3 +420,42 @@ main section div {
   display: flex;
   justify-content: space-between;
 }
+
+.map-nav {
+  position: absolute;
+  z-index: 99;
+  width: 100vw;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.map-nav .right-map-nav input {
+  border: 1px solid black;
+  padding: 7px;
+  width: 280px;
+}
+.map-nav .right-map-nav input:hover {
+  border: 1px solid goldenrod;
+}
+.map-nav .left-map-nav {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.map-nav .left-map-nav button {
+  border: 1px solid black;
+  background: white;
+  padding: 7px;
+  width: 150px;
+  list-style: none;
+  text-transform: capitalize;
+}
+.map-nav .left-map-nav button:hover {
+  border: 1px solid goldenrod;
+}
