@@ -1,15 +1,14 @@
 import { Flag, People, Map as Mp } from 'react-bootstrap-icons';
 import React from 'react';
-import MapFilter from './map/MapFilter';
+import { Switch, Route } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import NavMap from './NavMap';
+import MapFilter from './map/MapFilter';
 
 export const Container = () => {
   return (
     <div>
       <main>
         <div id="map">
-          <NavMap />
           <MapFilter />
         </div>
       </main>
@@ -20,6 +19,9 @@ export const Container = () => {
         </small>
         <ul></ul>
       </footer>
+      <Switch>
+        <Route path="/"></Route>
+      </Switch>
     </div>
   );
 };

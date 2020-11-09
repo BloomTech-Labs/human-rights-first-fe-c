@@ -11,6 +11,8 @@ import { Container } from './components/Container';
 import NavBar from './components/NavBar';
 import About from './components/about';
 import Dashboard from './components/Dashboard';
+import NavMap from '../src/components/NavMap';
+import Chart from './components/Chart';
 
 const store = createStore(rootReducer);
 
@@ -32,12 +34,16 @@ function App() {
       <header>
         <NavBar />
       </header>
+      <NavMap />
       <Switch>
         <Route path="/dashboard">
           <Dashboard />
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/chart">
+          <Chart />
         </Route>
         <Route path="/">
           <Container />
