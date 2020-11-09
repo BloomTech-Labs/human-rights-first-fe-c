@@ -31,14 +31,9 @@ const Dashboard = () => {
 };
 
 function IncidentDetails({ incident }) {
-  const { id } = incident;
-
   return (
     <div className="incident-card">
-      <Link to={`/showallincidents/${id}`}>
-        <IncidentCard incident={incident} />
-        <button>Save</button>
-      </Link>
+      <IncidentCard incident={incident} />
     </div>
   );
 }

@@ -61,6 +61,50 @@ const MapDiv = styled.div`
   border-right: 0.125rem solid silver;
 `;
 
+const CardContainer = styled.div`
+  box-sizing: border-box;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+`;
+
+const CardDiv = styled.div`
+  justify-content: center;
+  align-items: center;
+`;
+
+const CardTitle = styled.h2`
+  font-weight: 300;
+  font-size: 2rem;
+`;
+
+const StyledDate = styled.div`
+  font-size: 1rem;
+  margin: 6px 0;
+`;
+
+const StyledDesc = styled.p`
+  font-weight: 300;
+  font-size: 1.4rem;
+`;
+
+const CardButton = styled.button`
+  margin 0 5px;
+  padding: 8px 14px;
+  background: rgba(155,155,155, 0.2);
+  cursor: pointer;
+  border: 1px solid #fff;
+  outline: 0;
+  font-weight: 300;
+  :hover{
+    opacity: 0.7;
+  }
+`;
+
 export {
   StyledNavDiv,
   StyledTitle,
@@ -69,4 +113,10 @@ export {
   MapDiv,
   StyledFilterDiv,
   StyledSubTitle,
+  CardTitle,
+  StyledDesc,
+  StyledDate,
+  CardButton,
+  CardContainer,
+  CardDiv,
 };
