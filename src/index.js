@@ -13,6 +13,7 @@ import About from './components/about';
 import Dashboard from './components/Dashboard';
 import NavMap from '../src/components/NavMap';
 import Chart from './components/Chart';
+import Footer from './components/Footer';
 
 const store = createStore(rootReducer);
 
@@ -35,6 +36,8 @@ function App() {
         <NavBar />
       </header>
       <NavMap />
+      <Footer />
+
       <Switch>
         <Route path="/dashboard">
           <Dashboard />
