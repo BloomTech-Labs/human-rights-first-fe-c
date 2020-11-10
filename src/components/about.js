@@ -45,7 +45,7 @@ function About() {
           </div>
         </section>
         <section className="bottom-section">
-          <h2>About Human Rights First</h2>
+          <h2 className="about-h2">About Human Rights First</h2>
           <div className="bottom">
             <br />
             <br />
@@ -62,10 +62,6 @@ function About() {
 
             <img src={logo} alt="humane-right-first-logo" id="footerLogo" />
           </div>
-          <a href="#" className="back-to-top">
-            back to top {'  '}
-            <i class="fa fa-chevron-up"></i>
-          </a>
         </section>
       </div>
     </div>

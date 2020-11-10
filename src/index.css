@@ -276,6 +276,10 @@ main section div {
     display: none;
   }
 }
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+}
 
 @media screen and (max-width: 280px) {
 
@@ -416,7 +420,6 @@ main section div {
   margin-left: 10%;
   margin-top: -1%;
 }
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
+.about-h2{
+  text-align: center;
 }

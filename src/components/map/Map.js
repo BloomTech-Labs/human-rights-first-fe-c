@@ -10,7 +10,7 @@ const Map = ({ filteredData }) => {
     longitude: -95,
     width: '85vw',
     height: '85vh',
-    zoom: 1,
+    zoom: 2,
   });
   const [settings] = useState({
     scrollZoom: true,
