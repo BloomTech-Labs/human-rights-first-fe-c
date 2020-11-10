@@ -12,7 +12,7 @@ import NavBar from './components/NavBar';
 import About from './components/about';
 import Dashboard from './components/Dashboard';
 import NavMap from '../src/components/NavMap';
-import Chart from './components/Chart';
+import ChartComponent from './components/ChartComponent';
 import Footer from './components/Footer';
 
 const store = createStore(rootReducer);
@@ -46,7 +46,7 @@ function App() {
           <About />
         </Route>
         <Route path="/chart">
-          <Chart />
+          <ChartComponent />
         </Route>
         <Route path="/">
           <Container />
