@@ -1,20 +1,33 @@
 import React from 'react';
 
+import {
+  CardTitle,
+  CardContainer,
+  StyledDesc,
+  StyledDate,
+  CardButton,
+  CardDiv,
+  ButtonContainer,
+} from '../styles/DashboardStyles';
+
 const IncidentCard = props => {
-  const { dates, title, city, state, description } = props.incident;
+  const { date, title, city, state, desc } = props.incident;
 
   return (
-    <div className="incident-card">
-      <h1>{title}</h1>
-      <div className="location-date">
-        <em>
-          {city},{state} - {dates}
-        </em>
-      </div>
-      <div className="incident-description">
-        <p>{description}</p>
-      </div>
-    </div>
+    <CardContainer className="incident-card">
+      <CardTitle>{title}</CardTitle>
+      <CardDiv className="location-date">
+        <StyledDate>
+          {city},{state} - {date}
+        </StyledDate>
+      </CardDiv>
+      <CardDiv className="incident-description">
+        <StyledDesc>{desc}</StyledDesc>
+      </CardDiv>
+      <ButtonContainer>
+        <CardButton>Save</CardButton>
+      </ButtonContainer>
+    </CardContainer>
   );
 };
 
