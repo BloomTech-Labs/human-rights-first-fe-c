@@ -9,8 +9,8 @@ const Map = ({ filteredData }) => {
     latitude: 38,
     longitude: -95,
     width: '85vw',
-    height: '85vh',
-    zoom: 2,
+    height: '80vh',
+    zoom: 4,
   });
   const [settings] = useState({
     scrollZoom: true,
