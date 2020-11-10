@@ -6,6 +6,7 @@ import {
   StyledDate,
   CardButton,
   CardDiv,
+  ButtonContainer,
 } from '../styles/StyledComponents';
 
 const IncidentCard = props => {
@@ -21,8 +22,10 @@ const IncidentCard = props => {
       </CardDiv>
       <CardDiv className="incident-description">
         <StyledDesc>{desc}</StyledDesc>
-        <CardButton>Save</CardButton>
       </CardDiv>
+      <ButtonContainer>
+        <CardButton>Save</CardButton>
+      </ButtonContainer>
     </CardContainer>
   );
 };
