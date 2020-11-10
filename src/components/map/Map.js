@@ -8,8 +8,8 @@ const Map = ({ filteredData }) => {
   const [viewport, setViewport] = useState({
     latitude: 38,
     longitude: -95,
-    width: '100vw',
-    height: '85vh',
+    width: '85vw',
+    height: '80vh',
     zoom: 4,
   });
   const [settings] = useState({
