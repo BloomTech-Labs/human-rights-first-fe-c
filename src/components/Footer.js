@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterDiv = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 0;
   z-index: 97;
   width: 100vw;
