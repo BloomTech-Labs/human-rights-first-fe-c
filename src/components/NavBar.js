@@ -33,6 +33,12 @@ const NavBar = () => {
         <Menu.Item>
           <NavLink to="/about">About</NavLink>
         </Menu.Item>
+        <Menu.Item>
+          <NavLink to="/register">Sign-up</NavLink>
+        </Menu.Item>
+        <Menu.Item>
+          <NavLink to="/login">Log-in</NavLink>
+        </Menu.Item>
       </Menu>
     </StyledHeader>
   );
