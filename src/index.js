@@ -8,11 +8,9 @@ import './index.css';
 import 'antd/dist/antd.less';
 
 import { Container } from './components/Container';
-import NavBar from './components/NavBar';
 import About from './components/about';
 import Dashboard from './components/Dashboard';
-import NavMap from '../src/components/NavMap';
-import ChartComponent from './components/ChartComponent';
+import NavBar from '../src/components/NavBar';
 import Footer from './components/Footer';
 
 const store = createStore(rootReducer);
@@ -35,8 +33,6 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <NavMap />
-      <Footer />
 
       <Switch>
         <Route path="/dashboard">
@@ -45,13 +41,11 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/chart">
-          <ChartComponent />
-        </Route>
         <Route path="/">
           <Container />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
