@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   CardTitle,
   CardContainer,
@@ -7,7 +8,7 @@ import {
   CardButton,
   CardDiv,
   ButtonContainer,
-} from '../styles/StyledComponents';
+} from '../styles/DashboardStyles';
 
 const IncidentCard = props => {
   const { date, title, city, state, desc } = props.incident;
