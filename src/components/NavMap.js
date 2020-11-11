@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import styled from 'styled-components';
-
-// const linkStyle = styled.a``;
 
 export default function NavMap() {
   return (
