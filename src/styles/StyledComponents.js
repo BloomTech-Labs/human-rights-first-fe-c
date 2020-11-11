@@ -57,8 +57,37 @@ const MapDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 0.125rem solid silver;
-  border-right: 0.125rem solid silver;
+  border: 0.125rem solid silver;
+  margin: 75px auto 60px;
+`;
+
+const FooterDiv = styled.div`
+  position:relative;
+  bottom: 0;
+  z-index: 97;
+  width: 100vw;
+  text-align: center;
+  background:rgb(0,40,70);
+  color:white;
+  padding:15px;
+`;
+
+const ScrollToTop = styled.a`
+  color:white;
+  background:none;
+  font-size:.8rem;
+  font-family:sans-serif;
+`;
+
+const ChartContents = styled.div`
+  height: 80vh;
+  width: 80vw;
+  margin: auto auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 0;
 `;
 
 export {
@@ -69,4 +98,7 @@ export {
   MapDiv,
   StyledFilterDiv,
   StyledSubTitle,
+  FooterDiv,
+  ScrollToTop,
+  ChartContents,
 };
