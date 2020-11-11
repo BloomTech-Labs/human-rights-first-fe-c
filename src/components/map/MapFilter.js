@@ -45,9 +45,7 @@ const MapFilter = () => {
   return (
     <StyledDiv>
       <Map filteredData={searchResults} />
-
-      {/* Commenting this out because I will move filter logic (Essien) */}
-      {/* <StyledFilterDiv>
+      <StyledFilterDiv>
         <Input
           size="large"
           className="form-control"
@@ -62,7 +60,7 @@ const MapFilter = () => {
           placeholder="search by state"
           onChange={handleStateSearchInput}
         />
-      </StyledFilterDiv> */}
+      </StyledFilterDiv>
     </StyledDiv>
   );
 };

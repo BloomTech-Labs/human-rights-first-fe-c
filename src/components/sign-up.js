@@ -5,8 +5,8 @@ import './form.css';
 
 const initialVal = {
   fullname: '',
-  lastname: '',
-  email: '',
+  user_name: '',
+  password: '',
 };
 
 function RegisterForm(props) {
@@ -31,7 +31,7 @@ function RegisterForm(props) {
       .then(res => {
         setForm(res.data);
         console.log(res.data);
-        push('/');
+        push('/login');
       })
       .catch(err => {
         console.log(err);
@@ -42,10 +42,10 @@ function RegisterForm(props) {
     <div className="regis-form">
       <div className="form">
         <div className="head-text">
-          <h2>Sign Up</h2>
+          <h2 className="head2">Sign Up</h2>
         </div>
         <form>
-          <label htmlFor="name">First Name</label>
+          <label htmlFor="fullname">Name</label>
           <input
             name="fullname"
             onChange={onInputChange}
@@ -53,20 +53,20 @@ function RegisterForm(props) {
             placeholder="Please enter your first name"
           />
 
-          <label htmlFor="user_name">Lastname:</label>
+          <label htmlFor="user_name">User name:</label>
           <input
-            name="lastname"
+            name="user_name"
             onChange={onInputChange}
             type="text"
-            placeholder="Please enter a lastname"
+            placeholder="Please enter a user_name"
           />
 
-          <label htmlFor="password">Email:</label>
+          <label htmlFor="password">Password:</label>
           <input
-            name="email"
+            name="password"
             onChange={onInputChange}
-            type="email"
-            placeholder="Please enter a email"
+            type="password"
+            placeholder="Please enter a password"
           />
           <div className="btn">
             <button className="sign-up-btn" onClick={newUserSubmit}>

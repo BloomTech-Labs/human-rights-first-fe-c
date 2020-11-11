@@ -10,9 +10,10 @@
     background-size: cover;
 }
 .form{
+    width: 100%;
     background-color: rgb(236, 240, 241);
-    width: 60vw;
     border-radius: 5px;
+   
 }
 
 /* form{
@@ -35,30 +36,14 @@ label{
     font-size: 1.2rem;
     width: 100%;
     color:black;
-    /* text-shadow:  0 0 5px #ff7bac,
-        0 0 10px #ff7bac,
-        0 0 20px #ff7bac,
-        0 0 40px #ff7bac,
-        0 0 80px #ff7bac,
-        0 0 90px #ff7bac,
-        0 0 100px #ff7bac,
-        0 0 150px #ff7bac; */
 }
 .head-text{
     width: 100%;
 }
-h2{
+.head2{
 
-    font-size: 2.2rem;
+    font-size: 2rem;
     color:rgb(32, 85, 137);
-    /* text-shadow:  0 0 5px #34fae9,
-        0 0 10px #34fae9,
-        0 0 20px #34fae9,
-        0 0 40px #34fae9,
-        0 0 80px #34fae9,
-        0 0 90px #34fae9,
-        0 0 100px #34fae9,
-        0 0 150px #34fae9; */
 }
 .btn{
     width: 100%;
@@ -71,14 +56,6 @@ h2{
     border-radius: 10px;
     border: none;
     background-color: rgb(32, 85, 137);
-    /* box-shadow:  0 0 5px #34fae9,
-    0 0 10px #34fae9,
-    0 0 20px #34fae9,
-    0 0 40px #34fae9,
-    0 0 80px #34fae9,
-    0 0 90px #34fae9,
-    0 0 100px #34fae9,
-    0 0 150px #34fae9; */
 }
 :placeholder-shown{
     text-align: center;

@@ -83,7 +83,7 @@ const Map = ({ filteredData }) => {
                   {selectedIncident.city}, {selectedIncident.state}
                 </p>
                 {descriptionClicked ? (
-                  selectedIncident.desc
+                  selectedIncident.description
                 ) : (
                   <button onClick={() => setDescriptionClicked(true)}>
                     {' '}

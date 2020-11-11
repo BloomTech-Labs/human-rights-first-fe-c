@@ -60,7 +60,6 @@ const MapDiv = styled.div`
   border-left: 0.125rem solid silver;
   border-right: 0.125rem solid silver;
 `;
-
 export {
   StyledNavDiv,
   StyledTitle,
