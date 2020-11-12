@@ -13,6 +13,7 @@ import LoginForm from './components/sign-in';
 import Dashboard from './components/Dashboard';
 import NavBar from '../src/components/NavBar';
 import Footer from './components/Footer';
+import DashboardChart from './components/DashboardChart';
 
 const store = createStore(rootReducer);
 
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/dashboard-chart">
+          <DashboardChart />
         </Route>
         <Route path="/about">
           <About />
