@@ -39,7 +39,7 @@ const Map = ({ filteredData }) => {
           {...viewport}
           {...settings}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          mapStyle="mapbox://styles/jasonelliots/ckg9t6ll3002y19mk5th7j05v"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
           onViewportChange={viewport => {
             setViewport(viewport);
           }}
