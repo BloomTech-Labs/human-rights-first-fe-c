@@ -21,13 +21,11 @@ function LoginForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios
-      .post(`https://airbnb-builweek.herokuapp.com/api/auth/login`, formValue)
-      .then(res => {
-        console.log(res.data);
-        localStorage.setItem('token', res.data.session);
-        push('/dashboard');
-      });
+    axios.post(process.env.OKTA_URL_ISSUER, formValue).then(res => {
+      console.log(res.data);
+      localStorage.setItem('token', res.data);
+      push('/dashboard');
+    });
   };
 
   return (
