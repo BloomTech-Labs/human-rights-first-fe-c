@@ -22,24 +22,23 @@ const NavBar = () => {
         </a>
         <StyledTitle level={3}>Police Brutality Across America</StyledTitle>
       </StyledNavDiv>
-
-      <Menu mode="horizontal">
-        <Menu.Item>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/">Map</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/about">About</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/register">Sign-up</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/login">Log-in</NavLink>
-        </Menu.Item>
-      </Menu>
+      <div className="navDiv">
+        <NavLink className="link" to="/dashboard">
+          Dashboard
+        </NavLink>
+        <NavLink className="link" to="/">
+          Map
+        </NavLink>
+        <NavLink className="link" to="/about">
+          About
+        </NavLink>
+        <NavLink className="link" to="/register">
+          Sign-up
+        </NavLink>
+        <NavLink className="link" to="/login">
+          Log-in
+        </NavLink>
+      </div>
     </StyledHeader>
   );
 };
