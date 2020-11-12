@@ -9,10 +9,30 @@
     background-attachment: fixed;
     background-size: cover;
 }
+.sign-in-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../assets/signupImg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .form{
     background-color: rgb(236, 240, 241);
-    width: 60vw;
+    width: 60%;
+    height: 80vh;
     border-radius: 5px;
+    margin: 5% 0%;
+}
+.form-login{
+    background-color: rgb(236, 240, 241);
+    width: 50%;
+    height: 80vh;
+    border-radius: 5px;
+    margin: 5% 0%;
 }
 
 /* form{
@@ -25,16 +45,19 @@ input{
     width: 100%;
     height: 34px;
     background-color: #fff;
-    padding: 6px 12px;
-    margin: 1% 0%;
+    padding: 3%;
+    margin: 3% 0%;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
+
 }
 label{
     font-size: 1.2rem;
     width: 100%;
     color:black;
+    padding: 3%;
+    line-height: 5%;
     /* text-shadow:  0 0 5px #ff7bac,
         0 0 10px #ff7bac,
         0 0 20px #ff7bac,
@@ -46,8 +69,10 @@ label{
 }
 .head-text{
     width: 100%;
+    margin: 1% 5%;
+
 }
-h2{
+.text{
 
     font-size: 2.2rem;
     color:rgb(32, 85, 137);
@@ -71,14 +96,6 @@ h2{
     border-radius: 10px;
     border: none;
     background-color: rgb(32, 85, 137);
-    /* box-shadow:  0 0 5px #34fae9,
-    0 0 10px #34fae9,
-    0 0 20px #34fae9,
-    0 0 40px #34fae9,
-    0 0 80px #34fae9,
-    0 0 90px #34fae9,
-    0 0 100px #34fae9,
-    0 0 150px #34fae9; */
 }
 :placeholder-shown{
     text-align: center;
@@ -86,16 +103,7 @@ h2{
 }
 /* login form */
 
-.sign-in-form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100vh;
-    background-image: url("../assets/signupImg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
+
 .sign-in-btn{
     width: 100%;
     padding: 1.5%;
