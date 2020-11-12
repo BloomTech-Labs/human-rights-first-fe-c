@@ -542,10 +542,10 @@ const Dashboard = () => {
         <NavDashBoard />
 
         <Switch>
-          <Route path="/Explore">
+          <Route path="/dashboard-chart">
             <DashboardChart />
           </Route>
-          <Route path="/">{/* <Dashboard/> */}</Route>
+          {/* <Route path="/dashboard"><Dashboard/></Route> */}
         </Switch>
       </div>
 
