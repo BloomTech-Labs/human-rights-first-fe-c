@@ -468,3 +468,14 @@ main section div {
 .map-nav .left-map-nav button:hover {
   border: 1px solid goldenrod;
 }
+.navDiv{
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: inherit;
+  border: solid ;
+  background-color: rgb(0,40,70);
+}
+.link{
+  color: white;
+}
