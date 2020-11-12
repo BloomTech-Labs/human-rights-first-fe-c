@@ -9,17 +9,20 @@ const DashboardChart = () => {
   const [incidents, setIncidents] = useState([]);
 
   useEffect(() => {
-    const getIncidents = () => {
-      setIncidents(resposnse);
-    };
-    getIncidents();
+    // const getIncidents = () => {
+    //   setIncidents(resposnse);
+    // };
+    // getIncidents();
   }, []);
 
-  let dash_chart = am4core.create('chartdiv', am4charts.XYChart);
+  // let dash_chart = am4core.create('chartdiv', am4charts.XYChart);
 
   return (
-    <div id="chartdiv" style={{ width: '100%', height: '500px' }}>
-      {dash_chart} <p>hello</p>
+    // <div id="chartdiv" style={{ width: '100%', height: '500px' }}>
+    //   {dash_chart} <p>hello</p>
+    // </div>
+    <div>
+      <h1>hello</h1>
     </div>
   );
 };
