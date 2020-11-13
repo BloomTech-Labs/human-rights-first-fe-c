@@ -43,6 +43,7 @@ const temp_data = [
     count: 13,
   },
 ];
+
 const PieChart = () => {
   const chart = useRef(null);
   useLayoutEffect(() => {

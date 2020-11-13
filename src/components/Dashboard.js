@@ -4,9 +4,11 @@ import { BrowserRouter as Route, Switch, useParams } from 'react-router-dom';
 import IncidentCard from './IncidentCard';
 import DashboardChart from './DashboardChart';
 import NavDashBoard from './NavDashboard';
+import { useIncidents } from '../state/query_hooks/useIncidents';
 
 const Dashboard = () => {
   const [incidents, setIncidents] = useState([]);
+  const incidentsQuery = useIncidents();
 
   useEffect(() => {
     const getIncidents = () => {
