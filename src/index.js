@@ -14,6 +14,7 @@ import Dashboard from './components/Dashboard';
 import NavBar from '../src/components/NavBar';
 import Footer from './components/Footer';
 import DashboardChart from './components/DashboardChart';
+import { ReactQueryDevtools } from 'react-query-devtools';
 
 const store = createStore(rootReducer);
 
@@ -30,33 +31,36 @@ ReactDOM.render(
 
 function App() {
   return (
-    <div>
-      {/* Add the Route in to App */}
-      <header>
-        <NavBar />
-      </header>
+    <>
+      <div>
+        {/* Add the Route in to App */}
+        <header>
+          <NavBar />
+        </header>
 
-      <Switch>
-        <Route path="/register">
-          <RegisterForm />
-        </Route>
-        <Route path="/login">
-          <LoginForm />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-        <Route path="/dashboard-chart">
-          <DashboardChart />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/">
-          <Container />
-        </Route>
-      </Switch>
-      <Footer />
-    </div>
+        <Switch>
+          <Route path="/register">
+            <RegisterForm />
+          </Route>
+          <Route path="/login">
+            <LoginForm />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/dashboard-chart">
+            <DashboardChart />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+            <Container />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+      <ReactQueryDevtools />
+    </>
   );
 }
