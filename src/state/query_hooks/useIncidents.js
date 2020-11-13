@@ -1,4 +1,4 @@
-fimport axios from 'axios';
+import axios from 'axios';
 import { useQuery } from 'react-query';
 
 // ⬇️ --> USAGE: in react component <-- ⬇️
