@@ -1,29 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import * as am4core from '@amcharts/amcharts4/core';
-import * as am4charts from '@amcharts/amcharts4/charts';
-import am4themes_animated from '@amcharts/amcharts4/themes/animated';
-import axios from 'axios';
+import PieChart from './PieChart';
+import { useIncidents } from '../state/query_hooks/useIncidents';
+import { useIncident } from '../state/query_hooks/useIncident';
+import { useCategoryCount } from '../helpers/useCategoryCount';
 
 const DashboardChart = () => {
-  const [incidents, setIncidents] = useState([]);
+  const incidentsQuery = useIncidents();
+  const incident_id = 'mn-minneapolis-21';
+  const incidentQuery = useIncident({ incident_id });
 
-  useEffect(() => {
-    // const getIncidents = () => {
-    //   setIncidents(resposnse);
-    // };
-    // getIncidents();
-  }, []);
-
-  // let dash_chart = am4core.create('chartdiv', am4charts.XYChart);
+  console.log(useCategoryCount(incidentsQuery.data));
 
   return (
-    // <div id="chartdiv" style={{ width: '100%', height: '500px' }}>
-    //   {dash_chart} <p>hello</p>
-    // </div>
-    <div>
-      <h1>hello</h1>
+    <div className="dash-chart-container">
+      <PieChart />
     </div>
   );
 };
-
 export default DashboardChart;
