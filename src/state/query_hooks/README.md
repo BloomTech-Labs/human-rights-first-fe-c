@@ -31,6 +31,6 @@ NOTE: usage shows you how to access data inside a React component. There are man
 - Usage: ⬇️
 
   ```js
-  const id = 18;
-  const incidentQuery = useIncident({ id });
+  const incident_id = 'mn-minneapolis-18';
+  const incidentQuery = useIncident({ incident_id });
   ```

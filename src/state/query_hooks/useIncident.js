@@ -5,12 +5,14 @@ import { useQuery } from 'react-query';
 // const id = 18
 // const incidentQuery = useIncident({id})
 
-export const useIncident = ({ id }) => {
+export const useIncident = ({ incident_id }) => {
   return useQuery(
-    `incident/${id}`,
+    `incident/${incident_id}`,
     () => {
       return axios
-        .get(`https://hrf-c-api.herokuapp.com/incidents/incident/${id}`)
+        .get(
+          `${process.env.REACT_APP_BACKENDURL}/incidents/incident/${incident_id}`
+        )
         .then(res => res.data);
     },
     {
