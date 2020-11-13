@@ -10,11 +10,13 @@
     background-size: cover;
 }
 .form{
+    width: 50%;
     background-color: rgb(236, 240, 241);
-    /* width: 50%; */
+    justify-content: center;
     height: 80vh;
     border-radius: 5px;
     margin: 5% 0%;
+
 }
 
 input{
@@ -36,7 +38,7 @@ label{
     width: 100%;
 }
 .text{
-
+    margin: 1% 5%;
     font-size: 2.2rem;
     color:rgb(32, 85, 137);
 }

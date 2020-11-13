@@ -9,11 +9,13 @@ const SignUpFormDiv = styled.div`
   line-height: 3;
 `;
 const LogInFormDiv = styled.div`
-  display: flex;
+  display: block;
+  justify-items: center;
   background-color: rgb(236, 240, 241);
   width: 90%;
+  height: 70%;
   border-radius: 5px;
-  margin: 5% 5%;
+  margin: 10% 5%;
   line-height: 3;
 `;
 
