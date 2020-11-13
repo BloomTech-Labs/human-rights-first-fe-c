@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 
 // ⬇️ --> USAGE: in react component <-- ⬇️
-// const id = 18
-// const incidentQuery = useIncident({id})
+// const incident_id = 'mn-minneapolis-18';
+// const incidentQuery = useIncident({ incident_id });
 
 export const useIncident = ({ incident_id }) => {
   return useQuery(
