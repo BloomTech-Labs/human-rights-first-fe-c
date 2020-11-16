@@ -37,7 +37,7 @@ function LoginForm() {
         </div>
         <LogInFormDiv>
           <form>
-            <label>User login</label>
+            <label>Username</label>
             <input
               type="text"
               name="username"
