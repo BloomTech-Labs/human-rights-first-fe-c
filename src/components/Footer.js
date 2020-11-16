@@ -1,7 +1,5 @@
 import React from 'react';
-import { FooterDiv, ScrollToTop, } from '../styles/StyledComponents';
-
-
+import { FooterDiv, ScrollToTop } from '../styles/StyledComponents';
 
 export default function Footer() {
   return (

@@ -62,21 +62,21 @@ const MapDiv = styled.div`
 `;
 
 const FooterDiv = styled.div`
-  position:relative;
+  position: relative;
   bottom: 0;
   z-index: 97;
   width: 100vw;
   text-align: center;
-  background:rgb(0,40,70);
-  color:white;
-  padding:15px;
+  background: rgb(0, 40, 70);
+  color: white;
+  padding: 15px;
 `;
 
 const ScrollToTop = styled.a`
-  color:white;
-  background:none;
-  font-size:.8rem;
-  font-family:sans-serif;
+  color: white;
+  background: none;
+  font-size: 0.8rem;
+  font-family: sans-serif;
 `;
 
 const ChartContents = styled.div`
