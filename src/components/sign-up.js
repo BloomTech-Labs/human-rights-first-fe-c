@@ -3,31 +3,29 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './form.css';
 import { SignUpFormDiv } from '../../src/styles/FormStyle';
-
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 const initialVal = {
   name: '',
-  user_name: '',
+  username: '',
   password: '',
 };
 
 function RegisterForm(props) {
   const { push } = useHistory();
 
-  const [user, setUser] = useState([]);
   const [formValues, setForm] = useState(initialVal);
 
   const onInputChange = e => {
     const { name, value } = e.target;
-    setUser({
-      ...user,
+    setForm({
+      ...formValues,
       [name]: value,
     });
   };
 
   const newUserSubmit = e => {
     e.preventDefault();
-    // axiosWithAuth()
-    axios
+    axiosWithAuth()
       .post(``, formValues)
       .then(res => {
         setForm(res.data);
@@ -55,15 +53,15 @@ function RegisterForm(props) {
               placeholder="Please enter your name"
             />
 
-            <label htmlFor="user_name">Username:</label>
+            <label htmlFor="username">Username</label>
             <input
-              name="user_name"
+              name="username"
               onChange={onInputChange}
               type="text"
               placeholder="Please enter a username"
             />
 
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input
               name="password"
               onChange={onInputChange}
