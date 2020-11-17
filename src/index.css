@@ -8,10 +8,10 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-body * {
+/* This ⬇️ was causing some issues with our pie chart / bar chart load [@nic lehman] */
+/* body * {
   transition: all 0.3s ease-in-out;
-}
+} */
 
 /*Main Content*/
 main {
