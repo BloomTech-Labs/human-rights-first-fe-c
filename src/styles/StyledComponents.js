@@ -82,7 +82,7 @@ const ScrollToTop = styled.a`
 `;
 
 const ChartContents = styled.div`
-  height: 80vh;
+  height: 60vh;
   width: 80vw;
   margin: auto auto 60px;
   display: flex;
