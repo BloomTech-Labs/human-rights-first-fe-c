@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <div
       className="dashboard-container"
-      style={{ height: '60vh', width: '100%' }}
+      style={{ height: '100vh', width: '100%' }}
     >
       <div className="dashbaord-nav">
         <NavMap />

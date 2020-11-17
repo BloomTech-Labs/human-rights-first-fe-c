@@ -61,11 +61,10 @@ const MapDiv = styled.div`
   margin: 75px auto 60px;
 `;
 
-
 const FooterDiv = styled.div`
-  position: absolute;
+  position: relative;
   height: 10vh;
-  bottom: 0;
+  // bottom: 0;
   z-index: 97;
   width: 100vw;
   text-align: center;
