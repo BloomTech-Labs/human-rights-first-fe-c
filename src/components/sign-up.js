@@ -53,7 +53,7 @@ function RegisterForm(props) {
               placeholder="Please enter your name"
             />
 
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username</label>
             <input
               name="username"
               onChange={onInputChange}
@@ -61,7 +61,7 @@ function RegisterForm(props) {
               placeholder="Please enter a username"
             />
 
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input
               name="password"
               onChange={onInputChange}

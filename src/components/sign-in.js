@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory, useParams } from 'react-router-dom';
 import './form.css';
 import { LogInFormDiv, SignUpFormDiv } from '../../src/styles/FormStyle';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const initialProject = {
   username: '',
@@ -22,11 +23,13 @@ function LoginForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post(process.env.OKTA_URL_ISSUER, formValue).then(res => {
-      console.log(res.data);
-      localStorage.setItem('token', res.data);
-      push('/dashboard');
-    });
+    axiosWithAuth()
+      .post(process.env.OKTA_URL_ISSUER, formValue)
+      .then(res => {
+        console.log(res.data);
+        localStorage.setItem('token', res.data);
+        push('/dashboard');
+      });
   };
 
   return (
