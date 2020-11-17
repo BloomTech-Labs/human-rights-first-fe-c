@@ -26,9 +26,6 @@ const NavBar = () => {
         <NavLink className="link" to="/">
           Map
         </NavLink>
-        <NavLink className="link" to="/dashboard">
-          Dashboard
-        </NavLink>
         <NavLink className="link" to="/about">
           About
         </NavLink>

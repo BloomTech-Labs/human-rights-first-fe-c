@@ -7,6 +7,9 @@ export default function NavMap() {
       <div className="left-map-nav">
         <Link to="/">view map</Link>
         <Link to="/chart">view chart</Link>
+        <Link  to="/dashboard">
+          Pie Chart
+        </Link>
       </div>
       <div className="right-map-nav">
         <input

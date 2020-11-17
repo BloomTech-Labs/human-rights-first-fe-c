@@ -4,32 +4,33 @@ import { BrowserRouter as Route, Switch, useParams } from 'react-router-dom';
 import IncidentCard from './IncidentCard';
 import DashboardChart from './DashboardChart';
 import NavDashBoard from './NavDashboard';
+import NavMap from './NavMap';
 import { useIncidents } from '../state/query_hooks/useIncidents';
 
 const Dashboard = () => {
-  const [incidents, setIncidents] = useState([]);
+  // const [incidents, setIncidents] = useState([]);
   const incidentsQuery = useIncidents();
 
-  useEffect(() => {
-    const getIncidents = () => {
-      axios
-        .get('https://hrf-c-api.herokuapp.com/incidents/showallincidents', {})
-        .then(res => {
-          setIncidents(res.data);
-        })
-        .catch(err => {
-          console.error('server error', err);
-        });
-    };
-
-    getIncidents();
-  }, []);
+  // useEffect(() => {
+  //   const getIncidents = () => {
+  //     axios
+  //       .get('https://hrf-c-api.herokuapp.com/incidents/showallincidents', {})
+  //       .then(res => {
+  //         setIncidents(res.data);
+  //       })
+  //       .catch(err => {
+  //         console.error('server error', err);
+  //       });
+  //   };
+  // 
+  //   getIncidents();
+  // }, []);
 
   return (
     <div className="dashboard-container">
       <div className="dashbaord-nav">
+        <NavMap />
         <NavDashBoard />
-
         <Switch>
           <Route path="/dashboard-chart">
             <DashboardChart />
@@ -38,9 +39,10 @@ const Dashboard = () => {
       </div>
 
       <div className="incident-list">
-        {incidents.map(incident => (
+        {/* {incidents.map(incident => (
           <IncidentDetails key={incident.id} incident={incident} />
-        ))}
+        ))} */}
+        Hi
       </div>
     </div>
   );
