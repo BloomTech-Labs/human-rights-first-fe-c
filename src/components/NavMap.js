@@ -5,8 +5,11 @@ export default function NavMap() {
   return (
     <div className="map-nav">
       <div className="left-map-nav">
-        <Link to="/">view map</Link>
-        <Link to="/chart">view chart</Link>
+        <Link to="/">View Map</Link>
+        <Link to="/chart">Charts by State</Link>
+        <Link  to="/dashboard">
+          Charts by Force
+        </Link>
       </div>
       <div className="right-map-nav">
         <input

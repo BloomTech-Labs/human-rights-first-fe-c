@@ -426,10 +426,10 @@ main section div {
 }
 
 .map-nav {
-  position: absolute;
+  position: relative;
   z-index: 99;
   width: 100vw;
-  height: 70px;
+  height: 10vh;
   background: rgba(255, 255, 255, 0.7);
   padding: 0 3%;
   display: flex;

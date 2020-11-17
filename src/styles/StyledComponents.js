@@ -25,7 +25,7 @@ const StyledNavDiv = styled.div`
 // height: 20vh
 const StyledHeader = styled(Header)`
   display: flex;
-  height: 18vh;
+  height: 20vh;
   justify-content: space-between;
   align-items: center;
   background-color: white;
@@ -61,9 +61,10 @@ const MapDiv = styled.div`
   margin: 75px auto 60px;
 `;
 
-// height: 10vh;
+
 const FooterDiv = styled.div`
-  position: relative;
+  position: absolute;
+  height: 10vh;
   bottom: 0;
   z-index: 97;
   width: 100vw;
@@ -81,7 +82,7 @@ const ScrollToTop = styled.a`
 `;
 
 const ChartContents = styled.div`
-  height: 80vh;
+  height: 60vh;
   width: 80vw;
   margin: auto auto 60px;
   display: flex;
