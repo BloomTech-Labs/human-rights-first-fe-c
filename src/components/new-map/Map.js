@@ -6,6 +6,7 @@ import {
   ClusterMarker,
   IncidentContainer,
   IncidentsContainer,
+  ClearIncidentsBtn,
 } from '../../styles/MapStyles';
 import { useIncidents } from '../../state/query_hooks/useIncidents';
 
@@ -154,9 +155,19 @@ function Map() {
         </ReactMapGL>
       </div>
       {/* incident (sidebar) viewer when viewing map*/}
+      {!incidentsOfInterest && (
+        <IncidentsContainer>
+          <div style={{ textAlign: 'center' }}>
+            Click a cluster on the map to view incident details below
+          </div>
+        </IncidentsContainer>
+      )}
       {incidentsOfInterest && (
         <IncidentsContainer>
           <IncidentContainer>
+            <ClearIncidentsBtn onClick={() => setIncidentsOfInterest()}>
+              X
+            </ClearIncidentsBtn>
             {incidentsOfInterest.map(incident => {
               const details = incident.properties.incident;
               const date = new Date(details.date);
