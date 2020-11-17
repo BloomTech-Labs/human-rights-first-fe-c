@@ -14,6 +14,7 @@ import Dashboard from './components/Dashboard';
 import NavBar from '../src/components/NavBar';
 import Footer from './components/Footer';
 import DashboardChart from './components/DashboardChart';
+import Map from './components/new-map/Map';
 import { ReactQueryDevtools } from 'react-query-devtools';
 
 const store = createStore(rootReducer);

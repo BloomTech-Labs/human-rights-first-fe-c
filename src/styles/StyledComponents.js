@@ -22,7 +22,7 @@ const StyledNavDiv = styled.div`
   justify-content: left;
   align-items: end;
 `;
-
+// height: 20vh
 const StyledHeader = styled(Header)`
   display: flex;
   height: 18vh;
@@ -61,6 +61,7 @@ const MapDiv = styled.div`
   margin: 75px auto 60px;
 `;
 
+// height: 10vh;
 const FooterDiv = styled.div`
   position: relative;
   bottom: 0;
