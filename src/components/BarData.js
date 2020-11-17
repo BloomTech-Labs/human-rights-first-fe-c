@@ -14,5 +14,7 @@ export const BarData = limit => {
       data_container.push(data_obj);
     }
   }
+  data_container.sort((a, b) => a.state.localeCompare(b.state));
+
   return data_container;
 };
