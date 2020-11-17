@@ -6,6 +6,7 @@ import {
   ClusterMarker,
   IncidentContainer,
   IncidentsContainer,
+  ClearIncidentsBtn,
 } from '../../styles/MapStyles';
 import { useIncidents } from '../../state/query_hooks/useIncidents';
 
@@ -34,8 +35,8 @@ function Map() {
   const incidents =
     incidentsQuery.data && !incidentsQuery.isError ? incidentsQuery.data : [];
 
-  const incidentsHaveLatLong = React.useMemo(() =>
-    incidents.filter(incident => incident.lat != 0 && incident.long != 0)
+  const incidentsHaveLatLong = incidents.filter(
+    incident => incident.lat !== 0 && incident.long !== 0
   );
 
   const [incidentsOfInterest, setIncidentsOfInterest] = React.useState();
@@ -89,7 +90,7 @@ function Map() {
           width={'fit'}
           height={'70vh'}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          mapStyle="mapbox://styles/mapbox/light-v10"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
           onViewportChange={newViewport => {
             setViewport({ ...newViewport });
           }}
@@ -154,9 +155,19 @@ function Map() {
         </ReactMapGL>
       </div>
       {/* incident (sidebar) viewer when viewing map*/}
+      {!incidentsOfInterest && (
+        <IncidentsContainer>
+          <div style={{ textAlign: 'center' }}>
+            Click a cluster on the map to view incident details below
+          </div>
+        </IncidentsContainer>
+      )}
       {incidentsOfInterest && (
         <IncidentsContainer>
           <IncidentContainer>
+            <ClearIncidentsBtn onClick={() => setIncidentsOfInterest()}>
+              X
+            </ClearIncidentsBtn>
             {incidentsOfInterest.map(incident => {
               const details = incident.properties.incident;
               const date = new Date(details.date);
@@ -177,7 +188,11 @@ function Map() {
                     Sources:
                     {details.src.map(source => (
                       <li>
-                        <a href={source} target="_blank">
+                        <a
+                          href={source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Link
                         </a>
                       </li>

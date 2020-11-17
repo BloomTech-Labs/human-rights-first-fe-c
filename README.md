@@ -4,15 +4,14 @@ You can find the deployed project at [Human Rights First - Police Brutality Acro
 
 ## Contributors
 
-|                                                      [Matthew Molloy](https://github.com/)                                                       |                                                       [Jason Schwartz](https://github.com/)                                                        |                                                      [Emilio Diaz-Goico](https://github.com/)                                                       |                                                       [Steele Helbling](https://github.com/)                                                        |                                                      
-| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | 
+|                                        [Matthew Molloy](https://github.com/)                                        |                                        [Jason Schwartz](https://github.com/)                                        |                                      [Emilio Diaz-Goico](https://github.com/)                                       |                                       [Steele Helbling](https://github.com/)                                        |
+| :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [<img src="https://ca.slack-edge.com/ESZCHB482-W0138DA1E2C-958485caa8ee-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ4LYPM-ceff614ba646-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W0123RSBXLP-0bf2bb6576db-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W0138Q55T7A-beb4a8bca6a4-512" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "0" />](https://github.com/) |
-|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                                                      |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |              
+|                    [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                    |               [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                |              [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)               |             [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)              |  |
+|    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)    |    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)    |    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)    |    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)    |
 
 <br>
 <br>
-
 
 ## Project Overview
 
@@ -25,29 +24,28 @@ Our team is developing an interactive map that identifies instances of police us
 ### Key Features
 
 - User can view incidents of police brutality and get more information on specific incidents
-- User can currently search map based on city and state. In future releases, filters based on type of force and date could be implemented. 
+- User can currently search map based on city and state. In future releases, filters based on type of force and date could be implemented.
 
-
-#  Environment Variables
+# Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
     *  REACT_APP_BACKENDURL=
-       link to API endpoint to retrieve data 
+       link to API endpoint to retrieve data
     *  REACT_APP_MAPBOX_TOKEN=
-       mapbox token for accessing mapbox API - generate new token at mapbox.com 
+       mapbox token for accessing mapbox API - generate new token at mapbox.com
 
 # Testing
 
-No testing implemented as of October 23rd, 2020. 
+No testing implemented as of October 23rd, 2020.
 
 # Installation Instructions
 
-Run 'npm install' to install all necessary dependencies. 
+Run 'npm install' to install all necessary dependencies.
 
 ## Other Scripts
 
-    * node server.js - must be executed from /server folder - runs local server for development 
+    * node server.js - must be executed from /server folder - runs local server for development
 
 # Contributing
 
@@ -91,4 +89,3 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 See [Backend Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-BE) for details on the backend of our project.
 
 See [Data Science Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-DS) for details on the data science portion of our project.
-

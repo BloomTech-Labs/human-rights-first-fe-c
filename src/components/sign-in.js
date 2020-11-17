@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './form.css';
-import { LogInFormDiv, SignUpFormDiv } from '../../src/styles/FormStyle';
+import { LogInFormDiv } from '../../src/styles/FormStyle';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 const initialProject = {
