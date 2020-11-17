@@ -1,77 +1,75 @@
-
 .regis-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100vh;
-    background-image: url("../assets/signupImg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../assets/signupImg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-.form{
-    width: 50%;
-    background-color: rgb(236, 240, 241);
-    justify-content: center;
-    height: 80vh;
-    border-radius: 5px;
-    margin: 5% 0%;
+.form {
+  width: 50%;
+  background-color: rgb(236, 240, 241);
+  justify-content: center;
+  height: 80vh;
+  border-radius: 5px;
+  margin: 5% 0%;
+}
 
+input {
+  width: 100%;
+  height: 34px;
+  background-color: #fff;
+  padding: 6px 12px;
+  margin: 1% 0%;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-
-input{
-    width: 100%;
-    height: 34px;
-    background-color: #fff;
-    padding: 6px 12px;
-    margin: 1% 0%;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+label {
+  font-size: 1.2rem;
+  width: 100%;
+  color: black;
 }
-label{
-    font-size: 1.2rem;
-    width: 100%;
-    color:black;
+.head-text {
+  width: 100%;
 }
-.head-text{
-    width: 100%;
+.text {
+  margin: 1% 5%;
+  font-size: 2.2rem;
+  color: rgb(32, 85, 137);
 }
-.text{
-    margin: 1% 5%;
-    font-size: 2.2rem;
-    color:rgb(32, 85, 137);
+.btn {
+  width: 100%;
+  margin-top: 5%;
 }
-.btn{
-    width: 100%;
-    margin-top: 5%;
+.sign-up-btn {
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(32, 85, 137);
 }
-.sign-up-btn{
-    width: 100%;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(32, 85, 137);
-}
-:placeholder-shown{
-    text-align: center;
-    font-weight: 50;
+:placeholder-shown {
+  text-align: center;
+  font-weight: 50;
 }
 /* login form */
 
-.sign-in-form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-image: url("../assets/signupImg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.sign-in-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url('../assets/signupImg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-.sign-in-btn{
-    width: 100%;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(32, 85, 137);
+.sign-in-btn {
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(32, 85, 137);
 }
