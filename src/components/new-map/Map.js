@@ -89,7 +89,7 @@ function Map() {
           width={'fit'}
           height={'70vh'}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          mapStyle="mapbox://styles/mapbox/light-v10"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
           onViewportChange={newViewport => {
             setViewport({ ...newViewport });
           }}

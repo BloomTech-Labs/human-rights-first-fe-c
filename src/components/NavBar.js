@@ -17,10 +17,10 @@ const NavBar = () => {
   return (
     <StyledHeader>
       <StyledNavDiv>
-        <a href="https://www.humanrightsfirst.org/">
+        <a href="/">
           <img id="logo" src={logo} alt="human-rights-first-logo" />
         </a>
-        <StyledTitle level={3}>Police Brutality Across America</StyledTitle>
+        <StyledTitle level={3}>Police Use of Force America</StyledTitle>
       </StyledNavDiv>
       <div className="navDiv">
         <NavLink className="link" to="/">
