@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import PieChart from './PieChart';
+import { PieData } from './PieData';
 import { useIncidents } from '../state/query_hooks/useIncidents';
-import { useIncident } from '../state/query_hooks/useIncident';
-import { useCategoryCount } from '../helpers/useCategoryCount';
 
 const DashboardChart = () => {
+  const [limit, setLimit] = useState(100);
+
+  let pie_data = PieData(limit);
   const incidentsQuery = useIncidents();
-  const incident_id = 'mn-minneapolis-21';
-  const incidentQuery = useIncident({ incident_id });
 
-  console.log(useCategoryCount(incidentsQuery.data));
+  if (incidentsQuery?.data?.length > 0) {
+    return (
+      <div className="dash-chart-container">
+        <PieChart data={pie_data} />
+      </div>
+    );
+  }
 
-  return (
-    <div className="dash-chart-container">
-      <PieChart />
-    </div>
-  );
+  return <div className="dash-chart-container"></div>;
 };
 export default DashboardChart;
