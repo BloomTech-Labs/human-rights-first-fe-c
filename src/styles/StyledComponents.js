@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Layout, Menu, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 
 const { Header } = Layout;
 const { Title } = Typography;

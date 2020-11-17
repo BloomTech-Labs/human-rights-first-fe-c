@@ -4,8 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducer } from './state/reducers/index.js';
+
+import { ReactQueryDevtools } from 'react-query-devtools';
 import './index.css';
 import 'antd/dist/antd.less';
+
 import { Container } from './components/Container';
 import About from './components/about';
 import RegisterForm from './components/sign-up';
@@ -14,8 +17,6 @@ import Dashboard from './components/Dashboard';
 import NavBar from '../src/components/NavBar';
 import Footer from './components/Footer';
 import DashboardChart from './components/DashboardChart';
-import Map from './components/new-map/Map';
-import { ReactQueryDevtools } from 'react-query-devtools';
 
 const store = createStore(rootReducer);
 

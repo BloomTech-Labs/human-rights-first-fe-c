@@ -2,7 +2,6 @@ import React from 'react';
 import './../styles/index.css';
 import 'antd/dist/antd.css';
 import logo from '../assets/logo.png';
-import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom';
 
 // style component imports

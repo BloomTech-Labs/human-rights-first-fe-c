@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PieChart from './PieChart';
 import { PieData } from './PieData';
 import { useIncidents } from '../state/query_hooks/useIncidents';
-import NavMap from './NavMap';
+
 const DashboardChart = () => {
   const [limit, setLimit] = useState(100);
 

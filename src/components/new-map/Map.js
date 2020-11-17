@@ -34,8 +34,8 @@ function Map() {
   const incidents =
     incidentsQuery.data && !incidentsQuery.isError ? incidentsQuery.data : [];
 
-  const incidentsHaveLatLong = React.useMemo(() =>
-    incidents.filter(incident => incident.lat != 0 && incident.long != 0)
+  const incidentsHaveLatLong = incidents.filter(
+    incident => incident.lat !== 0 && incident.long !== 0
   );
 
   const [incidentsOfInterest, setIncidentsOfInterest] = React.useState();
@@ -177,7 +177,11 @@ function Map() {
                     Sources:
                     {details.src.map(source => (
                       <li>
-                        <a href={source} target="_blank">
+                        <a
+                          href={source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Link
                         </a>
                       </li>
