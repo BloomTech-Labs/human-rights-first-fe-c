@@ -19,7 +19,7 @@ const MarkerBtn = styled.div`
 
 const IncidentsContainer = styled.div`
   width: 25vw;
-  height: 70vh;
+  height: 60vh;
 
   background-color: white;
 
@@ -28,7 +28,7 @@ const IncidentsContainer = styled.div`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
 `;
 const IncidentContainer = styled.div`
-  height: 70vh;
+  height: 60vh;
   overflow: auto;
   padding: 70px 4px 0;
 

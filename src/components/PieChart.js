@@ -37,6 +37,6 @@ const PieChart = data => {
     };
   }, []);
 
-  return <div id="chartdiv" style={{ width: '100%', height: '500px' }}></div>;
+  return <div id="chartdiv" style={{ width: '100%', height: '60vh' }}></div>;
 };
 export default PieChart;

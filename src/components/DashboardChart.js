@@ -12,16 +12,13 @@ const DashboardChart = () => {
   if (incidentsQuery?.data?.length > 0) {
     return (
       <div className="dash-chart-container">
-        <NavMap />
+        {/* ⬇️ pushes legend below footer -- needs a solution [@ nic] */}
+        {/* <h1 style={{ textAlign: 'center' }}> Most Common Incident Types</h1> */}
         <PieChart data={pie_data} />
       </div>
     );
   }
 
-  return (
-    <div className="dash-chart-container">
-      <NavMap />
-    </div>
-  );
+  return <div className="dash-chart-container"></div>;
 };
 export default DashboardChart;
