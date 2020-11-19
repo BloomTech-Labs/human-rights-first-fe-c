@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
 
-import Map from './new-map/Map';
+import Map from '../components/map/Map';
 import NavMap from './NavMap';
 import DashboardChart from './DashboardChart';
 import ChartComponent from './ChartComponent';
