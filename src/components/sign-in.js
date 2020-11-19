@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './form.css';
-import { LogInFormDiv } from '../../src/styles/FormStyle';
+import { LogInFormDiv } from '../styles/FormStyle';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 const initialProject = {

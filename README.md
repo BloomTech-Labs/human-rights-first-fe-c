@@ -1,9 +1,23 @@
-# Human Rights First: Police Brutality Across America
+# Title (Same As Repo Name Without The Dashes)
 
-You can find the deployed project at [Human Rights First - Police Brutality Across America](https://main.d17v0exvwwwzgz.amplifyapp.com/) and a product demo video [here](https://streamable.com/s065r3)
+> ## Delete this section completely - these are just resources to help you with creating your documentation.
+>
+> GitHub Docs - Writing and Formating on Github: https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax
+>
+> Github Guids - Mastering Markdown: https://guides.github.com/features/mastering-markdown/
 
-## Contributors
+## Description (Same for all repos)
 
+<<<<<<< HEAD
+Include a paragraph describing the project. Some things you should write about in your description are:
+
+- A breif description of the Stakeholder Company and their goals overall.
+- A breif description of the company's goals with this project.
+- What is the problem(s) your team is trying to solve/answer.
+- The final(or planned) solution to the problem(s)
+
+Add the final product video for either web or ds (depending on what the repo is for) here.
+=======
 |                                        [Matthew Molloy](https://github.com/)                                        |                                        [Jason Schwartz](https://github.com/)                                        |                                      [Emilio Diaz-Goico](https://github.com/)                                       |                                       [Steele Helbling](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [<img src="https://ca.slack-edge.com/ESZCHB482-W0138DA1E2C-958485caa8ee-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ4LYPM-ceff614ba646-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W0123RSBXLP-0bf2bb6576db-512" width = "200" />](https://github.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W0138Q55T7A-beb4a8bca6a4-512" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "0" />](https://github.com/) |
@@ -14,15 +28,32 @@ You can find the deployed project at [Human Rights First - Police Brutality Acro
 <br>
 
 ## Project Overview
+>>>>>>> 6558e295e4b21bc0c4df8c980123fa9a7cfe3a18
 
-[Trello Board](https://trello.com/b/QWXanExQ/team-c-2009)
+## Contributors (Same for all repos)
 
-[Technical Architecture and Userflow](https://whimsical.com/8sQcpjw3K2XdAiM9aeMkft)
+Include a list of all the contributors and links to their GitHubs and LinkedIn Profiles.
 
-Our team is developing an interactive map that identifies instances of police use of force across the United States of America for Human Rights First, an independent advocacy and action organization.
+Here is an example of how you could do it:
 
-### Key Features
+- Fork and clone to get the code for the table below
+- Paste it twice to add more teammates and make sure to include a blank line in between the two
+- Be sure to update ALL github and linkedin links with your team's info or it will link to me and my friends
+- You can get each person's picture by clicking on their GitHub profile picture and copying the url in the browser
+- The people in the photos below are some of my favorite people from lambda school... You should follow them
 
+<<<<<<< HEAD
+|                                                             [May Ng](https://github.com/desiquinn)                                                              |                                                              [Tommy Colemon](https://github.com/desiquinn)                                                              |                                                             [Nisa Champagne](https://github.com/desiquinn)                                                             |                                                             [Jason Long](https://github.com/desiquinn)                                                             |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars2.githubusercontent.com/u/49328148?s=400&u=01c34b0fc10076d5fef8a38601a3384621bc18b2&v=4" width = "200" />](https://github.com/mngmay) | [<img src="https://avatars1.githubusercontent.com/u/50923422?s=400&u=817cd183508a4da9c048210dcd1962de16298b2b&v=4" width = "200" />](https://github.com/tommycoleman87) | [<img src="https://avatars3.githubusercontent.com/u/50988313?s=400&u=2bdd1579ba39980e62a45c5fb7544afe1f29a209&v=4" width = "200" />](https://github.com/nisaChampagne) | [<img src="https://avatars3.githubusercontent.com/u/57104675?s=400&u=e7620554469deb924ac378097155cd45590cbdf9&v=4" width = "200" />](https://github.com/jlong5795) |
+|                                                                        Team Project Lead                                                                        |                                                                              Web Developer                                                                              |                                                                             Web Developer                                                                              |                                                                           Data Scientist                                                                           |
+|                                     [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/desiquinn)                                      |                                         [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/desiquinn)                                          |                                         [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/desiquinn)                                         |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/desiquinn)                                       |
+|                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/desiree-morris)                  |                     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/desiree-morris)                      |                     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/desiree-morris)                     |                   [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/desiree-morris)                   |
+
+<br>
+
+## Deployed Product (Same for all repos)
+=======
 - User can view incidents of police brutality and get more information on specific incidents
 - User can currently search map based on city and state. In future releases, filters based on type of force and date could be implemented.
 
@@ -34,58 +65,85 @@ In order for the app to function correctly, the user must set up their own envir
        link to API endpoint to retrieve data
     *  REACT_APP_MAPBOX_TOKEN=
        mapbox token for accessing mapbox API - generate new token at mapbox.com
+>>>>>>> 6558e295e4b21bc0c4df8c980123fa9a7cfe3a18
 
-# Testing
+- Include ALL links to deployed end products (BE, FE, & DS)
+- Make sure they are clearly labeled
 
+<<<<<<< HEAD
+## Linked Repos (Same for all repos)
+=======
 No testing implemented as of October 23rd, 2020.
+>>>>>>> 6558e295e4b21bc0c4df8c980123fa9a7cfe3a18
 
-# Installation Instructions
+- Include ALL links to connecting repos
+- Describe how they are connected
+- Make sure they are clearly labeled
 
+<<<<<<< HEAD
+## Getting Started (BE, FE, or DS specific)
+=======
 Run 'npm install' to install all necessary dependencies.
+>>>>>>> 6558e295e4b21bc0c4df8c980123fa9a7cfe3a18
 
-## Other Scripts
+- Describe what was inherited as a team
+- Include links to legacy documentation & repos
+- Include a link to the Product Vision Document
 
+<<<<<<< HEAD
+- Include a second paragraph decribing how the next team can get started working with this repo
+- Describe where and how each portion is deployed
+- What needs to be changed in order to deploy to a new environment (do not add an secrets here)
+=======
     * node server.js - must be executed from /server folder - runs local server for development
+>>>>>>> 6558e295e4b21bc0c4df8c980123fa9a7cfe3a18
 
-# Contributing
+## Tech Stack Used (BE, FE, or DS specific)
 
-When contributing to this repository, please first discuss the change you wish to make via the 'issue' tab or any other method with the owners of this repository before making a change.
+- List the tech stack used
+- Described what it was used for
 
-Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
+## User Flows (Same for all repos)
 
-## Issue/Bug Request
+- Write out a description of your user flow
+- Include a screen shots of the user flow
 
-**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+## Wireframes (FE only)
 
-- Check first to see if your issue has already been reported.
-- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
-- Create a live example of the problem.
-- Navigate to the 'issues' tab to submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
+- Front End should include a description and screen shot of wireframes
 
-### Feature Requests
+## Architecture (Same for all repos)
 
-We would love to hear from you about new features which would improve this app and further the aims of our project. Please provide as much detail and information as possible to show us why you think your new feature should be implemented.
+- Write out a description of the architecture diagram
+- Include a screen shot of the archtecture diagram
 
-### Pull Requests
+- Describe the file hierarchy and where to find things (BE, FE, or DS specific)
 
-If you have developed a patch, bug fix, or new feature that would improve this app, please submit a pull request. It is best to communicate your ideas with the developers first before investing a great deal of time into a pull request to ensure that it will mesh smoothly with the project.
+## Updates To Repo in Labs 28 (BE, FE, or DS specific)
 
-Remember that this project is licensed under the MIT license, and by submitting a pull request, you agree that your work will be, too.
+- Describe what you have changed in this repo as a team
+- Provide examples and descriptions of components, how props are handled, where to find these changes, database tables, models, etc.
 
-#### Pull Request Guidelines
+## End Points (BE, FE, or DS specific)
 
-- Ensure any install or build dependencies are removed before the end of the layer when doing a build.
-- Update the README.md with details of changes to the interface, including new plist variables, exposed ports, useful file locations and container parameters.
-- Ensure that your code conforms to our existing code conventions and test coverage.
-- Include the relevant issue number, if applicable.
-- You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+- Provide a list of End Points and what they are used for (Don't just link to your API, actually write out a description for each one so it's clear for the next team)
+- Include a link to your API documentation if you have them (I use postman to create visually appealing API Docs)
 
-### Attribution
+## Issues (BE, FE, or DS specific)
 
-These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+- Include current issues/bugs that could not be fixed before Thursday of week 4
+- Format it as a task list for legibility
 
-## Further Tech Stack Information
+## Future Features (BE, FE, or DS specific)
 
-See [Backend Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-BE) for details on the backend of our project.
+- Describe what you wanted to do but could not get to
+- List any other ideas you had for the app or apis
+- Include links to any other research you have done for this project
 
+<<<<<<< HEAD
+## Support (BE, FE, or DS specific)
+
+Who to contact for further support. Include at least two names. They can use the contributors list above to get in contact with you, or find you on slack.
+=======
 See [Data Science Documentation](https://github.com/Lambda-School-Labs/Labs27-C-HRF-DS) for details on the data science portion of our project.
+>>>>>>> 6558e295e4b21bc0c4df8c980123fa9a7cfe3a18
