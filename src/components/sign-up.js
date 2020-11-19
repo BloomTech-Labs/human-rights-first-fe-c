@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './form.css';
-import { SignUpFormDiv } from '../../src/styles/FormStyle';
+import { SignUpFormDiv } from '../styles/FormStyle';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 const initialVal = {
   name: '',
@@ -25,7 +25,7 @@ function RegisterForm(props) {
   const newUserSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post(``, formValues)
+      .post(`${process.env.REACT_APP_BACKENDURL}/`, formValues)
       .then(res => {
         setForm(res.data);
         console.log(res.data);
