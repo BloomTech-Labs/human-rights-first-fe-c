@@ -2,7 +2,6 @@ import React from 'react';
 import './../styles/index.css';
 import 'antd/dist/antd.css';
 import logo from '../assets/logo.png';
-import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom';
 
 // style component imports
@@ -17,29 +16,25 @@ const NavBar = () => {
   return (
     <StyledHeader>
       <StyledNavDiv>
-        <a href="https://www.humanrightsfirst.org/">
+        <a href="/">
           <img id="logo" src={logo} alt="human-rights-first-logo" />
         </a>
-        <StyledTitle level={3}>Police Brutality Across America</StyledTitle>
+        <StyledTitle level={3}>Police Use of Force America</StyledTitle>
       </StyledNavDiv>
-
-      <Menu mode="horizontal">
-        <Menu.Item>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/">Map</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/about">About</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/register">Sign-up</NavLink>
-        </Menu.Item>
-        <Menu.Item>
-          <NavLink to="/login">Log-in</NavLink>
-        </Menu.Item>
-      </Menu>
+      <div className="navDiv">
+        <NavLink className="link" to="/">
+          Map
+        </NavLink>
+        <NavLink className="link" to="/about">
+          About
+        </NavLink>
+        <NavLink className="link" to="/register">
+          Sign-up
+        </NavLink>
+        <NavLink className="link" to="/login">
+          Log-in
+        </NavLink>
+      </div>
     </StyledHeader>
   );
 };

@@ -1,18 +1,17 @@
 /* Map component styling*/
 
-
 .logo {
-  width: 50%; 
+  width: 50%;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: left;
-  align-items: baseline; 
+  align-items: baseline;
 }
 
 #footerLogo {
-  margin-top: 20px; 
+  margin-top: 20px;
   width: 30%;
-  height: 30%; 
+  height: 30%;
 }
 
 .container {
@@ -33,14 +32,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 0.25%;
-  margin-right: 25%
+  margin-right: 25%;
 }
 
 .map-title {
   margin-left: 20%;
   margin-top: 1%;
 }
-
 
 .map-section {
   display: flex;
@@ -61,12 +59,12 @@
 }
 
 #logo {
-  width: 120px; 
-  height: 60px; 
+  width: 120px;
+  height: 60px;
   color: black;
   text-align: center;
   margin-top: 0px;
-  z-index: -5;  
+  z-index: -5;
 }
 
 .pop-up-close {
@@ -185,12 +183,6 @@ a {
 
 /* Sign Up Form */
 
-.form {
-  width: 25%;
-  margin: 5% 0 10% 10%;
-  padding: 6%;
-}
-
 .label {
   color: #03071e;
   font-weight: 700;
@@ -240,26 +232,23 @@ a {
   margin-left: 1%;
 }
 
-
 .marker-btn {
   background: none;
   border: none;
   cursor: pointer;
-  size: 5px; 
+  size: 5px;
 }
 
 .icon {
   width: 10px;
-  height: 12px; 
+  height: 12px;
 }
 
 .popup {
-  width: 30%; 
+  width: 30%;
 }
 
-
 @media screen and (max-width: 768px) {
-
   .next-to-about {
     display: none;
   }
@@ -274,7 +263,6 @@ a {
 }
 
 @media screen and (max-width: 280px) {
-
   .filter-title {
     flex-direction: column-reverse;
     margin-left: 20%;
@@ -284,5 +272,4 @@ a {
     font-size: 1rem;
     margin-left: 0;
   }
-
 }

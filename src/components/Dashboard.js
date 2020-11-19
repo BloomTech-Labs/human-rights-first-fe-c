@@ -1,40 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import IncidentCard from './IncidentCard';
+import React from 'react';
+
+import DashboardChart from './DashboardChart';
+import NavMap from './NavMap';
+
+import { useIncidents } from '../state/query_hooks/useIncidents';
 
 const Dashboard = () => {
-  const [incidents, setIncidents] = useState([]);
-  useEffect(() => {
-    const getIncidents = () => {
-      axios
-        .get('https://hrf-c-api.herokuapp.com/incidents/showallincidents')
-        .then(res => {
-          setIncidents(res.data);
-          console.log(res.data);
-        })
-        .catch(err => {
-          console.error('server error', err);
-        });
-    };
-
-    getIncidents();
-  }, []);
+  const incidentsQuery = useIncidents();
 
   return (
-    <div className="incident-list">
-      {incidents.map(incident => (
-        <IncidentDetails key={incident.id} incident={incident} />
-      ))}
+    <div
+      className="dashboard-container"
+      style={{ height: '100vh', width: '100%' }}
+    >
+      <div className="dashbaord-nav">
+        <NavMap />
+        <DashboardChart />
+      </div>
     </div>
   );
 };
 
-function IncidentDetails({ incident }) {
-  return (
-    <div className="incident-card">
-      <IncidentCard incident={incident} />
-    </div>
-  );
-}
 export default Dashboard;

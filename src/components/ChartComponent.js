@@ -1,23 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import HrfChart from './HrfChart';
-
-const ChartContents = styled.div`
-  height: 75vh;
-  width: 80vw;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 0 0;
-`;
-
+import { ChartContents } from '../styles/StyledComponents';
+import BarChart from './BarChart';
+import { BarData } from './BarData';
+import { useIncidents } from '../state/query_hooks/useIncidents';
 export default function ChartComponent() {
-  return (
-    <ChartContents>
-      <HrfChart />
-    </ChartContents>
-  );
+  const [limit, setLimit] = React.useState(0);
+  let bar_data = BarData(limit);
+  const incidentsQuery = useIncidents();
+  if (incidentsQuery?.data?.length > 0) {
+    return (
+      <ChartContents>
+        <BarChart data={bar_data} />
+      </ChartContents>
+    );
+  }
+  return <div className="dash-chart-container"></div>;
 }

@@ -1,32 +1,30 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import './form.css';
-
+import { SignUpFormDiv } from '../../src/styles/FormStyle';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 const initialVal = {
-  fullname: '',
-  lastname: '',
-  email: '',
+  name: '',
+  username: '',
+  password: '',
 };
 
 function RegisterForm(props) {
   const { push } = useHistory();
 
-  const [user, setUser] = useState([]);
   const [formValues, setForm] = useState(initialVal);
 
   const onInputChange = e => {
     const { name, value } = e.target;
-    setUser({
-      ...user,
+    setForm({
+      ...formValues,
       [name]: value,
     });
   };
 
   const newUserSubmit = e => {
     e.preventDefault();
-    // axiosWithAuth()
-    axios
+    axiosWithAuth()
       .post(``, formValues)
       .then(res => {
         setForm(res.data);
@@ -42,38 +40,40 @@ function RegisterForm(props) {
     <div className="regis-form">
       <div className="form">
         <div className="head-text">
-          <h2>Sign Up</h2>
+          <h2 className="text">Sign Up</h2>
         </div>
-        <form>
-          <label htmlFor="name">First Name</label>
-          <input
-            name="fullname"
-            onChange={onInputChange}
-            type="text"
-            placeholder="Please enter your first name"
-          />
+        <SignUpFormDiv>
+          <form>
+            <label htmlFor="name">Name</label>
+            <input
+              name="name"
+              onChange={onInputChange}
+              type="text"
+              placeholder="Please enter your name"
+            />
 
-          <label htmlFor="user_name">Lastname:</label>
-          <input
-            name="lastname"
-            onChange={onInputChange}
-            type="text"
-            placeholder="Please enter a lastname"
-          />
+            <label htmlFor="username">Username</label>
+            <input
+              name="username"
+              onChange={onInputChange}
+              type="text"
+              placeholder="Please enter a username"
+            />
 
-          <label htmlFor="password">Email:</label>
-          <input
-            name="email"
-            onChange={onInputChange}
-            type="email"
-            placeholder="Please enter a email"
-          />
-          <div className="btn">
-            <button className="sign-up-btn" onClick={newUserSubmit}>
-              Submit
-            </button>
-          </div>
-        </form>
+            <label htmlFor="password">Password</label>
+            <input
+              name="password"
+              onChange={onInputChange}
+              type="password"
+              placeholder="Please enter a password"
+            />
+            <div className="btn">
+              <button className="sign-up-btn" onClick={newUserSubmit}>
+                Submit
+              </button>
+            </div>
+          </form>
+        </SignUpFormDiv>
       </div>
     </div>
   );

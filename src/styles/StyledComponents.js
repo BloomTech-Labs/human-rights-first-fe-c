@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Layout, Menu, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 
 const { Header } = Layout;
 const { Title } = Typography;
@@ -22,10 +22,10 @@ const StyledNavDiv = styled.div`
   justify-content: left;
   align-items: end;
 `;
-
+// height: 20vh
 const StyledHeader = styled(Header)`
   display: flex;
-  height: 18vh;
+  height: 20vh;
   justify-content: space-between;
   align-items: center;
   background-color: white;
@@ -57,8 +57,38 @@ const MapDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 0.125rem solid silver;
-  border-right: 0.125rem solid silver;
+  border: 0.125rem solid silver;
+  margin: 75px auto 60px;
+`;
+
+const FooterDiv = styled.div`
+  position: relative;
+  height: 10vh;
+  // bottom: 0;
+  z-index: 97;
+  width: 100vw;
+  text-align: center;
+  background: rgb(0, 40, 70);
+  color: white;
+  padding: 15px;
+`;
+
+const ScrollToTop = styled.a`
+  color: white;
+  background: none;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+`;
+
+const ChartContents = styled.div`
+  height: 60vh;
+  width: 80vw;
+  margin: auto auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 0;
 `;
 
 export {
@@ -69,4 +99,7 @@ export {
   MapDiv,
   StyledFilterDiv,
   StyledSubTitle,
+  FooterDiv,
+  ScrollToTop,
+  ChartContents,
 };
