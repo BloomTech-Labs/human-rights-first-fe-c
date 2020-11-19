@@ -86,12 +86,15 @@ Our team is developing an interactive map that identifies potential instances of
 - Include a link to your API documentation if you have them (I use postman to create visually appealing API Docs)
 
 ## Issues (BE, FE, or DS specific)
-- Include current issues/bugs that could not be fixed before Thursday of week 4
-- Format it as a task list for legibility
+- Search/filter capability not functional 
+- Many data points list an incorrect lat,long of 0,0
+    - Map currently filters these out
+    - Charts currently use this data
 
 ## Future Features (BE, FE, or DS specific)
 - A filter on the dashboard to distinguish public approval of police use of force using NLP to create a sentiment analysis.
 - Add a predict route to receive input data from a user to classify a type of use of force, as defined by the [National Institute of Justice: Police Use-of-Force Continuum](https://nij.ojp.gov/topics/articles/use-force-continuum).
+- Pass cluster data directly to bar and pie charts for added interaction.
 
 ## Support (BE, FE, or DS specific)
 Who to contact for further support. Include at least two names.  They can use the contributors list above to get in contact with you, or find you on slack.
