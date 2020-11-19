@@ -1,17 +1,21 @@
 import React from 'react';
-import './footer.css';
+import styled from 'styled-components';
 
-function Footer() {
+const FooterDiv = styled.div`
+  position: relative;
+  bottom: 0;
+  z-index: 97;
+  width: 100vw;
+  text-align: center;
+`;
+
+export default function Footer() {
   return (
-    <div className="footer">
-      <a href="#" className="back-to-top">
-        back to top {'  '}
-        <i class="fa fa-chevron-up"></i>
-      </a>
-      <div className="copy">
-        <small>© Copyright 2020. All rights reserved.</small>
-      </div>
-    </div>
+    <FooterDiv>
+      <small>
+        © Copyright {new Date().getFullYear()}, Human Rights First. All rights
+        reserved.
+      </small>
+    </FooterDiv>
   );
 }
-export default Footer;
