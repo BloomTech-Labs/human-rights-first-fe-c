@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './form.css';
+import '../styles/form.css'
 import { LogInFormDiv } from '../styles/FormStyle';
 import axiosWithAuth from '../utils/axiosWithAuth';
 

@@ -1,4 +1,4 @@
-export const useCategoryCount = incidents => {
+export const getCategoryCount = incidents => {
   let category_count = {};
 
   if (incidents) {
