@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ClusterMarker = styled.div`
+const StyledClusterMarker = styled.div`
   color: #fff;
   background: #e63946;
   border-radius: 50%;
@@ -13,14 +13,8 @@ const ClusterMarker = styled.div`
     cursor: pointer;
   }
 `;
-const MarkerBtn = styled.div`
-  background: none;
-  border: none;
-  cursor: pointer;
-  size: 5px;
-`;
 
-const IncidentsContainer = styled.div`
+const StyledIncidentsContainer = styled.div`
   width: 24vw;
   height: 70vh;
 
@@ -30,7 +24,7 @@ const IncidentsContainer = styled.div`
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
 `;
-const IncidentContainer = styled.div`
+const StyledIncidentContainer = styled.div`
   height: 70vh;
   overflow: auto;
   padding: 12px 4px 0;
@@ -41,7 +35,7 @@ const IncidentContainer = styled.div`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
 `;
 
-const ClearIncidentsBtn = styled.div`
+const StyledClearIncidentsBtn = styled.div`
   width: 22vw;
   text-align: right;
   position: absolute;
@@ -51,9 +45,8 @@ const ClearIncidentsBtn = styled.div`
 `;
 
 export {
-  ClusterMarker,
-  MarkerBtn,
-  IncidentContainer,
-  IncidentsContainer,
-  ClearIncidentsBtn,
+  StyledClusterMarker,
+  StyledIncidentContainer,
+  StyledIncidentsContainer,
+  StyledClearIncidentsBtn,
 };

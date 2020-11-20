@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
 
-import Map from '../components/map/Map';
+import MapView from '../components/map/MapView';
 import NavMap from './NavMap';
 import DashboardChart from './DashboardChart';
 import ChartComponent from './ChartComponent';
@@ -20,7 +20,7 @@ export const Container = () => {
           <ChartComponent />
         </Route>
         <Route path="/">
-          <Map />
+          <MapView />
         </Route>
       </Switch>
     </div>
