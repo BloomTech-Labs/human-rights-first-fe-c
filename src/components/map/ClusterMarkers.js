@@ -109,9 +109,7 @@ function ClusterMarkers({
                     latitude,
                     longitude,
                     zoom: expansionZoom,
-                    transitionInterpolator: new FlyToInterpolator({
-                      speed: 1.5,
-                    }),
+                    transitionInterpolator: new FlyToInterpolator(),
                     transitionDuration: `auto`,
                   });
                 }
