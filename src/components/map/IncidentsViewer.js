@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   StyledIncidentsContainer,
-  StyledIncidentContainer,
+  StyledScrollableIncidentContainer,
   StyledClearIncidentsBtn,
 } from '../../styles/MapViewStyles';
 
@@ -18,17 +18,17 @@ function IncidentsViewer({ incidentsOfInterest, setIncidentsOfInterest }) {
       <StyledClearIncidentsBtn onClick={() => setIncidentsOfInterest()}>
         X
       </StyledClearIncidentsBtn>
-      <StyledIncidentContainer>
+      <StyledScrollableIncidentContainer>
         {incidentsOfInterest.map(incident => {
           const details = incident.properties.incident;
           const date = new Date(details.date);
           return (
-            // each incident
             <>
               <h1>{details.title}</h1>
               <div className="location-info">{`${details.city} | ${details.state}`}</div>
               <div className="date">{date.toISOString().slice(0, 10)}</div>
               <div className="incident-description">{details.desc}</div>
+              {/* ⬇️ getting warning for needing unique key ... ? uuid() or nanoid() ? ⬇️ */}
               <ul className="categories">
                 Categories:
                 {details.categories.map(tag => (
@@ -49,7 +49,7 @@ function IncidentsViewer({ incidentsOfInterest, setIncidentsOfInterest }) {
             </>
           );
         })}
-      </StyledIncidentContainer>
+      </StyledScrollableIncidentContainer>
     </StyledIncidentsContainer>
   );
 }

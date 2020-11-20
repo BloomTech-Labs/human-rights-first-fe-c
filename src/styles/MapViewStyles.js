@@ -24,7 +24,7 @@ const StyledIncidentsContainer = styled.div`
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
 `;
-const StyledIncidentContainer = styled.div`
+const StyledScrollableIncidentContainer = styled.div`
   height: 70vh;
   overflow: auto;
   padding: 12px 4px 0;
@@ -46,7 +46,7 @@ const StyledClearIncidentsBtn = styled.div`
 
 export {
   StyledClusterMarker,
-  StyledIncidentContainer,
+  StyledScrollableIncidentContainer,
   StyledIncidentsContainer,
   StyledClearIncidentsBtn,
 };

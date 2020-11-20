@@ -2,9 +2,9 @@ import * as React from 'react';
 // components
 import ChartsNavBar from '../ChartsNavBar';
 import IncidentsViewer from './IncidentsViewer';
+import MapContainer from './MapContainer';
 // styles
 import 'mapbox-gl/dist/mapbox-gl.css';
-import MapContainer from './MapContainer';
 
 function MapView() {
   // state variable
