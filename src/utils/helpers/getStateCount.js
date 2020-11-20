@@ -1,4 +1,4 @@
-export const useStateCount = incidents => {
+export const getStateCount = incidents => {
   let incident_count = {};
   if (incidents) {
     incidents.forEach(incident => {

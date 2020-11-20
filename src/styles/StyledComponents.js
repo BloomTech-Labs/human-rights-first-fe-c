@@ -80,17 +80,6 @@ const ScrollToTop = styled.a`
   font-family: sans-serif;
 `;
 
-const ChartContents = styled.div`
-  height: 60vh;
-  width: 80vw;
-  margin: auto auto 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 0 0;
-`;
-
 export {
   StyledNavDiv,
   StyledTitle,
@@ -101,5 +90,4 @@ export {
   StyledSubTitle,
   FooterDiv,
   ScrollToTop,
-  ChartContents,
 };
